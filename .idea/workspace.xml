@@ -2,97 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="664cae3b-4d8c-4eea-89b2-740d57374004" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/errors/500.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/05-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/06-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/07-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/08-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/09-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/10-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/11-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/12-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/blog/13-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/ecommerce/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/image-gallery/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/lg/avatar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/lg/avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/lg/avatar3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/lg/avatar4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/sm/avatar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/sm/avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/sm/avatar3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/sm/avatar4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/sm/avatar5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/sm/avatar6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/user-placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/user-placeholder.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/xs/avatar9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/front/img/bg-img/special.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/img/bg-img/special.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/buyer/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/buyer/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/buyer/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/buyer/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/buyer/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/buyer/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/buyer/transaction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/buyer/transaction/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/feedbacks/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/feedbacks/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/order/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/register_completion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/register_completion.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/transaction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/transaction/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/done_payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/done_payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/single.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/vendor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/vendor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap-4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap-4.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/custom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/custom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/semantic-ui.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/semantic-ui.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-tailwind.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-tailwind.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/tailwind.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/tailwind.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,20 +17,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/seller/order/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="153" column="29" selection-start-line="153" selection-start-column="21" selection-end-line="153" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/buyer/order/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/seller/product/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="147" column="38" lean-forward="true" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
+            <state relative-caret-position="512">
+              <caret line="81" column="34" lean-forward="true" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+              <folding>
+                <element signature="e#4716#4742#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -309,7 +214,7 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="317" />
     <option name="y" value="82" />
     <option name="width" value="1167" />
@@ -345,21 +250,6 @@
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="buyer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="buyer" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="seller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -368,7 +258,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="seller" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -422,15 +312,15 @@
       <workItem from="1603366430789" duration="1227000" />
       <workItem from="1603367775794" duration="523000" />
       <workItem from="1603368393572" duration="1368000" />
-      <workItem from="1603371078563" duration="8990000" />
+      <workItem from="1603371078563" duration="9573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12606000" />
+    <option name="totallyTimeSpent" value="13189000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1652452" />
@@ -448,7 +338,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004517" side_tool="true" weight="0.32932165" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" weight="0.20260021" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" visible="true" weight="0.20260021" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -758,6 +648,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/buyer/order/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="147" column="38" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/seller/order/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -765,10 +662,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/buyer/order/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/seller/product/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="147" column="38" lean-forward="true" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
+        <state relative-caret-position="512">
+          <caret line="81" column="34" lean-forward="true" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+          <folding>
+            <element signature="e#4716#4742#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

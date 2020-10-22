@@ -60,8 +60,10 @@
             td:nth-of-type(3):before {
                 content: "قیمت";
             }
-
-            td:nth-of-type(6):before {
+            td:nth-of-type(4):before {
+                content: "لینک";
+            }
+            td:nth-of-type(5):before {
                 content: "عملیات";
             }
 
@@ -103,9 +105,8 @@
                                         <th>ردیف</th>
                                         <th>تصویر</th>
                                         <th>قیمت</th>
-                                        <th class="nono">تعداد لایک</th>
-                                        <th class="nono">تعداد کامنت</th>
-                                        <th data-breakpoints="sm xs md">عملیات</th>
+                                        <th>کپی لینک</th>
+                                        <th>عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -122,16 +123,18 @@
                                             <td>{{number_format($product->price) ?? ''}} <span
                                                         class="nono">هزارتومان</span>
                                             </td>
-                                            <td class="nono">{{$product->like_count ?? ''}}</td>
-                                            <td class="nono">{{$product->comment_count ?? ''}}</td>
+
                                             <td>
-                                                <input type="text" style="width: 15px" id="link-{{$product->id}}"
+                                                <input type="text" id="link-{{$product->id}}"
                                                        value="{{route('product',$product->id)}}">
                                                 <button class="btn btn-sm btn-success "
                                                         style="top:5px;right: 0px"
                                                         onclick="copyToClipboard('link-{{$product->id}}')"><i
                                                             class="zmdi zmdi-copy"></i>
                                                 </button>
+                                            </td>
+                                            <td>
+
                                                 <a href="{{route('seller.products.edit',$product->id)}}"
                                                    class="btn btn-default waves-effect waves-float btn-sm waves-green"><i
                                                             class="zmdi zmdi-edit"></i></a>
