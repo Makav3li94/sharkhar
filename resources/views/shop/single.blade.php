@@ -2,130 +2,120 @@
 @section('content')
     <div class="container">
         <div class="row clearfix">
-                <div class="card">
-                    <div class="body">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-12">
-                                <div class="blogitem-image">
-                                    <img src="{{$product->image}}" alt="blog image">
-                                </div>
+            <div class="card">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-12">
+                            <div class="blogitem-image">
+                                <img src="{{$product->image}}" alt="blog image">
                             </div>
-                            <div class="col-xl-8 col-lg-8 col-md-12">
-                                <div class="product details">
-                                    <h3 class="product-title mb-2 mt-2">{{\Illuminate\Support\Str::limit($product->title,25)}}</h3>
-                                    <h5 class="price mt-0">قیمت فعلی: <span class="col-amber">{{$product->price != 0 ? number_format($product->price) : 'وارد نشده.'}} تومان</span></h5>
-                                    <div class="rating">
-                                        <div class="stars">
-                                            @for($i = 1; $i <= $p_good; $i++)
-                                                <span class="zmdi zmdi-star col-amber"></span>
-                                            @endfor
-                                            @for($i = 1; $i <= (5 - $p_good); $i++)
-                                                <span class="zmdi zmdi-star-outline"></span>
-                                            @endfor
-                                        </div>
-                                        <span class="m-l-10">{{$all}} بررسی</span>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-12">
+                            <div class="product details">
+                                <h3 class="product-title mb-2 mt-2">{{\Illuminate\Support\Str::limit($product->title,25)}}</h3>
+                                <h5 class="price mt-0">قیمت فعلی: <span class="col-amber">{{$product->price != 0 ? number_format($product->price) ." هزار تومان" : 'وارد نشده.'}} </span>
+                                </h5>
+                                <div class="rating">
+                                    <div class="stars">
+                                        @for($i = 1; $i <= $p_good; $i++)
+                                            <span class="zmdi zmdi-star col-amber"></span>
+                                        @endfor
+                                        @for($i = 1; $i <= (5 - $p_good); $i++)
+                                            <span class="zmdi zmdi-star-outline"></span>
+                                        @endfor
                                     </div>
-                                    <hr>
-                                    <p class="product-description">
-                                        {!! $product->body !!}
-                                    </p>
+                                    <span class="m-l-10">{{$all}} بررسی</span>
+                                </div>
+                                <hr>
+                                <p class="product-description">
+                                    {!! $product->body !!}
+                                </p>
+                                @if(!auth()->check())
                                     <hr>
                                     <div class="action">
                                         <form action="{{route('payment_view',$product->id)}}" method="get">
                                             @csrf
-                                            <div class="row form-group">
-                                                    <div class="row">
-                                                        <div class="col-md-6 mp-res">
-                                                            <div class="form-group my-1">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text">
-                                                               تعداد
-                                                        </span>
-                                                                    </div>
-                                                                    <input type="number" class="form-control"
-                                                                           name="qty" value="1" id="qty"
-                                                                           onchange="getCost()" min="1">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group my-1">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text">
-                                                                      قیمت
-                                                                      </span>
-                                                                    </div>
-                                                                    <input type="text" class="form-control"
-                                                                           name="cost" id="total"
-                                                                           value="{{$product->price}}">
-                                                                    <input type="hidden" name="default_cost"
-                                                                           id="default_cost"
-                                                                           value="{{$product->price}}">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                            <small class="text-center text-info mt-1 mb-2" style="display: inherit">لطفا
+                                                اطلاعات زیر را جهت
+                                                پیگیری سفارشتان پر کنید.
+                                            </small>
+                                            <div class="row">
+                                                <!-- Single Input Area Start -->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="name">نام و نام خانواگی:</label>
+                                                        <input type="text" class="form-control" name="name"
+                                                               value="{{old('name')}}"
+                                                               oninput="setCustomValidity('')"
+                                                               oninvalid="this.setCustomValidity('لطفا نام و نام خانوادگی را وارد کنید')"
+                                                               required>
                                                     </div>
-                                            </div>
-                                            @if(!auth()->guard('buyer')->check())
-                                                <small class="text-center text-info mt-1 mb-2" style="display: inherit">لطفا اطلاعات زیر را جهت
-                                                    پیگیری سفارشتان پر کنید.</small>
-                                                <div class="row">
-                                                    <!-- Single Input Area Start -->
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" name="name"
-                                                                   placeholder="نام و نام خانوادگی ..."
-                                                                   value="{{old('name')}}"
-                                                                   oninput="setCustomValidity('')"
-                                                                   oninvalid="this.setCustomValidity('لطفا نام و نام خانوادگی را وارد کنید')"
-                                                                   required>
-                                                        </div>
-                                                        @if($errors->has('name'))
-                                                            <small class="text-danger">
-                                                                {{$errors->first('name')}}
-                                                            </small>
-                                                        @endif
-
-                                                    </div>
-                                                    <!-- Single Input Area Start -->
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control"
-                                                                   name="mobile"
-                                                                   placeholder="شماره تلفن ..."
-                                                                   value="{{old('mobile')}}"
-                                                                   oninput="setCustomValidity('')"
-                                                                   oninvalid="this.setCustomValidity('لطفا شماره تلفن را وارد کنید')"
-                                                                   required>
-                                                        </div>
-                                                        @if($errors->has('mobile'))
-                                                            <small class="text-danger">
-                                                                {{$errors->first('mobile')}}
-                                                            </small>
-                                                        @endif
-                                                    </div>
-
-                                                    <!-- Single Input Area Start -->
+                                                    @if($errors->has('name'))
+                                                        <small class="text-danger">
+                                                            {{$errors->first('name')}}
+                                                        </small>
+                                                    @endif
 
                                                 </div>
 
-                                            @endif
-                                            <div class="row ">
-                                                <div class="col-lg-12 text-center">
-                                            <button class="btn btn-raised btn-primary btn-round waves-effect"
-                                                    type="submit">تکمیل فرایند خرید
-                                            </button>
-                                            </div></div>
-                                        </form>
+                                                <!-- Single Input Area Start -->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="mobile">شماره تلفن:</label>
+                                                        <input type="text" class="form-control"
+                                                               name="mobile"
 
+                                                               value="{{old('mobile')}}"
+                                                               oninput="setCustomValidity('')"
+                                                               oninvalid="this.setCustomValidity('لطفا شماره تلفن را وارد کنید')"
+                                                               required>
+                                                    </div>
+                                                    @if($errors->has('mobile'))
+                                                        <small class="text-danger">
+                                                            {{$errors->first('mobile')}}
+                                                        </small>
+                                                    @endif
+                                                </div>
+
+                                                <!-- Single Input Area Start -->
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="qty">تعداد:</label>
+                                                    <input type="number" class="form-control"
+                                                           name="qty" value="1" id="qty"
+                                                           onchange="getCost()" min="1">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="cost">قیمت:</label>
+                                                    <input type="text" class="form-control"
+                                                           name="cost" id="total" readonly
+                                                           value="{{$product->price}}">
+                                                    <input type="hidden" name="default_cost"
+                                                           id="default_cost"
+                                                           value="{{$product->price}}">
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-lg-12 text-center">
+                                                    <button class="btn btn-raised btn-primary btn-round waves-effect"
+                                                            type="submit">تکمیل فرایند خرید
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+
             @if($feedbacks->count() > 0)
                 <div class="card">
                     <div class="header">
@@ -189,7 +179,7 @@
                         </ul>
                     </div>
                 </div>
-                @else
+            @else
                 <div class="card">
                     <div class="body">
                         <p class="text-primary text-center m-0">
@@ -197,7 +187,7 @@
                         </p>
                     </div>
                 </div>
-                @endif
+            @endif
         </div>
     </div>
 

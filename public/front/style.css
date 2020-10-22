@@ -204,7 +204,7 @@ ol {
     font-size: 24px;
     right: 30px;
     width: 50px;
-    background-color: #fb397d;
+    background-color: #e1306c;
     color: #fff;
     text-align: center;
     height: 50px;
@@ -241,11 +241,10 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #5b32b4;
-    font-size: 48px;
+    color: #405de6;
+    font-size: 30px;
     margin: 0;
 }
-
 
 .section-heading {
     margin-bottom: 60px;
@@ -259,7 +258,7 @@ p {
 .line-shape {
     width: 80px;
     height: 2px;
-    background-color: #fb397d;
+    background-color: #e1306c;
     margin-top: 15px;
 }
 
@@ -297,7 +296,7 @@ p {
     -webkit-animation: 2000ms linear 0s normal none infinite running colorlib-load;
     animation: 2000ms linear 0s normal none infinite running colorlib-load;
     background: transparent none repeat scroll 0 0;
-    border-color: #dddddd #dddddd #fb397d;
+    border-color: #dddddd #dddddd #e1306c;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
@@ -345,14 +344,13 @@ p {
 }
 
 .menu_area .navbar-brand {
-    font-size: 60px;
+    font-size: 35px;
     font-weight: 700;
     color: #fff;
     margin: 0;
     line-height: 1;
     padding: 0;
 }
-
 
 .menu_area .navbar-brand:hover,
 .menu_area .navbar-brand:focus {
@@ -379,7 +377,7 @@ p {
 
 
 .menu_area nav ul li > a:hover {
-    color: #fb397d;
+    color: #e1306c;
 }
 
 .sing-up-button {
@@ -394,15 +392,16 @@ p {
     display: inline-block;
     border: 2px solid #a883e9;
     height: 50px;
-    min-width: 178px;
+    min-width: 110px;
     line-height: 46px;
     text-align: center;
-    border-radius: 24px 24px 24px 0px;
+    border-radius: 24px 24px 24px 24px;
     font-size: 0.8rem;
+    margin-left: 10px;
 }
 
 .sing-up-button > a:hover {
-    background: #fb397d;
+    background: #e1306c;
     color: #fff;
     border-color: transparent;
     -webkit-transition-duration: 500ms;
@@ -413,7 +412,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #884bdf;
+    background-color: #833ab4;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -423,7 +422,7 @@ p {
 }
 
 .header_area.sticky .menu_area .navbar-brand {
-    font-size: 50px;
+    font-size: 35px;
 }
 
 .header_area.sticky .menu_area #nav .nav-link {
@@ -472,12 +471,13 @@ p {
 }
 
 .wellcome-heading > h2 {
-    font-size: 70px;
+    font-size: 60px;
     color: #ffffff;
     font-weight: 700;
     position: relative;
     z-index: 3;
     text-align: left;
+    padding-bottom: 15px;
 }
 .get-start-area{
     direction: rtl;
@@ -519,7 +519,7 @@ p {
 }
 
 .get-start-area .submit {
-    background-color: #fb397d;
+    background-color: #e1306c;
     color: #fff;
     font-weight: 500;
     display: inline-block;
@@ -528,7 +528,7 @@ p {
     min-width: 167px;
     line-height: 46px;
     text-align: center;
-    border-radius: 24px 24px 0px 24px;
+    border-radius: 24px 24px 24px 24px;
     margin-left: 10px;
 }
 
@@ -568,12 +568,12 @@ p {
 
 .single-icon > i {
     font-size: 36px;
-    color: #fb397d;
+    color: #e1306c;
 }
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #405de6;
 }
 
 .single-icon {
@@ -582,7 +582,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #405de6;
     margin-bottom: 15px;
 }
 
@@ -597,8 +597,8 @@ p {
 }
 
 .special_description_content > h2 {
-    color: #5b32b4;
-    font-size: 48px;
+    color: #405de6;
+    font-size: 26px;
     margin-bottom: 30px;
 }
 
@@ -643,7 +643,7 @@ p {
 .app-download-btn.active a,
 .app-download-btn a:hover {
     border-color: transparent;
-    background-color: #fb397d;
+    background-color: #e1306c;
 }
 
 .app-download-btn a i {
@@ -692,7 +692,7 @@ p {
 }
 
 .single-feature > i {
-    color: #fb397d;
+    color: #e1306c;
     font-size: 30px;
     display: inline-block;
     float: right;
@@ -701,7 +701,7 @@ p {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #405de6;
     text-align: right;
 }
 
@@ -741,7 +741,7 @@ p {
 .video-area .video-play-btn a {
     width: 80px;
     height: 80px;
-    background-color: #fb397d;
+    background-color: #e1306c;
     color: #fff;
     text-align: center;
     display: block;
@@ -851,7 +851,7 @@ p {
 }
 
 .app-screenshots-area .owl-dot.active {
-    background-color: #fb397d;
+    background-color: #e1306c;
     border: transparent;
 }
 
@@ -882,13 +882,13 @@ p {
 }
 
 .single-price-plan .package-plan > h5 {
-    color: #5b32b4;
+    color: #405de6;
     font-size: 18px;
 }
 
 
 .single-price-plan .package-plan .ca-price h4 {
-    color: #fb397d;
+    color: #e1306c;
     font-size: 48px;
     position: relative;
     z-index: 1;
@@ -898,7 +898,7 @@ p {
 
 .single-price-plan .package-plan .ca-price span {
     font-size: 18px;
-    color: #fb397d;
+    color: #e1306c;
 }
 
 .single-price-plan .plan-button > a {
@@ -943,7 +943,7 @@ p {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #5b32b4;
+    color: #405de6;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -994,8 +994,8 @@ p {
 }
 
 .clients-feedback-area .slick-dots li.slick-active button {
-    background-color: #fb397d;
-    border-color: #fb397d;
+    background-color: #e1306c;
+    border-color: #e1306c;
 }
 
 .clients-feedback-area .slick-slide.client-thumbnail {
@@ -1081,13 +1081,13 @@ p {
     display: inline-block;
     text-align: center;
     line-height: 45px;
-    color: #fb397d;
+    color: #e1306c;
     font-weight: 500;
     border-radius: 23px 23px 23px 0;
 }
 
 .get-started-button > a:hover {
-    background: #5b32b4;
+    background: #405de6;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1115,7 +1115,7 @@ p {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #405de6;
 }
 
 .member-text > p {
@@ -1194,11 +1194,10 @@ p {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #5b32b4;
+    color: #405de6;
 }
-.footer-contact-area{
-    padding: 150px 0 40px 0;
-
+.footer-contact-area {
+    padding: 60px 0 60px 0;
 }
 .footer-contact-area .section-heading{
     text-align: right;
@@ -1236,7 +1235,7 @@ p {
 }
 
 .btn.submit-btn {
-    background: #fb397d;
+    background: #e1306c;
     height: 48px;
     min-width: 185px;
     color: #ffffff;
@@ -1245,7 +1244,7 @@ p {
 }
 
 .btn.submit-btn:hover {
-    background: #5b32b4;
+    background: #405de6;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1265,8 +1264,8 @@ p {
 -------------------------- */
 
 .footer-text > h2 {
-    color: #5b32b4;
-    font-size: 72px;
+    color: #405de6;
+    font-size: 45px;
     font-weight: 700;
 }
 
@@ -1283,7 +1282,7 @@ p {
 }
 
 .footer-social-icon > a > i:hover {
-    background: #fb397d;
+    background: #e1306c;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1310,7 +1309,7 @@ p {
 }
 
 .footer-social-icon > a .active {
-    background: #fb397d;
+    background: #e1306c;
 }
 
 .footer-menu ul li:last-child a {

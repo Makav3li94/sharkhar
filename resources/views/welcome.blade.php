@@ -85,7 +85,7 @@
 
 
 <!-- ***** Footer Area Start ***** -->
-<footer class="text-center section_padding_100 pb-0 clearfix">
+<footer class="text-center pt-lg-5 pb-0 clearfix">
     <!-- footer logo -->
     <div class="footer-text">
         <h2>شرخر</h2>

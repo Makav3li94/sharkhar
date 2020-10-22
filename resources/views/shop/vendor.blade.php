@@ -42,47 +42,55 @@
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                     <div class="body">
-                        <ul class="row list-unstyled c_review">
-                            @foreach($feedbacks as $feedback)
-                                <li class="col-12">
-                                    <div class="avatar">
-                                        <a href="javascript:void(0);">
-                                            <img class="rounded" src="{{asset('assets/images/user-placeholder.png')}}"
-                                                 alt="user" width="60"></a>
-                                    </div>
-                                    <div class="comment-action">
-                                        <h6 class="c_name">{{$feedback->buyer->name}}</h6>
-                                        <p class="c_msg m-b-0">{{\Illuminate\Support\Str::limit($feedback->body,70)}} </p>
-                                        <div class="badge badge-info">{{\Illuminate\Support\Str::limit($feedback->product->title,15)}}</div>
-                                        <span class="m-l-10" style="position:absolute ;top:39px">
+                        @if(count($feedbacks) > 0)
+                            <ul class="row list-unstyled c_review">
+                                @foreach($feedbacks as $feedback)
+                                    <li class="col-12">
+                                        <div class="avatar">
+                                            <a href="javascript:void(0);">
+                                                <img class="rounded"
+                                                     src="{{asset('assets/images/user-placeholder.png')}}"
+                                                     alt="user" width="60"></a>
+                                        </div>
+                                        <div class="comment-action">
+                                            <h6 class="c_name">{{$feedback->buyer->name}}</h6>
+                                            <p class="c_msg m-b-0">{{\Illuminate\Support\Str::limit($feedback->body,70)}} </p>
+                                            <div class="badge badge-info">{{\Illuminate\Support\Str::limit($feedback->product->title,15)}}</div>
+                                            <span class="m-l-10" style="position:absolute ;top:39px">
                                             @if($feedback->score == 'green')
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star col-amber"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star col-amber"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star col-amber"></i></a>
-                                            @elseif($feedback->score == 'warning')
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star col-amber"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star col-amber"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star-outline text-muted"></i></a>
-                                            @else
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star col-amber"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star-outline text-muted"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                            class="zmdi zmdi-star-outline text-muted"></i></a>
-                                            @endif
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star col-amber"></i></a>
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star col-amber"></i></a>
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star col-amber"></i></a>
+                                                @elseif($feedback->score == 'warning')
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star col-amber"></i></a>
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star col-amber"></i></a>
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star-outline text-muted"></i></a>
+                                                @else
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star col-amber"></i></a>
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star-outline text-muted"></i></a>
+                                                    <a href="javascript:void(0);"><i
+                                                                class="zmdi zmdi-star-outline text-muted"></i></a>
+                                                @endif
                                         </span>
-                                        <small class="comment-date float-sm-right pt-1">{{$feedback->created_at}}</small>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                                            <small class="comment-date float-sm-right pt-1">{{$feedback->created_at}}</small>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p class="text-primary text-center m-0">
+                                فعلا بازخوردی ثبت نشده :(
+                            </p>
+                            <hr>
+                        @endif
                         <div class="user">
                             <div class="d-flex">
                                 <h2 class="font-18 flex-grow-1 mb-0">{{$seller->name}}
@@ -130,15 +138,15 @@
                             <img src="{{$product->image}}" alt="{{$seller->title}}" class="img-fluid cp_img"/>
 
                             <div class="d-flex mt-3">
-                                    <div class="pr-2 ml-auto">
-                                            <i class="zmdi zmdi-thumb-up col-blue"></i>
-                                            <span>{{$product->like_count}} لایک</span>
-                                    </div>
-                                    <div class="pr-2">
-                                            <i class="zmdi zmdi-comment-text col-red"></i>
+                                <div class="pr-2 ml-auto">
+                                    <i class="zmdi zmdi-thumb-up col-blue"></i>
+                                    <span>{{$product->like_count}} لایک</span>
+                                </div>
+                                <div class="pr-2">
+                                    <i class="zmdi zmdi-comment-text col-red"></i>
 
-                                            <span>{{$product->comment_count}} نظر</span>
-                                    </div>
+                                    <span>{{$product->comment_count}} نظر</span>
+                                </div>
                             </div>
                             <hr>
                             <div class="product_details">
