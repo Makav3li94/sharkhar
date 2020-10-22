@@ -28,11 +28,11 @@ class TransactionsController extends Controller {
 	 */
 	public function index() {
 		if ( auth()->guard( 'web' )->check() ) {
-			$transactions = Transaction::where( 'seller_id', auth()->user()->id )->paginate(5);
+			$transactions = Transaction::where( 'seller_id', auth()->user()->id )->orderBy('id','DESC')->paginate(5);
 
 			return view( 'seller.transaction.index', compact( 'transactions' ) );
 		} elseif ( auth()->guard( 'buyer' )->check() ) {
-			$transactions = Transaction::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->paginate(5);
+			$transactions = Transaction::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->orderBy('id','DESC')->paginate(5);
 
 			return view( 'buyer.transaction.index', compact( 'transactions' ) );
 		} else {
@@ -114,6 +114,7 @@ class TransactionsController extends Controller {
 	}
 
 	public function payment( Request $request, Product $product ) {
+
 		$request->validate( [
 			'cost'         => 'required',
 			'qty'          => 'required|numeric',
@@ -177,6 +178,10 @@ class TransactionsController extends Controller {
 	public function store( Request $request ) {
 
 		$order   = Order::findOrFail( $request->order_id );
+		if (isset($request->note)) {
+			$order->note = $request->note;
+			$order->update();
+		}
 		$seller  = $order->seller;
 		$buyer   = $order->buyer;
 		$product = $order->product;

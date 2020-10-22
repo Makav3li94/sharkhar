@@ -15,10 +15,10 @@ class OrdersController extends Controller
     public function index()
     {
     	if (auth()->guard('web')->check()){
-		    $orders = Order::where('seller_id',auth()->user()->id)->paginate(5);
+		    $orders = Order::where('seller_id',auth()->user()->id)->orderBy('id','DESC')->paginate(5);
 		    return view('seller.order.index',compact('orders'));
 	    }elseif (auth()->guard('buyer')->check()){
-		    $orders = Order::where('buyer_id',auth()->guard('buyer')->user()->id)->paginate(5);
+		    $orders = Order::where('buyer_id',auth()->guard('buyer')->user()->id)->orderBy('id','DESC')->paginate(5);
 		    return view('buyer.order.index',compact('orders'));
 	    }else{
 

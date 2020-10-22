@@ -13,7 +13,7 @@
             @endif
 
             {{-- Next Page Link --}}
-            @if ($paginator->hasMorePages())
+            @if ($paginator->hasPages())
                 <li class="page-item">
                     <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('pagination.next')</a>
                 </li>

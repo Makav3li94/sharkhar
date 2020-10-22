@@ -12,7 +12,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading text-right" style="direction: rtl">
-                        <h2>دستیار فروش شرخر چیه ؟؟</h2>
+                        <h2>خرید امن با دستیار فروش شرخر</h2>
                         {{--                    <h3>شره !</h3>--}}
                         <p>همه چیزی که برای مدیریت، آنالیز، و رشد کسب و کارتون نیاز دارید.</p>
                     </div>

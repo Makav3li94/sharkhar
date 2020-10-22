@@ -73,14 +73,14 @@
         @media screen and ( max-width: 520px ) {
 
             li.page-item {
-
                 display: none;
             }
 
             .page-item:first-child,
             .page-item:last-child,
+            .page-item:nth-last-child(2),
+            .page-item:nth-child(2),
             .page-item.active {
-
                 display: block;
             }
         }
@@ -159,7 +159,7 @@
                     </div>
                 </div>
             @endif
-            @if($products->hasMorePages()  )
+            @if($products->hasPages()  )
                 <div class="card">
                     <div class="body">
                         <div class="col-lg-12">

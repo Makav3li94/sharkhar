@@ -2,7 +2,6 @@
 @section('content')
     <div class="container">
         <div class="row clearfix">
-            <div class="col-lg-12">
                 <div class="card">
                     <div class="body">
                         <div class="row">
@@ -13,9 +12,8 @@
                             </div>
                             <div class="col-xl-8 col-lg-8 col-md-12">
                                 <div class="product details">
-                                    <h3 class="product-title mb-0">{{\Illuminate\Support\Str::limit($product->title,40)}}</h3>
-                                    <h5 class="price mt-0">قیمت فعلی: <span class="col-amber">{{$product->price != 0 ? number_format($product->price) : 'وارد نشده.'}} تومان</span>
-                                    </h5>
+                                    <h3 class="product-title mb-2 mt-2">{{\Illuminate\Support\Str::limit($product->title,25)}}</h3>
+                                    <h5 class="price mt-0">قیمت فعلی: <span class="col-amber">{{$product->price != 0 ? number_format($product->price) : 'وارد نشده.'}} تومان</span></h5>
                                     <div class="rating">
                                         <div class="stars">
                                             @for($i = 1; $i <= $p_good; $i++)
@@ -31,18 +29,18 @@
                                     <p class="product-description">
                                         {!! $product->body !!}
                                     </p>
+                                    <hr>
                                     <div class="action">
                                         <form action="{{route('payment_view',$product->id)}}" method="get">
                                             @csrf
                                             <div class="row form-group">
-                                                <div class=" col-lg-12 col-md-12 col-sm-12">
                                                     <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-6 mp-res">
                                                             <div class="form-group my-1">
                                                                 <div class="input-group">
                                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
-                                                            <i class="ti-counter ml-2"></i>تعداد
+                                                               تعداد
                                                         </span>
                                                                     </div>
                                                                     <input type="number" class="form-control"
@@ -56,7 +54,7 @@
                                                                 <div class="input-group">
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text">
-                                                                         <i class="ti-money ml-2"></i>قیمت
+                                                                      قیمت
                                                                       </span>
                                                                     </div>
                                                                     <input type="text" class="form-control"
@@ -69,12 +67,10 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                             </div>
-                                            <hr>
                                             @if(!auth()->guard('buyer')->check())
-                                                <h6 class="text-center mb-2 inlineblock">لطفا اطلاعات زیر را جهت
-                                                    پیگیری سفارشتان پر کنید.</h6>
+                                                <small class="text-center text-info mt-1 mb-2" style="display: inherit">لطفا اطلاعات زیر را جهت
+                                                    پیگیری سفارشتان پر کنید.</small>
                                                 <div class="row">
                                                     <!-- Single Input Area Start -->
                                                     <div class="col-md-6">
@@ -116,10 +112,12 @@
                                                 </div>
 
                                             @endif
-
+                                            <div class="row ">
+                                                <div class="col-lg-12 text-center">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect"
                                                     type="submit">تکمیل فرایند خرید
                                             </button>
+                                            </div></div>
                                         </form>
 
                                     </div>
@@ -128,9 +126,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-12">
-
+            @if($feedbacks->count() > 0)
                 <div class="card">
                     <div class="header">
                         <h2><strong>خواندن</strong> نظرات</h2>
@@ -193,7 +189,15 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+                @else
+                <div class="card">
+                    <div class="body">
+                        <p class="text-primary text-center m-0">
+                            فعلا نظری ثبت نشده :(
+                        </p>
+                    </div>
+                </div>
+                @endif
         </div>
     </div>
 

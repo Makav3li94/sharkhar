@@ -32,7 +32,7 @@
             @endforeach
 
             {{-- Next Page Link --}}
-            @if ($paginator->hasMorePages())
+            @if ($paginator->hasPages())
                 <li>
                     <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&rsaquo;</a>
                 </li>

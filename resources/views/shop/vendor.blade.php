@@ -84,17 +84,21 @@
                             @endforeach
                         </ul>
                         <div class="user">
-                            <h2 class="mt-3 mb-1">{{$seller->name}}
-                                <div class="badge  badge-{{$sellerColor}} ">{{$sellerIsVerified}}</div>
-                            </h2>
-                            <small class="text-info">{{$seller->mobile}}</small>
+                            <div class="d-flex">
+                                <h2 class="font-18 flex-grow-1 mb-0">{{$seller->name}}
+
+                                </h2>
+                                <div class=" badge  badge-{{$sellerColor}}  ">{{$sellerIsVerified}}</div>
+                            </div>
+                            <hr>
+                            <span class="text-info">{{$seller->mobile}}</span>
                             <br>
-                            <small class="text-info"><strong>مجموع بازخورد
-                                    ها:</strong> ' {{$seller->feedbacks->count()}}</small>
+                            <span class="text-info"><strong>مجموع بازخورد
+                                    ها:</strong> ' {{$seller->feedbacks->count()}}</span>
                             <ul class="list-unstyled mt-3 d-flex">
-                                <li class="mr-3 badge badge-success"> :) فروشنده عالی: {{$good}}</li>
-                                <li class="mr-3 badge badge-info">فروشنده معمولی: {{$normal}}</li>
-                                <li class="mr-3 badge badge-danger">باید بهتر باشه :{{$bad}}</li>
+                                <li class="mr-3 p-2 mp-res badge badge-success"> عالی: {{$good}} :)</li>
+                                <li class="mr-3 p-2 mp-res badge badge-info">معمولی: {{$normal}}</li>
+                                <li class="mr-3 p-2 mp-res badge badge-danger"> ضعیف :{{$bad}}</li>
                             </ul>
 
 
@@ -125,23 +129,18 @@
                             <span class="label onsale">فروشی!</span>
                             <img src="{{$product->image}}" alt="{{$seller->title}}" class="img-fluid cp_img"/>
 
-                            <div class=" mt-3 ">
-                                <div class="row">
-                                    <div class="col-lg-6 col-xs-6">
-                                        <div class="">
+                            <div class="d-flex mt-3">
+                                    <div class="pr-2 ml-auto">
                                             <i class="zmdi zmdi-thumb-up col-blue"></i>
                                             <span>{{$product->like_count}} لایک</span>
-                                        </div>
                                     </div>
-                                    <div class="col-lg-6 col-xs-6 text-right">
-                                        <div class="">
+                                    <div class="pr-2">
                                             <i class="zmdi zmdi-comment-text col-red"></i>
 
                                             <span>{{$product->comment_count}} نظر</span>
-                                        </div>
                                     </div>
-                                </div>
                             </div>
+                            <hr>
                             <div class="product_details">
                                 <a class="text-justify font-13 d-inline-block"
                                    href="{{route('product',$product->id)}}">{{\Illuminate\Support\Str::limit($product->title,80)}}</a>
@@ -162,7 +161,7 @@
 
             @endforeach
         </div>
-        @if($products->hasMorePages()  )
+        @if($products->hasPages()  )
             <div class="row clearfix">
                 <div class="card">
                     <div class="body">
@@ -179,5 +178,21 @@
 
 @endsection
 @section('styles')
+    <style>
+        @media screen and ( max-width: 520px ) {
 
+            li.page-item {
+                display: none;
+            }
+
+            .page-item:first-child,
+            .page-item:last-child,
+            .page-item:nth-last-child(2),
+            .page-item:nth-child(2),
+            .page-item.active {
+                display: block;
+            }
+        }
+
+    </style>
 @endsection

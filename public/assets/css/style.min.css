@@ -1,7 +1,7 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700");
 @font-face {
-font-family: "IRANSansDN";
-src: url('../fonts/iransansdn.ttf') format('truetype');
+	font-family: "IRANSansDN";
+	src: url('../fonts/iransansdn.ttf') format('truetype');
 }
 body {
 	height: 100%;
@@ -22291,7 +22291,7 @@ section.bib{
 	box-shadow: 0 0 16px rgba(41, 42, 51, 0.06), 0 6px 20px rgba(41, 42, 51, 0.02);
 }header{
 	 background-color: #fb397d;
-	height: 70px;
+	 height: 70px;
  }
 .toTop {
 	bottom: 0;
@@ -22314,6 +22314,10 @@ section.bib{
 only screen
 and (max-width: 760px), (min-device-width: 768px)
 and (max-device-width: 1024px) {
+	/*.mp-res{*/
+	/*	margin: 0 !important;*/
+	/*	padding: 0 !important;*/
+	/*}*/
 	.nono {
 		display: none !important;
 	}
@@ -22324,13 +22328,13 @@ and (max-device-width: 1024px) {
 	.sidebar .menu .list a {
 		color: #222;
 		position: relative;
-		padding: 7px 10px;
+		padding: 12px 12px;
 		font-size: 14px;
 	}
 	.sidebar .menu .list .ml-menu li a {
 		font-size: 12px;
 		padding-right: 40px;
-		padding-top: 0px;
+		padding-top: 15px;
 		padding-bottom: 0px;
 	}
 	.p-res-0{
@@ -22344,6 +22348,11 @@ and (max-device-width: 1024px) {
 	header{
 		background-color: #fb397d;
 		height: 100px;
+	}
+
+	.product-title {
+		font-size: 1.1em !important;
+		margin-top: 10px !important;
 	}
 }
 .none{

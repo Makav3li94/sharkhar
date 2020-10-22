@@ -59,7 +59,7 @@
                     <div class="copyright text-center">
                         &copy;
                         <script>document.write(new Date().getFullYear())</script>
-                        ,
+                        ,کلیه حقوق محفوظ است.شرخر!
                         {{--                        <span>راست چین شده توسط <a href="https://thememakker.com/" target="_blank">آرش خادملو</a></span>--}}
                     </div>
                 </div>

@@ -70,9 +70,10 @@
                     <div class="copyright text-center">
                         &copy;
                         <script>document.write(new Date().getFullYear())</script>
-                        {{--                        <span>راست چین شده توسط <a href="https://thememakker.com/" target="_blank">آرش خادملو</a></span>--}}
+                        ,کلیه حقوق محفوظ است.شرخر!
                     </div>
                 </div>
+
                 <div class="col-lg-8 col-sm-12">
                     <div class="card">
                         <img src="{{asset('assets/images/final1.png')}}" alt="Sign Up"/>

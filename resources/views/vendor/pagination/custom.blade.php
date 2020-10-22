@@ -30,7 +30,7 @@
 
 
 
-        @if ($paginator->hasMorePages())
+        @if ($paginator->hasPages())
                 <li class="page-item"><a href="{{ $paginator->nextPageUrl() }}" rel="next" class="page-link" href="javascript:void(0);"><i class="zmdi zmdi-arrow-right"></i></a></li>
         @else
         @endif

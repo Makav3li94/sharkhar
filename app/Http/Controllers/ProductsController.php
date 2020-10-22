@@ -14,7 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::where([['status',1],['seller_id',auth()->user()->id]])->paginate(5);
+        $products = Product::where([['status',1],['seller_id',auth()->user()->id]])->orderBy('id','DESC')->paginate(5);
         return view('seller.product.index',compact('products'));
     }
 

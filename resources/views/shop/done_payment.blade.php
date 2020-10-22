@@ -1,329 +1,249 @@
-@extends('welcome')
-@section('styles')
-    <link rel="stylesheet" href="{{asset('assets/plugins/footable-bootstrap/css/footable.bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/plugins/footable-bootstrap/css/footable.standalone.min.css')}}">
-    <style>
+@extends('layouts.admin_layout',['title' => 'بازگشت از درگاه','b_level2'=>$order->seller->insta_user,'hide'=>'true'])
 
-        body {
-            background-color: #f5f5f5;
-            overflow-x: hidden;
-        }
-
-        /* Profile Section */
-        @media screen and (max-width: 720px) {
-            .profile {
-                display: none;
-            }
-        }
-
-        /* Profile Section */
-
-        .profile {
-            padding: 5rem 0;
-            text-align: right;
-            direction: rtl;
-            padding: 30px;
-        }
-
-        .profile::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        .profile-image {
-            float: left;
-            width: calc(33.333% - 1rem);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 3rem;
-        }
-
-        .profile-image img {
-            border-radius: 50%;
-        }
-
-        .profile-user-settings,
-        .profile-stats,
-        .profile-bio {
-            float: left;
-            width: calc(66.666% - 2rem);
-        }
-
-        .profile-user-settings {
-            margin-top: 1.1rem;
-        }
-
-        .profile-user-name {
-            display: inline-block;
-            font-size: 3.2rem;
-            font-weight: 300;
-        }
-
-
-        .profile-stats {
-            margin-top: 2.3rem;
-        }
-
-        .profile-stats li {
-            display: inline-block;
-            font-size: 1.6rem;
-            line-height: 1.5;
-            margin-right: 4rem;
-            cursor: pointer;
-        }
-
-        .profile-stats li:first-of-type {
-            margin-right: 0;
-        }
-
-        .profile-bio {
-            font-size: 1.6rem;
-            font-weight: 400;
-            line-height: 1.5;
-            margin-top: 2.3rem;
-        }
-
-        .profile-real-name,
-        .profile-stat-count {
-            font-weight: 600;
-        }
-
-        .product_item {
-            direction: rtl;
-            text-align: right;
-            padding: 20px;
-        }
-    </style>
-@endsection
 @section('content')
-    <section class="wellcome_area clearfix" style="height: 400px;margin-bottom: 100px" id="home">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 col-md">
-                    <div class="wellcome-heading text-right" style="direction: rtl">
-                        <h2>فروشگاه های محبوبتون !</h2>
-                        {{--                    <h3>شره !</h3>--}}
-                        <p>هرچی دوست دارید، با امنیت خاطر بخرید.</p>
+
+    <div class="container">
+        @if($verifyCode != 'false')
+            <div class="row clearfix">
+                <div class="card">
+                    <div class="header d-flex">
+                        <h2 class="p-2 ">وضعیت پرداخت :</h2>
+                        <div class=" ml-4 p-2 mr-auto alert alert-success">پرداخت شده</div>
+                    </div>
+                    <div class="body">
+                        <div class="d-flex ">
+                            <div class="p-2 ml-auto">
+                                <h5><strong>شماره سفارش: </strong> #{{$order->id}}</h5>
+                            </div>
+
+                            <div class="p-2">
+                                <p class="mb-0"><strong>تاریخ سفارش: </strong>{{$order->created_at}}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 p-0">
+                                    <address>
+                                        <strong class=" pb-2">نام فروشنده: </strong>{{$order->seller->name}}<br>
+                                        {{$buyer->address ?? ''}}<br>
+                                        <abbr title="Phone">ت:</abbr> {{$order->seller->mobile}}<br>
+                                        <abbr title="Phone">ت-ث:</abbr> {{$order->seller->telephone ?? ''}}
+                                    </address>
+                                </div>
+                                <div class="col-md-6 col-sm-6 p-0  text-right">
+                                    <p class="mb-0"><strong>وضعیت سفارش: </strong>
+                                        <span class="badge badge-success"> در حال انجام
+                                    </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="body_scroll">
-        <div class="block-header">
-            @if($verifyCode != 'false')
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 style="text-align: right">وضعیت پرداخت :
-                                <div class="badge badge-success">پرداخت شده</div>
-                            </h2>
-
+            <div class="row clearfix">
+                <div class="card">
+                    <div class="body">
+                        <div class="col-md-12">
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>تصویر</th>
+                                        <th class="nono">عنوان</th>
+                                        <th>تعداد</th>
+                                        <th>واحد</th>
+                                        <th>مجموع</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><img src="{{$order->product->image_thumb}}" width="40" alt="Product img">
+                                        </td>
+                                        <td class="nono">{{\Illuminate\Support\Str::limit($order->product->title,20) ??''}}</td>
+                                        <td>{{$order->qty ?? ''}}</td>
+                                        <td>{{number_format($order->product->price)}}</td>
+                                        <td>{{number_format($order->price)}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="container mt-3" style="direction: rtl;text-align: right;">
-                    <div class="row clearfix">
+            </div>
+
+            <div class="row clearfix">
+                <div class="card">
+
+                    <div class="body">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4 mb-5 ">
+                                    <ul class="list-unstyled price-list">
+                                        <li><strong>قیمت محصول: </strong>
+                                            <span>{{$order->qty}} * {{number_format($order->product->price)}}</span>
+                                        </li>
+                                        <li><strong>قیمت کل: </strong>
+                                            <span> {{number_format(($order->price) - ($order->shipping_cost)) ?? 0}}</span>
+                                        </li>
+                                        <li><strong>هزینه ارسال: </strong>
+                                            <span>{{$order->shipping_cost ?? 0}}</span>
+                                        </li>
+
+                                        <li class="text-danger"><strong>تخفیف: </strong>
+                                            <span>{{number_format($order->discount) ?? 0}}</span>
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                    <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
+                                        : {{number_format($order->price) }} هزار
+                                        تومان</h5>
+                                </div>
+                                <div class="col-lg-3 nono">
+
+                                </div>
+                                <div class="col-lg-5 col-sm-8 ">
+                                    <textarea name="note" class="form-control" id="" rows="3">{{$order->note ?? ''}}</textarea>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        @else
+
+
+            <div class="row clearfix">
+                <div class="card">
+                    <div class="header d-flex">
+                        <h2 class="p-2 ">وضعیت پرداخت :</h2>
+                        <div class=" ml-4 p-2 mr-auto alert alert-danger">خطا در پرداخت</div>
+                    </div>
+
+                    <div class="body">
+                        <p class="text-info text-center" >اگر مبلغی از حساب شما کسر شده تا 48 ساعت آینده به حساب شما باز خواهد گشت</p>
+                        <hr>
+                        <div class="d-flex ">
+                            <div class="p-2 ml-auto">
+                                <h5><strong>شماره سفارش: </strong> #{{$order->id}}</h5>
+                            </div>
+
+                            <div class="p-2">
+                                <p class="mb-0"><strong>تاریخ سفارش: </strong>{{$order->created_at}}</p>
+                            </div>
+                        </div>
+
                         <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5><strong>شماره سفارش: </strong> #{{$order->id}}</h5>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                            <address>
-                                                <strong>فروشنده {{$order->seller->name}}.</strong><br>
-                                                {{$order->seller->address ?? ''}}<br>
-                                                <abbr title="Phone">ت:</abbr> {{$order->seller->mobile}}
-                                            </address>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 text-right">
-                                            <p class="mb-0"><strong>تاریخ سفارش: </strong>{{$order->created_at}}</p>
-                                            {{--                                    <p class="mb-0"><strong>وضعیت سفارش: </strong> <span class="badge badge-success">موفقیت</span></p>--}}
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 p-0">
+                                    <address>
+                                        <strong class=" pb-2">نام فروشنده: </strong>{{$order->seller->name}}<br>
+                                        {{$buyer->address ?? ''}}<br>
+                                        <abbr title="Phone">ت:</abbr> {{$order->seller->mobile}}<br>
+                                        <abbr title="Phone">ت-ث:</abbr> {{$order->seller->telephone ?? ''}}
+                                    </address>
                                 </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover c_table theme-color">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th width="60px">آیتم</th>
-                                                        <th></th>
-                                                        <th class="hidden-sm-down">توضیحات</th>
-                                                        <th>تعداد</th>
-                                                        <th class="hidden-sm-down">هزینه واحد</th>
-                                                        <th>مجموع</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td><img src="{{$order->product->image_thumb}}" width="40"
-                                                                 alt="Product img"></td>
-                                                        <td>{{$order->product->title ?? ''}}</td>
-                                                        <td class="hidden-sm-down">{{$order->note ?? ''}}</td>
-                                                        <td>{{$order->qty}}</td>
-                                                        <td class="hidden-sm-down">{{$order->product->price}} هزار
-                                                            تومان
-                                                        </td>
-                                                        <td>{{$order->price}}</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        @csrf
-                                        <div class="col-md-6">
-
-                                            <p>امیدواریم خرید لذت بخشی داشته باشید.</p>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <ul class="list-unstyled">
-                                                <li><strong>مجموع مبلغ
-                                                        پرداختی:-</strong> {{number_format($order->product->price)}}
-                                                    هزار تومان
-                                                </li>
-                                                <li><strong>هزینه
-                                                        ارسال:-</strong>{{number_format($order->seller->default_shipping)}}
-                                                </li>
-                                                <li class="text-danger"><strong>تخفیف:-</strong> 0</li>
-                                            </ul>
-                                            <h3 class="mb-0 text-success">{{number_format($order->price)}} هزار
-                                                تومان </h3>
-
-                                        </div>
-
-                                    </div>
-
+                                <div class="col-md-6 col-sm-6 p-0  text-right">
+                                    <p class="mb-0"><strong>وضعیت سفارش: </strong>
+                                        <span class="badge badge-warning">در انتظار پرداخت
+                                    </span>
+                                    </p>
                                 </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="card">
+                    <div class="body">
+                        <div class="col-md-12">
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th width="60px">تصویر</th>
+                                        <th class="nono">عنوان</th>
+                                        <th>تعداد</th>
+                                        <th>واحد</th>
+                                        <th>مجموع</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><img src="{{$order->product->image_thumb}}" width="40" alt="Product img">
+                                        </td>
+                                        <td class="nono">{{\Illuminate\Support\Str::limit($order->product->title,20) ??''}}</td>
+                                        <td>{{$order->qty ?? ''}}</td>
+                                        <td>{{number_format($order->product->price)}}</td>
+                                        <td>{{number_format($order->price)}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            @else
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 style="text-align: right">وضعیت پرداخت :
-                                <div class="badge badge-success">پرداخت نشده</div>
-                            </h2>
-                            <div class="container mt-3" style="direction: rtl;text-align: right;">
-                                <div class="row clearfix">
-                                    <div class="col-lg-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h5><strong>شماره سفارش: </strong> #{{$order->id}}</h5>
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-6">
-                                                        <address>
-                                                            <strong>فروشنده {{$order->seller->name}}.</strong><br>
-                                                            {{$order->seller->address ?? ''}}<br>
-                                                            <abbr title="Phone">ت:</abbr> {{$order->seller->mobile}}
-                                                        </address>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 text-right">
-                                                        <p class="mb-0"><strong>تاریخ سفارش: </strong>{{$order->created_at}}</p>
-                                                        {{--                                    <p class="mb-0"><strong>وضعیت سفارش: </strong> <span class="badge badge-success">موفقیت</span></p>--}}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover c_table theme-color">
-                                                                <thead>
-                                                                <tr>
-                                                                    <th>#</th>
-                                                                    <th width="60px">آیتم</th>
-                                                                    <th></th>
-                                                                    <th class="hidden-sm-down">توضیحات</th>
-                                                                    <th>تعداد</th>
-                                                                    <th class="hidden-sm-down">هزینه واحد</th>
-                                                                    <th>مجموع</th>
-                                                                </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td><img src="{{$order->product->image_thumb}}" width="40"
-                                                                             alt="Product img"></td>
-                                                                    <td>{{$order->product->title ?? ''}}</td>
-                                                                    <td class="hidden-sm-down">{{$order->note ?? ''}}</td>
-                                                                    <td>{{$order->qty}}</td>
-                                                                    <td class="hidden-sm-down">{{$order->product->price}} هزار
-                                                                        تومان
-                                                                    </td>
-                                                                    <td>{{$order->price}}</td>
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
+            <div class="row clearfix">
+                <div class="card">
+                    <div class="body">
+                        <form action="{{route('payment')}}" method="post">
+                            <input type="hidden" name="order_id" value="{{$order->id}}">
+                            <div class="row">
 
-                                                <form action="{{route('payment')}}" method="post">
-                                                    <input type="hidden" name="order_id" value="{{$order->id}}">
-                                                    <div class="row">
-                                                        @csrf
-                                                        <div class="col-md-6">
-                                                            <h5>توجه</h5>
-                                                            <p>امیدواریم خرید لذت بخشی داشته باشید.</p>
-                                                        </div>
-                                                        <div class="col-md-6 text-right">
-                                                            <ul class="list-unstyled">
-                                                                <li><strong>زیر مجموع:-</strong> {{number_format($order->product->price)}}
-                                                                    هزار تومان
-                                                                </li>
-                                                                <li><strong>هزینه
-                                                                        ارسال:-</strong>{{number_format($order->seller->default_shipping)}}
-                                                                </li>
-                                                                <li class="text-danger"><strong>تخفیف:-</strong> 0</li>
-                                                            </ul>
-                                                            <h3 class="mb-0 text-success">{{number_format($order->price)}} هزار تومان </h3>
+                                @csrf
+                                <div class="col-lg-4 col-sm-4 mb-5 ">
+                                    <ul class="list-unstyled price-list">
+                                        <li><strong>قیمت محصول: </strong>
+                                            <span>{{$order->qty}} * {{number_format($order->product->price)}}</span>
+                                        </li>
+                                        <li><strong>قیمت کل: </strong>
+                                            <span> {{number_format(($order->price) - ($order->shipping_cost)) ?? 0}}</span>
+                                        </li>
+                                        <li><strong>هزینه ارسال: </strong>
+                                            <span>{{$order->shipping_cost ?? 0}}</span>
+                                        </li>
 
-                                                        </div>
-                                                        <button type="submit" class="btn btn-success text-center">پرداخت مجدد</button>
-                                                    </div>
-                                                </form>
+                                        <li class="text-danger"><strong>تخفیف: </strong>
+                                            <span>{{number_format($order->discount) ?? 0}}</span>
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                    <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
+                                        : {{number_format($order->price) }} هزار
+                                        تومان</h5>
+                                </div>
+                                <div class="col-lg-3 nono">
 
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-sm-8 ">
+                                    <textarea name="note" class="form-control" id="" rows="3"
+                                              placeholder="اگر نکته ای در خصوص خرید مد نظرتون هست اینجا یادداشت کنید">{{$order->note ?? ''}}</textarea>
+                                </div>
+
+
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">
+                                        پرداخت
+                                    </button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            @endif
-        </div>
-    @endsection
+            </div>
+        @endif
+    </div>
 
-    @section('scripts')
-        <!-- Jquery-2.2.4 JS -->
-            <script src="{{asset('front/js/jquery-2.2.4.min.js')}}"></script>
 
-            <!-- Popper js -->
-            <script src="{{asset('front/js/popper.min.js')}}"></script>
-            <!-- Bootstrap-4 Beta JS -->
-            <script src="{{asset('front/js/bootstrap.min.js')}}"></script>
-            <!-- All Plugins JS -->
-            <script src="{{asset('front/js/plugins.js')}}"></script>
-            <!-- Slick Slider Js-->
-            <script src="{{asset('front/js/slick.min.js')}}"></script>
-            <!-- Footer Reveal JS -->
-            <script src="{{asset('front/js/footer-reveal.min.js')}}"></script>
-            <!-- Active JS -->
-            <script src="{{asset('front/js/active.js')}}"></script>
 
 @endsection
+

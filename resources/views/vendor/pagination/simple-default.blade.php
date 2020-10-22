@@ -9,7 +9,7 @@
             @endif
 
             {{-- Next Page Link --}}
-            @if ($paginator->hasMorePages())
+            @if ($paginator->hasPages())
                 <li><a href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('pagination.next')</a></li>
             @else
                 <li class="disabled" aria-disabled="true"><span>@lang('pagination.next')</span></li>

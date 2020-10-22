@@ -81,14 +81,14 @@
         @media screen and ( max-width: 520px ) {
 
             li.page-item {
-
                 display: none;
             }
 
             .page-item:first-child,
             .page-item:last-child,
+            .page-item:nth-last-child(2),
+            .page-item:nth-child(2),
             .page-item.active {
-
                 display: block;
             }
         }
@@ -153,7 +153,7 @@
                     </div>
                 </div>
             @endif
-            @if($orders->hasMorePages()  )
+            @if($orders->hasPages()  )
                 <div class="card">
                     <div class="body">
                         {{$orders->links('vendor.pagination.custom')}}

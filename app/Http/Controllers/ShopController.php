@@ -43,6 +43,7 @@ class ShopController extends Controller {
 		$bad    = Feedback::where( [ [ 'product_id', $product->id ], [ 'score', 0 ] ] )->count();
 
 		$all = $good + $normal + $bad;
+		$p_good = 0;
 		if ( $all != 0 ) {
 			$p_good = ( ( $all - ( $all - $good ) ) / ( $all ) ) * 100;
 			if ( $p_good >= 80 ) {
