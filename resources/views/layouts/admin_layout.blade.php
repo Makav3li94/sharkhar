@@ -123,7 +123,19 @@
 
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>{{ ucfirst($title ?? '') }}</h2>
-                    <ul class="breadcrumb">
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
+                                class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                @if(isset($back))
+                    <div class="col-lg-5 col-md-6 col-sm-12 nono">
+                        <a class="btn btn-primary float-right " href="{{url()->previous()}}">
+                            بازگشت
+                            <i class="zmdi zmdi-arrow-right"></i>
+                        </a>
+                    </div>
+                @endif
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="breadcrumb" style="   background-color: #fafafa !important;">
                         <li class="breadcrumb-item">
                             <a href="
                        @if(auth()->guard('web')->check())
@@ -147,17 +159,7 @@
 
 
                     </ul>
-                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
-                                class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
-                @if(isset($back))
-                    <div class="col-lg-5 col-md-6 col-sm-12 nono">
-                        <a class="btn btn-primary float-right " href="{{url()->previous()}}">
-                            بازگشت
-                            <i class="zmdi zmdi-arrow-right"></i>
-                        </a>
-                    </div>
-                @endif
             </div>
         </div>
     @endif

@@ -9,13 +9,13 @@ use Illuminate\Support\Str;
 
 class ScraperController extends Controller {
 
-	public function scrapInstagram($seller){
-		ScrapInsta::dispatch($seller);
+	public function scrapInstagram( $seller ) {
+		ScrapInsta::dispatch( $seller );
 	}
 
 
 	public function scrap() {
-		$userdata     = $this->getId( 'gallery__rezvan' );
+		$userdata     = $this->getId( 'pardis_shoebag' );
 		$UserID       = explode( '_', $userdata['logging_page_id'] );
 		$UserID       = $UserID[1];
 		$pageSize     = $userdata['graphql']['user']['edge_owner_to_timeline_media']['count'];
@@ -62,7 +62,7 @@ class ScraperController extends Controller {
 			}
 			$nodes = $media['edges'];
 			foreach ( $nodes as $thispost ) {
-				$this->createProducts( $thispost );
+				return $this->createProducts( $thispost );
 			}
 		}
 	}
@@ -81,40 +81,56 @@ class ScraperController extends Controller {
 
 	}
 
+	function getPriceKey( $postArray, $needle ) {
+
+		foreach ( $postArray as $key => $item ) {
+			if ( strpos( utf8_encode( $item ), utf8_encode( $needle ) ) !== false ) {
+				return $key;
+			}
+		}
+	}
 
 	public function createProducts( $thispost ) {
+
 		$post = $thispost['node'];
 		if ( $post['is_video'] !== 'false' ) {
 			$message = isset( $post['edge_media_to_caption']['edges'][0] ) ? $post['edge_media_to_caption']['edges'][0]['node']['text'] : "";
 			$title   = Str::limit( $message, 100 );
-			$message = $this->getCleanString( $message );
-
-			if ( strpos( $message, 'قیمت' ) !== false || strpos( $message, '💲' ) !== false || strpos( $message, '$' ) !== false || strpos( $message, 'تومان' ) !== false || strpos( $message, 'نومن' ) !== false || strpos( $message, 'ریال' ) !== false ) {
-				if ( strpos( $message, 'قیمت' ) !== false ) {
-					$result = $this->priceFunction( $message, 'قیمت', 2 );
-					dd( $result );
-				} elseif ( strpos( $message, 'تومان' ) !== false ) {
-					$result = $this->priceFunction( $message, 'تومان', 1 );
-				} elseif ( strpos( $message, '💲' ) !== false ) {
-
-					$result = $this->priceFunction( $message, '💲', 1 );
-
-				} elseif ( strpos( $message, '$' ) !== false ) {
-
-					$result = $this->priceFunction( $message, '$', 1 );
-
-				} elseif ( strpos( $message, 'نومن' ) !== false ) {
-					$result = $this->priceFunction( $message, 'تومن', 1 );
-				} elseif ( strpos( $message, 'ریال' ) !== false ) {
-					$result = $this->priceFunction( $message, 'ریال', 1 );
-					$result = $result / 10;
+//			$message   = utf8_encode( $message );
+			$message   = $this->getCleanString( $message );
+			 $postArray = preg_split( '/\r\n|\r|\n/', $message );
+			$price     = 0;
+			$key       = $this->getPriceKey( $postArray, 'قيمت ' );
+			if ( $key !== null ) {
+				$price = $this->simplepriceFunction( $postArray[ $key ] );
+			} elseif ( $key == null ) {
+				$key = $this->getPriceKey( $postArray, 'قیمت ' );
+				if ( $key == null ) {
+					$key = $this->getPriceKey( $postArray, 'قیمت' );
+					if ( $key == null ) {
+						$key = $this->getPriceKey( $postArray, '💲' );
+						if ( $key == null ) {
+							$key = $this->getPriceKey( $postArray, '️قیمت' );
+							if ( $key == null ) {
+								$price = $this->dumbPriceFunctionForDumbPeople( $message );
+							} else {
+								$price = $this->simplepriceFunction( $postArray[ $key ] );
+							}
+						} else {
+							$price = $this->simplepriceFunction( $postArray[ $key ] );
+						}
+					} else {
+						$price = $this->simplepriceFunction( $postArray[ $key ] );
+					}
+				} else {
+					 $price = $this->simplepriceFunction( $postArray[ $key ] );
 				}
-			} else {
-				$result = 0;
 			}
 
-			if ( ! is_numeric( $result ) ) {
-				$result = 0;
+
+
+			if ( ! is_numeric( $price ) ) {
+				$price = 0;
 			}
 			$message = nl2br( $message );
 
@@ -172,6 +188,16 @@ class ScraperController extends Controller {
 		}
 	}
 
+	function secondConvertNumbers( $srting, $toPersian = false ) {
+		$en_num = array( '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' );
+		$fa_num = array( '٠', '١', '٢', '٣', '٤', '٥', '٦', '۷', '٨', '٩' );
+		if ( $toPersian ) {
+			return str_replace( $en_num, $fa_num, $srting );
+		} else {
+			return str_replace( $fa_num, $en_num, $srting );
+		}
+	}
+
 	function extractPrice( $str, $query, $numOfWordToAdd, $notBefore ) {
 
 		list( $before, $after ) = explode( $query, $str );
@@ -211,8 +237,45 @@ class ScraperController extends Controller {
 		return $string;
 	}
 
+	public function simplepriceFunction( $message ) {
 
-	public function priceFunction( $message, $type, $wordsCrawl, $notBefore = null ) {
+		$result = Str::replaceArray( '،', [ '' ], $message );
+		$result = Str::replaceArray( ',', [ '' ], $result );
+		$result = Str::replaceArray( '.', [ '' ], $result );
+		$result = Str::replaceArray( '/', [ '' ], $result );
+		$result = $this->convertNumbers( $result );
+		$result = $this->secondConvertNumbers( $result );
+
+		$result = (int) filter_var( $result, FILTER_SANITIZE_NUMBER_INT );
+		if ( strlen( $result ) <= 3 ) {
+			$result = $result * 1000;
+		}
+
+		return $result;
+	}
+
+	public function dumbPriceFunctionForDumbPeople( $message ) {
+		if ( strpos( $message, 'قیمت ' ) !== false | strpos( $message, 'تومان' ) !== false || strpos( $message, 'نومن' ) !== false || strpos( $message, 'ریال' ) !== false ) {
+			if ( strpos( $message, 'قیمت ' ) !== false ) {
+				$result = $this->priceFunction( $message, 'قیمت ', 2 );
+			} elseif ( strpos( $message, 'تومان' ) !== false ) {
+				$result = $this->priceFunction( $message, 'تومان', 2 );
+			} elseif ( strpos( $message, 'نومن' ) !== false ) {
+				$result = $this->priceFunction( $message, 'تومن', 2 );
+			} elseif ( strpos( $message, 'ریال' ) !== false ) {
+				$result = $this->priceFunction( $message, 'ریال', 2 );
+				$result = $result / 10;
+			}
+		} else {
+			$result = 0;
+		}
+
+		return $result;
+	}
+
+	public function priceFunction(
+		$message, $type, $wordsCrawl, $notBefore = null
+	) {
 
 		$result = $this->extractPrice( $message, $type, $wordsCrawl, $notBefore );
 
@@ -220,7 +283,8 @@ class ScraperController extends Controller {
 		$result = Str::replaceArray( ',', [ '' ], $result );
 		$result = Str::replaceArray( '.', [ '' ], $result );
 		$result = Str::replaceArray( '/', [ '' ], $result );
-		$result = $this->convertNumbers( $result );
+
+		 $result = $this->convertNumbers( $result );
 		list( $before, $after ) = explode( $type, $result );
 		$before = (int) filter_var( $before, FILTER_SANITIZE_NUMBER_INT );
 		$after  = (int) filter_var( $after, FILTER_SANITIZE_NUMBER_INT );
@@ -230,20 +294,6 @@ class ScraperController extends Controller {
 		} elseif ( $after != 0 ) {
 			$result = $after;
 		}
-
-//		if ( $before == 0 ) {
-//			$result = substr( $result, 0, strpos( $result, $type ) );
-//			$result = Str::after( $result, $type );
-//		} elseif ( $before != 0 ) {
-//			 $result = $before;
-//		}
-//		if ( $after == 0 ) {
-//			$result = substr( $result, 0, strpos( $result, $type ) );
-//			$result = Str::before( $result, $type );
-//		} elseif ( $after != 0 ) {
-//			echo $result = $after;
-//			die();
-//		}
 
 
 		if ( strlen( $result ) <= 3 ) {

@@ -241,16 +241,16 @@
     .cool_facts_area .col-12:last-of-type .single-cool-fact {
         margin-bottom: 0;
     }
-    .sing-up-button > a {
+    .sing-up-button > a  {
         color: #fff;
         font-weight: 500;
         display: inline-block;
         border: 2px solid #a883e9;
         height: 50px;
-        min-width: 144px;
+        min-width: 130px;
         line-height: 46px;
         text-align: center;
-        border-radius: 24px 24px 24px 0px;
+        border-radius: 24px 24px 24px 24px;
         font-size: 0.8rem;
     }
 }
