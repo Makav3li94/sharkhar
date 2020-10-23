@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Seller;
 use Illuminate\Console\Command;
 
 class ScrapInsta extends Command
@@ -18,7 +19,7 @@ class ScrapInsta extends Command
      *
      * @var string
      */
-    protected $description = 'scrap instagram posts';
+    protected $description = 'scrap instagram posts update';
 
     /**
      * Create a new command instance.
@@ -37,6 +38,9 @@ class ScrapInsta extends Command
      */
     public function handle()
     {
-        return 0;
+        $sellers = Seller::where('status',1)->get();
+        foreach ($sellers as $seller){
+	        \App\Jobs\ScrapInsta::dispatch( $seller );
+        }
     }
 }

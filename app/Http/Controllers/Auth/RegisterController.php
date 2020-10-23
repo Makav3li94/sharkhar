@@ -73,13 +73,12 @@ class RegisterController extends Controller {
 			] );
 
 			$validator->after( function ( $validator ) use ( $data ) {
-				$preRegister = PreRegister::where('mobile',$data['mobile'])->first();
-				if ($preRegister->code != $data['confirm_code']){
+				$preRegister = PreRegister::where( 'mobile', $data['mobile'] )->first();
+				if ( $preRegister->code != $data['confirm_code'] ) {
 					$validator->errors()->add( 'confirm_code', 'کد پیامکی درست نیست .' );
 				}
 
 			} );
-
 
 
 			return $validator->after( function ( $validator ) use ( $data ) {
@@ -128,7 +127,6 @@ class RegisterController extends Controller {
 	}
 
 
-
 	protected function instagramUserCheck( $username ) {
 		$url = "https://www.instagram.com/$username/?__a=1";
 
@@ -163,10 +161,11 @@ class RegisterController extends Controller {
 	 */
 	protected function create( array $data ) {
 		$seller  = Seller::create( [
-			'name'       => $data['name'],
-			'mobile'     => $data['mobile'],
-			'insta_user' => $data['insta_user'],
-			'password'   => Hash::make( $data['password'] ),
+			'name'        => $data['name'],
+			'mobile'      => $data['mobile'],
+			'insta_user'  => $data['insta_user'],
+			'password'    => Hash::make( $data['password'] ),
+			'bank_status' => 1,
 		] );
 		$scraper = new ScraperController();
 		$scraper->scrapInstagram( $seller );
@@ -182,7 +181,8 @@ class RegisterController extends Controller {
 			'mobile'   => $request['mobile'],
 			'password' => Hash::make( $request['password'] ),
 		] );
-		Auth::guard('buyer')->loginUsingId($buyer->id);
+		Auth::guard( 'buyer' )->loginUsingId( $buyer->id );
+
 		return redirect()->intended( 'buyer/dashboard' );
 	}
 

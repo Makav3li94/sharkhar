@@ -6,10 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="664cae3b-4d8c-4eea-89b2-740d57374004" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ScrapInsta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ScrapInsta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/traits/Scraper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/traits/Scraper.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,68 +24,76 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+            <state relative-caret-position="3222">
+              <caret line="193" column="33" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="168" column="12" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/ScrapInsta.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#40#62#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2624">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Jobs/ScrapInsta.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="61" column="22" lean-forward="true" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state relative-caret-position="486">
+              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/traits/Scraper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="136" column="48" selection-start-line="136" selection-start-column="48" selection-end-line="136" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScraperController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Seller/AdminSellerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="55" selection-start-line="55" selection-end-line="62" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -101,8 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dash</find>
-      <find>buyerLogin</find>
       <find>guard( 'buyer'</find>
       <find>buyer.dashboard</find>
       <find>sharkhar/login</find>
@@ -131,6 +137,8 @@
       <find>fa_to_en</find>
       <find>فیلتر شده از</find>
       <find>datat</find>
+      <find>ScrapInsta</find>
+      <find>scrap</find>
     </findStrings>
     <replaceStrings>
       <replace>e1306c</replace>
@@ -145,8 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap-4.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/buyer/order/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/buyer/transaction/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/shop/vendor.blade.php" />
         <option value="$PROJECT_DIR$/public/front/style.css" />
@@ -154,7 +160,6 @@
         <option value="$PROJECT_DIR$/public/front/css/responsive.css" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ScraperController.php" />
-        <option value="$PROJECT_DIR$/app/traits/Scraper.php" />
         <option value="$PROJECT_DIR$/resources/views/buyer/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/seller/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/plugins/clipboard.js-master/clipboard.js-master/demo/target-input.html" />
@@ -196,6 +201,9 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/ScrapInsta.php" />
+        <option value="$PROJECT_DIR$/app/traits/Scraper.php" />
       </list>
     </option>
   </component>
@@ -345,7 +353,14 @@
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+              <item name="Commands" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
@@ -356,36 +371,15 @@
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="seller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="seller" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="seller" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Jobs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -445,18 +439,18 @@
       <workItem from="1603388748641" duration="7782000" />
       <workItem from="1603398460993" duration="11616000" />
       <workItem from="1603456542556" duration="22133000" />
-      <workItem from="1603481814447" duration="4013000" />
+      <workItem from="1603481814447" duration="4978000" />
+      <workItem from="1603487600946" duration="651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60239000" />
+    <option name="totallyTimeSpent" value="61855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17324094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -471,7 +465,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004517" side_tool="true" weight="0.32932165" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" visible="true" weight="0.28060672" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" visible="true" weight="0.28060672" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -504,72 +498,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/buyer/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Admin/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-          <folding>
-            <element signature="e#52#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/order/index.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/buyer/profile/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="106" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Compressed/33721_aero/aero/html/jquery-datatable.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="1623" selection-start-line="1623" selection-end-line="1623" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Seller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Seller/AdminSellerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="55" selection-start-line="55" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/seller/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="216" column="18" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/seller/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -731,18 +659,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/FixRequestInputs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="e#274#569#0#PHP" />
-            <element signature="e#698#1204#0#PHP" />
-            <element signature="e#1333#1730#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/FixRequestInputs.php" />
     <entry file="file://E:/download/baloot-master/baloot-master/src/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -813,13 +730,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="30" column="110" selection-start-line="30" selection-start-column="110" selection-end-line="30" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -894,6 +804,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="61" column="22" lean-forward="true" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/shetabit/payment/src/Facade/Payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/shetabit/multipay/src/Drivers/Zarinpal/Zarinpal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3222">
+          <caret line="193" column="33" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="168" column="12" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Seller/AdminSellerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="55" selection-start-line="55" selection-end-line="62" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/ScrapInsta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/traits/Scraper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="136" column="48" selection-start-line="136" selection-start-column="48" selection-end-line="136" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScraperController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Jobs/ScrapInsta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
         </state>
       </provider>
     </entry>

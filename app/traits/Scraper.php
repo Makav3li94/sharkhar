@@ -35,7 +35,7 @@ trait Scraper {
 		$tryNext      = true;
 		$limit        = $pageSize;
 		$found        = 0;
-		set_time_limit( 150 );
+		set_time_limit( 260 );
 		while ( $tryNext ) {
 			$tryNext  = false;
 			$response = file_get_contents( $iterationUrl );
@@ -88,7 +88,6 @@ trait Scraper {
 		if ( $post['is_video'] !== 'false' ) {
 			$message = isset( $post['edge_media_to_caption']['edges'][0] ) ? $post['edge_media_to_caption']['edges'][0]['node']['text'] : "";
 			$title   = Str::limit( $message, 100 );
-//			$message   = utf8_encode( $message );
 			$message   = $this->getCleanString( $message );
 			$postArray = preg_split( '/\r\n|\r|\n/', $message );
 			$price     = 0;
