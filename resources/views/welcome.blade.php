@@ -8,13 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
     <!-- Title -->
+    <meta name="theme-color" content="#7f4ee0">
     <title>پلتفرم شرخر - دستیار فروش شما !</title>
 
     <!-- Favicon -->
 {{--    <link rel="icon" href="img/core-img/favicon.ico">--}}
 
-    <!-- Core Stylesheet -->
+<!-- Core Stylesheet -->
     <link href="{{asset('front/style.css')}}" rel="stylesheet">
 
     <!-- Responsive CSS -->
@@ -43,43 +47,47 @@
                             <a href="{{route('register_buyer')}}">ثبت نام خریدار</a>
                         @endif
 
+
                     </div>
-                    @if(auth()->guard('web')->check())
-                        <a href="{{route('login')}}">ورود به پلتفرم</a>
+                    <div class="sing-up-button">
+                        @if(auth()->guard('web')->check())
+                            <a href="{{route('login')}}">ورود به پلتفرم</a>
                         @else
-                        <a href="{{route('register')}}">ثبت نام فروشنده</a>
-                    @endif
+                            <a href="{{route('register')}}">ثبت نام فروشنده</a>
+                        @endif
 
+
+                    </div>
 
                 </div>
+                <div class="col-12 col-lg-8">
+                    <div class="menu_area">
+                        <nav class="navbar navbar-expand-lg navbar-light">
 
-            </div>
-            <div class="col-12 col-lg-8">
-                <div class="menu_area">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-
-                        <div class="collapse navbar-collapse" id="ca-navbar" style="direction: rtl">
-                            <ul class="navbar-nav ml-auto" id="nav">
-                                <li class="nav-item "><a href="{{route('home')}}" class="nav-link" >خانه</a></li>
-                                <li class="nav-item"><a href="{{route('shop')}}" class="nav-link" >فروشگاه</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
-                            </ul>
-                            <div class="sing-up-button d-lg-none">
-                                <a href="{{route('register')}}">ثبت نام رایگان</a>
+                            <div class="collapse navbar-collapse" id="ca-navbar" style="direction: rtl">
+                                <ul class="navbar-nav ml-auto" id="nav">
+                                    <li class="nav-item "><a href="{{route('home')}}" class="nav-link">خانه</a></li>
+                                    <li class="nav-item"><a href="{{route('shop')}}" class="nav-link">فروشگاه</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
+                                </ul>
+                                <div class="sing-up-button d-lg-none">
+                                    <a href="{{route('register')}}">ثبت نام رایگان</a>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Logo -->
-                        <a class="navbar-brand" href="{{route('home')}}">شَرخَر</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                        <!-- Menu Area -->
-                    </nav>
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="{{route('home')}}">شَرخَر</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar"
+                                    aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span
+                                        class="navbar-toggler-icon"></span></button>
+                            <!-- Menu Area -->
+                        </nav>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
 </header>
 <!-- ***** Header Area End ***** -->
 @yield('content')
@@ -104,7 +112,8 @@
     </div>
     <!-- Foooter Text-->
     <div class="copyright-text ">
-        <p class="text-center">Copyright ©2020 شرخر. طراحی توسط <a rel="nofollow" href="https://parnasite.com" target="_blank">Parna</a></p>
+        <p class="text-center">Copyright ©2020 شرخر. طراحی توسط <a rel="nofollow" href="https://parnasite.com"
+                                                                   target="_blank">Parna</a></p>
     </div>
 </footer>
 <!-- ***** Footer Area Start ***** -->
@@ -131,7 +140,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B3RQ6EQG0M"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-B3RQ6EQG0M');
