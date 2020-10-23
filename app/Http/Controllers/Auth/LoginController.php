@@ -35,7 +35,7 @@ class LoginController extends Controller {
 		} elseif ( auth()->guard( 'buyer' )->check() == 1 ) {
 			$route = 'login_buyer';
 		} else {
-
+			$route = 'login_admin';
 		}
 		$this->performLogout( $request );
 
@@ -56,23 +56,21 @@ class LoginController extends Controller {
 	 */
 
 	public function showAdminLoginForm() {
-		return view( 'auth.admin.login' );
+		return view( 'admin.login' );
 	}
 
 	public function adminLogin( Request $request ) {
+
 		$request->validate( [
-			'email'    => 'required|email',
-			'password' => 'required|min:6'
+			'mobile'    => 'required',
+			'password' => 'required'
 		] );
 
-		if ( Auth::guard( 'admin' )->attempt( [ 'email'    => $request->email,
-		                                        'password' => $request->password
-		], $request->get( 'remember' ) ) ) {
-
-			return redirect()->intended( '/admin' );
+		if ( Auth::guard( 'admin' )->attempt( [ 'mobile'    => $request->mobile, 'password' => $request->password ], $request->get( 'remember' ) ) ) {
+			return redirect()->route('admin.dashboard');
 		}
 
-		return back()->withInput( $request->only( 'email', 'remember' ) );
+		return back()->withInput( $request->only( 'mobile', 'remember' ) );
 	}
 
 	public function showBuyerLoginForm() {
@@ -88,7 +86,7 @@ class LoginController extends Controller {
 		                                        'password' => $request->password
 		], $request->get( 'remember' ) ) ) {
 
-			return redirect()->intended( '/buyer' );
+			return redirect()->route('buyer.dashboard');
 		}
 
 		return back()->withInput( $request->only( 'mobile', 'remember' ) );

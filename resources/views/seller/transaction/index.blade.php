@@ -92,7 +92,11 @@
     </style>
 @endsection
 @section('content')
-
+    @if(count($transactions) == 1)
+        <div class="container">
+            <div class="alert alert-danger"> {{auth()->user()->name}} ،ممنون بابت استفاده! تراکنش شما شِبا شده و مطابق سیکل پرداخت شاپرک تصفیه خواهد شد.</div>
+        </div>
+    @endif
     <div class="container">
         <div class="row clearfix">
             @if(count($transactions) > 0)

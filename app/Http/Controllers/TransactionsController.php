@@ -153,7 +153,7 @@ class TransactionsController extends Controller {
 			return redirect()->back()->withError( 'bitarbiat' );
 		}
 		$seller = $product->seller;
-		$cost   = ( $request->qty * $request->default_cost ) + $seller->default_shipping;
+		$cost   = ( $request->qty * ($product->optional_price == 0 ? $product->price : $product->optional_price) ) + $seller->default_shipping;
 
 		$order = Order::create( [
 			'seller_id'     => $product->seller_id,

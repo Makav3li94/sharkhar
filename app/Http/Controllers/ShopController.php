@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Feedback;
 use App\Models\Product;
 use App\Models\Seller;
+use Illuminate\Http\Request;
 
 class ShopController extends Controller {
 
@@ -23,7 +24,7 @@ class ShopController extends Controller {
 		$p_good           = 0;
 		$p_norm           = 0;
 		$p_bad            = 0;
-		$sellerIsVerified = $seller->is_verified == 'green' ? 'تایید شده توسط شرخر' : 'تایید نشده :(';
+		$sellerIsVerified = $seller->is_verified == 'green' ? ' تایید هویت شده توسط شرخر' : 'تایید نشده';
 		$sellerColor      = $seller->is_verified == "red" ? "danger" : "success";
 		$feedbacks        = Feedback::where( 'seller_id', $seller->id )->get()->take( 3 );
 		$all              = $good + $normal + $bad;
@@ -36,7 +37,8 @@ class ShopController extends Controller {
 		return view( 'shop.vendor', compact( 'seller', 'products', 'good', 'normal', 'bad', 'p_good', 'p_norm', 'p_bad', 'sellerIsVerified', 'sellerColor', 'feedbacks' ) );
 	}
 
-	public function single( Product $product ) {
+	public function single( Product $product ,$optional_price = null) {
+
 		$seller = $product->seller;
 		$good   = Feedback::where( [ [ 'product_id', $product->id ], [ 'score', 2 ] ] )->count();
 		$normal = Feedback::where( [ [ 'product_id', $product->id ], [ 'score', 1 ] ] )->count();
@@ -60,6 +62,6 @@ class ShopController extends Controller {
 		}
 		$feedbacks = Feedback::where( 'product_id', $product->id )->get();
 		return view( 'shop.single'
-			, compact( 'seller', 'product','all','p_good','feedbacks') );
+			, compact( 'seller', 'product','all','p_good','feedbacks','optional_price') );
 	}
 }

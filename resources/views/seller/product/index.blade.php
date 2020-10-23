@@ -60,9 +60,11 @@
             td:nth-of-type(3):before {
                 content: "قیمت";
             }
+
             td:nth-of-type(4):before {
                 content: "لینک";
             }
+
             td:nth-of-type(5):before {
                 content: "عملیات";
             }
@@ -90,6 +92,13 @@
 
 @endsection
 @section('content')
+    @if(count($products) > 0)
+        <div class="container">
+            <div class="alert alert-info"> {{auth()->user()->name}}،اگر محصول قیمت مشخص ندارد قبل از کپی لینک قیمت محصول
+                را به تومان در جدول وارد کنید.
+            </div>
+        </div>
+    @endif
     <div class="container">
 
         <div class="row clearfix">
@@ -120,16 +129,26 @@
                                                     <img src="{{$product->image_thumb}}" width="35" alt="Product img">
                                                 </a>
                                             </td>
-                                            <td>{{number_format($product->price) ?? ''}} <span
-                                                        class="nono">هزارتومان</span>
+
+                                            <td>
+                                                @if($product->price !=0)
+                                                    {{number_format($product->price)." هزارتومان" ?? ''}}
+                                                @else
+                                                    <input class="form-control total" onkeyup="optinalPriceFunc('{{$product->id}}')" name="optional_price" id="{{$product->id}}-optional_price" type="text">
+                                                @endif
                                             </td>
 
                                             <td>
-                                                <button class="btn btn-sm btn-info" data-clipboard-text="{{route('product',$product->id)}}">
+                                                <button class="btn btn-sm btn-info"
+                                                        id="{{$product->id}}-copy-link"
+                                                        data-clipboard-text="{{route('product',$product->id)}}">
                                                     <i class="zmdi zmdi-copy"></i>
                                                 </button>
-                                                    ||
-                                                <a class="btn btn-sm btn-success" href="whatsapp://send?text={{route('product',$product->id)}}" data-action="share/whatsapp/share">
+                                                ||
+                                                <a class="btn btn-sm btn-success"
+                                                   id="{{$product->id}}-whatsup-link"
+                                                   href="whatsapp://send?text={{route('product',$product->id)}}"
+                                                   data-action="share/whatsapp/share">
                                                     <i class="zmdi zmdi-whatsapp"></i>
                                                 </a>
                                             </td>
@@ -182,7 +201,97 @@
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
     <script src="{{asset('assets/plugins/clipboard.js-master/clipboard.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script> <!-- Bootstrap Notify Plugin Js -->
     <script>
+
+
+        function optinalPriceFunc(val) {
+
+            if (this.timer) {
+                window.clearTimeout(this.timer);
+            }
+            this.timer = window.setTimeout(function() {
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                var product_id = val;
+                var price = $('#'+ val + '-optional_price').val();
+                $.ajax({
+                    'url': "{{route('seller.optional_price')}}",
+                    'type': 'get',
+                    'contentType': "application/json",
+                    data: {product_id: product_id,optional_price:price},
+
+                    success: function (response) {
+
+                        if (response.price_error == 'true'){
+                            var allowDismiss = true;
+                            $.notify({
+                                    message: "لطفا قیمت را درست وارد کنید."
+                                },
+                                {
+                                    type: 'alert-danger',
+                                    allow_dismiss: allowDismiss,
+                                    newest_on_top: true,
+                                    timer: 3000,
+                                    placement: {
+                                        from: 'bottom',
+                                        align: 'left'
+                                    },
+                                    template: '<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} ' + (allowDismiss ? "" : "") + '" role="alert">' +
+                                        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+                                        '<span data-notify="icon"></span> ' +
+                                        '<span data-notify="title">{1}</span> ' +
+                                        '<span data-notify="message">{2}</span>' +
+                                        '<div class="progress" data-notify="progressbar">' +
+                                        '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+                                        '</div>' +
+                                        '<a href="{3}" target="{4}" data-notify="url"></a>' +
+                                        '</div>'
+                                });
+                        }
+
+                        if (response.optional_price == 'success') {
+
+                            $('#'+ val + '-copy-link').attr("data-clipboard-text", "{{url('/product/')}}"+'/'+val+'/'+price).change();
+                            $('#'+ val + '-whatsup-link').attr("href", 'whatsapp://send?text='+"{{url('/product/')}}"+'/'+val+'/'+price).change();
+                            var allowDismiss = true;
+                            $.notify({
+                                    message: "قیمت موقت اعمال شد."
+                                },
+                                {
+                                    type: 'alert-success',
+                                    allow_dismiss: allowDismiss,
+                                    newest_on_top: true,
+                                    timer: 3000,
+                                    placement: {
+                                        from: 'bottom',
+                                        align: 'left'
+                                    },
+                                    template: '<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} ' + (allowDismiss ? "" : "") + '" role="alert">' +
+                                        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+                                        '<span data-notify="icon"></span> ' +
+                                        '<span data-notify="title">{1}</span> ' +
+                                        '<span data-notify="message">{2}</span>' +
+                                        '<div class="progress" data-notify="progressbar">' +
+                                        '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+                                        '</div>' +
+                                        '<a href="{3}" target="{4}" data-notify="url"></a>' +
+                                        '</div>'
+                                });
+                        }
+                    }
+                });
+
+            }, 500);
+
+
+        }
+
+
         var btns = document.querySelectorAll('button');
         var clipboard = new ClipboardJS(btns);
         $(function () {
@@ -263,5 +372,8 @@
             alert("لینک کپی شد." + copyText.value);
             return false;
         }
+
+
+
     </script>
 @endsection

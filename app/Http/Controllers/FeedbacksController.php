@@ -173,7 +173,7 @@ class FeedbacksController extends Controller {
 
 	public function getSellerAjax( Request $request ) {
 		$validator = Validator::make( $request->all(), [
-			'order' => 'required,numeric'
+			'order' => 'required|numeric'
 		] );
 		if ( $validator->fails() ) {
 			return response()->json( [ 'selectEroor' => 'true' ] );

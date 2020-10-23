@@ -12,7 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
+//Route::get('admin',function (){
+//	\App\Models\Admin::create([
+//		'name'=>'Makaveli',
+//		'email'=>'neogood@yahoo.com',
+//		'mobile'=>'09121989573',
+//		'password'=>\Illuminate\Support\Facades\Hash::make('Parham@19171363'),
+//	]);
+//});
+//Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
 
 Route::get( '/', function () {
 //	$url      = "https://www.instagram.com/parnasite/?__a=1";
@@ -40,10 +48,10 @@ Route::post( 'message', function () {
 Auth::routes();
 Route::get( '/shops', [ \App\Http\Controllers\ShopController::class, 'shop' ] )->name( 'shop' );
 Route::get( '/vendors/{name}', [ \App\Http\Controllers\ShopController::class, 'vendor' ] )->name( 'vendor' );
-Route::get( '/product/{product}', [ \App\Http\Controllers\ShopController::class, 'single' ] )->name( 'product' );
+Route::get( '/product/{product}/{optional_price?}', [ \App\Http\Controllers\ShopController::class, 'single' ] )->name( 'product' );
 Route::get( '/payment/{product}', [ \App\Http\Controllers\TransactionsController::class, 'payment' ] )->name( 'payment_view' );
 Route::post( '/final/payment', [ \App\Http\Controllers\TransactionsController::class, 'store' ] )->name( 'payment' );
-Route::get( '/check_payment/{order_id?}', [ \App\Http\Controllers\TransactionsController::class, 'checkPayment' ] )->name( 'check_payment' );
+Route::get( '/check_payment/{order_id?}/', [ \App\Http\Controllers\TransactionsController::class, 'checkPayment' ] )->name( 'check_payment' );
 
 Route::get( '/resend', [ \App\Http\Controllers\SellersController::class, 'resendCode' ] )->name( 'resend_code' );
 Route::post( '/forget/password', [
@@ -51,7 +59,7 @@ Route::post( '/forget/password', [
 	'forgetPassword'
 ] )->name( 'forget_password' );
 
-Route::get( '/login/admin', [ \App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm' ] );
+Route::get( '/sharkhar/login', [ \App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm' ] )->name('admin_login');
 Route::get( '/login/buyer', [
 	\App\Http\Controllers\Auth\LoginController::class,
 	'showBuyerLoginForm'
@@ -71,18 +79,46 @@ Route::get( '/register/buyer', [
 	'showBuyerRegisterForm'
 ] )->name( 'register_buyer' );
 
-Route::post( '/login/admin', [ \App\Http\Controllers\Auth\LoginController::class, 'adminLogin' ] );
+Route::post( '/sharkhar/login', [ \App\Http\Controllers\Auth\LoginController::class, 'adminLogin' ] )->name('admin_login');
+
+
 Route::post( '/login/buyer', [
 	\App\Http\Controllers\Auth\LoginController::class,
 	'buyerLogin'
 ] )->name( 'buyer_login' );
+
 Route::post( '/register/buyer', [ \App\Http\Controllers\Auth\RegisterController::class, 'createBuyer' ] );
 
 Route::get( 'scrap/', [ \App\Http\Controllers\ScraperController::class, 'scrapInstagram' ] )->name( 'scrap' );
 
 Route::get( '/home', [ App\Http\Controllers\HomeController::class, 'index' ] )->name( 'home' );
 Route::view( '/home', 'home' )->middleware( 'auth' );
-Route::view( '/buyer', 'buyer.dashboard' );
+//Route::get( '/buyer', 	[\App\Http\Controllers\Admin\Buyer\AdminBuyerController::class, 'dashboard'] );
+//Route::get( '/admin',   [ \App\Http\Controllers\Admin\Admin\AdminController::class, 'dashboard'] );
+//******* ADMIN ********
+Route::name( 'admin.' )->prefix( 'admin' )->middleware( 'auth:admin' )->group( function () {
+	Route::get( 'dashboard', [
+		\App\Http\Controllers\Admin\Admin\AdminController::class,
+		'dashboard'
+	] )->name( 'dashboard' );
+
+		Route::resource( 'sellers', \App\Http\Controllers\SellersController::class )->except( [
+		'create',
+		'show'
+	] );;
+
+
+	Route::patch( 'sellers.update/{seller}', [
+		\App\Http\Controllers\SellersController::class,
+		'changePassword'
+	] )->name( 'sellers.change_password' );
+
+
+	Route::resource( 'contacts', \App\Http\Controllers\ContactsController::class );
+
+} );
+
+
 //******* SElLER *******
 Route::name( 'seller.' )->prefix( 'seller' )->middleware( 'auth' )->group( function () {
 	Route::get( 'dashboard', [
@@ -115,6 +151,7 @@ Route::name( 'seller.' )->prefix( 'seller' )->middleware( 'auth' )->group( funct
 		'create',
 		'show'
 	] );;
+	Route::get('products_optional_price',[\App\Http\Controllers\ProductsController::class,'updateOptionalPrice'])->name('optional_price');
 	Route::resource( 'transactions', \App\Http\Controllers\TransactionsController::class )->only( [
 		'index',
 	] );;
@@ -124,7 +161,7 @@ Route::name( 'seller.' )->prefix( 'seller' )->middleware( 'auth' )->group( funct
 } );
 
 //******* Buyer *******
-Route::name( 'buyer.' )->prefix( 'buyer' )->group( function () {
+Route::name( 'buyer.' )->prefix( 'buyer' )->middleware( 'auth:buyer' )->group( function () {
 	Route::get( 'dashboard', [
 		\App\Http\Controllers\Admin\Buyer\AdminBuyerController::class,
 		'dashboard'

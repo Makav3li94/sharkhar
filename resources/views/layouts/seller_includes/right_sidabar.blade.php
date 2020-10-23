@@ -1,10 +1,23 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="{{route('seller.dashboard')}}">
-            <img src="{{asset('assets/images/logo.png')}}" width="25" alt="sharkhar">
-            <span class="m-l-10">شرخر</span>
-        </a>
+        @if(auth()->guard('web')->check())
+            <a href="{{route('seller.dashboard')}}">
+                <img src="{{asset('assets/images/logo.png')}}" width="25" alt="sharkhar">
+                <span class="m-l-10">شرخر</span>
+            </a>
+        @elseif(auth()->guard('buyer')->check())
+            <a href="{{route('buyer.dashboard')}}">
+                <img src="{{asset('assets/images/logo.png')}}" width="25" alt="sharkhar">
+                <span class="m-l-10">شرخر</span>
+            </a>
+        @else
+            <a href="{{route('admin.dashboard')}}">
+                <img src="{{asset('assets/images/logo.png')}}" width="25" alt="sharkhar">
+                <span class="m-l-10">شرخر</span>
+            </a>
+        @endif
+
         <a class="logout-link" href="#" title="خروج از شرخر"
            onclick="event.preventDefault();document.getElementById('logout').submit()">
             <i class="zmdi zmdi-power"></i>
@@ -53,7 +66,25 @@
                         <i class="zmdi zmdi-shopping-basket"></i><span>فروشگاه</span></a>
                 </li>
             @else
+                <li class=" ">
+                    <a href="{{route('admin.sellers.index')}}">
+                        <i class="zmdi zmdi-account"></i><span>فروشندگان</span></a>
+                </li>
 
+{{--                <li class=" ">--}}
+{{--                    <a href="{{route('shop')}}">--}}
+{{--                        <i class="zmdi zmdi-shopping-basket"></i><span>خریداران</span></a>--}}
+{{--                </li>--}}
+
+                <li class=" ">
+                    <a href="{{route('admin.contacts.index')}}">
+                        <i class="zmdi zmdi-ticket-star"></i><span>تیکت ها</span></a>
+                </li>
+
+{{--                <li class=" ">--}}
+{{--                    <a href="{{route('shop')}}">--}}
+{{--                        <i class="zmdi zmdi-shopping-basket"></i><span>فیدبک ها</span></a>--}}
+{{--                </li>--}}
             @endif
 
             @if(auth()->guard('web')->check())

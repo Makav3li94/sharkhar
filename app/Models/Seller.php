@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 class Seller extends Authenticatable
 {
     use HasFactory;
@@ -49,6 +50,22 @@ class Seller extends Authenticatable
 		}
 	}
 
+
+	public function getStatusAttribute( $value ) {
+		if ($value  == 1 ) {
+			return $value = 'green';
+		} else {
+			return $value = 'red';
+		}
+	}
+
+	public function getBankStatusAttribute( $value ) {
+		if ($value  == 1 ) {
+			return $value = 'green';
+		} else {
+			return $value = 'red';
+		}
+	}
 
 	public function setMCodeAttribute($value) {
 		if ( empty($value) ) { // will check for empty string

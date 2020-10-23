@@ -1,75 +1,77 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Admin;
 
-use App\Models\Admin;
-use App\Models\PreRegister;
+use App\Http\Controllers\Controller;
+use App\Models\Buyer;
+use App\Models\Order;
 use App\Models\Seller;
-use App\Traits\Sms;
+use App\Models\Transaction;
+use Carbon\Carbon;
+use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Symfony\Component\Console\Input\Input;
 
-class SellersController extends Controller {
-	use Sms;
+class AdminController extends Controller {
+	public function dashboard() {
+		$now               = Carbon::now()->toDateString();
+		$todaySellers      = Seller::whereDate( "created_at", '=', $now )->count();
+		$todayBuyers       = Buyer::whereDate( "created_at", '=', $now )->count();
+		$todayComInfo      = Seller::whereDate( "created_at", '=', $now )->count();
+		$todayTransactiona = Transaction::where( 'status', 1 )->whereDate( "created_at", '=', $now )->count();
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function index() {
-		$sellers = Seller::all();
+		$totalSellers = Seller::count();
+		$totalBuyers  = Buyer::count();
+		$totalTransactions = Transaction::count();
+		$totalOrders  = Order::count();
 
-		return view( 'admin.seller.index', compact( 'sellers' ) );
+		return view( 'admin.dashboard', compact( 'todaySellers', 'todayBuyers', 'todayComInfo', 'todayTransactiona','totalSellers','totalBuyers','totalOrders','totalTransactions' ) );
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function create() {
-		//
+	public function verify( Request $request, Seller $seller ) {
+
+		$request->validate( [
+			'id_card' => 'required|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
+			'id_book' => 'required|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
+			'id_bill' => 'required|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
+		] );
+		$path    = '/uploads/files/' . $seller->insta_user . "/";
+		$id_card = $request->file( 'id_card' );
+		$id_book = $request->file( 'id_book' );
+		$id_bill = $request->file( 'id_bill' );
+
+		$id_card = $this->FileUploader( $id_card, $path, $seller );
+		$id_book = $this->FileUploader( $id_book, $path, $seller );
+		$id_bill = $this->FileUploader( $id_bill, $path, $seller );
+		$seller->update( [
+			'id_card' => $id_card,
+			'id_book' => $id_book,
+			'id_bill' => $id_bill,
+		] );
+
+		return redirect()->back()->with( 'success', 'فایل های شما با موفقیت آپلود شد.' );
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @param \Illuminate\Http\Request $request
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function store( Request $request ) {
-		//
+	protected function FileUploader( $file, $path, $seller ) {
+		$date        = Verta::instance()->formatDate();
+		$fileName    = $file->getClientOriginalName();
+		$fileNewName = time() . '-' . $date . '-' . $seller->mobile . '-' . $fileName;
+		$file->move( public_path( $path ), $fileNewName );
+
+		return $path . $fileNewName;
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param \App\Models\Seller $seller
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function show( Seller $seller ) {
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param \App\Models\Seller $seller
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function edit( Seller $seller ) {
-
-		return view( 'admin.seller.edit', compact( 'seller' ) );
+	public function profile( Seller $seller ) {
+		return view( 'seller.profile.edit', compact( 'seller' ) );
 	}
 
 	public function changePassword( Seller $seller, Request $request ) {
-
+		if ( auth()->user()->id != $seller->id ) {
+			return "sheyton nasho";
+		}
 		$request->validate( [
 			'password' => 'required|min:8|confirmed',
 		] );
@@ -102,30 +104,11 @@ class SellersController extends Controller {
 		if ( $validator->fails() ) {
 			return redirect()->back()->withErrors( $validator )->withInput();
 		}
-		$status      = 0;
-		$is_verified = 0;
-		$bank_status = 0;
-		if ( isset( $request->status ) ) {
-			$status = 1;
-		}
-
-		if ( isset( $request->is_verified ) ) {
-			$is_verified = 1;
-		}
-		if ( isset( $request->bank_status ) ) {
-		return	$bank_status = 1;
-		}
-
 		$request->sheba   = Str::upper( $request->sheba );
 		$default_shipping = (int) filter_var( $request->default_shipping, FILTER_SANITIZE_NUMBER_INT );
 		$free_shipping    = (int) filter_var( $request->free_shipping, FILTER_SANITIZE_NUMBER_INT );
 		$seller->update( [
-			'sheba'           => $request->sheba,
-			'mobile'           => $request->mobile,
-			'insta_user'       => $request->insta_user,
-			'status'           => $status,
-			'is_verified'      => $is_verified,
-			'bank_status'      => $bank_status,
+			'sheba'            => $request->sheba,
 			'm_code'           => $request->m_code,
 			'title'            => $request->title,
 			'address'          => $request->address,
@@ -138,18 +121,6 @@ class SellersController extends Controller {
 		return redirect()->back()->with( 'success', 'تغییرات با موفقیت اعمال شد . ' );
 
 	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param \App\Models\Seller $seller
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function destroy( Seller $seller ) {
-		//
-	}
-
 
 	protected function nationalCodeCheck( $code ) {
 		if ( ! preg_match( '/^[0-9]{10}$/', $code ) ) {
@@ -171,6 +142,4 @@ class SellersController extends Controller {
 
 		return false;
 	}
-
-
 }

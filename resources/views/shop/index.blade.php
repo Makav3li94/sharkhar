@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="body product_item">
 
-                            <span class="badge badge-{{$seller->is_verified == 1 ? 'succcess' : 'danger'}}">{{$seller->is_verified == 1 ? 'تایید هویت شده' : 'تایید نشده'}}</span>
+                            <span class="badge badge-{{$seller->is_verified == 1 ? 'succcess' : 'danger'}}">{{$seller->is_verified == 1 ? 'تایید هویت شده' : ''}}</span>
                             <img src="{{$seller->logo}}" alt="Product" class="img-fluid cp_img"/>
                             <h2 class="text-blush font-14 pt-4">{{$seller->title}}</h2>
                             <div class="product_details">
