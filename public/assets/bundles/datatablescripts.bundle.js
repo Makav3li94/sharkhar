@@ -2438,10 +2438,10 @@
 					sNext: "بعدی",
 					sPrevious: "قبلی"
 				},
-				sEmptyTable: "داده ای در جدول وجود ندارد",
-				sInfo: "نمایش _START_ تا _END_ از _TOTAL_ نوشته ",
+				sEmptyTable: "پیدا نشد",
+				sInfo: "",
 				sInfoEmpty: "نمایش 0 تا 0 از 0 نوشته ",
-				sInfoFiltered: "(فیلتر شده از _MAX_ total نوشته )",
+				sInfoFiltered: "",
 				sInfoPostFix: "",
 				sDecimal: "",
 				sThousands: ",",
@@ -2451,7 +2451,7 @@
 				sSearch: "جستجو:",
 				sSearchPlaceholder: "",
 				sUrl: "",
-				sZeroRecords: "هیچ رکوردی یافت نشد"
+				sZeroRecords: "هیچی یافت نشد"
 			},
 			oSearch: a.extend({}, Ua.models.oSearch),
 			sAjaxDataProp: "data",

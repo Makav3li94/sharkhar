@@ -22369,6 +22369,11 @@ and (max-device-width: 1024px) {
         font-size: 1.1em !important;
         margin-top: 10px !important;
     }
+    .price_input{
+        width: 80%;
+        margin-right: 20%;
+        background-color: #fff;
+    }
 }
 
 .none {

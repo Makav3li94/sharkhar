@@ -28,7 +28,7 @@ class TransactionsController extends Controller {
 	 */
 	public function index() {
 		if ( auth()->guard( 'web' )->check() ) {
-			$transactions = Transaction::where( 'seller_id', auth()->user()->id )->orderBy('id','DESC')->paginate(5);
+			$transactions = Transaction::where( 'seller_id', auth()->user()->id )->orderBy('id','DESC')->get();
 
 			return view( 'seller.transaction.index', compact( 'transactions' ) );
 		} elseif ( auth()->guard( 'buyer' )->check() ) {

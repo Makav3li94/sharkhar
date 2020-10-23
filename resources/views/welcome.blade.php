@@ -36,6 +36,14 @@
             <!-- Signup btn -->
             <div class="col-12 col-lg-4">
                 <div class="sing-up-button">
+                    <div class="sing-up-button">
+                        @if(auth()->guard('buyer')->check())
+                            <a href="{{route('register_buyer')}}">ورود به پلتفرم</a>
+                        @else
+                            <a href="{{route('register_buyer')}}">ثبت نام خریدار</a>
+                        @endif
+
+                    </div>
                     @if(auth()->guard('web')->check())
                         <a href="{{route('login')}}">ورود به پلتفرم</a>
                         @else
@@ -44,14 +52,7 @@
 
 
                 </div>
-                <div class="sing-up-button">
-                    @if(auth()->guard('buyer')->check())
-                        <a href="{{route('register_buyer')}}">ورود به پلتفرم</a>
-                    @else
-                        <a href="{{route('register_buyer')}}">ثبت نام خریدار</a>
-                    @endif
 
-                </div>
             </div>
             <div class="col-12 col-lg-8">
                 <div class="menu_area">

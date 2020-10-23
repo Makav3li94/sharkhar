@@ -49,10 +49,16 @@
         Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
         */
+
+        td:nth-of-type(1):before {
+            content: "ردیف";
+        }
         td:nth-of-type(2):before {
             content: "تصویر";
         }
-
+        td:nth-of-type(3):before {
+            content: "";
+        }
         td:nth-of-type(4):before {
             content: "قیمت";
         }
@@ -60,7 +66,15 @@
         td:nth-of-type(5):before {
             content: "خریدار";
         }
-
+        td:nth-of-type(6):before {
+            content: "تلفن";
+        }
+        td:nth-of-type(7):before {
+            content: "تحویل";
+        }
+        td:nth-of-type(8):before {
+            content: "پرداخت";
+        }
         td:nth-of-type(9):before {
             content: "عملیات";
         }
@@ -93,24 +107,25 @@
                     <div class="col-lg-12">
                         @if(count($orders) > 0)
                             <div class="">
-                                <table class="table">
+{{--                                <table class="table">--}}
+                                <table class="table js-basic-example dataTable">
                                     <thead>
                                     <tr>
-                                        <th class="nono">ردیف</th>
+                                        <th>ردیف</th>
                                         <th>تصویر</th>
-                                        <th class="nono">کد محصول</th>
+                                        <th>نام محصول</th>
                                         <th>قیمت</th>
                                         <th>خریدار</th>
-                                        <th class="nono">شماره تلفن خریدار</th>
-                                        <th class="nono"> تحویل</th>
-                                        <th class="nono"> پرداخت</th>
+                                        <th>شماره تلفن خریدار</th>
+                                        <th> تحویل</th>
+                                        <th> پرداخت</th>
                                         <th>عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($orders as $key=>$order)
                                         <tr>
-                                            <td class="nono">{{$key + 1}}</td>
+                                            <td>{{$key + 1}}</td>
                                             <td>
                                                 <a class="soso none"
                                                    href="{{route('seller.products.edit',$order->product->id)}}"
@@ -121,15 +136,13 @@
                                                 <img class="nono" src="{{asset($order->product->image_thumb)}}"
                                                      width="35" alt="Product img">
                                             </td>
-                                            <td class="nono"><a
-                                                        href="{{route('seller.products.edit',$order->product->id)}}"
-                                                        target="_blank">#{{$order->product->id}}</a></td>
+                                            <td>{{\Illuminate\Support\Str::limit($order->product->title,55)}}</td>
                                             <td>{{$order->product->price}}</td>
                                             <td>{{$order->buyer->name}}</td>
-                                            <td class="nono">{{$order->buyer->mobile}}</td>
-                                            <td class="nono"><span class="col-{{$order->deliver_status}}">@if($order->deliver_status == 'green')
+                                            <td>{{$order->buyer->mobile}}</td>
+                                            <td><span class="col-{{$order->deliver_status}}">@if($order->deliver_status == 'green')
                                                         تحویل شده @else درحال ارسال @endif</span></td>
-                                            <td class="nono"><span class="col-{{$order->payment_status}}">@if($order->payment_status == 'green')
+                                            <td><span class="col-{{$order->payment_status}}">@if($order->payment_status == 'green')
                                                         پرداخت شده @else پرداخت نشده @endif</span></td>
                                             <td>
                                                 <a href="{{route('seller.orders.edit',$order->id)}}" title="جزئیات"
@@ -151,22 +164,18 @@
 
             </div>
         </div>
-        @if($orders->hasPages()  )
-            <div class="card">
-                <div class="body">
-                    {{$orders->links('vendor.pagination.custom')}}
-                </div>
-            </div>
-        @endif
+
     </div>
 @endsection
 
 @section('scripts')
+    <!-- SweetAlert Plugin Js -->
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
     <script>
-        $(function () {
-            $('.data_table').DataTable();
-        });
+        $(document).ready( function () {$('.js-basic-example').dataTable( {
+            "bSort": false
+        } );
+        } );
     </script>
 @endsection

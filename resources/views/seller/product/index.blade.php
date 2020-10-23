@@ -56,16 +56,18 @@
             td:nth-of-type(2):before {
                 content: "تصویر";
             }
-
             td:nth-of-type(3):before {
+                content: "";
+            }
+            td:nth-of-type(4):before {
                 content: "قیمت";
             }
 
-            td:nth-of-type(4):before {
+            td:nth-of-type(5):before {
                 content: "لینک";
             }
 
-            td:nth-of-type(5):before {
+            td:nth-of-type(6):before {
                 content: "عملیات";
             }
 
@@ -107,12 +109,13 @@
                     <div class="body">
                         <div class="col-lg-12">
                             <div class="">
-                                <table class="table">
-                                    {{--                            <table class="table js-basic-example dataTable">--}}
+{{--                                <table class="table">--}}
+                                <table class="table js-basic-example dataTable">
                                     <thead>
                                     <tr>
                                         <th>ردیف</th>
                                         <th>تصویر</th>
+                                        <th>نام</th>
                                         <th>قیمت</th>
                                         <th>کپی لینک خرید</th>
                                         <th>عملیات</th>
@@ -129,12 +132,14 @@
                                                     <img src="{{$product->image_thumb}}" width="35" alt="Product img">
                                                 </a>
                                             </td>
-
+                                            <td>
+                                                {{\Illuminate\Support\Str::limit($product->title,60)}}
+                                            </td>
                                             <td>
                                                 @if($product->price !=0)
                                                     {{number_format($product->price)." هزارتومان" ?? ''}}
                                                 @else
-                                                    <input class="form-control total" onkeyup="optinalPriceFunc('{{$product->id}}')" name="optional_price" id="{{$product->id}}-optional_price" type="text">
+                                                    <input class="form-control total price_input" onkeyup="optinalPriceFunc('{{$product->id}}')" name="optional_price" id="{{$product->id}}-optional_price" type="text">
                                                 @endif
                                             </td>
 
@@ -181,15 +186,15 @@
                     </div>
                 </div>
             @endif
-            @if($products->hasPages()  )
-                <div class="card">
-                    <div class="body">
-                        <div class="col-lg-12">
-                            {{$products->links('vendor.pagination.custom')}}
-                        </div>
-                    </div>
-                </div>
-            @endif
+{{--            @if($products->hasPages()  )--}}
+{{--                <div class="card">--}}
+{{--                    <div class="body">--}}
+{{--                        <div class="col-lg-12">--}}
+{{--                            {{$products->links('vendor.pagination.custom')}}--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            @endif--}}
         </div>
     </div>
 
@@ -291,12 +296,10 @@
 
         }
 
-
-        var btns = document.querySelectorAll('button');
-        var clipboard = new ClipboardJS(btns);
-        $(function () {
-            $('.js-basic-example').DataTable();
-        });
+        $(document).ready( function () {$('.js-basic-example').dataTable( {
+            "bSort": false
+        } );
+        } );
 
         $(function () {
             $('.delete_product').on('click', function () {

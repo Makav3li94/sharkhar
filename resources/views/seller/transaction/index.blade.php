@@ -48,26 +48,36 @@
             Label the data
         You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
             */
+
+
+            td:nth-of-type(1):before {
+                content: "ردیف";
+            }
             td:nth-of-type(2):before {
                 content: "خریدار";
             }
 
-            td:nth-of-type(4):before {
-                content: "کد محصول";
+            td:nth-of-type(3):before {
+                content: "تلفن";
             }
 
-            td:nth-of-type(5):before {
+
+            td:nth-of-type(4):before {
                 content: "شماره سفارش";
             }
 
-            td:nth-of-type(6):before {
-                content: "قیمت";
+            td:nth-of-type(5):before {
+                content: "فیمت";
             }
-            td:nth-of-type(7):before {
+
+            td:nth-of-type(6):before {
                 content: "وضعیت";
             }
+            td:nth-of-type(7):before {
+                content: "پیگیری";
+            }
             td:nth-of-type(8):before {
-                content: "کد پیگیری";
+                content: "تراکتش";
             }
 
             .table td, .table th {
@@ -105,33 +115,32 @@
                     <div class="col-lg-12">
 
                         <div>
-                            <table class="table">
+{{--                            <table class="table">--}}
+                                <table class="table js-basic-example dataTable">
                                 <thead>
                                 <tr>
-                                    <th class="nono">ردیف</th>
+                                    <th>ردیف</th>
                                     <th>خریدار</th>
-                                    <th class="nono">تلفن</th>
-                                    <th>کد محصول</th>
+                                    <th>تلفن</th>
                                     <th>شماره سفارش</th>
-                                    <th >قیمت</th>
-                                    <th >وضعیت </th>
+                                    <th>قیمت</th>
+                                    <th>وضعیت </th>
                                     <th>کد پیگیری</th>
-                                    <th class="nono">نوع تراکتش</th>
+                                    <th>نوع تراکتش</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($transactions as $key=>$transaction)
                                     <tr>
-                                        <td class="nono">{{$key + 1}}</td>
+                                        <td>{{$key + 1}}</td>
                                         <td>{{$transaction->buyer->name}}</td>
-                                        <td class="nono">{{$transaction->buyer->mobile}}</td>
-                                        <td><h5>{{$transaction->product->id}}</h5></td>
+                                        <td>{{$transaction->buyer->mobile}}</td>
                                         <td>{{$transaction->order->id}}</td>
                                         <td>{{number_format($transaction->price)}}</td>
                                         <td><span class="col-{{$transaction->status}}">@if($transaction->status == 'green')
                                                     پرداخت شده @else پرداخت نشده @endif</span></td>
                                         <td>{{$transaction->verify_code ?? ''}}</td>
-                                        <td class="nono">{{$transaction->transaction_type == 1 ? 'مستقیم' : 'واسط'}}</td>
+                                        <td>{{$transaction->transaction_type == 1 ? 'مستقیم' : 'واسط'}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -149,15 +158,7 @@
                     </div>
                 </div>
             @endif
-            @if($transactions->hasPages()  )
-                <div class="card">
-                    <div class="body">
-                        <div class="col-lg-12">
-                            {{$transactions->links('vendor.pagination.custom')}}
-                        </div>
-                    </div>
-                </div>
-            @endif
+
         </div>
     </div>
 @endsection
@@ -167,8 +168,9 @@
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
     <script>
-        $(function () {
-            $('.data_table').DataTable();
-        });
+        $(document).ready( function () {$('.js-basic-example').dataTable( {
+            "bSort": false
+        } );
+        } );
     </script>
 @endsection
