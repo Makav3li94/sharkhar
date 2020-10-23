@@ -48,7 +48,8 @@ class TransactionsController extends Controller {
 			$buyer   = Buyer::findOrFail( $order->buyer_id );
 			$seller  = Seller::findOrFail( $order->seller_id );
 			$product = Product::findOrFail( $order->product_id );
-
+			$product->optional_price = 0;
+			$product->save();
 
 			$receipt = Payment::amount( $cost * 10 )->transactionId( $request->Authority )->verify();
 
