@@ -62,9 +62,10 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">ثبت نام
                             </button>
-                            {{--                        <div class="signin_with mt-3">--}}
-                            {{--                            <a class="link" href="sign-in.html">شما قبلا عضویت دارید؟</a>--}}
-                            {{--                        </div>--}}
+                            <div class="signin_with mt-3">
+                                <p class="mb-0">ثبت نام کردی ؟ <a href="{{route('buyer_login')}}" class="text-danger" title="ورود به شرخر">وارد
+                                        شو</a></p>
+                            </div>
                         </div>
                     </form>
                     <div class="copyright text-center">

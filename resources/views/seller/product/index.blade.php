@@ -105,7 +105,7 @@
                                         <th>ردیف</th>
                                         <th>تصویر</th>
                                         <th>قیمت</th>
-                                        <th>کپی لینک</th>
+                                        <th>کپی لینک خرید</th>
                                         <th>عملیات</th>
                                     </tr>
                                     </thead>
@@ -125,13 +125,13 @@
                                             </td>
 
                                             <td>
-                                                <input type="text" id="link-{{$product->id}}"
-                                                       value="{{route('product',$product->id)}}">
-                                                <button class="btn btn-sm btn-success "
-                                                        style="top:5px;right: 0px"
-                                                        onclick="copyToClipboard('link-{{$product->id}}')"><i
-                                                            class="zmdi zmdi-copy"></i>
+                                                <button class="btn btn-sm btn-info" data-clipboard-text="{{route('product',$product->id)}}">
+                                                    <i class="zmdi zmdi-copy"></i>
                                                 </button>
+                                                    ||
+                                                <a class="btn btn-sm btn-success" href="whatsapp://send?text={{route('product',$product->id)}}" data-action="share/whatsapp/share">
+                                                    <i class="zmdi zmdi-whatsapp"></i>
+                                                </a>
                                             </td>
                                             <td>
 
@@ -181,7 +181,10 @@
     <!-- SweetAlert Plugin Js -->
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/clipboard.js-master/clipboard.min.js')}}"></script>
     <script>
+        var btns = document.querySelectorAll('button');
+        var clipboard = new ClipboardJS(btns);
         $(function () {
             $('.js-basic-example').DataTable();
         });
@@ -252,8 +255,13 @@
 
 
         function copyToClipboard(id) {
-            document.getElementById(id).select();
-            document.execCommand('copy');
+
+            var copyText = document.getElementById(id);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("لینک کپی شد." + copyText.value);
+            return false;
         }
     </script>
 @endsection

@@ -2,7 +2,15 @@
 
 @section('content' )
 
-
+    @if(auth()->user()->sheba == null)
+        <div class="container">
+        <a href="{{route('seller.profile',auth()->user()->id)}}"><div class="alert alert-danger">لطفا از طریق اطلاعات فروشگاه، شماره شبا خود را جهت تصفیه وارد نمایید.</div></a>
+        </div>
+        @else
+        <div class="container">
+            <a href="{{route('seller.products.index')}}"><div class="alert alert-info">مشتری دارید؟ کافیه از طریق بخش محصولات کپی لینک خرید رو برای مشتری بفرستید و بقیش با ما !</div></a>
+        </div>
+    @endif
         <div class="container">
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-6 col-sm-12">
