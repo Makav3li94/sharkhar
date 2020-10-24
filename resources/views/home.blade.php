@@ -4,6 +4,23 @@
 
     <!-- Responsive CSS -->
     <link href="{{asset('front/css/responsive.css')}}" rel="stylesheet">
+    <style>
+        .fornow{
+            filter: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            z-index: 999;
+            font-size: 22px;
+            color: #405de6;
+            padding: 60px;
+            background-color: #fff;
+        }
+    </style>
 @endsection
 @section('content')
     <!-- ***** Wellcome Area Start ***** -->
@@ -12,9 +29,10 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading text-right" style="direction: rtl">
-                        <h2>خرید امن با دستیار فروش شرخر</h2>
+                        <h2>شرخر: فروش آسان، خرید امن </h2>
                         {{--                    <h3>شره !</h3>--}}
-                        <p>همه چیزی که برای مدیریت، آنالیز، و رشد کسب و کارتون نیاز دارید.</p>
+{{--                        <p>همه چیزی که برای مدیریت، آنالیز، و رشد کسب و کارتون نیاز دارید.</p>--}}
+{{--                        <p>دیگه نگران نباشید  پیج جنسو میفرسته، درست میفرسته، چی می فرسته :)</p>--}}
                     </div>
                     <div class="get-start-area">
                         <!-- Form Start -->
@@ -45,7 +63,7 @@
                         <div class="special_description_content">
                             <h2>بهترین پیشنهاد برای پیج های اینستاگرامی</h2>
                             <p>
-                                شرخر چیه ؟ خیل خلاصه شرخر یه الگوریتم داره که با استفاده از پیج ایسنتا گرام شما، یک فروش خیلی زیبا با امکانات کامل براتون می سازه.
+                                شرخر چیه ؟ خیلی خلاصه شرخر یه الگوریتم داره که با استفاده از پیج ایسنتا گرام شما، یک فروش خیلی زیبا با امکانات کامل براتون می سازه.
                                 خوب کلی شرکت طراحی سایت هست که الان با قیمت پایین به ما سایت میدن، چرا بیایم اینجا؟ بله شرکت ها در خصوص هزینه سئو و شرایط سخت بهینه سازی برای موتور های جست و جو کاملا ساکتن موقع قرارداد !
                                 طراحی سایت کلا چیز خیلی خوبیه اگر اصولی انجام بشه ولی راستش قیمت موفقیت براش بالاست.
                                 ما چی کار می کنیم، اولی اینکه شما تو همون محیط اینستاگرام کاراتون رو می کنید.
@@ -110,13 +128,13 @@
     <section class="our-monthly-membership section_padding_70 clearfix">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <div class="membership-description">
-                        <h2>فعلا پلتفرم رایگانه، ولی قول نمیدیم بمونه :|</h2>
+                        <h2>تمهیدات ویژه برای 1000 نفر اول، چیز زیادی نمونده تموم شه ;)</h2>
                         <p>کلی امکانات فقط با یه کلیک.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <div class="get-started-button wow bounceInDown" data-wow-delay="0.5s">
                         <a href="{{route('register')}}">استفاده از شرخر</a>
                     </div>
@@ -125,6 +143,117 @@
         </div>
     </section>
     <!-- ***** Awesome Features Start ***** -->
+
+    <section class="pricing-plane-area section_padding_100_70 clearfix position-relative" id="pricing" >
+        <h5 class="fornow" style="filter: none ; position: absolute; left: 0; right: 0; margin: auto">
+          ! فعلا،به ازای هر تراکنش تنها 1% تا سقف 2 هزار تومان
+        </h5>
+        <div class="container" style="filter: blur(8px);">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Heading Text  -->
+                    <div class="section-heading text-center">
+                        <h2>تعرفه استفاده</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Package Price  -->
+                    <div class="single-price-plan  text-center">
+                        <!-- Package Text  -->
+                        <div class="package-plan">
+                            <h5>1 ساله</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                <span>میلیون تومان</span>
+                                <h4>1</h4>
+                            </div>
+                        </div>
+                        <div class="package-description p-3">
+                            <p>افزودن و آپدیت خودکار محصولات</p>
+                            <p>محصول نامحدود</p>
+                            <p>تراکنش نامحدود</p>
+                            <p>سفارش نامحدود</p>
+                            <p>افزودن اطلاعات به صورت خودکار</p>
+                            <p>لینک خرید درگاه</p>
+                            <p>آمار بازخورد از خرید</p>
+                            <p>بررسی تراکنش ها</p>
+                            <p>پشتیبانی 24 ساعته</p>
+                            <p>ارائه آمار کاربردی</p>
+                        </div>
+                        <!-- Plan Button  -->
+                        <div class="plan-button">
+                            <a href="#">بریم !</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Package Price  -->
+                    <div class="single-price-plan active text-center">
+                        <!-- Package Text  -->
+                        <div class="package-plan">
+                            <h5>6 ماهه</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                <span>هزار تومان</span>
+                                <h4>550</h4>
+                            </div>
+                        </div>
+                        <div class="package-description p-3">
+                            <p>افزودن و آپدیت خودکار محصولات</p>
+                            <p>محصول نامحدود</p>
+                            <p>تراکنش نامحدود</p>
+                            <p>سفارش نامحدود</p>
+                            <p>افزودن اطلاعات به صورت خودکار</p>
+                            <p>لینک خرید درگاه</p>
+                            <p>آمار بازخورد از خرید</p>
+                            <p>بررسی تراکنش ها</p>
+                            <p>پشتیبانی 24 ساعته</p>
+                            <p>ارائه آمار کاربردی</p>
+                        </div>
+                        <!-- Plan Button  -->
+                        <div class="plan-button">
+                            <a href="#">بریم !</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 ">
+                    <!-- Package Price  -->
+                    <div class="single-price-plan text-center">
+                        <!-- Package Text  -->
+                        <div class="package-plan">
+                            <h5>3 ماهه</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                <span> هزار تومان</span>
+                                <h4>300</h4>
+                            </div>
+                        </div>
+                        <div class="package-description p-3">
+                            <p>افزودن و آپدیت خودکار محصولات</p>
+                            <p>محصول نامحدود</p>
+                            <p>تراکنش نامحدود</p>
+                            <p>سفارش نامحدود</p>
+                            <p>افزودن اطلاعات به صورت خودکار</p>
+                            <p>لینک خرید درگاه</p>
+                            <p>آمار بازخورد از خرید</p>
+                            <p>بررسی تراکنش ها</p>
+                            <p>پشتیبانی 24 ساعته</p>
+                            <p>ارائه آمار کاربردی</p>
+                        </div>
+                        <!-- Plan Button  -->
+                        <div class="plan-button">
+                            <a href="#">بریم !</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section class="awesome-feature-area bg-white section_padding_70 clearfix" id="features">
         <div class="container">
             <div class="row">

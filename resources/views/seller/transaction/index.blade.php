@@ -172,5 +172,16 @@
             "bSort": false
         } );
         } );
+        $(document).ready(function () {
+
+
+            if (RegExp('multipage', 'gi').test(window.location.search)) {
+                introJs().setOption('doneLabel', 'صفحه بعد').start().oncomplete(function () {
+                    window.location.href = '{{ url("seller/feedbacks/?multipage=true") }}';
+                });
+            }
+
+        });
+
     </script>
 @endsection

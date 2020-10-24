@@ -1,0 +1,37 @@
+.introjs-tooltipbuttons {
+    text-align: left
+}
+
+.introjs-skipbutton {
+    margin-left: 5px
+}
+
+.introjs-tooltip {
+    direction: rtl;
+    text-align: right;
+    text-align: justify;
+}
+
+.introjs-prevbutton {
+    border: 1px solid #d4d4d4;
+    border-left: none;
+    border-radius: 0 .2em .2em 0
+}
+
+.introjs-nextbutton {
+    border: 1px solid #d4d4d4;
+    border-radius: .2em 0 0 .2em
+}
+
+.introjs-bullets ul li {
+    float: right
+}
+.introjs-fixParent {
+    position: absolute !important;
+}
+.introjs-tooltipbuttons {
+    text-align: center;
+    direction: rtl;
+}
+
+/*# sourceMappingURL=introjs-rtl.min.css.map */

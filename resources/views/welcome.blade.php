@@ -16,7 +16,7 @@
     <title>پلتفرم شرخر - دستیار فروش شما !</title>
 
     <!-- Favicon -->
-{{--    <link rel="icon" href="img/core-img/favicon.ico">--}}
+    <link rel="icon" href="{{asset('assets/images/fav.png')}}">
 
 <!-- Core Stylesheet -->
     <link href="{{asset('front/style.css')}}" rel="stylesheet">
@@ -60,34 +60,37 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-lg-8">
-                    <div class="menu_area">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-
-                            <div class="collapse navbar-collapse" id="ca-navbar" style="direction: rtl">
-                                <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item "><a href="{{route('home')}}" class="nav-link">خانه</a></li>
-                                    <li class="nav-item"><a href="{{route('shop')}}" class="nav-link">فروشگاه</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
-                                </ul>
-                                <div class="sing-up-button d-lg-none">
-                                    <a href="{{route('register')}}">ثبت نام رایگان</a>
-                                </div>
-                            </div>
-
-                            <!-- Logo -->
-                            <a class="navbar-brand" href="{{route('home')}}">شَرخَر</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar"
-                                    aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span
-                                        class="navbar-toggler-icon"></span></button>
-                            <!-- Menu Area -->
-                        </nav>
-                    </div>
-                </div>
-
             </div>
+            <div class="col-12 col-lg-8">
+                <div class="menu_area">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+
+                        <div class="collapse navbar-collapse" id="ca-navbar" style="direction: rtl">
+                            <ul class="navbar-nav ml-auto" id="nav">
+                                <li class="nav-item "><a href="{{route('home')}}" class="nav-link">خانه</a></li>
+{{--                                <li class="nav-item"><a href="{{route('shop')}}" class="nav-link">فروشگاه</a></li>--}}
+                                <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
+                            </ul>
+                            <div class="sing-up-button d-lg-none">
+                                <a href="{{route('register')}}">ثبت نام رایگان</a>
+                            </div>
+                        </div>
+
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="{{route('home')}}">
+                            <img src="{{asset('front/img/logo-w.png')}}" width="80px" alt="شرخر">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar"
+                                aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span
+                                    class="navbar-toggler-icon"></span></button>
+                        <!-- Menu Area -->
+                    </nav>
+                </div>
+            </div>
+
         </div>
+    </div>
 </header>
 <!-- ***** Header Area End ***** -->
 @yield('content')
@@ -97,7 +100,7 @@
 <footer class="text-center pt-lg-5 pb-0 clearfix">
     <!-- footer logo -->
     <div class="footer-text">
-        <h2>شرخر</h2>
+        <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
     </div>
     <!-- social icon-->
 

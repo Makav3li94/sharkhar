@@ -52,8 +52,7 @@
                                     <li class="comment-user">
 
                                         <div class="icon-box w50 ml-2">
-                                            <img class="rounded-circle " width="50px"
-                                                 src="{{ asset('assets/images/logo.png')}}" alt="Awesome Image">
+                                            <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
                                         </div>
                                         <div class="text-box ">
                                             <h5>پشتیبانی شرخر</h5>

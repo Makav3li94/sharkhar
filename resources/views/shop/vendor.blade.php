@@ -4,7 +4,7 @@
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12">
                 <div class="card mcard_1">
-                    <div class="body">
+                    <div class="body" data-intro="اطلاعات پیج شما ...">
 
 
                         <div class="img">
@@ -39,7 +39,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12" data-intro="آمار بازخورد های مشتریان شما پس از خرید از شرخر">
                 <div class="card">
                     <div class="body">
                         @if(count($feedbacks) > 0)
@@ -132,7 +132,7 @@
         <div class="row clearfix">
             @foreach($products as $product)
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                    <div class="card">
+                    <div class="card" >
                         <div class="body product_item">
                             <span class="label onsale">فروشی!</span>
                             <img src="{{$product->image}}" alt="{{$seller->title}}" class="img-fluid cp_img"/>
@@ -183,7 +183,18 @@
     </div>
 @endsection
 @section('scripts')
+<script>
+    $(document).ready(function () {
 
+
+        if (RegExp('multipage', 'gi').test(window.location.search)) {
+            introJs().setOption('doneLabel', 'Next page').start().oncomplete(function () {
+                    window.location.href = '{{ url("seller/products/?multipage=true") }}';
+            });
+        }
+
+    });
+</script>
 @endsection
 @section('styles')
     <style>

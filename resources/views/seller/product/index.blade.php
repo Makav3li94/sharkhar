@@ -103,7 +103,7 @@
     @endif
     <div class="container">
 
-        <div class="row clearfix">
+        <div class="row clearfix" data-intro="لیست محصولات شما ...">
             @if(count($products) > 0)
                 <div class="card">
                     <div class="body">
@@ -116,9 +116,9 @@
                                         <th>ردیف</th>
                                         <th>تصویر</th>
                                         <th>نام</th>
-                                        <th>قیمت</th>
-                                        <th>کپی لینک خرید</th>
-                                        <th>عملیات</th>
+                                        <th data-intro="اگر علاقه ای به ثبت قیمت ندارید، قبل از کپی لینک قیمت روز را در این قسمت وارد کنید.">قیمت</th>
+                                        <th data-intro="برای مشتری پیج ایسنتاگرام یا کسب و کارتون، این لینک را از طریق دکمه کپی ارسال کنید،همین ! بقیش با ما.">کپی لینک خرید</th>
+                                        <th data-intro="ویراش، حذف و تغییر قیمت محصول ...">عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -208,7 +208,16 @@
     <script src="{{asset('assets/plugins/clipboard.js-master/clipboard.min.js')}}"></script>
     <script src="{{asset('assets/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script> <!-- Bootstrap Notify Plugin Js -->
     <script>
+        $(document).ready(function () {
 
+
+            if (RegExp('multipage', 'gi').test(window.location.search)) {
+                introJs().setOption('doneLabel', 'صفحه بعد').start().oncomplete(function () {
+                    window.location.href = '{{ url("seller/orders/?multipage=true") }}';
+                });
+            }
+
+        });
 
         function optinalPriceFunc(val) {
 

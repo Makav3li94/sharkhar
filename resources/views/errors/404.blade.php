@@ -6,7 +6,7 @@
                 <div class="col-lg-12 col-sm-12">
 
                     <div class="header text-center">
-                        <img class="logo" src="{{asset('assets/images/logo.svg')}}" alt="">
+                        <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
                         <h5>ارور 404</h5>
                         <span>صفحه مورد نظر پیدا نشد :-(</span>
                         <a class="btn btn-primary " href="{{url()->previous()}}">

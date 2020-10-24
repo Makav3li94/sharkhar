@@ -101,8 +101,8 @@
                     <li class="comment-user">
 
                         <div class="icon-box w50 ml-2">
-                            <img class="" width="50px"
-                                 src="{{asset('assets/images/logo.png')}}" alt="sharkhar">
+                            <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
+
                         </div>
                         <div class="text-box ">
                             <h5>{{$feedback->buyer->name}}</h5>

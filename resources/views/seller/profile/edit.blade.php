@@ -11,7 +11,7 @@
                 <div class="header">
                     <h2><strong>تنظیمات</strong> حساب</h2>
                 </div>
-                <div class="body">
+                <div class="body" data-intro="تکمیل اطلاعات از اینجا">
                     <form action="{{route('seller.update',$seller->id)}}" method="post">
                         @csrf
                         @method('PATCH')
@@ -68,23 +68,23 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 mb-4">
-                                        <label>کد ملی</label>
+                                        <label>پست الکترونیک</label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                            class="zmdi zmdi-account-add"></i></span>
+                                                    <span class="input-group-text"><i
+                                                                class="zmdi zmdi-email"></i></span>
                                             </div>
-                                            <input class="form-control" name="m_code"
-                                                   value="{{$seller->m_code ?? old('m_code')}}"
-                                                   {{$seller->m_code ? 'readonly' : ''}}
-                                                   type="text">
-                                            @if($errors->has('m_code'))
+                                            <input class="form-control"
+                                                   value="{{$seller->email ?? old('email')}}" name="email"
+                                                   type="email" placeholder="example@gmail.com">
+                                            @if($errors->has('email'))
                                                 <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('m_code')}}
+                                                    {{$errors->first('email')}}
                                                 </small>
                                             @endif
                                         </div>
                                     </div>
+
                                     <div class="col-lg-6 col-md-6 mb-4">
                                         <label>لینک پیج ایسنتاگرام</label>
                                         <div class="input-group masked-input">
@@ -103,42 +103,6 @@
                                         </div>
                                     </div>
 
-
-                                    <div class="col-lg-6 col-md-6 mb-4">
-                                        <label>پست الکترونیک</label>
-                                        <div class="input-group masked-input">
-                                            <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                                class="zmdi zmdi-email"></i></span>
-                                            </div>
-                                            <input class="form-control"
-                                                   value="{{$seller->email ?? old('email')}}" name="email"
-                                                   type="email" placeholder="example@gmail.com">
-                                            @if($errors->has('email'))
-                                                <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('email')}}
-                                                </small>
-                                            @endif
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-6 col-md-6 mb-4 ">
-                                        <label>عنوان فروشگاه</label>
-                                        <div class="input-group masked-input">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                            class="zmdi zmdi-badge-check"></i></span>
-                                            </div>
-                                            <input name="title" class="form-control "
-                                                   value="{{$seller->title ?? old('title')}}" type="text">
-                                            @if($errors->has('title'))
-                                                <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('title')}}
-                                                </small>
-                                            @endif
-                                        </div>
-                                    </div>
                                     <div class="col-lg-6 col-md-6 mb-4">
                                         <label>تلفن ثابت</label>
                                         <div class="input-group masked-input">
@@ -157,7 +121,42 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 mb-4">
+                                    <div class="col-lg-6 col-md-6 mb-4 ">
+                                        <label>عنوان فروشگاه</label>
+                                        <div class="input-group masked-input">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                            class="zmdi zmdi-badge-check"></i></span>
+                                            </div>
+                                            <input name="title" class="form-control "
+                                                   value="{{$seller->title ?? old('title')}}" type="text">
+                                            @if($errors->has('title'))
+                                                <small class="text-danger d-inline-block w-100  mt-2">
+                                                    {{$errors->first('title')}}
+                                                </small>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 mb-4" data-intro="کد ملی  مطابق با شماره شبا ، جهت واریز پول.">
+                                        <label>کد ملی</label>
+                                        <div class="input-group masked-input">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                            class="zmdi zmdi-account-add"></i></span>
+                                            </div>
+                                            <input class="form-control" name="m_code"
+                                                   value="{{$seller->m_code ?? old('m_code')}}"
+                                                   {{$seller->m_code ? 'readonly' : ''}}
+                                                   type="text">
+                                            @if($errors->has('m_code'))
+                                                <small class="text-danger d-inline-block w-100  mt-2">
+                                                    {{$errors->first('m_code')}}
+                                                </small>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 mb-4" data-intro="شماره شِبا جهت تصفیه">
                                         <label>شماره شبا</label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
@@ -175,7 +174,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 mb-4">
+                                    <div class="col-lg-6 col-md-6 mb-4" data-intro="هزینه پستی ارسال، مثلا 15 هزار تومان">
                                         <label>هزینه ارسال ثابت</label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
@@ -193,7 +192,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 mb-4">
+                                    <div class="col-lg-6 col-md-6 mb-4" data-intro="اگر فرضا خرید بالای 200 هزار تومان شامل ارسال رایگان میشود، عدد 200،000 را وارد کنید.">
                                         <label>حداقل خرید و ارسال رایگان</label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
@@ -249,7 +248,7 @@
 
                     <h2>اطلاعات مورد نیاز جهت <strong class="text-danger">تایید شما</strong></h2>
                 </div>
-                <div class="body">
+                <div class="body" data-intro="تکمیل اطلاعات برای گرفتن تاییدیه فروش شرخر،(این قسمت اختیاری است.)">
                     <div class="col-md-12">
                         <form action="{{route('seller.verify',$seller->id)}}" method="post"
                               enctype="multipart/form-data">
@@ -316,7 +315,7 @@
                 <div class="header">
                     <h2><strong>تنظیمات</strong> امنیتی</h2>
                 </div>
-                <div class="body">
+                <div class="body" data-intro="تغییر رمز ورود به شرخرتون از اینجا">
                     <div class="col-md-12">
                         <form action="{{route('seller.change_password',$seller->id)}}" method="post">
                             @csrf
@@ -401,6 +400,13 @@
                 messages: {}
             });
 
+
+            if (RegExp('multipage', 'gi').test(window.location.search)) {
+                introJs().setOption('doneLabel', 'صفحه بعد').start().oncomplete(function () {
+                    {{--window.location.href = 'seller/profile/{{auth()->user()->id}}profile?multipage=true';--}}
+                        window.location.href = '{{ url("vendors/".auth()->user()->insta_user."/?multipage=true") }}';
+                });
+            }
 
         });
 
@@ -503,6 +509,8 @@
 
         valueRef2.addEventListener("change", getChange);
         console.log(valueRef);
+
+
 
 
     </script>

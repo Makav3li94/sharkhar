@@ -186,7 +186,7 @@
                                 <ul class="comment-reply list-unstyled">
                                     <li>
                                         <div class="icon-box">
-                                            <img src="{{asset('assets/images/logo.png')}}" class="img-fluid img-thumbnail" width="100px" alt="sharkhar">
+                                            <img src="{{asset('assets/images/logo-p.png')}}" class="img-fluid img-thumbnail" width="100px" alt="sharkhar">
                                         </div>
                                         <div class="text-box">
                                             <h5>{{$feedback->buyer->name}}</h5>

@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/charts-c3/plugin.css')}}"/>
-
+    <link rel="icon" href="{{asset('assets/images/fav.png')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/morrisjs/morris.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/plugins/intro.js-master/introjs.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/plugins/intro.js-master/introjs-rtl.css')}}"/>
     @yield('styles')
 
     <!-- Custom Css -->
@@ -29,7 +31,7 @@
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
-        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{asset('assets/images/loader.svg')}}" width="48" height="48"
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{asset('assets/images/logo-p.png')}}" width="48" height="48"
                                  alt="Sharkhar"></div>
         <p>لطفا صبر کنید...</p>
     </div>
@@ -74,7 +76,8 @@
         <ul class="navbar-nav flex-row ml-md-auto ">
             <li class="nav-item ">
                 <a class="navbar-brand mr-0 mr-md-2 p-0 m-0" href="/" aria-label="sharkhar">
-                    <title>sharkhar</title><img src="{{asset('assets/images/logo.png')}}" width="36" height="36" class="d-block" alt="">
+{{--                    <title>sharkhar</title>--}}
+                    <img src="{{asset('assets/images/logo-p.png')}}"  width="36" height="36" class="d-block" alt="شرخر">
                 </a>
             </li>
             <li class="nav-item">
@@ -123,7 +126,11 @@
 <section class="content {{isset($bib) ? $bib : ''}}">
     @if(!isset($hide))
         <div class="container">
-            <div class="row clearfix bread-crumb">
+            <div class="row clearfix bread-crumb"
+                 @if(request()->is('seller/dashboard'))
+            data-step="1" data-intro="در شرخر، شما برای فروش نیاز به ثبت شماره شِبا و ارسال لینک خرید برای مشتری دارید، همین. لطفا تا انتهای آموزش با من باشید."
+                @endif
+            >
 
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>{{ ucfirst($title ?? '') }}</h2>
@@ -278,8 +285,12 @@
     gtag('js', new Date());
 
     gtag('config', 'G-B3RQ6EQG0M');
-</script>
 
+
+
+
+</script>
+<script  src="{{asset('assets/plugins/intro.js-master/introjs.js')}}"></script>
 </body>
 
 </html>

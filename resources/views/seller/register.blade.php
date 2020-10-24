@@ -13,7 +13,7 @@
                     <form class="card auth_form" action="{{route('register')}}" method="post">
                         @csrf
                         <div class="header">
-                            <img class="logo" src="{{asset('assets/images/logo.png')}}" alt="">
+                            <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
                             <h5>ثبت نام</h5>
                             <span>عضویت جدید را ثبت کنید</span>
                         </div>

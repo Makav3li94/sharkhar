@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //		'password'=>\Illuminate\Support\Facades\Hash::make('Parham@19171363'),
 //	]);
 //});
-//Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
+Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
 
 Route::get( '/', function () {
 //	$url      = "https://www.instagram.com/parnasite/?__a=1";

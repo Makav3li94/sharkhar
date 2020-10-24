@@ -241,14 +241,16 @@ trait Scraper {
 	public function dumbPriceFunctionForDumbPeople( $message ) {
 		if ( strpos( $message, 'قیمت ' ) !== false | strpos( $message, 'تومان' ) !== false || strpos( $message, 'نومن' ) !== false || strpos( $message, 'ریال' ) !== false ) {
 			if ( strpos( $message, 'قیمت ' ) !== false ) {
-				$result = $this->priceFunction( $message, 'قیمت ', 2 );
+				$result = $this->priceFunction( $message, 'قیمت ', 1 );
 			} elseif ( strpos( $message, 'تومان' ) !== false ) {
-				$result = $this->priceFunction( $message, 'تومان', 2 );
+				$result = $this->priceFunction( $message, 'تومان', 1 );
 			} elseif ( strpos( $message, 'نومن' ) !== false ) {
-				$result = $this->priceFunction( $message, 'تومن', 2 );
+				$result = $this->priceFunction( $message, 'تومن', 1 );
 			} elseif ( strpos( $message, 'ریال' ) !== false ) {
-				$result = $this->priceFunction( $message, 'ریال', 2 );
-				$result = $result / 10;
+				$result = $this->priceFunction( $message, 'ریال', 1 );
+				if (is_numeric($result)) {
+					$result = $result / 10;
+				}
 			}
 		} else {
 			$result = 0;

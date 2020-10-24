@@ -8,7 +8,8 @@
                         @csrf
 
                         <div class="header">
-                            <img class="logo" src="{{asset('assets/images/logo.png')}}" alt="">
+                            <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
+
                             <h5>فراموشی رمزعبور؟</h5>
                             <span>شماره موبایل خود را وارد کنید تا رمز جدید ارسال شود.</span>
                         </div>

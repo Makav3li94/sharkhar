@@ -45,12 +45,12 @@ class ScraperController extends Controller {
 		set_time_limit( 150 );
 		while ( $tryNext ) {
 			$tryNext  = false;
-			$response = file_get_contents( $iterationUrl );
+			 $response = file_get_contents( $iterationUrl );
 
 			if ( $response === false ) {
 				break;
 			}
-			$data = json_decode( $response, true );
+			return $data = json_decode( $response, true );
 			if ( $data === null ) {
 				break;
 			}

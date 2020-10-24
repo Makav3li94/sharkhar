@@ -8,7 +8,7 @@
                         @csrf
 
                         <div class="header">
-                            <img class="logo" src="{{asset('assets/images/logo.png')}}" alt="">
+                            <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
                             <h5>ورود خریدار</h5>
                         </div>
                         <div class="body">

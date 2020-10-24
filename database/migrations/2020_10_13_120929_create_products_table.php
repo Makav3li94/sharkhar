@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->text('image_thumb')->nullable();
             $table->string('title')->nullable();
             $table->text('body')->nullable();
-            $table->unsignedBigInteger('price')->nullable();
+            $table->string('price')->nullable();
             $table->unsignedBigInteger('optional_price')->default(0)->nullable();
             $table->integer('like_count')->nullable();
             $table->integer('comment_count')->nullable();

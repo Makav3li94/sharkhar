@@ -220,5 +220,17 @@
         $(function () {
             $('.data_table').DataTable();
         });
+
+
+        $(document).ready(function () {
+
+
+            if (RegExp('multipage', 'gi').test(window.location.search)) {
+                introJs().start();
+            }
+
+        });
     </script>
+
+
 @endsection
