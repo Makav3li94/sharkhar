@@ -19,7 +19,7 @@
         </div>
     @endif
     <div class="container">
-        <div class="row clearfix" data-step="2" data-intro="آمار روزانه فروش، تراکنش و سفارش">
+        <div class="row clearfix" data-step="2" data-intro="آمار روزانه فروش، تراکنش و سفارش" data-position="bottom-middle-aligned">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card widget_2 big_icon traffic">
                     <div class="body">
@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="row clearfix" data-step="3" data-intro="آمار کلی فروش، تراکنش و سفارش">
+        <div class="row clearfix" data-step="3" data-intro="آمار کلی فروش، تراکنش و سفارش" data-position="bottom-middle-aligned">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">

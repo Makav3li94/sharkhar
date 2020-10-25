@@ -1,26 +1,8 @@
 @extends('welcome')
 @section('styles')
-    <link href="{{asset('front/style.css')}}" rel="stylesheet">
 
     <!-- Responsive CSS -->
-    <link href="{{asset('front/css/responsive.css')}}" rel="stylesheet">
-    <style>
-        .fornow{
-            filter: none;
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: auto;
-            top: 50%;
-            width: 100%;
-            text-align: center;
-            z-index: 999;
-            font-size: 22px;
-            color: #405de6;
-            padding: 60px;
-            background-color: #fff;
-        }
-    </style>
+
 @endsection
 @section('content')
     <!-- ***** Wellcome Area Start ***** -->
@@ -30,8 +12,8 @@
                 <div class="col-12 col-md">
                     <div class="wellcome-heading text-right" style="direction: rtl">
                         <h2>شرخر: فروش آسان، خرید امن </h2>
-                        {{--                    <h3>شره !</h3>--}}
-{{--                        <p>همه چیزی که برای مدیریت، آنالیز، و رشد کسب و کارتون نیاز دارید.</p>--}}
+                                            <h3>شره !</h3>
+                        <p>همه چیزی که برای مدیریت، آنالیز، و رشد کسب و کارتون نیاز دارید.</p>
 {{--                        <p>دیگه نگران نباشید  پیج جنسو میفرسته، درست میفرسته، چی می فرسته :)</p>--}}
                     </div>
                     <div class="get-start-area">
@@ -145,7 +127,7 @@
     <!-- ***** Awesome Features Start ***** -->
 
     <section class="pricing-plane-area section_padding_100_70 clearfix position-relative" id="pricing" >
-        <h5 class="fornow" style="filter: none ; position: absolute; left: 0; right: 0; margin: auto">
+        <h5 class="fornow" >
           ! فعلا،به ازای هر تراکنش تنها 1% تا سقف 2 هزار تومان
         </h5>
         <div class="container" style="filter: blur(8px);">
@@ -349,14 +331,19 @@
     <section class="footer-contact-area  clearfix" id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <!-- Heading Text  -->
-                    <div class="section-heading">
+                <div class="col-12">
+                    <!-- Heading Text -->
+                    <div class="section-heading text-center">
                         <h2>تماس با ما</h2>
-                        <div class="line-shape"></div>
+                        <div class="line-shape "></div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+
                     <div class="footer-text">
-                        <p>در صورت تمایل به همکاری، سوالات، پیشنهادات و انتقادات در تماس باشید.</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.605859596771!2d51.34522911561607!3d35.71131558018737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e07555a0b72ab%3A0x66e6d9605cee51f4!2sSharif%20Energy%20Research%20Institute!5e0!3m2!1sen!2sua!4v1603650460553!5m2!1sen!2sua" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                     {{--                <div class="address-text">--}}
                     {{--                    <p><span>Address:</span> 40 Baria Sreet 133/2 NewYork City, US</p>--}}
@@ -413,24 +400,4 @@
         </div>
     </section>
     <!-- ***** Contact Us Area End ***** -->
-@endsection
-@section('scripts')
-
-<!-- ***** Footer Area Start ***** -->
-
-<!-- Jquery-2.2.4 JS -->
-<script src="{{asset('front/js/jquery-2.2.4.min.js')}}"></script>
-
-<!-- Popper js -->
-<script src="{{asset('front/js/popper.min.js')}}"></script>
-<!-- Bootstrap-4 Beta JS -->
-<script src="{{asset('front/js/bootstrap.min.js')}}"></script>
-<!-- All Plugins JS -->
-<script src="{{asset('front/js/plugins.js')}}"></script>
-<!-- Slick Slider Js-->
-<script src="{{asset('front/js/slick.min.js')}}"></script>
-<!-- Footer Reveal JS -->
-<script src="{{asset('front/js/footer-reveal.min.js')}}"></script>
-<!-- Active JS -->
-<script src="{{asset('front/js/active.js')}}"></script>
 @endsection

@@ -32,7 +32,7 @@
                                        oninvalid="this.setCustomValidity('لطفا رمز عبور را وارد کنید')" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <a href="{{url('password/reset')}}" onclick="sendPassword()" class="forgot " title="فراموشی رمز عبور">
+                                        <a href="{{url('password/reset')}}"  class="forgot " title="فراموشی رمز عبور">
                                             <i class="zmdi zmdi-lock"></i>
                                         </a>
                                     </span>

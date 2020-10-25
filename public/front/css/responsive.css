@@ -35,9 +35,9 @@
     .menu_area .navbar-brand {
         font-size: 48px;
     }
-    .header_area.sticky {
-        height: 50px;
-    }
+    /*.header_area.sticky {*/
+    /*    height: 50px;*/
+    /*}*/
     .header_area .menu_area #nav .nav-link,
     .header_area.sticky .menu_area #nav .nav-link {
         padding: 7.5px 15px;
@@ -49,8 +49,8 @@
         text-align: left;
     }
     .sing-up-button {
-        margin-top: 30px;
-        text-align: left;
+        /*margin-top: 30px;*/
+        /*text-align: left;*/
     }
     .welcome-thumb {
         width: 50%;
@@ -111,12 +111,22 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+    .nono{
+        display: none;
+    }
+    .res-p{
+        padding: 0 20px;
+    }
+    .modal-dialog {
+        max-width: 350px !important;
+        margin: 7rem auto !important;
+    }
     .header_area {
         padding: 0;
     }
     .menu_area{
-        text-align: center;
-        display: none;
+        /*text-align: center;*/
+        /*display: none;*/
     }
     .menu_area .navbar-brand {
         font-size: 28px !important;
@@ -124,13 +134,8 @@
         width: 100%;
     }
 
-    .navbar-toggler{
-        display: none;
-    }
 
-    .header_area.sticky {
-        height: 100px;
-    }
+
     .header_area .menu_area #nav .nav-link,
     .header_area.sticky .menu_area #nav .nav-link {
         padding: 5px 15px;
@@ -142,7 +147,7 @@
         text-align: left;
     }
     .sing-up-button {
-        margin-top: 15px;
+        /*margin-top: 15px;*/
         text-align: left;
     }
     .header_area {

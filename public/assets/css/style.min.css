@@ -22320,14 +22320,7 @@ header {
 .toTop a {
     color: #fff;
 }
-
-@media only screen
-and (max-width: 760px), (min-device-width: 768px)
-and (max-device-width: 1024px) {
-    /*.mp-res{*/
-    /*	margin: 0 !important;*/
-    /*	padding: 0 !important;*/
-    /*}*/
+@media screen and (max-width: 600px) {
     .nono {
         display: none !important;
     }
@@ -22335,6 +22328,15 @@ and (max-device-width: 1024px) {
     .soso {
         display: block !important;
     }
+}
+@media only screen
+and (max-width: 760px), (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    /*.mp-res{*/
+    /*	margin: 0 !important;*/
+    /*	padding: 0 !important;*/
+    /*}*/
+
 
     .sidebar .menu .list a {
         color: #222;

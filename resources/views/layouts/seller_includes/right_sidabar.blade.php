@@ -50,7 +50,7 @@
                         <i class="zmdi zmdi-home"></i><span>داشبورد</span></a>
                 </li>
 
-                <li class="{{ request()->is('seller/profile/*') ? 'active' : '' }}"
+                <li class="{{ request()->is('seller/profile/*') ? 'active' : '' }} remove-help"
                 @if(request()->is('seller/profile/*'))
                         data-step="1" data-intro="ضرروی ! ،جهت تکمیل اطلاعات فروشگاه از اینجا"
                         @endif
@@ -59,7 +59,7 @@
                         <i class="zmdi zmdi-account"></i><span>اطلاعات فروشگاه</span>
                     </a>
                 </li>
-                <li class=" "
+                <li class="remove-help "
                     @if(request()->is('vendors/*'))
                     data-step="1" data-intro="مشاهده فروشگاه از اینجا"
                         @endif>
@@ -67,7 +67,7 @@
                         <i class="zmdi zmdi-shopping-basket"></i><span>فروشگاه</span></a>
                 </li>
 
-                <li class="{{ request()->is('seller/products') ? 'active' : '' }}"
+                <li class="{{ request()->is('seller/products') ? 'active' : '' }} remove-help"
                     @if(request()->is('seller/products'))
                     data-step="1" data-intro="مدیریت محصولات از اینجا"
                         @endif>
@@ -77,7 +77,7 @@
                 </li>
 
 
-                <li class="{{ request()->is('seller/orders') ? 'active' : '' }} "
+                <li class="{{ request()->is('seller/orders') ? 'active' : '' }} remove-help"
                     @if(request()->is('seller/orders'))
                     data-step="1" data-intro="مدیریت سفارشات از اینجا"
                         @endif>
@@ -88,7 +88,7 @@
 
 
 
-                <li class="{{ request()->is('seller/transactions/*') ? 'active' : '' }}"
+                <li class="{{ request()->is('seller/transactions/*') ? 'active' : '' }} remove-help"
                     @if(request()->is('seller/transactions'))
                     data-step="1" data-intro="مدیریت تراکنش ها از اینجا"
                         @endif>
@@ -97,7 +97,7 @@
                     </a>
                 </li>
 
-                <li class="{{ request()->is('seller/feedbacks/*') ? 'active' : '' }}"
+                <li class="{{ request()->is('seller/feedbacks/*') ? 'active' : '' }} remove-help"
                     @if(request()->is('seller/feedbacks'))
                     data-step="1" data-intro="مدیریت بازخورد ها از اینجا"
                         @endif>
@@ -106,7 +106,7 @@
                 </li>
 
 
-                <li><a href="javascript:void(0);" class="menu-toggle {{ request()->is('seller/contacts/*') ? 'active' : '' }}"
+                <li><a href="javascript:void(0);" class="menu-toggle {{ request()->is('seller/contacts/*') ? 'active' : '' }} remove-help"
                        @if(request()->is('seller/contacts/*'))
                        data-step="1" data-intro="ارسال تیکت به پشتیبانی شرخر از اینجا"
                             @endif>
@@ -116,12 +116,14 @@
                         <li><a href="{{route('seller.contacts.create')}}">تیکت جدید</a></li>
                     </ul>
                 </li>
-                <hr>
-                <li class="">
+
+                <li class="nono">
+                    <hr>
                     <a href="{{url('seller/dashboard?start=true')}}"  >
                         <i class="zmdi zmdi-flag text-danger" ></i><span>آموزش پنل</span></a>
+                    <hr>
                 </li>
-                <hr>
+
             @elseif(auth()->guard('buyer')->check())
 
                 <li class="{{ request()->is('buyer/dashboard') ? 'active' : '' }} ">

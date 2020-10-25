@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="">
-    <meta name="theme-color" content="#5851db" >
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta name="theme-color" content="#5851db">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>::دستیار فروش شرخر :: خانه</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/morrisjs/morris.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/intro.js-master/introjs.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/intro.js-master/introjs-rtl.css')}}"/>
-    @yield('styles')
+@yield('styles')
 
-    <!-- Custom Css -->
+<!-- Custom Css -->
     <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
 </head>
 
@@ -76,18 +76,18 @@
         <ul class="navbar-nav flex-row ml-md-auto ">
             <li class="nav-item ">
                 <a class="navbar-brand mr-0 mr-md-2 p-0 m-0" href="/" aria-label="sharkhar">
-{{--                    <title>sharkhar</title>--}}
-                    <img src="{{asset('assets/images/logo-p.png')}}"  width="36" height="36" class="d-block" alt="شرخر">
+                    {{--                    <title>sharkhar</title>--}}
+                    <img src="{{asset('assets/images/logo-p.png')}}" width="36" height="36" class="d-block" alt="شرخر">
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{{route('home')}}" >
+                <a class="nav-link " href="{{route('home')}}">
                     دستیار فروش شرخر
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="{{route('shop')}}" >
+                <a class="nav-link " href="{{route('shop')}}">
                     فروشگاه ها
                 </a>
             </li>
@@ -104,15 +104,14 @@
                     <a class="nav-link" href="{{route('register_buyer')}}">خرید امن شما !</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+                    <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions"
+                       data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         ورژن: 0.3702
                     </a>
                 </li>
             </ul>
         </div>
-
-
 
 
     </header>
@@ -126,13 +125,14 @@
 <section class="content {{isset($bib) ? $bib : ''}}">
     @if(!isset($hide))
         <div class="container">
-            <div class="row clearfix bread-crumb"
-                 @if(request()->is('seller/dashboard'))
-            data-step="1" data-intro="در شرخر، شما برای فروش نیاز به ثبت شماره شِبا و ارسال لینک خرید برای مشتری دارید، همین. لطفا تا انتهای آموزش با من باشید."
-                @endif
-            >
+            <div class="row clearfix bread-crumb">
 
-                <div class="col-lg-7 col-md-6 col-sm-12">
+                <div class="col-lg-7 col-md-6 col-sm-12"
+                     @if(request()->is('seller/dashboard'))
+                     data-step="1"
+                     data-intro="در شرخر، شما برای فروش نیاز به ثبت شماره شِبا و ارسال لینک خرید برای مشتری دارید، همین. لطفا تا انتهای آموزش با من باشید."
+                        @endif
+                >
                     <h2>{{ ucfirst($title ?? '') }}</h2>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
                                 class="zmdi zmdi-sort-amount-desc"></i></button>
@@ -273,6 +273,7 @@
             });
         @endif
 
+
     });
 
 
@@ -281,16 +282,18 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B3RQ6EQG0M"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-B3RQ6EQG0M');
 
 
-
-
 </script>
-<script  src="{{asset('assets/plugins/intro.js-master/introjs.js')}}"></script>
+<script src="{{asset('assets/plugins/intro.js-master/introjs.js')}}"></script>
 </body>
 
 </html>

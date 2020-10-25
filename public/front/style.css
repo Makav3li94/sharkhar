@@ -7,7 +7,6 @@
 :: Version: v1.0
 :: Created: 11/03/2017
 -------------------------- */
-
 /* --- [Master Stylesheet] ----
 :: 1.0 Base CSS Start
 :: 2.0 Header Area CSS
@@ -24,7 +23,6 @@
 :: 13.0 Contact Area CSS Start
 :: 14.0 Footer Area CSS Start
 -------------------------- */
-
 @import 'css/bootstrap.min.css';
 @import 'css/animate.css';
 @import 'css/magnific-popup.css';
@@ -33,10 +31,12 @@
 @import 'css/font-awesome.min.css';
 @import 'css/themify-icons.css';
 @import 'css/ionicons.min.css';
+
 @font-face {
     font-family: "IRANSansDN";
     src: url('fonts/iransansdn.ttf') format('truetype');
 }
+
 /* --------------------------
 :: 1.0 Base CSS Start
 -------------------------- */
@@ -250,7 +250,7 @@ p {
     margin-bottom: 60px;
 }
 
-.container{
+.container {
     text-align: right;
 }
 
@@ -263,7 +263,7 @@ p {
 }
 
 .line-shape {
-    margin-left: calc(50% - 40px);
+    margin-left: calc(50% - 40px) !important;
 }
 
 .table {
@@ -333,6 +333,9 @@ p {
 /* --------------------------
 :: 2.0 Header Area CSS
 -------------------------- */
+header {
+    direction: rtl !important;
+}
 
 .header_area {
     left: 0;
@@ -372,7 +375,7 @@ p {
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
-    padding: 35px 15px;
+    padding: 15px 15px;
 }
 
 
@@ -383,7 +386,6 @@ p {
 .sing-up-button {
     text-align: right;
     width: auto;
-    float: left;
 }
 
 .sing-up-button > a {
@@ -397,7 +399,6 @@ p {
     text-align: center;
     border-radius: 24px 24px 24px 24px;
     font-size: 0.8rem;
-    margin-left: 10px;
 }
 
 .sing-up-button > a:hover {
@@ -414,8 +415,8 @@ p {
 .header_area.sticky {
     background-color: #833ab4;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    height: 70px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding-top: 15px;
     position: fixed;
     top: 0;
     z-index: 99;
@@ -428,6 +429,7 @@ p {
 .header_area.sticky .menu_area #nav .nav-link {
     padding: 23px 15px;
 }
+
 .header_area.sticky .navbar {
     padding: 0;
 }
@@ -479,10 +481,12 @@ p {
     text-align: left;
     padding-bottom: 15px;
 }
-.get-start-area{
+
+.get-start-area {
     direction: rtl;
     text-align: left;
 }
+
 .get-start-area .email {
     background: #9572e8;
     height: 50px;
@@ -559,9 +563,11 @@ p {
 .wellcome-heading {
     margin-bottom: 100px;
 }
-.wellcome-heading p{
+
+.wellcome-heading p {
     text-align: left;
 }
+
 /* --------------------------
 :: 4.0 Special Area CSS
 -------------------------- */
@@ -604,7 +610,7 @@ p {
 
 .single-special:hover {
     -webkit-box-shadow: 0 10px 90px rgba(0, 0, 0, 0.08);
-            box-shadow: 0 10px 90px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 90px rgba(0, 0, 0, 0.08);
 }
 
 .single-special p {
@@ -1181,9 +1187,10 @@ p {
 /* --------------------------
 :: 13.0 Contact Area CSS Start
 -------------------------- */
-#contact{
+#contact {
     direction: rtl;
 }
+
 .address-text > p,
 .phone-text > p,
 .email-text > p {
@@ -1196,15 +1203,18 @@ p {
 .email-text > p > span {
     color: #405de6;
 }
+
 .footer-contact-area {
     padding: 60px 0 60px 0;
 }
-.footer-contact-area .section-heading{
+
+.footer-contact-area .section-heading {
     text-align: right;
     direction: rtl;
 }
+
 .footer-contact-area .line-shape {
-    margin-left: 0;
+    margin-right: calc(50% - 40px) !important;
 }
 
 .footer-contact-area .heading-text > p {
@@ -1215,9 +1225,11 @@ p {
     margin-bottom: 50px;
 
 }
-.footer-contact-area .contact_from{
+
+.footer-contact-area .contact_from {
     direction: rtl;
 }
+
 #name {
     font-size: 18px;
     padding: 15px 15px;
@@ -1326,4 +1338,151 @@ p {
 
 .copyright-text > p {
     margin-bottom: 0;
+}
+
+.checkbox, .radio {
+    text-align: right;
+    margin-bottom: 12px;
+}
+
+.checkbox input[type="checkbox"], .radio input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.authentication .auth_form .checkbox label {
+    font-size: 13px;
+}
+
+.checkbox label, .radio label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-right: 33px;
+    line-height: 27px;
+}
+
+.checkbox label::before, .checkbox label::after {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0;
+    cursor: pointer;
+    border-radius: 3px;
+    top: 0;
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    -webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    -ms-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+}
+
+.authentication .auth_form .checkbox label {
+    font-size: 13px;
+}
+
+.login-button {
+    background-color: #e1306c;
+    color: #fff;
+    font-weight: 200;
+    display: inline-block;
+    border: none;
+    height: 40px;
+    min-width: 100px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 24px 24px 24px 24px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.new-button {
+    background-color: #405de6;
+    color: #fff !important;
+    font-weight: 200;
+    display: inline-block;
+    border: none;
+    height: 40px;
+    min-width: 115px;
+    line-height: 37px;
+    text-align: center;
+    border-radius: 24px 24px 24px 24px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.modal-content {
+    color: #726a84;
+}
+
+.custom-control-label::before {
+    position: absolute;
+    top: .25rem;
+    right: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    content: "";
+    background-color: #fff;
+    border: #adb5bd solid 1px;
+}
+
+.custom-control {
+    position: relative;
+    display: block;
+    min-height: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.modal-body {
+    margin: 15px 20px;
+    padding: 0;
+}
+
+.modal-dialog {
+    max-width: 400px;
+    margin: 7.75rem 0 0 3rem;
+}
+
+.modal-body input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #726a84;
+    opacity: 1; /* Firefox */
+}
+
+small {
+    text-align: right !important;
+    margin-bottom: 5px;
+}
+
+.fornow {
+    filter: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    max-width:60%;
+
+    text-align: center;
+    z-index: 95;
+    font-size: 22px;
+    color: #405de6;
+    padding: 60px;
+    background-color: #fff;
+
+}
+
+#map {
+    height: 400px;
 }
