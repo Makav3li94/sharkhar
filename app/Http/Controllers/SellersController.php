@@ -149,7 +149,16 @@ class SellersController extends Controller {
 	public function destroy( Seller $seller ) {
 		//
 	}
+	public function resendCode( Request $request ) {
 
+		$preRegister  = PreRegister::where( 'mobile', $request->mobile )->first();
+		$toNum        = $request->mobile;
+		$pattern_code = "48ty4nm4q5";
+		$input_data   = array( "code" => "{$preRegister->code}" );
+		$result       = $this->sentWithPattern( [ $toNum ], $pattern_code, $input_data );
+
+		return response()->json( [ 'sms_send' => 'success', 'result' => $result ] );
+	}
 
 	protected function nationalCodeCheck( $code ) {
 		if ( ! preg_match( '/^[0-9]{10}$/', $code ) ) {

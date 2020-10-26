@@ -212,33 +212,35 @@
                                             @endif
                                         </div>
                                     </div>
-                                    {{--                                    @if($seller->is_verified == 1)--}}
-                                    <div class="col-lg-12">
-                                        <label>انتخاب روش پیش فرض پرداخت</label>
-                                        <div class="input-group ">
-                                            <div class="radio inlineblock m-r-20">
-                                                <input type="radio" name="payment_method" id="direct" class="with-gap"
-                                                       value="1" {{$seller->bank_status == 1 ? 'checked=""': ''}}>
-                                                <label for="direct">واریز مستقیم به حساب شما</label>
-                                            </div>
-                                            <div class="radio inlineblock">
-                                                <input type="radio" name="payment_method" id="police" class="with-gap"
-                                                       value="0" {{$seller->bank_status == 0 ? 'checked=""': ''}}>
-                                                <label for="police">استفاده از سیستم واسطه شرخر</label>
+                                    @if($seller->is_verified == 1)
+                                        <div class="col-lg-12">
+                                            <label>انتخاب روش پیش فرض پرداخت</label>
+                                            <div class="input-group ">
+                                                <div class="radio inlineblock m-r-20">
+                                                    <input type="radio" name="payment_method" id="direct"
+                                                           class="with-gap"
+                                                           value="1" {{$seller->bank_status == 1 ? 'checked=""': ''}}>
+                                                    <label for="direct">واریز مستقیم به حساب شما</label>
+                                                </div>
+                                                <div class="radio inlineblock">
+                                                    <input type="radio" name="payment_method" id="police"
+                                                           class="with-gap"
+                                                           value="0" {{$seller->bank_status == 0 ? 'checked=""': ''}}>
+                                                    <label for="police">استفاده از سیستم واسطه شرخر</label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-{{--                                    <div class="col-lg-12" hidden>--}}
-{{--                                        <label>محدود کردن متد پرداخت</label>--}}
-{{--                                        <div class="input-group ">--}}
-{{--                                            <div class="checkbox">--}}
-{{--                                                <input id="checkbox" name="restrict_payment" type="checkbox" value="on">--}}
-{{--                                                <label for="checkbox">مشتری حق استفاده از سیستم واسطه را نداشته--}}
-{{--                                                    باشد.</label>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-                                    {{--                                    @endif--}}
+                                        {{--                                    <div class="col-lg-12" hidden>--}}
+                                        {{--                                        <label>محدود کردن متد پرداخت</label>--}}
+                                        {{--                                        <div class="input-group ">--}}
+                                        {{--                                            <div class="checkbox">--}}
+                                        {{--                                                <input id="checkbox" name="restrict_payment" type="checkbox" value="on">--}}
+                                        {{--                                                <label for="checkbox">مشتری حق استفاده از سیستم واسطه را نداشته--}}
+                                        {{--                                                    باشد.</label>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                        </div>--}}
+                                        {{--                                    </div>--}}
+                                    @endif
                                     <div class="col-md-12 mb-3">
                                         <small class="text-info">در صورتی که فروشگاه فیزیکی دارید، آدرس آنرا وارد
                                             نمایید.

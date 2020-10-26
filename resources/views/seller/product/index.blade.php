@@ -144,9 +144,7 @@
                                             </td>
 
                                             <td>
-                                                <button class="btn btn-sm btn-info"
-                                                        id="{{$product->id}}-copy-link"
-                                                        data-clipboard-text="{{route('product',$product->id)}}">
+                                                <button class="btn btn-sm btn-info clipboard-btn" data-clipboard-text="{{route('product',$product->id)}}">
                                                     <i class="zmdi zmdi-copy"></i>
                                                 </button>
                                                 ||
@@ -210,6 +208,16 @@
     <script>
         $(document).ready(function () {
 
+            var btns = document.querySelectorAll('button');
+            var clipboard = new ClipboardJS(btns);
+
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+
+            clipboard.on('error', function(e) {
+
+            });
 
             if (RegExp('multipage', 'gi').test(window.location.search)) {
                 introJs().setOption('doneLabel', 'صفحه بعد').start().oncomplete(function () {
@@ -374,16 +382,16 @@
                 });
         }
 
-
-        function copyToClipboard(id) {
-
-            var copyText = document.getElementById(id);
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
-            document.execCommand("copy");
-            alert("لینک کپی شد." + copyText.value);
-            return false;
-        }
+        //
+        // function copyToClipboard(id) {
+        //
+        //     var copyText = document.getElementById(id);
+        //     copyText.select();
+        //     copyText.setSelectionRange(0, 99999);
+        //     document.execCommand("copy");
+        //     alert("لینک کپی شد." + copyText.value);
+        //     return false;
+        // }
 
 
 

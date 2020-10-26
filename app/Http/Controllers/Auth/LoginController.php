@@ -35,7 +35,7 @@ class LoginController extends Controller {
 		} elseif ( auth()->guard( 'buyer' )->check() == 1 ) {
 			$route = 'login_buyer';
 		} else {
-			$route = 'login_admin';
+			$route = 'admin_login';
 		}
 		$this->performLogout( $request );
 
