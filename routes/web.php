@@ -153,6 +153,10 @@ Route::name( 'seller.' )->prefix( 'seller' )->middleware( 'auth' )->group( funct
 		'create',
 		'show'
 	] );;
+	Route::resource( 'police', \App\Http\Controllers\PoliceController::class )->except( [
+		'create',
+		'show'
+	] );;
 	Route::resource( 'products', \App\Http\Controllers\ProductsController::class )->except( [
 		'create',
 		'show'

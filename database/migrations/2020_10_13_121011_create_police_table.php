@@ -21,10 +21,10 @@ class CreatePoliceTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('transaction_id');
             $table->tinyInteger('is_verified')->default(1)->comment('1 for natural 2 for verifie and 0 for fuck up shit ');
-            $table->text('buyer_body');
-            $table->string('buyer_file');
-            $table->text('seller_reply');
-	        $table->string('seller_file');
+            $table->text('buyer_body')->nullable();
+            $table->string('buyer_file')->nullable();
+            $table->text('seller_reply')->nullable();
+	        $table->string('seller_file')->nullable();
 	        $table->tinyInteger('admin_vote')->nullable()->comment('0 vote to buyer and 1 vote to seller');
             $table->timestamps();
         });

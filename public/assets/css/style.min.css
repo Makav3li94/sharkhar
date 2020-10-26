@@ -125,7 +125,9 @@ fieldset[disabled] .navbar .navbar-nav > a.btn.active {
     color: #e9ecef;
     border-color: #e9ecef
 }
-
+.btn.btn-simple{
+    color: #222;
+}
 .btn.btn-simple:hover,
 .btn.btn-simple:focus,
 .btn.btn-simple:active,

@@ -112,31 +112,36 @@
                 </div>
                 <div class="p-2">
                     <div class="sing-up-button d-flex justify-content-start">
-                        @if(auth()->guard('buyer')->check())
-                            <div class="p-2">
-                                <div class="sing-up-button ">
 
-                                    <a href="{{route('register_buyer')}}">ورود به پلتفرم</a>
-
-                                </div>
-                            </div>
-                        @else
-
-                        @endif
                         <div class="p-2">
                             <div class="sing-up-button ">
                                 @if(auth()->guard('web')->check())
                                     <a href="{{route('login')}}">ورود به پلتفرم</a>
                                 @else
                                     <a href="{{route('register')}}" data-toggle="modal" data-target="#colorModal">ورود /
-                                        ثبت
-                                        نام </a>
+                                        ثبت نام </a>
                                 @endif
 
 
                             </div>
                         </div>
+                        @if(auth()->guard('buyer')->check())
+                            <div class="p-2">
+                                <div class="sing-up-button ">
 
+                                    <a href="{{route('login_buyer')}}">ورود به پلتفرم</a>
+
+                                </div>
+                            </div>
+                        @else
+                            <div class="p-2">
+                                <div class="sing-up-button ">
+
+                                    <a href="{{route('register_buyer')}}">خریدار</a>
+
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
 
@@ -211,9 +216,9 @@
 
 <!-- ***** Footer Area Start ***** -->
 <footer class="text-center pt-lg-5 pb-5 clearfix" id="contact">
-   <div class="mb-4 mt-2 p-3">
-       <img class=" overflow-hidden" src="{{asset('front/img/footer_logos.png')}}" alt="نماد ها">
-   </div>
+    <div class="mb-4 mt-2 p-3">
+        <img class=" overflow-hidden" src="{{asset('front/img/footer_logos.png')}}" alt="نماد ها">
+    </div>
 
     <!-- footer logo -->
     <div class="footer-text">
@@ -276,17 +281,24 @@
     $('#colorModal').modal('show');
     @endif
 
+    $(document).ready(function () {
         window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-    gtag('js', new Date());
+        gtag('js', new Date());
 
-    gtag('config', 'G-B3RQ6EQG0M');
+        gtag('config', 'G-B3RQ6EQG0M');
+    })
 
-
+    function loadDeferredIframe() {
+        // this function will load the Google homepage into the iframe
+        var iframe = document.getElementById("my-deferred-iframe");
+        iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.605859596771!2d51.34522911561607!3d35.71131558018737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e07555a0b72ab%3A0x66e6d9605cee51f4!2sSharif%20Energy%20Research%20Institute!5e0!3m2!1sen!2sua!4v1603650460553!5m2!1sen!2sua" // here goes your url
+    };
+    window.onload = loadDeferredIframe;
 </script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script

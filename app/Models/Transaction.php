@@ -26,6 +26,11 @@ class Transaction extends Model
 		return $this->belongsTo( Order::class );
 	}
 
+
+	public function police() {
+		return $this->hasOne( Police::class );
+	}
+
 	public function getStatusAttribute( $value ) {
 
 		if ( $value == 1 ) {

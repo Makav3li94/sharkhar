@@ -1,27 +1,8 @@
-@extends('layouts.admin_layout')
+@extends('layouts.admin_layout',['title' => 'اطلاعات بازخورد','b_level2'=>'اطلاعات بازخورد','back'=>'true'])
 
 @section('content')
-    <div class="body_scroll">
-        <div class="block-header">
-            <div class="row">
-                <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>بازخورد</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('buyer.dashboard')}}"><i
-                                        class="zmdi zmdi-home"></i> {{auth()->guard('buyer')->user()->title}}</a></li>
-                        <li class="breadcrumb-item active">اطلاعات بازخورد</li>
-                    </ul>
-                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
-                                class="zmdi zmdi-sort-amount-desc"></i></button>
-                </div>
-                <div class="col-lg-5 col-md-6 col-sm-12">
-                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i
-                                class="zmdi zmdi-arrow-right"></i></button>
-                </div>
-            </div>
-        </div>
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row clearfix">
                 <div class="col-lg-4 col-md-12">
                     <div class="card mcard_4">
@@ -145,37 +126,37 @@
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12">
-{{--                    <div class="card">--}}
-{{--                        <div class="header">--}}
-{{--                            <h3><strong>ارسال</strong>فیدبک ( تجربه خرید شما از این فروشنده چطور بود ؟ ) </h3>--}}
-{{--                        </div>--}}
-{{--                        <div class="body">--}}
-{{--                            <div class="input-group  mb-5">--}}
-{{--                                <textarea name="body" rows="2" class="w-100" disabled></textarea>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-12">--}}
-{{--                                <label>امتیاز شما به خرید</label>--}}
-{{--                                <div class=" rating">--}}
-{{--                                    <label>--}}
-{{--                                        <input type="radio" name="stars" value="1"/>--}}
-{{--                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>--}}
-{{--                                    </label>--}}
-{{--                                    <label>--}}
-{{--                                        <input type="radio" name="stars" value="2"/>--}}
-{{--                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>--}}
-{{--                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>--}}
-{{--                                    </label>--}}
-{{--                                    <label>--}}
-{{--                                        <input type="radio" name="stars" value="3"/>--}}
-{{--                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>--}}
-{{--                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>--}}
-{{--                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>--}}
-{{--                                    </label>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                    <div class="card">
+                        <div class="header">
+                            <h3><strong>ارسال</strong>فیدبک ( تجربه خرید شما از این فروشنده چطور بود ؟ ) </h3>
+                        </div>
+                        <div class="body">
+                            <div class="input-group  mb-5">
+                                <textarea name="body" rows="2" class="w-100" disabled></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <label>امتیاز شما به خرید</label>
+                                <div class=" rating">
+                                    <label>
+                                        <input type="radio" name="stars" value="1"/>
+                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stars" value="2"/>
+                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stars" value="3"/>
+                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="icon"><i class="zmdi zmdi-star"></i></span>
+                                    </label>
+                                </div>
+                            </div>
 
-{{--                        </div>--}}
-{{--                    </div>--}}
+                        </div>
+                    </div>
                     <div class="card">
                         <div class="header">
                             <h2><strong>بازخورد</strong> شما</h2>

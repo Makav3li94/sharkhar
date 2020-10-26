@@ -153,9 +153,21 @@
                                             </td>
                                             <td>{{$transaction->verify_code ?? ''}}</td>
                                             <td>
-                                                {{$transaction->transaction_type == 1 ? 'مستقیم' : 'واسط'}}
+                                                @if($transaction->transaction_type == 1)
+                                                    مستقیم
+                                                @else
+                                                    واسط |
+                                                    @if($transaction->police->is_verified == 'green')
+                                                        <span class="col-{{$transaction->police->is_verified}}">  تایید شده</span>
+                                                    @elseif($transaction->police->is_verified == 'warning')
+                                                        <span class="col-{{$transaction->police->is_verified}}">  در حال بررسی</span>
+                                                    @else
+                                                        <span class="col-{{$transaction->police->is_verified}}">گزارش مشکل</span>
+                                                    @endif
+                                                @endif
                                                 @if($transaction->transaction_type == 0)|
-                                                    <a href="" class="btn btn-sm btn-info">پیگیری</a>
+                                                <a href="{{route('seller.police.edit',$transaction->police->id)}}"
+                                                   class="btn btn-sm btn-info">پیگیری</a>
                                                 @endif
                                             </td>
                                         </tr>

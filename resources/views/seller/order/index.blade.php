@@ -116,9 +116,10 @@
                                         <th>نام محصول</th>
                                         <th>قیمت</th>
                                         <th>خریدار</th>
-                                        <th>شماره تلفن خریدار</th>
+                                        <th>تلفن</th>
                                         <th> تحویل</th>
                                         <th> پرداخت</th>
+                                        <th> نوع</th>
                                         <th>عملیات</th>
                                     </tr>
                                     </thead>
@@ -136,7 +137,7 @@
                                                 <img class="nono" src="{{asset($order->product->image_thumb)}}"
                                                      width="35" alt="Product img">
                                             </td>
-                                            <td>{{\Illuminate\Support\Str::limit($order->product->title,55)}}</td>
+                                            <td>{{\Illuminate\Support\Str::limit($order->product->title,20)}}</td>
                                             <td>{{$order->product->price}}</td>
                                             <td>{{$order->buyer->name}}</td>
                                             <td>{{$order->buyer->mobile}}</td>
@@ -144,6 +145,9 @@
                                                         تحویل شده @else درحال ارسال @endif</span></td>
                                             <td><span class="col-{{$order->payment_status}}">@if($order->payment_status == 'green')
                                                         پرداخت شده @else پرداخت نشده @endif</span></td>
+                                            <td><span class="col-{{$order->payment_method}}">@if($order->payment_method == '۱')
+                                                        مستقیم @else واسطه @endif</span></td>
+
                                             <td>
                                                 <a href="{{route('seller.orders.edit',$order->id)}}" title="جزئیات"
                                                    class="btn btn-default waves-effect waves-float btn-sm waves-green"><i

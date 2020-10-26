@@ -12,7 +12,7 @@
                 <div class="col-12 col-md">
                     <div class="wellcome-heading text-right" style="direction: rtl">
                         <h2>شرخر: فروش آسان، خرید امن </h2>
-                                            <h3>شره !</h3>
+                                            <h3>شرخر !</h3>
                         <p>همه چیزی که برای مدیریت، آنالیز، و رشد کسب و کارتون نیاز دارید.</p>
 {{--                        <p>دیگه نگران نباشید  پیج جنسو میفرسته، درست میفرسته، چی می فرسته :)</p>--}}
                     </div>
@@ -343,7 +343,7 @@
                 <div class="col-md-6">
 
                     <div class="footer-text">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.605859596771!2d51.34522911561607!3d35.71131558018737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e07555a0b72ab%3A0x66e6d9605cee51f4!2sSharif%20Energy%20Research%20Institute!5e0!3m2!1sen!2sua!4v1603650460553!5m2!1sen!2sua" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe id="my-deferred-iframe" src="about:blank" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                     {{--                <div class="address-text">--}}
                     {{--                    <p><span>Address:</span> 40 Baria Sreet 133/2 NewYork City, US</p>--}}

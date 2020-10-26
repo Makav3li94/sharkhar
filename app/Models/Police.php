@@ -28,4 +28,13 @@ class Police extends Model {
 		return $this->belongsTo( Transaction::class );
 	}
 
+	public function getIsVerifiedAttribute( $value ) {
+		if ($value  == 1 ) {
+			return $value = 'blue';
+		} elseif($value == 2) {
+			return $value = 'green';
+		}else{
+			return $value = 'red';
+		}
+	}
 }
