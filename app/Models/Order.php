@@ -27,6 +27,10 @@ class Order extends Model {
 		return $this->belongsTo( Transaction::class );
 	}
 
+	public function police() {
+		return $this->hasOne( Police::class );
+	}
+
 	public function getDeliverStatusAttribute( $value ) {
 		if ($value  == 1 ) {
 			return $value = 'green';

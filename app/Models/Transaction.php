@@ -30,8 +30,10 @@ class Transaction extends Model
 
 		if ( $value == 1 ) {
 			return $value = 'green';
-		} else {
+		} elseif($value == 0) {
 			return $value = 'red';
+		}else{
+			return $value = 'info';
 		}
 	}
 }

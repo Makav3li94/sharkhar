@@ -16,8 +16,11 @@ class CreatePoliceTable extends Migration
         Schema::create('police', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('seller_id')->index();
-            $table->unsignedBigInteger('user_id_id');
+            $table->unsignedBigInteger('buyer_id');
             $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('transaction_id');
+            $table->tinyInteger('is_verified')->default(1)->comment('1 for natural 2 for verifie and 0 for fuck up shit ');
             $table->text('buyer_body');
             $table->string('buyer_file');
             $table->text('seller_reply');

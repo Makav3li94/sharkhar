@@ -8,8 +8,8 @@
 
             <div class="card">
                 <div class="body">
-                    <div class="d-flex ">
-                        <div class="p-2 ml-auto">
+                    <div class="d-flex justify-content-between">
+                        <div class="p-2 ">
                             <h5><strong>شماره سفارش: </strong> #{{$order->id}}</h5>
                         </div>
 
@@ -82,22 +82,41 @@
                     <form action="{{route('payment')}}" method="post">
                         <input type="hidden" name="order_id" value="{{$order->id}}">
                         <div class="row">
-
                             @csrf
                             <div class="col-lg-4 col-sm-4 mb-5 ">
                                 <ul class="list-unstyled price-list">
-                                    <li><strong>قیمت محصول: </strong>
-                                        <span>{{$order->qty}} * {{number_format($order->product->price)}}</span>
+                                    <li class="d-flex justify-content-between">
+                                        <div class="">
+                                            <strong>قیمت محصول: </strong>
+                                        </div>
+                                        <div class="">
+                                            <span>{{$order->qty}} * {{number_format($order->product->price)}}</span>
+                                        </div>
                                     </li>
-                                    <li><strong>قیمت کل: </strong>
-                                        <span> {{number_format(($order->price) - ($order->shipping_cost)) ?? 0}}</span>
+                                    <li class="d-flex justify-content-between">
+                                        <div class="">
+                                            <strong>قیمت کل: </strong>
+                                        </div>
+                                        <div class="">
+                                            <span> {{number_format(($order->price) - ($order->shipping_cost)) ?? 0}}</span>
+                                        </div>
                                     </li>
-                                    <li><strong>هزینه ارسال: </strong>
-                                        <span>{{$order->shipping_cost ?? 0}}</span>
+                                    <li class="d-flex justify-content-between">
+                                        <div class="">
+                                            <strong>هزینه ارسال: </strong>
+                                        </div>
+                                        <div>
+                                            <span>{{$order->shipping_cost ?? 0}}</span>
+                                        </div>
                                     </li>
 
-                                    <li class="text-danger"><strong>تخفیف: </strong>
-                                        <span>{{number_format($order->discount) ?? 0}}</span>
+                                    <li class="d-flex justify-content-between text-danger">
+                                        <div>
+                                            <strong>تخفیف: </strong>
+                                        </div>
+                                        <div>
+                                            <span>{{number_format($order->discount) ?? 0}}</span>
+                                        </div>
                                     </li>
                                 </ul>
                                 <hr>
@@ -109,12 +128,29 @@
 
                             </div>
                             <div class="col-lg-5 col-sm-8 ">
-                                <textarea name="note" class="form-control" id="" rows="3" placeholder="اگر نکته ای در خصوص خرید مد نظرتون هست اینجا یادداشت کنید"></textarea>
+                                <textarea name="note" class="form-control" id="" rows="3"
+                                          placeholder="اگر نکته ای در خصوص خرید مد نظرتون هست اینجا یادداشت کنید"></textarea>
                             </div>
 
 
                         </div>
-                        <div class="row mt-5">
+                        <div class="row mt-2">
+                            <div class="col-lg-12">
+                                <div class="form-group text-center">
+                                    <div class="radio inlineblock m-r-20">
+                                        <input type="radio" name="payment_method" id="direct" class="with-gap" value="0"
+                                               checked="">
+                                        <label for="direct">واریز مستقیم به فروشنده</label>
+                                    </div>
+                                    <div class="radio inlineblock">
+                                        <input type="radio" name="payment_method" id="police" class="with-gap" value="1"
+                                        >
+                                        <label for="police">استفاده از سیستم واسطه شرخر</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">
                                     پرداخت

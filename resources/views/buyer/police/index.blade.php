@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'لیست تراکنش های مالی','b_level2'=>'لیست تراکنش های مالی','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'پیگیری سفارشات','b_level2'=>'پیگیری سفارشات','back'=>'true'])
 @section('styles')
     <link rel="stylesheet" href="{{asset('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
     <style>
@@ -48,42 +48,34 @@
             Label the data
         You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
             */
-            td:nth-of-type(1):before {
-                content: "ردیف";
-            }
-
             td:nth-of-type(2):before {
-                content: "خریدار";
+                content: "تصویر";
             }
-
-            td:nth-of-type(3):before {
-                content: "تلفن";
-            }
-
 
             td:nth-of-type(4):before {
-                content: "شماره سفارش";
+                content: "قیمت";
             }
 
-            td:nth-of-type(5):before {
-                content: "فیمت";
+            td:nth-of-type(4):before {
+                content: "فروشنده";
             }
 
             td:nth-of-type(6):before {
-                content: "وضعیت";
+                content: "تحویل";
             }
 
             td:nth-of-type(7):before {
-                content: "پیگیری";
+                content: "پرداخت";
             }
 
             td:nth-of-type(8):before {
-                content: "تراکتش";
+                content: "عملیات";
             }
 
             .table td, .table th {
                 text-align: left;
             }
+
         }
 
         @media screen and ( max-width: 520px ) {
@@ -103,60 +95,50 @@
     </style>
 @endsection
 @section('content')
-    @if(count($transactions) == 1)
-        <div class="container">
-            <div class="alert alert-danger"> {{auth()->user()->name}} ،ممنون بابت استفاده! تراکنش شما شِبا شده و مطابق
-                سیکل پرداخت شاپرک تصفیه خواهد شد.
-            </div>
-        </div>
-    @endif
+
     <div class="container">
         <div class="row clearfix">
-            @if(count($transactions) > 0)
+            @if(count($orders) > 0)
                 <div class="card">
                     <div class="body">
                         <div class="col-lg-12">
 
-                            <div>
-                                {{--                            <table class="table">--}}
-                                <table class="table js-basic-example dataTable">
+                            <div class="">
+                                <table class="table ">
                                     <thead>
                                     <tr>
-                                        <th>ردیف</th>
-                                        <th>خریدار</th>
-                                        <th>تلفن</th>
-                                        <th>شماره سفارش</th>
+                                        <th class="nono">ردیف</th>
+                                        <th>تصویر</th>
                                         <th>قیمت</th>
-                                        <th>وضعیت</th>
-                                        <th>کد پیگیری</th>
-                                        <th>نوع تراکتش</th>
+                                        <th>فروشنده</th>
+                                        <th class="nono"> شماره تلفن فروشنده</th>
+                                        <th>نحویل</th>
+                                        <th>تایید جنس</th>
+                                        <th>عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($transactions as $key=>$transaction)
+                                    @foreach($orders as $key=>$order)
                                         <tr>
-                                            <td>{{$key + 1}}</td>
-                                            <td>{{$transaction->buyer->name}}</td>
-                                            <td>{{$transaction->buyer->mobile}}</td>
-                                            <td>{{$transaction->order->id}}</td>
-                                            <td>{{number_format($transaction->price)}}</td>
+                                            <td class="nono">{{$key + 1}}</td>
+                                            <td><img src="{{asset($order->product->image_thumb)}}" width="48"
+                                                     alt="Product img"></td>
+                                            <td>{{$order->product->price}}</td>
+                                            <td>{{$order->seller->name}}</td>
+                                            <td class="nono">{{$order->seller->mobile}}</td>
                                             <td>
-                                            <span class="col-{{$transaction->status}}">
-                                                @if($transaction->status == 'green')
-                                                    پرداخت شده
-                                                @elseif($transaction->status == 'info')
-                                                    سیستم واسطه
-                                                @else
-                                                    پرداخت نشده
-                                                @endif
-                                            </span>
+                                                <span class="col-{{$order->deliver_status}}">
+                                                    @if($order->deliver_status == 'green')
+                                                        تحویل گرفتم @else تحویل نگرفتم @endif
+                                                </span>
                                             </td>
-                                            <td>{{$transaction->verify_code ?? ''}}</td>
                                             <td>
-                                                {{$transaction->transaction_type == 1 ? 'مستقیم' : 'واسط'}}
-                                                @if($transaction->transaction_type == 0)|
-                                                    <a href="" class="btn btn-sm btn-info">پیگیری</a>
-                                                @endif
+                                                <span class="col-{{$order->payment_status}}">@if($order->payment_status == 'green')
+                                                        پرداخت کردم @else پرداخت نکردم @endif</span></td>
+                                            <td>
+                                                <a href="{{route('buyer.police.edit',$order->id)}}" title="جزئیات"
+                                                   class="btn btn-default waves-effect waves-float btn-sm waves-green"><i
+                                                            class="zmdi zmdi-edit"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -170,36 +152,30 @@
                 <div class="card">
                     <div class="body">
                         <p class="text-primary text-center m-0">
-                            فعلا تراکنشی ندارید :(
+                            فعلا سفارشی ندادید :(
                         </p>
+
                     </div>
                 </div>
             @endif
-
+            @if($orders->hasPages()  )
+                <div class="card">
+                    <div class="body">
+                        {{$orders->links('vendor.pagination.custom')}}
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
-@endsection
 
+@endsection
 
 @section('scripts')
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
     <script>
-        $(document).ready(function () {
-            $('.js-basic-example').dataTable({
-                "bSort": false
-            });
+        $(function () {
+            $('.data_table').DataTable();
         });
-        $(document).ready(function () {
-
-
-            if (RegExp('multipage', 'gi').test(window.location.search)) {
-                introJs().setOption('doneLabel', 'صفحه بعد').start().oncomplete(function () {
-                    window.location.href = '{{ url("seller/feedbacks/?multipage=true") }}';
-                });
-            }
-
-        });
-
     </script>
 @endsection

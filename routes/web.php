@@ -20,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 //		'password'=>\Illuminate\Support\Facades\Hash::make('Parham@19171363'),
 //	]);
 //});
-Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
+//Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
+Route::get('test', function (){
+	echo \Illuminate\Support\Facades\Hash::make('1qaz!QAZ');
+});
 
 Route::get( '/', function () {
 //	$url      = "https://www.instagram.com/parnasite/?__a=1";
@@ -47,6 +50,9 @@ Route::post( 'message', function () {
 
 Auth::routes();
 Route::get( '/shops', [ \App\Http\Controllers\ShopController::class, 'shop' ] )->name( 'shop' );
+Route::resource( '/blogs',  \App\Http\Controllers\BlogController::class  )->except(['create']);
+Route::get('/blogs/{slug}',[\App\Http\Controllers\BlogController::class,'show'] );
+Route::get('/blog/{category_slug}',[\App\Http\Controllers\BlogController::class,'category'] );
 Route::get( '/vendors/{name}', [ \App\Http\Controllers\ShopController::class, 'vendor' ] )->name( 'vendor' );
 Route::get( '/product/{product}/{optional_price?}', [ \App\Http\Controllers\ShopController::class, 'single' ] )->name( 'product' );
 Route::get( '/payment/{product}', [ \App\Http\Controllers\TransactionsController::class, 'payment' ] )->name( 'payment_view' );
@@ -175,6 +181,11 @@ Route::name( 'buyer.' )->prefix( 'buyer' )->middleware( 'auth:buyer' )->group( f
 		'update'
 	] )->name( 'update' );
 	Route::resource( 'orders', \App\Http\Controllers\OrdersController::class )->except( [
+		'create',
+		'show'
+	] );;
+
+	Route::resource( 'police', \App\Http\Controllers\PoliceController::class )->except( [
 		'create',
 		'show'
 	] );;

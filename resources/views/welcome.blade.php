@@ -12,8 +12,11 @@
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
     <!-- Title -->
+    <meta name="description" content="دستیار فروش شرخر، خرید امن فروش آسان">
+    <meta name="keywords" content="شرخر, اینستاگرام, اینستا گرام, پیج فروشگاهی, فروشگاه انلاین">
+    <meta name="author" content="Parham Akbari">
     <meta name="theme-color" content="#7f4ee0">
-    <title>پلتفرم شرخر - دستیار فروش شما !</title>
+    <title>دستیار فروش شرخر، خرید امن فروش آسان</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{asset('assets/images/fav.png')}}">
@@ -224,15 +227,18 @@
                 <li class="mb-3">
                     <i class="ti-location-pin p-2"></i>
                     آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳
-
+                </li>
+                <br>
+                <li class="mb-3">
+                    <i class=" ti-headphone-alt  p-2"></i>
+                    تلفن: ۶۷ ۷۳ ۲۸۴۳-۰۲۱ - : ۶۲ ۸۸ ۵۶۰۷-۰۲۱
                 </li>
                 <br>
                 <li>
-                    <i class=" ti-headphone-alt  p-2"></i>
+                    <i class=" ti-email  p-2"></i>
+                    sharkhar@info.net
 
-                    تلفن: ۶۷ ۷۳ ۲۸۴۳-۰۲۱
                 </li>
-
 
             </ul>
         </nav>

@@ -20,4 +20,12 @@ class Police extends Model {
 	public function buyer() {
 		return $this->belongsTo( Buyer::class );
 	}
+
+	public function order() {
+		return $this->belongsTo( Order::class );
+	}
+	public function transaction() {
+		return $this->belongsTo( Transaction::class );
+	}
+
 }

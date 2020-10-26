@@ -131,6 +131,11 @@
                         <i class="zmdi zmdi-home"></i><span>داشبورد</span></a>
                 </li>
 
+                <li class="">
+                    <a href="{{route('buyer.police.index')}}">
+                        <i class="zmdi zmdi-check"></i><span>پیگیری سفارشات</span></a>
+                </li>
+
                 <li class=" ">
                     <a href="{{route('shop')}}">
                         <i class="zmdi zmdi-shopping-basket"></i><span>فروشگاه</span></a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buyer;
 use App\Models\LinkLogin;
 use App\Models\Order;
+use App\Models\Police;
 use App\Models\Product;
 use App\Models\Seller;
 use App\Models\Transaction;
@@ -28,11 +29,11 @@ class TransactionsController extends Controller {
 	 */
 	public function index() {
 		if ( auth()->guard( 'web' )->check() ) {
-			$transactions = Transaction::where( 'seller_id', auth()->user()->id )->orderBy('id','DESC')->get();
+			$transactions = Transaction::where( 'seller_id', auth()->user()->id )->orderBy( 'id', 'DESC' )->get();
 
 			return view( 'seller.transaction.index', compact( 'transactions' ) );
 		} elseif ( auth()->guard( 'buyer' )->check() ) {
-			$transactions = Transaction::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->orderBy('id','DESC')->paginate(5);
+			$transactions = Transaction::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->orderBy( 'id', 'DESC' )->paginate( 5 );
 
 			return view( 'buyer.transaction.index', compact( 'transactions' ) );
 		} else {
@@ -45,9 +46,9 @@ class TransactionsController extends Controller {
 		$order       = $transaction->order;
 		$cost        = (int) $order->price;
 		try {
-			$buyer   = Buyer::findOrFail( $order->buyer_id );
-			$seller  = Seller::findOrFail( $order->seller_id );
-			$product = Product::findOrFail( $order->product_id );
+			$buyer                   = Buyer::findOrFail( $order->buyer_id );
+			$seller                  = Seller::findOrFail( $order->seller_id );
+			$product                 = Product::findOrFail( $order->product_id );
 			$product->optional_price = 0;
 			$product->save();
 
@@ -58,8 +59,21 @@ class TransactionsController extends Controller {
 
 			$order->update( [ 'payment_status' => 1 ] );
 			$transaction = Transaction::where( [ 'order_id' => $order->id ] )->first();
-			$transaction->update( [ 'status' => 1, 'verify_code' => $verifyCode ] );
+			if ($order->payment_method == 0){
+				$transaction->update( [ 'verify_code' => $verifyCode ] );
 
+				Police::create([
+					'seller_id'=> $transaction->seller_id,
+					'buyer_id'=> $transaction->buyer_id,
+					'product_id'=> $transaction->product_id,
+					'order_id'=>$transaction->order_id ,
+					'transaction_id'=>$transaction->id ,
+				]);
+
+			}else{
+				$transaction->update( [ 'status' => 1, 'verify_code' => $verifyCode ] );
+
+			}
 
 			$random = $random = Str::random( 40 );
 			LinkLogin::create( [
@@ -154,16 +168,17 @@ class TransactionsController extends Controller {
 			return redirect()->back()->withError( 'bitarbiat' );
 		}
 		$seller = $product->seller;
-		$cost   = ( $request->qty * ($product->optional_price == 0 ? $product->price : $product->optional_price) ) + $seller->default_shipping;
+		$cost   = ( $request->qty * ( $product->optional_price == 0 ? $product->price : $product->optional_price ) ) + $seller->default_shipping;
 
 		$order = Order::create( [
-			'seller_id'     => $product->seller_id,
-			'buyer_id'      => $buyer->id,
-			'product_id'    => $product->id,
-			'shipping_cost' => $seller->default_shipping,
-			'price'         => $cost,
-			'note'          => $request->note,
-			'qty'           => $request->qty,
+			'seller_id'      => $product->seller_id,
+			'buyer_id'       => $buyer->id,
+			'product_id'     => $product->id,
+			'shipping_cost'  => $seller->default_shipping,
+			'price'          => $cost,
+			'note'           => $request->note,
+			'qty'            => $request->qty,
+			'payment_method' => 1,
 		] );
 
 		return view( 'shop.payment', compact( 'order' ) );
@@ -177,9 +192,9 @@ class TransactionsController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store( Request $request ) {
-
-		$order   = Order::findOrFail( $request->order_id );
-		if (isset($request->note)) {
+		global $transactionId;
+		$order = Order::findOrFail( $request->order_id );
+		if ( isset( $request->note ) ) {
 			$order->note = $request->note;
 			$order->update();
 		}
@@ -191,7 +206,7 @@ class TransactionsController extends Controller {
 		$invoice->detail( 'mobile', $buyer->mobile );
 		$invoice->detail( 'email', 'test@gmail.com' );
 
-		if ( $seller->bank_status == 1 ) {
+		if ( $seller->bank_status == 1 && $request->payment_method == 1 ) {
 
 
 			if ( $cost != 0 ) {
@@ -237,21 +252,20 @@ class TransactionsController extends Controller {
 							'product_id'       => 1,
 							'order_id'         => 1,
 							'price'            => 1,
-							'status'           => 0,
+							'status'           => 2,
 							'transaction_type' => 0,
 						] );
 					}
 				);
 
-				$transaction = DB::table( 'transactions' )->latest()->first();
-				$transaction = Transaction::find( $transaction->id );
+//				$transaction = DB::table( 'transactions' )->latest()->first();
+				$transaction = Transaction::find( $transactionId );
 				$transaction->update( [
 					'buyer_id'         => $buyer->id,
 					'seller_id'        => $product->seller_id,
 					'product_id'       => $product->id,
 					'order_id'         => $order->id,
 					'price'            => $cost,
-					'status'           => 0,
 					'transaction_type' => 1,
 				] );
 

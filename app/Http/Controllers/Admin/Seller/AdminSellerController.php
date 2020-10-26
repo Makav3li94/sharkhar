@@ -114,6 +114,7 @@ class AdminSellerController extends Controller {
 			'free_shipping'    => $free_shipping,
 			'telephone'        => $request->telephone,
 			'default_shipping' => $default_shipping,
+			'bank_status' => $request->payment_method ?? 0,
 		] );
 
 		return redirect()->back()->with( 'success', 'تغییرات با موفقیت اعمال شد . ' );

@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
 	        $table->text('note')->nullable();
 	        $table->tinyInteger('deliver_status')->default(0)->comment('is deliverd or not');
 	        $table->tinyInteger('payment_status')->default(0)->comment('is paid or not');
+	        $table->tinyInteger('payment_method')->default(1)->comment('1 for direct and 0 for police');
             $table->timestamps();
         });
     }
