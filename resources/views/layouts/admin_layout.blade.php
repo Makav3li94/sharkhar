@@ -79,7 +79,7 @@
         <div class="container-fluid">
             <div class="top-header">
                 <div class="row d-flex  justify-content-between res-p">
-                    <div class="p-2 ">
+                    <div class="">
                         <nav class="navbar navbar-expand-lg navbar-light position-relative shadow-none mb-0">
                             <ul class="navbar-nav  text-white">
 
@@ -91,7 +91,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="p-2 ">
+                    <div class="">
                         <nav class="navbar navbar-expand-lg navbar-light position-relative shadow-none mb-0">
                             <ul class="navbar-nav  text-white w-100">
 
@@ -214,7 +214,7 @@
             -webkit-transition-duration: 500ms;
             -o-transition-duration: 500ms;
             transition-duration: 500ms;
-            padding: 15px 15px;
+            padding: 12px 15px;
         }
 
         .menu_area nav ul li > a:hover {
@@ -328,7 +328,7 @@
             .modal-dialog {
                 max-width: 350px !important;
                 margin: 10rem auto !important;
-                float: none!important;
+                float: none !important;
             }
         }
     </style>
@@ -408,9 +408,9 @@
 <section class="content {{isset($bib) ? $bib : ''}}">
     @if(!isset($hide))
         <div class="container">
-            <div class="row clearfix bread-crumb">
+            <div class="row clearfix ">
 
-                <div class="col-lg-7 col-md-6 col-sm-12"
+                <div class="col-lg-7 col-md-6 col-sm-8"
                      @if(request()->is('seller/dashboard'))
                      data-step="1"
                      data-intro="در شرخر، شما برای فروش نیاز به ثبت شماره شِبا و ارسال لینک خرید برای مشتری دارید، همین. لطفا تا انتهای آموزش با من باشید."
@@ -420,16 +420,10 @@
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
                                 class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
-                @if(isset($back))
-                    <div class="col-lg-5 col-md-6 col-sm-12 nono">
-                        <a class="btn btn-primary float-right " href="{{url()->previous()}}">
-                            بازگشت
-                            <i class="zmdi zmdi-arrow-right"></i>
-                        </a>
-                    </div>
-                @endif
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <ul class="breadcrumb" style="   background-color: #fafafa !important;">
+            </div>
+            <div class="row bread-crumb d-flex justify-content-between">
+                <div class="p-2">
+                    <ul class="breadcrumb" >
                         <li class="breadcrumb-item">
                             <a href="
                        @if(auth()->guard('web')->check())
@@ -454,6 +448,15 @@
 
                     </ul>
                 </div>
+
+                @if(isset($back))
+                    <div class="p-2 ">
+                        <a class="btn btn-info  " href="{{url()->previous()}}">
+                            بازگشت
+                            <i class="zmdi zmdi-arrow-right"></i>
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     @endif
@@ -471,12 +474,30 @@
 </section>
 
 
-
 @if(!auth()->guard()->check() && !auth()->guard('buyer')->check())
     @php $bib = 'bib' @endphp
-    <footer class="text-center pt-3 pb-3 clearfix" style="font-size: 1rem!important;" >
-        <div class="mb-4 mt-2 p-3">
-            <img class=" overflow-hidden" src="{{asset('front/img/footer_logos.png')}}" alt="نماد ها">
+    <footer class="text-center pt-3 pb-3 clearfix" style="font-size: 1rem!important;">
+        <div class="mb-4 mt-2 p-3 ">
+            <ul class="list-unstyled safety">
+                <li>
+
+                    <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt="" style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
+
+
+                </li>
+                {{--            <li>--}}
+                {{--                <img src="{{asset('assets/images/bank.png')}}" alt="تحت نظارت درگاه شاپرک">--}}
+                {{--            </li>--}}
+
+                <li>
+                    <img src="{{asset('assets/images/passargad.png')}}" alt="درگاه بانک پاسارگاد">
+                </li>
+
+                <li>
+                    <img src="{{asset('assets/images/ssk.png')}}" alt="دارای ssl">
+                </li>
+            </ul>
+
         </div>
 
         <!-- footer logo -->
@@ -542,6 +563,14 @@
     .toTop a {
         color: #fff;
     }
+    .safety li{
+        display: inline-block;
+        background-color: #f5f9fc;
+        border: 1px solid #222222;
+        padding: 10px;
+        margin-left: 10px;
+    }
+
 </style>
 <!-- Jquery Core Js -->
 <script src="{{asset('assets/bundles/libscripts.bundle.js')}}"></script>

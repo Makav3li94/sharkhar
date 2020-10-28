@@ -41,7 +41,7 @@
     <div class="container-fluid">
         <div class="top-header">
             <div class="row d-flex  justify-content-between res-p">
-                <div class="p-2 ">
+                <div class="">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <ul class="navbar-nav  text-white">
 
@@ -53,7 +53,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="p-2 ">
+                <div class="">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <ul class="navbar-nav  text-white w-100">
 
@@ -134,13 +134,13 @@
                                 </div>
                             </div>
                         @else
-                            <div class="p-2">
-                                <div class="sing-up-button ">
+{{--                            <div class="p-2">--}}
+{{--                                <div class="sing-up-button ">--}}
 
-                                    <a href="{{route('register_buyer')}}">خریدار</a>
+{{--                                    <a href="{{route('register_buyer')}}">خریدار</a>--}}
 
-                                </div>
-                            </div>
+{{--                                </div>--}}
+{{--                            </div>--}}
                         @endif
                     </div>
                 </div>
@@ -216,8 +216,32 @@
 
 <!-- ***** Footer Area Start ***** -->
 <footer class="text-center pt-lg-5 pb-5 clearfix" id="contact">
-    <div class="mb-4 mt-2 p-3">
-        <img class=" overflow-hidden" src="{{asset('front/img/footer_logos.png')}}" alt="نماد ها">
+    <div class="mb-4 mt-2 p-3 ">
+        <ul class="list-unstyled safety">
+            <li>
+
+
+{{--                <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=185088&amp;Code=swGIr379CMXL5IJdyLDB" alt="" style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>--}}
+                <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt="" style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
+
+
+            </li>
+{{--            <li>--}}
+{{--                <img src="{{asset('assets/images/bank.png')}}" alt="تحت نظارت درگاه شاپرک">--}}
+{{--            </li>--}}
+
+            <li>
+                <img src="{{asset('assets/images/passargad.png')}}" alt="درگاه بانک پاسارگاد">
+            </li>
+
+            <li>
+                <img src="{{asset('assets/images/ssk.png')}}" alt="دارای ssl">
+            </li>
+        </ul>
+{{--        <img class=" overflow-hidden" src="{{asset('front/img/footer_logos.png')}}" alt="نماد ها">--}}
+
+
+
     </div>
 
     <!-- footer logo -->

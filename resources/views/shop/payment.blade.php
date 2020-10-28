@@ -134,22 +134,22 @@
 
 
                         </div>
-                        <div class="row mt-2">
-                            <div class="col-lg-12">
-                                <div class="form-group text-center">
-                                    <div class="radio inlineblock m-r-20">
-                                        <input type="radio" name="payment_method" id="direct" class="with-gap" value="0"
-                                               checked="">
-                                        <label for="direct">واریز مستقیم به فروشنده</label>
-                                    </div>
-                                    <div class="radio inlineblock">
-                                        <input type="radio" name="payment_method" id="police" class="with-gap" value="1"
-                                        >
-                                        <label for="police">استفاده از سیستم واسطه شرخر</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="row mt-2">--}}
+{{--                            <div class="col-lg-12">--}}
+{{--                                <div class="form-group text-center">--}}
+{{--                                    <div class="radio inlineblock m-r-20">--}}
+{{--                                        <input type="radio" name="payment_method" id="direct" class="with-gap" value="0"--}}
+{{--                                               checked="">--}}
+{{--                                        <label for="direct">واریز مستقیم به فروشنده</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="radio inlineblock">--}}
+{{--                                        <input type="radio" name="payment_method" id="police" class="with-gap" value="1"--}}
+{{--                                        >--}}
+{{--                                        <label for="police">استفاده از سیستم واسطه شرخر</label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="row mt-1">
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">

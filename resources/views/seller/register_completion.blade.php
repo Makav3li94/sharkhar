@@ -87,6 +87,23 @@
                             </div>
 
                             <div class="input-group mb-3">
+                                <input type="password" name="password" class="form-control"
+                                       placeholder="رمزعبور به شرخر !" oninput="setCustomValidity('')"
+                                       oninvalid="this.setCustomValidity('لطفا رمز عبور را وارد کنید')" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
+                                </div>
+                                @if($errors->has('password'))
+                                    <small class="text-danger d-inline-block w-100  mt-2">
+                                        {{$errors->first('password')}}
+                                    </small>
+                                @endif
+                            </div>
+                            <small class="text-left text-info d-block mb-2" style="text-align: right!important;"> رمز
+                                عبور (برای ساخت فروشگاه، نیازی به رمز اکانت اینستاگرام شما نداریم)
+                            </small>
+
+                            <div class="input-group mb-3">
 
                                 <input type="text" name="insta_user" class="form-control"
                                        placeholder="نام کاربری اینستاگرام" value="{{ old('insta_user') }}"
@@ -106,22 +123,7 @@
                                 <img class="d-block h-25 mx-auto" src="{{asset('assets/images/user_ex.jpg')}}" alt="">
                             </div>
 
-                            <div class="input-group mb-3">
-                                <input type="password" name="password" class="form-control"
-                                       placeholder="رمزعبور به شرخر !" oninput="setCustomValidity('')"
-                                       oninvalid="this.setCustomValidity('لطفا رمز عبور را وارد کنید')" required>
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
-                                </div>
-                                @if($errors->has('password'))
-                                    <small class="text-danger d-inline-block w-100  mt-2">
-                                        {{$errors->first('password')}}
-                                    </small>
-                                @endif
-                            </div>
-                            <small class="text-left text-info d-block mb-2" style="text-align: right!important;"> رمز
-                                عبور (برای ساخت فروشگاه، نیازی به رمز اکانت اینستاگرام شما نداریم)
-                            </small>
+
                             <div class="checkbox">
                                 <input id="remember_me" name="rules" type="checkbox" checked>
                                 <label for="remember_me">من با قوانین و مقررات موافقم. <a href="javascript:void(0);">شرایط

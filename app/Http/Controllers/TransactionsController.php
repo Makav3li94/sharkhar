@@ -206,13 +206,14 @@ class TransactionsController extends Controller {
 		$invoice->detail( 'mobile', $buyer->mobile );
 		$invoice->detail( 'email', 'test@gmail.com' );
 
-		if ( $seller->bank_status == 1 && $request->payment_method == 1 ) {
+//		if ( $seller->bank_status == 1 && $request->payment_method == 1 ) {
+		if ( $seller->bank_status == 'green'  ) {
 
 
 			if ( $cost != 0 ) {
-				$payment = Payment::callbackUrl( route( 'check_payment', $order->id ) )->purchaseDirect(
+				 $payment = Payment::callbackUrl( route( 'check_payment', $order->id ) )->purchaseDirect(
 					( new Invoice )->amount( $cost )->partner( $seller->sheba )->sellerShare( $cost ),
-					function ( $driver, $transactionId ) {
+					function ( $driver, $transactionId) {
 						Transaction::create( [
 							'transaction_id'   => $transactionId,
 							'buyer_id'         => 1,
@@ -225,9 +226,7 @@ class TransactionsController extends Controller {
 						] );
 					}
 				);
-
-				$transaction = DB::table( 'transactions' )->latest()->first();
-				$transaction = Transaction::find( $transaction->id );
+				$transaction = DB::table( 'transactions' )->latest()->limit(1);
 				$transaction->update( [
 					'buyer_id'         => $buyer->id,
 					'seller_id'        => $product->seller_id,
@@ -258,8 +257,7 @@ class TransactionsController extends Controller {
 					}
 				);
 
-//				$transaction = DB::table( 'transactions' )->latest()->first();
-				$transaction = Transaction::find( $transactionId );
+				$transaction = DB::table( 'transactions' )->latest()->limit(1);
 				$transaction->update( [
 					'buyer_id'         => $buyer->id,
 					'seller_id'        => $product->seller_id,

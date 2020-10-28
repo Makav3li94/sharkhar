@@ -41,54 +41,56 @@
                                                 <div class="action">
                                                     <form action="{{route('payment_view',$product->id)}}" method="get">
                                                         @csrf
-                                                        <small class="text-center text-info mt-1 mb-2"
-                                                               style="display: inherit">
-                                                            لطفا
-                                                            اطلاعات زیر را جهت
-                                                            پیگیری سفارشتان پر کنید.
-                                                        </small>
-                                                        <div class="row">
-                                                            <!-- Single Input Area Start -->
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for="name">نام و نام خانواگی:</label>
-                                                                    <input type="text" class="form-control" name="name"
-                                                                           value="{{old('name')}}"
-                                                                           oninput="setCustomValidity('')"
-                                                                           oninvalid="this.setCustomValidity('لطفا نام و نام خانوادگی را وارد کنید')"
-                                                                           required>
+                                                        @if(!auth()->guard('buyer')->check())
+                                                            <small class="text-center text-info mt-1 mb-2"
+                                                                   style="display: inherit">
+                                                                لطفا
+                                                                اطلاعات زیر را جهت
+                                                                پیگیری سفارشتان پر کنید.
+                                                            </small>
+                                                            <div class="row">
+                                                                <!-- Single Input Area Start -->
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="name">نام و نام خانواگی:</label>
+                                                                        <input type="text" class="form-control"
+                                                                               name="name"
+                                                                               value="{{old('name')}}"
+                                                                               oninput="setCustomValidity('')"
+                                                                               oninvalid="this.setCustomValidity('لطفا نام و نام خانوادگی را وارد کنید')"
+                                                                               required>
+                                                                    </div>
+                                                                    @if($errors->has('name'))
+                                                                        <small class="text-danger">
+                                                                            {{$errors->first('name')}}
+                                                                        </small>
+                                                                    @endif
+
                                                                 </div>
-                                                                @if($errors->has('name'))
-                                                                    <small class="text-danger">
-                                                                        {{$errors->first('name')}}
-                                                                    </small>
-                                                                @endif
+
+                                                                <!-- Single Input Area Start -->
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="mobile">شماره تلفن:</label>
+                                                                        <input type="text" class="form-control"
+                                                                               name="mobile"
+
+                                                                               value="{{old('mobile')}}"
+                                                                               oninput="setCustomValidity('')"
+                                                                               oninvalid="this.setCustomValidity('لطفا شماره تلفن را وارد کنید')"
+                                                                               required>
+                                                                    </div>
+                                                                    @if($errors->has('mobile'))
+                                                                        <small class="text-danger">
+                                                                            {{$errors->first('mobile')}}
+                                                                        </small>
+                                                                    @endif
+                                                                </div>
+
+                                                                <!-- Single Input Area Start -->
 
                                                             </div>
-
-                                                            <!-- Single Input Area Start -->
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for="mobile">شماره تلفن:</label>
-                                                                    <input type="text" class="form-control"
-                                                                           name="mobile"
-
-                                                                           value="{{old('mobile')}}"
-                                                                           oninput="setCustomValidity('')"
-                                                                           oninvalid="this.setCustomValidity('لطفا شماره تلفن را وارد کنید')"
-                                                                           required>
-                                                                </div>
-                                                                @if($errors->has('mobile'))
-                                                                    <small class="text-danger">
-                                                                        {{$errors->first('mobile')}}
-                                                                    </small>
-                                                                @endif
-                                                            </div>
-
-                                                            <!-- Single Input Area Start -->
-
-                                                        </div>
-
+                                                        @endif
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <label for="qty">تعداد:</label>

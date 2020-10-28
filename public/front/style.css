@@ -50,7 +50,7 @@ body {
     font-family: 'IRANSansDN', sans-serif;
     background-color: #fff;
     font-size: 1rem;
-
+    overflow-x: hidden;
 }
 
 h1,
@@ -375,7 +375,7 @@ header {
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
-    padding: 15px 15px;
+    padding: 10px 15px;
 }
 
 
@@ -427,7 +427,7 @@ header {
 }
 
 .header_area.sticky .menu_area #nav .nav-link {
-    padding: 23px 15px;
+    /*padding: 23px 15px;*/
 }
 
 .header_area.sticky .navbar {
@@ -1485,4 +1485,11 @@ small {
 
 #map {
     height: 400px;
+}
+.safety li{
+    display: inline-block;
+    background-color: #f5f9fc;
+    border: 1px solid #222222;
+    padding: 10px;
+    margin-left: 10px;
 }

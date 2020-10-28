@@ -119,7 +119,7 @@
 
                 <li class="nono">
                     <hr>
-                    <a href="{{url('seller/dashboard?start=true')}}"  >
+                    <a href="{{url('seller/dashboard?start=true')}} none"   >
                         <i class="zmdi zmdi-flag text-danger" ></i><span>آموزش پنل</span></a>
                     <hr>
                 </li>

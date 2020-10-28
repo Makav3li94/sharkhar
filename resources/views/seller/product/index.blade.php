@@ -133,7 +133,7 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                {{\Illuminate\Support\Str::limit($product->title,60)}}
+                                                {{\Illuminate\Support\Str::limit($product->title,30)}}
                                             </td>
                                             <td>
                                                 @if($product->price !=0)
