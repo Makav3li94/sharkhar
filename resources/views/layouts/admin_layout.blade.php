@@ -95,11 +95,11 @@
                         <nav class="navbar navbar-expand-lg navbar-light position-relative shadow-none mb-0">
                             <ul class="navbar-nav  text-white w-100">
 
-                                <li class="w-100 font-16">
-                                    <i class="ti-location-pin p-2"></i>
-                                    آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳
+{{--                                <li class="w-100 font-16">--}}
+{{--                                    <i class="ti-location-pin p-2"></i>--}}
+{{--                                    آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳--}}
 
-                                </li>
+{{--                                </li>--}}
                             </ul>
                         </nav>
                     </div>
@@ -135,7 +135,7 @@
                                                 </li>
                                                 <li class="nav-item"><a class="nav-link font-16" href="#contact">تماس با
                                                         ما</a></li>
-                                                <li class="nav-item"><a class="nav-link font-16" href="">بلاگ</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{route('rules')}}">قوانین و مقررات</a></li>
                                             </ul>
 
                                         </div>
@@ -480,14 +480,17 @@
         <div class="mb-4 mt-2 p-3 ">
             <ul class="list-unstyled safety">
                 <li>
-
-                    <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt="" style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
-
-
+                    <a referrerpolicy="origin" target="_blank"
+                       href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img
+                                referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt=""
+                                style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
                 </li>
-                {{--            <li>--}}
-                {{--                <img src="{{asset('assets/images/bank.png')}}" alt="تحت نظارت درگاه شاپرک">--}}
-                {{--            </li>--}}
+
+                <li>
+                    <img id='nbqeesgtjzpewlaonbqewlao' style='cursor:pointer'
+                         onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=207424&p=uiwkobpdjyoeaodsuiwkaods", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")'
+                         alt='logo-samandehi' src='{{asset('assets/images/samandehi.png')}}'/>
+                </li>
 
                 <li>
                     <img src="{{asset('assets/images/passargad.png')}}" alt="درگاه بانک پاسارگاد">
@@ -499,7 +502,41 @@
             </ul>
 
         </div>
+        <div class="footer-menu footer-nav">
+            <nav>
+                <ul>
+                    <li class="mb-3">
+                        <a href="{{route('SellBenefit')}}">
+                            مزایای فروش در شرخر
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="{{route('sellerProtection')}}">
+                            حمایت از فروشندگان
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="{{route('DisputeRules')}}" class="border-left-0">
+                            قوانین مرتبط با اختلافات
+                        </a>
+                    </li>
+                    <br>
 
+
+                    <li class="mb-3">
+                        <a href="{{route('buyBenefit')}}">
+                            مزایای خرید از شرخر
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="{{route('moneyBackGuarantee')}}" class="border-left-0">
+                            ضمانت برگشت پول
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
         <!-- footer logo -->
         <div class="footer-text">
             <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
@@ -511,8 +548,11 @@
                 <ul class="list-unstyled">
                     <li class="mb-2">
                         <i class="ti-location-pin p-2"></i>
-                        آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳
+{{--                        آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳--}}
+                        <br>
+                        دفتر مرکزی: تهران، جیحون،کوچه ریاضی، پلاک ۲۶
                     </li>
+
                     <li class="mb-2">
                         <i class=" ti-headphone-alt  p-2"></i>
                         تلفن: ۶۷ ۷۳ ۲۸۴۳-۰۲۱ - ۶۲ ۸۸ ۵۶۰۷-۰۲۱
@@ -535,6 +575,22 @@
     <style>
         .footer-text {
             margin-bottom: 15px;
+        }
+        .footer-menu ul li {
+            display: inline-block;
+        }
+        .footer-nav ul{
+            list-style: none;
+        }
+        .footer-nav ul li{
+            width: 200px;
+
+        }
+        .footer-menu ul li a {
+            border-left: 2px solid #726a84;
+            display: block;
+            padding: 0 7.5px;
+            color: #726a84;
         }
     </style>
     <script>

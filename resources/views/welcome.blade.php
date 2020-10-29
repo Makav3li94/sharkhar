@@ -57,11 +57,11 @@
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <ul class="navbar-nav  text-white w-100">
 
-                            <li class="w-100 ">
-                                <i class="ti-location-pin p-2"></i>
-                                آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳
+{{--                            <li class="w-100 ">--}}
+{{--                                <i class="ti-location-pin p-2"></i>--}}
+{{--                                آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳--}}
 
-                            </li>
+{{--                            </li>--}}
                         </ul>
                     </nav>
                 </div>
@@ -101,7 +101,7 @@
                                             <li class="nav-item"><a class="nav-link" href="#pricing">تعرفه</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="">بلاگ</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{{route('rules')}}">قوانین و مقررات</a></li>
                                         </ul>
 
                                     </div>
@@ -134,13 +134,13 @@
                                 </div>
                             </div>
                         @else
-{{--                            <div class="p-2">--}}
-{{--                                <div class="sing-up-button ">--}}
+                            {{--                            <div class="p-2">--}}
+                            {{--                                <div class="sing-up-button ">--}}
 
-{{--                                    <a href="{{route('register_buyer')}}">خریدار</a>--}}
+                            {{--                                    <a href="{{route('register_buyer')}}">خریدار</a>--}}
 
-{{--                                </div>--}}
-{{--                            </div>--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
                         @endif
                     </div>
                 </div>
@@ -218,34 +218,67 @@
 <footer class="text-center pt-lg-5 pb-5 clearfix" id="contact">
     <div class="mb-4 mt-2 p-3 ">
         <ul class="list-unstyled safety">
-            <li>
-
-
-{{--                <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=185088&amp;Code=swGIr379CMXL5IJdyLDB" alt="" style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>--}}
-                <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt="" style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
-
-
+            <li class="mb-2">
+                <a referrerpolicy="origin" target="_blank"
+                   href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img
+                            referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt=""
+                            style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
             </li>
-{{--            <li>--}}
-{{--                <img src="{{asset('assets/images/bank.png')}}" alt="تحت نظارت درگاه شاپرک">--}}
-{{--            </li>--}}
 
-            <li>
+            <li class="mb-2">
+                <img id='nbqeesgtjzpewlaonbqewlao' style='cursor:pointer'
+                     onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=207424&p=uiwkobpdjyoeaodsuiwkaods", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")'
+                     alt='logo-samandehi' src='{{asset('assets/images/samandehi.png')}}'/>
+            </li>
+
+            <li class="mb-2">
                 <img src="{{asset('assets/images/passargad.png')}}" alt="درگاه بانک پاسارگاد">
             </li>
 
-            <li>
+            <li class="mb-2">
                 <img src="{{asset('assets/images/ssk.png')}}" alt="دارای ssl">
             </li>
         </ul>
-{{--        <img class=" overflow-hidden" src="{{asset('front/img/footer_logos.png')}}" alt="نماد ها">--}}
-
-
 
     </div>
 
+    <div class="footer-menu footer-nav">
+        <nav>
+            <ul>
+                <li class="mb-3">
+                    <a href="{{route('SellBenefit')}}">
+                        مزایای فروش در شرخر
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="{{route('sellerProtection')}}">
+                        حمایت از فروشندگان
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="{{route('DisputeRules')}}" class="border-left-0">
+                        قوانین مرتبط با اختلافات
+                    </a>
+                </li>
+                <br>
+
+
+                <li class="mb-3">
+                    <a href="{{route('buyBenefit')}}">
+                        مزایای خرید از شرخر
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="{{route('moneyBackGuarantee')}}" class="border-left-0">
+                        ضمانت برگشت پول
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
     <!-- footer logo -->
-    <div class="footer-text">
+    <div class="footer-logo mb-0 mt-2">
         <img src="{{asset('assets/images/logo-p.png')}}" width="80px" alt="شرخر">
     </div>
     <!-- social icon-->
@@ -254,8 +287,11 @@
         <nav>
             <ul>
                 <li class="mb-3">
+{{--                    <i class="ti-location-pin p-2"></i>--}}
+{{--                    آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳--}}
+                    <br>
                     <i class="ti-location-pin p-2"></i>
-                    آدرس : تهران، طرشت، بلوار شهید تیموری، پژوهشکده علوم و فناوری شریف پلاک ۱۷۳
+                    دفتر مرکزی: تهران، جیحون،کوچه ریاضی، پلاک ۲۶
                 </li>
                 <br>
                 <li class="mb-3">
@@ -264,8 +300,8 @@
                 </li>
                 <br>
                 <li>
-                    <i class=" ti-email  p-2"></i>
                     sharkhar@info.net
+                    <i class=" ti-email  p-2"></i>
 
                 </li>
 

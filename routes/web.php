@@ -53,6 +53,18 @@ Route::get( '/shops', [ \App\Http\Controllers\ShopController::class, 'shop' ] )-
 Route::resource( '/blogs',  \App\Http\Controllers\BlogController::class  )->except(['create']);
 Route::get('/blogs/{slug}',[\App\Http\Controllers\BlogController::class,'show'] );
 Route::get('/blog/{category_slug}',[\App\Http\Controllers\BlogController::class,'category'] );
+
+//RULES
+Route::get( '/sell-benefit', [ \App\Http\Controllers\PagesController::class, 'sellBenefit' ] )->name( 'SellBenefit' );
+Route::get( '/seller-protection', [ \App\Http\Controllers\PagesController::class, 'sellerProtection' ] )->name( 'sellerProtection' );
+Route::get( '/dispute-rules', [ \App\Http\Controllers\PagesController::class, 'disputeRules' ] )->name( 'DisputeRules' );
+
+
+Route::get( '/buy-benefit', [ \App\Http\Controllers\PagesController::class, 'buyBenefit' ] )->name( 'buyBenefit' );
+Route::get( '/money-back-guarantee', [ \App\Http\Controllers\PagesController::class, 'moneyBackGuarantee' ] )->name( 'moneyBackGuarantee' );
+
+Route::get( '/rules', [ \App\Http\Controllers\PagesController::class, 'rules' ] )->name( 'rules' );
+
 Route::get( '/vendors/{name}', [ \App\Http\Controllers\ShopController::class, 'vendor' ] )->name( 'vendor' );
 Route::get( '/product/{product}/{optional_price?}', [ \App\Http\Controllers\ShopController::class, 'single' ] )->name( 'product' );
 Route::get( '/payment/{product}', [ \App\Http\Controllers\TransactionsController::class, 'payment' ] )->name( 'payment_view' );

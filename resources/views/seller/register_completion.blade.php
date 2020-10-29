@@ -126,7 +126,7 @@
 
                             <div class="checkbox">
                                 <input id="remember_me" name="rules" type="checkbox" checked>
-                                <label for="remember_me">من با قوانین و مقررات موافقم. <a href="javascript:void(0);">شرایط
+                                <label for="remember_me">من با قوانین و مقررات موافقم. <a href="{{route('rules')}}" target="_blank">شرایط
                                         استفاده</a></label>
                                 @if($errors->has('rules'))
                                     <small class="text-danger d-inline-block w-100  mt-2">
