@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'صفحه پرداخت','b_level2'=>$order->seller->insta_user,'hide'=>'true'])
+@extends('layouts.admin_layout',['title' => 'صفحه پرداخت','b_level2'=>'صورت حساب سفارش #'.$order->id,'hide'=>'true'])
 @section('styles')
 
 @endsection

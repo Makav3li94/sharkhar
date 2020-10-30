@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'اطلاعات بازخورد','b_level2'=>'اطلاعات بازخورد','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'سیستم واسطه','b_level2'=>'پیگیری سفارش #' .$police->id ,'back'=>'true'])
 
 @section('content')
 

@@ -13,12 +13,13 @@
         "ext-json": "*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/guzzle": "^6.5.5",
         "hekmatinasser/verta": "^1.11",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
         "shetabit/payment": "^4.0",
+        "spatie/laravel-sitemap": "^5.8",
         "spatie/laravel-tags": "^3.0"
     },
     "require-dev": {

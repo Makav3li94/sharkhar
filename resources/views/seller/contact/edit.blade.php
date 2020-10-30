@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'بررسی تیکت','b_level2'=>'بررسی تیکت','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'بررسی تیکت','b_level2'=>'بررسی تیکت ' . $contact->subject ,'back'=>'true'])
 
 @section('content')
 

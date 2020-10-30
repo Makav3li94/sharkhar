@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'فروشگاه','b_level2'=>'فروشگاه'])
+@extends('layouts.admin_layout',['title' => 'فروشگاه','b_level2'=>'فروشگاه ها'])
 @section('content')
     <div class="container">
 

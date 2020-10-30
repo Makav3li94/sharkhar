@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'صفحه محصول','b_level2'=>$seller->insta_user,'hide'=>'true'])
+@extends('layouts.admin_layout',['title' => 'صفحه محصول ' .\Illuminate\Support\Str::limit($product->title,25),'b_level2'=>\Illuminate\Support\Str::limit($product->title,80),'hide'=>'true'])
 @section('content')
     <div class="container">
         <div class="row clearfix">

@@ -28,6 +28,9 @@ trait Scraper {
 		$seller->followers = $followers;
 		$seller->following = $following;
 
+		if ($pageSize > 800){
+			$pageSize = 800;
+		}
 
 		$seller->save();
 		$profileUrl   = "https://instagram.com/graphql/query/?query_id=17888483320059182&id=" . $UserID . "&first=" . $pageSize;

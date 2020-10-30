@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'بازگشت از درگاه','b_level2'=>$order->seller->insta_user,'hide'=>'true'])
+@extends('layouts.admin_layout',['title' => 'بازگشت از درگاه','b_level2'=>'وضعیت پرداخت سفارش #'.$order->id,'hide'=>'true'])
 
 @section('content')
 

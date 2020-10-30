@@ -35,22 +35,8 @@ trait RegistersUsers {
 	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
 	 */
 	public function register( Request $request ) {
-		$data = $request->all();
+
 		if ( isset( $request->confirm ) ) {
-			$validator = Validator::make( $data, [
-				'mobile'       => [ 'required', 'regex:/(09)[0-9]{9}/', 'unique:sellers' ],
-			] );
-
-			if ( $validator->fails() ) {
-				return redirect()->back()->withErrors( $validator )->withInput();
-			}
-			$validator->after( function ( $validator ) use ( $data ) {
-				$preRegister = PreRegister::where( 'mobile', $data['mobile'] )->first();
-				if ( $preRegister->code != $data['confirm_code'] ) {
-					$validator->errors()->add( 'confirm_code', 'کد پیامکی درست نیست .' );
-				}
-
-			} );
 			PreRegister::where('mobile',$request->mobile)->delete();
 			$this->validatorCode( $request->all() )->validate();
 

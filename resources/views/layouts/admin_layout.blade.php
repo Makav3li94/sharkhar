@@ -1,4 +1,4 @@
-@include('layouts.head')
+@include('layouts.head',['title'=>$title])
 
 <body class="theme-blush">
 
@@ -33,6 +33,11 @@
 
 @include('layouts.front_header')
 
+@if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
+    @php
+        $bib = 'bib'
+    @endphp
+@endif
 <section class="content {{isset($bib) ? $bib : ''}}">
 
     @if(!isset($hide))
@@ -70,43 +75,43 @@
                     @endif
                 </div>
             </div>
-        <div class="bread-crumb d-flex justify-content-between">
-            <div class="p-2">
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="
-                       @if(auth()->guard('web')->check())
-                        {{route('seller.dashboard')}}
-                        @elseif(auth()->guard('buyer')->check())
-                        {{route('buyer.dashboard')}}
-                        @else
-                        @endif">
-                            <i class="zmdi zmdi-home"></i> شرخر</a>
-                    </li>
-                    @if(isset($b_level1))
-
+            <div class="bread-crumb d-flex justify-content-between">
+                <div class="p-2">
+                    <ul class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="{{url()->previous()}}">{{$b_level1}}</a>
+                            <a href="
+                       @if(auth()->guard('web')->check())
+                            {{route('seller.dashboard')}}
+                            @elseif(auth()->guard('buyer')->check())
+                            {{route('buyer.dashboard')}}
+                            @else
+                            @endif">
+                                <i class="zmdi zmdi-home"></i> شرخر</a>
                         </li>
+                        @if(isset($b_level1))
 
-                        <li class="breadcrumb-item active">{{$b_level2}}</li>
-                    @else
-                        <li class="breadcrumb-item active">{{$b_level2}}</li>
-                    @endif
+                            <li class="breadcrumb-item">
+                                <a href="{{url()->previous()}}">{{$b_level1}}</a>
+                            </li>
+
+                            <li class="breadcrumb-item active">{{$b_level2}}</li>
+                        @else
+                            <li class="breadcrumb-item active">{{$b_level2}}</li>
+                        @endif
 
 
-                </ul>
-            </div>
-
-            @if(isset($back))
-                <div class="p-2 ">
-                    <a class="btn btn-info  " href="{{url()->previous()}}">
-                        بازگشت
-                        <i class="zmdi zmdi-arrow-right"></i>
-                    </a>
+                    </ul>
                 </div>
-            @endif
-        </div>
+
+                @if(isset($back))
+                    <div class="p-2 ">
+                        <a class="btn btn-info  " href="{{url()->previous()}}">
+                            بازگشت
+                            <i class="zmdi zmdi-arrow-right"></i>
+                        </a>
+                    </div>
+                @endif
+            </div>
         </div>
     @endif
 

@@ -2,7 +2,6 @@
 
 namespace Shetabit\Multipay;
 
-use App\Models\Order;
 use Ramsey\Uuid\Uuid;
 use Shetabit\Multipay\Traits\HasDetail;
 
@@ -46,7 +45,6 @@ class Invoice
     public function __construct()
     {
         $this->uuid();
-        $this->order();
     }
 
     /**
@@ -64,11 +62,7 @@ class Invoice
 
         $this->uuid = $uuid;
     }
-	public function order($order_id)
-	{
 
-		$this->order = 	Order::find($order_id);
-	}
     /**
      * Get invoice uuid
      *

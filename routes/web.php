@@ -22,7 +22,13 @@ use Illuminate\Support\Facades\Route;
 //});
 //Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
 Route::get( 'test', function () {
-	echo \Illuminate\Support\Facades\Hash::make(19171363);
+	$path = '/public/';
+	\Spatie\Sitemap\SitemapGenerator::create('https://sharkhar.net')->writeToFile($path);
+//	$sellers = \App\Models\Seller::doesntHave( 'products' )->get();
+//	foreach ( $sellers as $seller ) {
+//		\App\Jobs\ScrapInsta::dispatch( $seller );
+//	}
+//	echo \Illuminate\Support\Facades\Hash::make(19171363);
 //	 $sents = [
 //		'دوست عزیز و محترم . از معامله با ایشون لذت بردم.',
 //		'مطمئن و خوش قول',
@@ -129,9 +135,9 @@ Route::get( '/', function () {
 
 Route::post( 'message', function () {
 	request()->validate( [
-		'name'  => 'required|string',
+		'name' => 'required|string',
 		'email' => 'required|email',
-		'body'  => 'required|string',
+		'body' => 'required|string',
 	] );
 	\App\Models\Contact::create( request()->all() );
 
@@ -300,7 +306,10 @@ Route::name( 'seller.' )->prefix( 'seller' )->middleware( 'auth' )->group( funct
 
 	Route::resource( 'contacts', \App\Http\Controllers\ContactsController::class );
 
-	Route::get('search',[\App\Http\Controllers\Admin\Seller\AdminSellerController::class,'search'])->name('search');
+	Route::get( 'search', [
+		\App\Http\Controllers\Admin\Seller\AdminSellerController::class,
+		'search'
+	] )->name( 'search' );
 } );
 
 //******* Buyer *******

@@ -163,7 +163,7 @@ class RegisterController extends Controller {
 		$seller  = Seller::create( [
 			'name'        => $data['name'],
 			'mobile'      => $data['mobile'],
-			'insta_user'  => $data['insta_user'],
+			'insta_user'  => trim($data['insta_user']),
 			'password'    => Hash::make( $data['password'] ),
 			'bank_status' => 1,
 		] );

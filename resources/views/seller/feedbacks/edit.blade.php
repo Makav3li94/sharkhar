@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'اطلاعات بازخورد','b_level1'=>'لیست بازخورد ها','b_level2'=>'اطلاعات بازخورد','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'اطلاعات بازخورد','b_level1'=>'لیست بازخورد ها','b_level2'=>'اطلاعات بازخورد #'. $feedback->id ,'back'=>'true'])
 
 @section('content')
     <div class="container">

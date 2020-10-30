@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'صورتحساب','b_level1'=>'لیست سفارشات','b_level2'=>'صورتحساب','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'صورتحساب','b_level1'=>'لیست سفارشات','b_level2'=>'صورتحساب #' .$order->id,'back'=>'true'])
 
 @section('content')
 

@@ -12,11 +12,12 @@
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
     <!-- Title -->
-    <meta name="description" content="دستیار فروش شرخر، خرید امن فروش آسان">
-    <meta name="keywords" content="شرخر, دستیار فروش شرخر, دستیار فروش آنلاین,اینستا گرام, پیج فروشگاهی, فروشگاه انلاین">
+    <meta name="description" content="                     دیگه نگران مشتری هایی که نمی تونن به فروشگاه های انلاین اعتماد کنن نباشید ! چون دستیار فروش شرخر کار اعتماد سازیتون رو انجام میده
+                                 و باعث افزایش فروشتون تا 70 درصد میشه. بیا تو :)">
+    <meta name="keywords" content="شرخر, دستیار فروش شرخر, دستیار فروش آنلاین,دستیار فروش ,اینستا گرام, پیج فروشگاهی, فروشگاه انلاین, دستیار فروش اینستاگرام">
     <meta name="author" content="Parham Akbari">
     <meta name="theme-color" content="#7f4ee0">
-    <title>دستیار فروش شرخر، خرید امن فروش آسان</title>
+    <title>دستیار فروش شرخر: خرید امن، فروش آسان</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{asset('assets/images/fav.png')}}">
@@ -366,59 +367,6 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqExwgWihRNtMSI8lIi3WnCmh4hQ8IJEA&callback=initMap&libraries=&v=weekly"
         defer
 ></script>
-
-{{--<script src="https://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script> <!-- Google Maps API Js -->--}}
-{{--<script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyCqExwgWihRNtMSI8lIi3WnCmh4hQ8IJEA&amp;&sensor=false"></script> <!-- Google Maps API Js -->--}}
-{{--<script src="{{asset('assets/plugins/gmaps/gmaps.js')}}"></script> <!-- GMaps PLugin Js -->--}}
-<script>
-    // Note: This example requires that you consent to location sharing when
-    // prompted by your browser. If you see the error "The Geolocation service
-    // failed.", it means you probably did not give permission for the browser to
-    // locate you.
-    // let map, infoWindow;
-    // function initMap() {
-    //     map = new google.maps.Map(document.getElementById("map"), {
-    //         center: {lat: 35.711438, lng: 51.347407},
-    //         zoom: 8,
-    //     });
-
-    // map = new google.maps.Map(document.getElementById("map"), {
-    //     center: {lat: 35.711438, lng: 51.347407},
-    //     zoom: 6,
-    // });
-    // infoWindow = new google.maps.InfoWindow();
-    // const locationButton = document.createElement("button");
-    // locationButton.textContent = "Pan to Current Location";
-    // locationButton.classList.add("custom-map-control-button");
-    // map.controls[google.maps.ControlPosition.TOP_CENTER].push(
-    //     locationButton
-    // );
-    // locationButton.addEventListener("click", () => {
-    //     // Try HTML5 geolocation.
-    //     if (navigator.geolocation) {
-    //         navigator.geolocation.getCurrentPosition(
-    //             (position) => {
-    //                 const pos = {
-    //                     lat: position.coords.latitude,
-    //                     lng: position.coords.longitude,
-    //                 };
-    //                 infoWindow.setPosition(pos);
-    //                 infoWindow.setContent("Location found.");
-    //                 infoWindow.open(map);
-    //                 map.setCenter(pos);
-    //             },
-    //             () => {
-    //                 handleLocationError(true, infoWindow, map.getCenter());
-    //             }
-    //         );
-    //     } else {
-    //         // Browser doesn't support Geolocation
-    //         handleLocationError(false, infoWindow, map.getCenter());
-    //     }
-    // });
-    // }
-
-</script>
 
 </body>
 

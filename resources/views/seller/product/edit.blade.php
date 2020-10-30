@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'ویرایش محصول','b_level1'=>'محصولات','b_level2'=>'ویرایش محصول','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'ویرایش محصول','b_level1'=>'محصولات','b_level2'=>'ویرایش محصول #' .$product->id,'back'=>'true'])
 
 @section('content')
 
