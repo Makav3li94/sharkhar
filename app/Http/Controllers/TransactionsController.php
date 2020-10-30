@@ -41,92 +41,7 @@ class TransactionsController extends Controller {
 		}
 	}
 
-	public function checkPayment( Request $request ) {
-		$transaction = Transaction::where( 'transaction_id', $request->Authority )->first();
-		$order       = $transaction->order;
-		$cost        = (int) $order->price;
-		try {
-			$buyer                   = Buyer::findOrFail( $order->buyer_id );
-			$seller                  = Seller::findOrFail( $order->seller_id );
-			$product                 = Product::findOrFail( $order->product_id );
-			$product->optional_price = 0;
-			$product->save();
 
-			$receipt = Payment::amount( $cost * 10 )->transactionId( $request->Authority )->verify();
-
-			// You can show payment referenceId to the user.
-			$verifyCode = $receipt->getReferenceId();
-
-			$order->update( [ 'payment_status' => 1 ] );
-			$transaction = Transaction::where( [ 'order_id' => $order->id ] )->first();
-			if ($order->payment_method == 0){
-				$transaction->update( [ 'verify_code' => $verifyCode ] );
-
-				Police::create([
-					'seller_id'=> $transaction->seller_id,
-					'buyer_id'=> $transaction->buyer_id,
-					'product_id'=> $transaction->product_id,
-					'order_id'=>$transaction->order_id ,
-					'transaction_id'=>$transaction->id ,
-				]);
-
-			}else{
-				$transaction->update( [ 'status' => 1, 'verify_code' => $verifyCode ] );
-
-			}
-
-			$random = $random = Str::random( 40 );
-			LinkLogin::create( [
-				'mobile' => $buyer->mobile,
-				'token'  => $random
-			] );
-
-			$url = route( 'link_login_buyer', [
-				'token' => $random
-			] );
-
-
-			$this->sentWithPattern( [ $seller->mobile ], '78e6st84v7', [ 'product' => $product->id ] );
-			if ( $seller->bank_status == 1 ) {
-				$this->sentWithPattern( [ $seller->mobile ], 'e7ukfaqd4x', [
-					'name'    => $seller->name,
-					'buyer'   => $buyer->name,
-					'product' => $product->id,
-					'cost'    => $cost
-				] );
-			} else {
-
-				$this->sentWithPattern( [ $seller->mobile ], 'mf9737wgo0', [
-					'name'    => $seller->name,
-					'buyer'   => $buyer->name,
-					'product' => $product->id,
-					'cost'    => $cost
-				] );
-			}
-			$this->sentWithPattern( [ $buyer->mobile ], 'iubx9a17gk', [
-				'name'    => $buyer->name,
-				'product' => $product->id,
-				'cost'    => $cost,
-				'seller'  => $seller->name,
-				'link'    => $url
-			] );
-
-			return view( 'shop.done_payment', compact( 'order', 'verifyCode' ) );
-
-		} catch ( InvalidPaymentException $exception ) {
-			Transaction::where( [ 'order_id' => $order->id ] )->delete();
-			$verifyCode = 'false';
-
-			/**
-			 * when payment is not verified, it will throw an exception.
-			 * We can catch the exception to handle invalid payments.
-			 * getMessage method, returns a suitable message that can be used in user interface.
-			 **/
-			return view( 'shop.done_payment', compact( 'verifyCode', 'order' ) );
-		}
-
-
-	}
 
 	public function payment( Request $request, Product $product ) {
 
@@ -178,7 +93,7 @@ class TransactionsController extends Controller {
 			'price'          => $cost,
 			'note'           => $request->note,
 			'qty'            => $request->qty,
-			'payment_method' => 1,
+			'payment_method' => 0,
 		] );
 
 		return view( 'shop.payment', compact( 'order' ) );
@@ -274,6 +189,95 @@ class TransactionsController extends Controller {
 
 	}
 
+
+
+	public function checkPayment( Request $request ) {
+		$transaction = Transaction::where( 'transaction_id', $request->Authority )->first();
+		$order       = $transaction->order;
+		$cost        = (int) $order->price;
+		try {
+			$buyer                   = Buyer::findOrFail( $order->buyer_id );
+			$seller                  = Seller::findOrFail( $order->seller_id );
+			$product                 = Product::findOrFail( $order->product_id );
+			$product->optional_price = 0;
+			$product->save();
+
+			$receipt = Payment::amount( $cost * 10 )->transactionId( $request->Authority )->verify();
+
+			// You can show payment referenceId to the user.
+			$verifyCode = $receipt->getReferenceId();
+
+			$order->update( [ 'payment_status' => 1 ] );
+			$transaction = Transaction::where( [ 'order_id' => $order->id ] )->first();
+			if ($order->payment_method == 0){
+				$transaction->update( [ 'verify_code' => $verifyCode ] );
+
+				Police::create([
+					'seller_id'=> $transaction->seller_id,
+					'buyer_id'=> $transaction->buyer_id,
+					'product_id'=> $transaction->product_id,
+					'order_id'=>$transaction->order_id ,
+					'transaction_id'=>$transaction->id ,
+					'transaction_type'=>0 ,
+				]);
+
+			}else{
+				$transaction->update( [ 'status' => 1, 'verify_code' => $verifyCode ] );
+
+			}
+
+			$random = $random = Str::random( 40 );
+			LinkLogin::create( [
+				'mobile' => $buyer->mobile,
+				'token'  => $random
+			] );
+
+			$url = route( 'link_login_buyer', [
+				'token' => $random
+			] );
+
+
+			$this->sentWithPattern( [ $seller->mobile ], '78e6st84v7', [ 'product' => $product->id ] );
+			if ( $seller->bank_status == 1 ) {
+				$this->sentWithPattern( [ $seller->mobile ], 'e7ukfaqd4x', [
+					'name'    => $seller->name,
+					'buyer'   => $buyer->name,
+					'product' => $product->id,
+					'cost'    => $cost
+				] );
+			} else {
+
+				$this->sentWithPattern( [ $seller->mobile ], 'mf9737wgo0', [
+					'name'    => $seller->name,
+					'buyer'   => $buyer->name,
+					'product' => $product->id,
+					'cost'    => $cost
+				] );
+			}
+			$this->sentWithPattern( [ $buyer->mobile ], 'iubx9a17gk', [
+				'name'    => $buyer->name,
+				'product' => $product->id,
+				'cost'    => $cost,
+				'seller'  => $seller->name,
+				'link'    => $url
+			] );
+
+			return view( 'shop.done_payment', compact( 'order', 'verifyCode' ) );
+
+		} catch ( InvalidPaymentException $exception ) {
+			Transaction::where( [ 'order_id' => $order->id ] )->delete();
+			$verifyCode = 'false';
+
+			/**
+			 * when payment is not verified, it will throw an exception.
+			 * We can catch the exception to handle invalid payments.
+			 * getMessage method, returns a suitable message that can be used in user interface.
+			 **/
+			return view( 'shop.done_payment', compact( 'verifyCode', 'order' ) );
+		}
+
+
+	}
 	/**
 	 * Display the specified resource.
 	 *

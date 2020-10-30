@@ -1,4 +1,5 @@
 <aside id="leftsidebar" class="sidebar">
+
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
         @if(auth()->guard('web')->check())
@@ -23,6 +24,7 @@
         <form id="logout" method="POST" action="{{ route('logout') }}">@csrf</form>
     </div>
     <div class="menu">
+
         <ul class="list">
             <li>
                 <div class="user-info">
@@ -31,7 +33,7 @@
                             <img src="{{auth()->user()->logo ? : ''}}" alt="{{auth()->user()->insta_user}}">
                         </a>
                     @endif
-                    <div class="detail p-t-10">
+                    <div class="detail p-2">
                         @if(auth()->guard('web')->check())
                             <h4>{{auth()->user()->name}}</h4>
                             <small>{{auth()->user()->insta_user}} </small>
@@ -51,10 +53,10 @@
                 </li>
 
                 <li class="{{ request()->is('seller/profile/*') ? 'active' : '' }} remove-help"
-                @if(request()->is('seller/profile/*'))
-                        data-step="1" data-intro="ضرروی ! ،جهت تکمیل اطلاعات فروشگاه از اینجا"
+                    @if(request()->is('seller/profile/*'))
+                    data-step="1" data-intro="ضرروی ! ،جهت تکمیل اطلاعات فروشگاه از اینجا"
                         @endif
-                        >
+                >
                     <a href="{{route('seller.profile',auth()->user()->id)}}">
                         <i class="zmdi zmdi-account"></i><span>اطلاعات فروشگاه</span>
                     </a>
@@ -106,11 +108,12 @@
                 </li>
 
 
-                <li><a href="javascript:void(0);" class="menu-toggle {{ request()->is('seller/contacts/*') ? 'active' : '' }} remove-help"
+                <li><a href="javascript:void(0);"
+                       class="menu-toggle {{ request()->is('seller/contacts/*') ? 'active' : '' }} remove-help"
                        @if(request()->is('seller/contacts/*'))
                        data-step="1" data-intro="ارسال تیکت به پشتیبانی شرخر از اینجا"
                             @endif>
-                    <i class="zmdi zmdi-ticket-star"></i><span>پشتیبانی</span></a>
+                        <i class="zmdi zmdi-ticket-star"></i><span>پشتیبانی</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('seller.contacts.index')}}">لیست تیکت ها</a></li>
                         <li><a href="{{route('seller.contacts.create')}}">تیکت جدید</a></li>
@@ -119,8 +122,8 @@
 
                 <li class="nono">
                     <hr>
-                    <a href="{{url('seller/dashboard?start=true')}} none"   >
-                        <i class="zmdi zmdi-flag text-danger" ></i><span>آموزش پنل</span></a>
+                    <a href="{{url('seller/dashboard?start=true')}} none">
+                        <i class="zmdi zmdi-flag text-danger"></i><span>آموزش پنل</span></a>
                     <hr>
                 </li>
 
@@ -133,7 +136,7 @@
 
                 <li class="">
                     <a href="{{route('buyer.police.index')}}">
-                        <i class="zmdi zmdi-check"></i><span>پیگیری سفارشات</span></a>
+                        <i class="zmdi zmdi-check"></i><span>سیستم واسطه</span></a>
                 </li>
 
                 <li class=" ">
@@ -165,7 +168,7 @@
                         <li><a href="{{route('buyer.contacts.create')}}">تیکت جدید</a></li>
                     </ul>
                 </li>
-                @else
+            @else
                 <li class=" ">
                     <a href="{{route('admin.sellers.index')}}">
                         <i class="zmdi zmdi-account"></i><span>فروشندگان</span></a>

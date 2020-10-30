@@ -134,7 +134,7 @@
                                             </td>
                                             <td>
                                                 <span class="col-{{$order->police->is_verified}}">
-                                                    @if($order->police->is_verified == 'success')
+                                                    @if($order->police->is_verified == 'green')
                                                         تایید سفارش
                                                     @elseif($order->police->is_verified == 'blue')
                                                        در حال بررسی

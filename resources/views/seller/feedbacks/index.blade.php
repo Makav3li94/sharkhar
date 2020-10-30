@@ -86,8 +86,6 @@
     </style>
 @endsection
 @section('content')
-
-
     <div class="container">
         <div class="row clearfix">
 
@@ -148,7 +146,7 @@
                     <div class="body">
                         <div class="col-lg-12">
                             <div class="">
-                                <table class="table">
+                                <table class="table js-basic-example dataTable">
                                     <thead>
                                     <tr>
                                         <th class="nono">
@@ -217,10 +215,11 @@
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
     <script>
-        $(function () {
-            $('.data_table').DataTable();
-        });
 
+        $(document).ready( function () {$('.js-basic-example').dataTable( {
+            "bSort": false
+        } );
+        } );
 
         $(document).ready(function () {
 

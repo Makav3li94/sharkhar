@@ -12,7 +12,7 @@
                         <div class="col-lg-8 col-md-12">
                             <div class="form-group">
                                 <label>انتخاب سفارش</label>
-                                <select class="form-control show-tick ms select2" id="order" name="order"
+                                <select class="form-control  ms select2" id="order" name="order"
                                         onchange="getSeller()" data-placeholder="انتخاب سفارش">
                                     <option></option>
                                     @foreach($orders as $order)

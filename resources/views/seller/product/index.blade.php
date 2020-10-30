@@ -203,7 +203,7 @@
     <!-- SweetAlert Plugin Js -->
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/clipboard.js-master/clipboard.min.js')}}"></script>
+
     <script src="{{asset('assets/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script> <!-- Bootstrap Notify Plugin Js -->
     <script>
         $(document).ready(function () {

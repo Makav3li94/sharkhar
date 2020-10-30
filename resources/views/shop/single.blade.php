@@ -37,97 +37,106 @@
                                                 {!! $product->body !!}
                                             </p>
                                             @if(!auth()->check())
-                                                <hr>
-                                                <div class="action">
-                                                    <form action="{{route('payment_view',$product->id)}}" method="get">
-                                                        @csrf
-                                                        @if(!auth()->guard('buyer')->check())
-                                                            <small class="text-center text-info mt-1 mb-2"
-                                                                   style="display: inherit">
-                                                                لطفا
-                                                                اطلاعات زیر را جهت
-                                                                پیگیری سفارشتان پر کنید.
-                                                            </small>
+                                                @if($product->optional_price == 0 && $product->price == 0)
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="alert alert-info">
+                                                            امکان خرید این محصول وجود ندارد.
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <hr>
+                                                    <div class="action">
+                                                        <form action="{{route('payment_view',$product->id)}}" method="get">
+                                                            @csrf
+                                                            @if(!auth()->guard('buyer')->check())
+                                                                <small class="text-center text-info mt-1 mb-2"
+                                                                       style="display: inherit">
+                                                                    لطفا
+                                                                    اطلاعات زیر را جهت
+                                                                    پیگیری سفارشتان پر کنید.
+                                                                </small>
+                                                                <div class="row">
+                                                                    <!-- Single Input Area Start -->
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="name">نام و نام خانواگی:</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   name="name"
+                                                                                   value="{{old('name')}}"
+                                                                                   oninput="setCustomValidity('')"
+                                                                                   oninvalid="this.setCustomValidity('لطفا نام و نام خانوادگی را وارد کنید')"
+                                                                                   required>
+                                                                        </div>
+                                                                        @if($errors->has('name'))
+                                                                            <small class="text-danger">
+                                                                                {{$errors->first('name')}}
+                                                                            </small>
+                                                                        @endif
+
+                                                                    </div>
+
+                                                                    <!-- Single Input Area Start -->
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="mobile">شماره تلفن:</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   name="mobile"
+
+                                                                                   value="{{old('mobile')}}"
+                                                                                   oninput="setCustomValidity('')"
+                                                                                   oninvalid="this.setCustomValidity('لطفا شماره تلفن را وارد کنید')"
+                                                                                   required>
+                                                                        </div>
+                                                                        @if($errors->has('mobile'))
+                                                                            <small class="text-danger">
+                                                                                {{$errors->first('mobile')}}
+                                                                            </small>
+                                                                        @endif
+                                                                    </div>
+
+                                                                    <!-- Single Input Area Start -->
+
+                                                                </div>
+                                                            @endif
                                                             <div class="row">
-                                                                <!-- Single Input Area Start -->
                                                                 <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="name">نام و نام خانواگی:</label>
-                                                                        <input type="text" class="form-control"
-                                                                               name="name"
-                                                                               value="{{old('name')}}"
-                                                                               oninput="setCustomValidity('')"
-                                                                               oninvalid="this.setCustomValidity('لطفا نام و نام خانوادگی را وارد کنید')"
-                                                                               required>
-                                                                    </div>
-                                                                    @if($errors->has('name'))
-                                                                        <small class="text-danger">
-                                                                            {{$errors->first('name')}}
-                                                                        </small>
-                                                                    @endif
-
+                                                                    <label for="qty">تعداد:</label>
+                                                                    <input type="number" class="form-control"
+                                                                           name="qty" value="1" id="qty"
+                                                                           onchange="getCost()" min="1">
                                                                 </div>
 
-                                                                <!-- Single Input Area Start -->
                                                                 <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="mobile">شماره تلفن:</label>
-                                                                        <input type="text" class="form-control"
-                                                                               name="mobile"
 
-                                                                               value="{{old('mobile')}}"
-                                                                               oninput="setCustomValidity('')"
-                                                                               oninvalid="this.setCustomValidity('لطفا شماره تلفن را وارد کنید')"
-                                                                               required>
-                                                                    </div>
-                                                                    @if($errors->has('mobile'))
-                                                                        <small class="text-danger">
-                                                                            {{$errors->first('mobile')}}
-                                                                        </small>
-                                                                    @endif
-                                                                </div>
-
-                                                                <!-- Single Input Area Start -->
-
-                                                            </div>
-                                                        @endif
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label for="qty">تعداد:</label>
-                                                                <input type="number" class="form-control"
-                                                                       name="qty" value="1" id="qty"
-                                                                       onchange="getCost()" min="1">
-                                                            </div>
-
-                                                            <div class="col-md-6">
-
-                                                                <label for="cost">قیمت:</label>
-                                                                <input type="text" class="form-control"
-                                                                       name="cost" id="total" readonly
-                                                                       value="{{$product->price}}">
-
-                                                                @if($product->optional_price == 0)
-                                                                    <input type="hidden" name="default_cost"
-                                                                           id="default_cost"
+                                                                    <label for="cost">قیمت:</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="cost" id="total" readonly
                                                                            value="{{$product->price}}">
-                                                                @else
-                                                                    <input type="hidden" name="default_cost"
-                                                                           id="default_cost"
-                                                                           value="{{$product->optional_price}}">
-                                                                @endif
+
+                                                                    @if($product->optional_price == 0)
+                                                                        <input type="hidden" name="default_cost"
+                                                                               id="default_cost"
+                                                                               value="{{$product->price}}">
+                                                                    @else
+                                                                        <input type="hidden" name="default_cost"
+                                                                               id="default_cost"
+                                                                               value="{{$product->optional_price}}">
+                                                                    @endif
 
 
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="row mt-4">
-                                                            <div class="col-lg-12 text-center">
-                                                                <button class="btn btn-raised btn-primary btn-round waves-effect"
-                                                                        type="submit">تکمیل فرایند خرید
-                                                                </button>
+                                                            <div class="row mt-4">
+                                                                <div class="col-lg-12 text-center">
+                                                                    <button class="btn btn-raised btn-primary btn-round waves-effect"
+                                                                            type="submit">تکمیل فرایند خرید
+                                                                    </button>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                                        </form>
+                                                    </div>
+                                                    @endif
                                 @endif
                             </div>
                         </div>

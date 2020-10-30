@@ -13,7 +13,7 @@
     <meta http-equiv="Expires" content="0"/>
     <!-- Title -->
     <meta name="description" content="دستیار فروش شرخر، خرید امن فروش آسان">
-    <meta name="keywords" content="شرخر, اینستاگرام, اینستا گرام, پیج فروشگاهی, فروشگاه انلاین">
+    <meta name="keywords" content="شرخر, دستیار فروش شرخر, دستیار فروش آنلاین,اینستا گرام, پیج فروشگاهی, فروشگاه انلاین">
     <meta name="author" content="Parham Akbari">
     <meta name="theme-color" content="#7f4ee0">
     <title>دستیار فروش شرخر، خرید امن فروش آسان</title>
@@ -23,7 +23,7 @@
 
     <!-- Core Stylesheet -->
     <link href="{{asset('front/style.css')}}" rel="stylesheet">
-
+    <script src="https://www.p30rank.ir/google"></script>
     <!-- Responsive CSS -->
     <link href="{{asset('front/css/responsive.css')}}" rel="stylesheet">
     @yield('styles')
@@ -101,6 +101,7 @@
                                             <li class="nav-item"><a class="nav-link" href="#pricing">تعرفه</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{{route('shop')}}">فروشگاه ها</a></li>
                                             <li class="nav-item"><a class="nav-link" href="{{route('rules')}}">قوانین و مقررات</a></li>
                                         </ul>
 

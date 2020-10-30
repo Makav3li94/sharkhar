@@ -15,14 +15,14 @@ class PoliceController extends Controller {
 	 */
 	public function index() {
 		if ( auth()->guard( 'web' )->check() ) {
-			$orders = Order::where( 'seller_id', auth()->user()->id )->orderBy( 'id', 'DESC' )->get();
+			$orders = Order::where( 'seller_id', auth()->user()->id )->latest()->get();
 
 //			return view( 'seller.police.index', compact( 'orders' ) );
 		} elseif ( auth()->guard( 'buyer' )->check() ) {
 			$orders = Order::whereHas( 'police' )->where( [
 				[ 'payment_method', 0 ],
 				[ 'buyer_id', auth()->guard( 'buyer' )->user()->id ]
-			] )->orderBy( 'id', 'DESC' )->paginate( 5 );
+			] )->latest()->paginate( 5 );
 
 			return view( 'buyer.police.index', compact( 'orders' ) );
 		} else {

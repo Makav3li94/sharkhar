@@ -10,14 +10,17 @@ use Illuminate\Http\Request;
 class ShopController extends Controller {
 
 	public function shop() {
-		$sellers = Seller::where( 'status', 1 )->paginate( 30 );
 
-		return view( 'shop.index', compact( 'sellers' ) );
+		$best =Seller::WhereHas('products')->where( [['is_verified',1],['status', 1]] )->orderBy('id','DESC')->take(8)->get();
+		$bestIds = $best->pluck('id');
+		$sellers = Seller::WhereHas('products')->whereNotIn('id',$bestIds)->where( 'status', 1 )->latest()->paginate( 12 );
+
+		return view( 'shop.index', compact( 'sellers','best' ) );
 	}
 
 	public function vendor( $name ) {
 		$seller           = Seller::where( 'insta_user', $name )->first();
-		$products         = $seller->products()->paginate( 12 );
+		$products         = $seller->products()->latest()->paginate( 12 );
 		$good             = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 2 ] ] )->count();
 		$normal           = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 1 ] ] )->count();
 		$bad              = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 0 ] ] )->count();

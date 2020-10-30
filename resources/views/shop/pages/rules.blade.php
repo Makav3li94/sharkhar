@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="header">
                         <div class="header">
-                            <h2><spong>نحوه حمایت از </spong>فروشندگان</h2>
+                            <h2><strong>قوانین و مقررات</strong> استفاده از شرخر</h2>
                         </div>
 
                     </div>

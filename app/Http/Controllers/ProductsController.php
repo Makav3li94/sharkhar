@@ -16,7 +16,7 @@ class ProductsController extends Controller {
 		$products = Product::where( [
 			[ 'status', 1 ],
 			[ 'seller_id', auth()->user()->id ]
-		] )->orderBy( 'id', 'ASC' )->get();
+		] )->latest()->get();
 
 		return view( 'seller.product.index', compact( 'products' ) );
 	}

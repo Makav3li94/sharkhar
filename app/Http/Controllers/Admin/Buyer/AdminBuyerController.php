@@ -28,7 +28,7 @@ class AdminBuyerController extends Controller {
 
 		if ( $request->password !== null ) {
 			$request->validate( [
-				'email'     => "unique:buyers,email,{$buyer->id}",
+				'email'     => "nullable|unique:buyers,email,{$buyer->id}",
 				'password' => 'required|min:8|confirmed',
 
 			] );
@@ -40,7 +40,7 @@ class AdminBuyerController extends Controller {
 			] );
 		} else {
 			$request->validate( [
-				'email'     => "unique:buyers,email,{$buyer->id}",
+				'email'     => "nullable|unique:buyers,email,{$buyer->id}",
 			] );
 			$buyer->update( [
 				'email' => $request->email,

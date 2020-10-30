@@ -16,11 +16,11 @@ class ContactsController extends Controller {
 	 */
 	public function index() {
 		if ( auth()->guard( 'web' )->check() ) {
-			$tickets = Contact::where( 'seller_id', auth()->user()->id )->orderBy( 'id', 'DESC' )->paginate( 10 );
+			$tickets = Contact::where( 'seller_id', auth()->user()->id )->latest()->paginate( 10 );
 
 			return view( 'seller.contact.index', compact( 'tickets' ) );
 		} elseif ( auth()->guard( 'buyer' )->check() ) {
-			$tickets = Contact::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->paginate( 10 );
+			$tickets = Contact::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->latest()->paginate( 10 );
 
 			return view( 'buyer.contact.index', compact( 'tickets' ) );
 		} else {
@@ -32,9 +32,12 @@ class ContactsController extends Controller {
 	}
 
 	public function store( Request $request ) {
-		$request->validate( [ 'body' => 'required|string' ] );
+		$request->validate( [
+			'body' => 'required|string' ,
+			'subject' => 'required|string' ,
+		] );
 		if ( isset( $request->first ) ) {
-			if ( auth()->check() ) {
+			if ( auth()->guard( 'web' )->check() ) {
 				Contact::create( [
 					'parent_id' => 0,
 					'subject'   => $request->subject,
@@ -44,6 +47,7 @@ class ContactsController extends Controller {
 
 				return redirect()->route( 'seller.contacts.index' )->withSuccess( 'تیکت شما با موفقیت ارسال شد' );
 			} elseif ( auth()->guard( 'buyer' )->check() ) {
+
 				Contact::create( [
 					'parent_id' => 0,
 					'subject'   => $request->subject,
@@ -107,7 +111,7 @@ class ContactsController extends Controller {
 			$tickets = Contact::whereNotIn( 'id', [ $contact->id ] )->where( [
 				[ 'seller_id', auth()->user()->id ],
 				[ 'parent_id', $contact->id ]
-			] )->orderBy( 'id', 'ASC' )->get();
+			] )->latest()->get();
 
 			return view( 'seller.contact.edit', compact( 'contact', 'tickets' ) );
 		} elseif ( auth()->guard( 'buyer' )->check() ) {
@@ -117,7 +121,7 @@ class ContactsController extends Controller {
 					auth()->guard( 'buyer' )->user()->id
 				],
 				[ 'parent_id', $contact->id ]
-			] )->orderBy( 'id', 'ASC' )->get();
+			] )->latest()->get();
 
 			return view( 'buyer.contact.edit', compact( 'contact', 'tickets' ) );
 		} else {
@@ -128,7 +132,7 @@ class ContactsController extends Controller {
 						$contact->seller_id
 					],
 					[ 'parent_id', $contact->id ]
-				] )->orderBy( 'id', 'ASC' )->get();
+				] )->latest()->get();
 			} elseif ( $contact->buyer_id == 1 ) {
 				$tickets = Contact::whereNotIn( 'id', [ $contact->id ] )->where( [
 					[
@@ -136,7 +140,7 @@ class ContactsController extends Controller {
 						$contact->buyer_id
 					],
 					[ 'parent_id', $contact->id ]
-				] )->orderBy( 'id', 'ASC' )->get();
+				] )->latest()->get();
 			}
 
 

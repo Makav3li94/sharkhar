@@ -19,13 +19,13 @@ class FeedbacksController extends Controller {
 	 */
 	public function index() {
 		if ( auth()->guard( 'buyer' )->check() ) {
-			$feedbacks = Feedback::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->orderBy( 'id', 'desc' )->get();
+			$feedbacks = Feedback::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->latest()->get();
 
 			return view( 'buyer.feedbacks.index', compact( 'feedbacks' ) );
 
 		} elseif ( auth()->guard( 'web' )->check() ) {
 			$seller    = Seller::findOrfail( auth()->user()->id );
-			$feedbacks = Feedback::where( 'seller_id', $seller->id )->paginate( 5 );
+			$feedbacks = Feedback::where( 'seller_id', $seller->id )->latest()->get();
 			$good      = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 2 ] ] )->count();
 			$normal    = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 1 ] ] )->count();
 			$bad       = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 0 ] ] )->count();
@@ -173,7 +173,7 @@ class FeedbacksController extends Controller {
 
 	public function getSellerAjax( Request $request ) {
 		$validator = Validator::make( $request->all(), [
-			'order' => 'required|numeric'
+			'order_id' => 'required'
 		] );
 		if ( $validator->fails() ) {
 			return response()->json( [ 'selectEroor' => 'true' ] );
@@ -199,22 +199,21 @@ class FeedbacksController extends Controller {
 		$sellerIsVerified = $seller->is_verified == 'green' ? 'تایید شده توسط شرخر' : 'تایید نشده :(';
 		$sellerColor      = $seller->is_verified == "red" ? "danger" : "success";
 		$deliverStatus    = ( $order->deliver_status == 'green' ) ? 'تحویل گرفتم' : 'تحویل نگرفتم';
-		$deliverCollor    = $order->deliver_status == "red" ? "danger" : "success";
+		$deliverCollor    = $order->deliver_status == "red" ;
 
-		$paymentStatus = ( $order->payment_status == 'green' ) ? 'تحویل گرفتم' : 'تحویل نگرفتم';
-		$paymentCollor = $order->payment_status == "red" ? "danger" : "success";
+		$paymentStatus = ( $order->payment_status == 'green' ) ? 'پرداخت کردم' : 'پرداخت نکردم';
+		$paymentCollor = $order->payment_status == "red" ;
 		$html          = '';
 		if ( $order ) {
 			$html = ' 
                 <div class="row">
                  
-                 <div class="col-lg-4 col-md-12 pr-0 p-res-0">
+                 <div class="col-lg-5 col-md-5 pr-0 p-res-0">
                          <div class="card">
                         <div class="header">
                             <h2><strong>اطلاعات</strong> فروشنده</h2>
                         </div>
                         <div class="body">
-                              <div class="col-lg-4 col-md-12">
                             <div class="img">
                                 <img src="' . $order->seller->logo . '" class="rounded-circle" alt="profile-image">
                             </div>
@@ -228,9 +227,9 @@ class FeedbacksController extends Controller {
                                 <small class="text-info"><strong>مجموع بازخورد
                                         ها:</strong> ' . $order->seller->feedbacks->count() . '</small>
                                 <ul class="list-unstyled mt-3 d-flex">
-                                    <li class="mr-3 badge badge-success"> :) فروشنده عالی: ' . $good . '</li>
-                                    <li class="mr-3 badge badge-info">فروشنده معمولی: ' . $normal . '</li>
-                                    <li class="mr-3 badge badge-danger">باید بهتر باشه : ' . $bad . '}</li>
+                                    <li class="mr-1 badge badge-success"> :) فروشنده عالی: ' . $good . '</li>
+                                    <li class="mr-1 badge badge-info">فروشنده معمولی: ' . $normal . '</li>
+                                    <li class="mr-1 badge badge-danger">باید بهتر باشه : ' . $bad . '</li>
                                 </ul>
 
 
@@ -248,7 +247,7 @@ class FeedbacksController extends Controller {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
 </div>
                     <div class="card">
                         <div class="header">
@@ -282,13 +281,13 @@ class FeedbacksController extends Controller {
                             <p>
                                 <span class="col-' . $paymentCollor . '">' . $paymentStatus . '</span>
                             </p>
-                            <hr>
+                      
 
                         </div>
 
                     </div>
              </div>
-                <div class="col-lg-8 col-md-12 pl-0 p-res-0">
+                <div class="col-lg-7 col-md-7 pl-0 p-res-0">
                     <div class="card">
                         <div class="header">
                                 <h2><strong>ارسال بازخورد</strong> خرید شما چگونه بود ؟</h2>

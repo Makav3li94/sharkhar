@@ -28,4 +28,12 @@ class Buyer extends Authenticatable
 	public function police(){
 		return $this->hasMany(Police::class);
 	}
+
+	public function setEmailAttribute($value) {
+		if ( empty($value) ) { // will check for empty string
+			$this->attributes['email'] = NULL;
+		} else {
+			$this->attributes['email'] = $value;
+		}
+	}
 }

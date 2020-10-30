@@ -4,15 +4,13 @@
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12">
                 <div class="card mcard_1">
+                    <div class="img">
+                        <img src="{{$seller->background ?? asset('assets/images/2.jpg')}}" class="img-fluid"
+                             alt="">
+
+                    </div>
                     <div class="body" data-intro="اطلاعات پیج شما ...">
 
-
-                        <div class="img">
-                            <img src="{{$seller->background ?? 'assets/images/image-gallery/2.jpg'}}" class="img-fluid"
-                                 alt="">
-
-                        </div>
-                        <div class="body">
                             <div class="user">
                                 <img src="{{$seller->logo}}" class="rounded-circle img-raised"
                                      alt="profile-image">
@@ -34,6 +32,10 @@
                                     <small>دنبال کردن</small>
                                 </div>
                             </div>
+                        <hr>
+                        <div class="p-2 d-flex justify-content-between">
+                            <h2 class="mb-0 font-18">{{$seller->name}}</h2>
+                            <div class=" badge  badge-{{$sellerColor}}  ">{{$sellerIsVerified}}</div>
                         </div>
                     </div>
 
@@ -42,45 +44,63 @@
             <div class="col-lg-6 col-md-12" data-intro="آمار بازخورد های مشتریان شما پس از خرید از شرخر">
                 <div class="card">
                     <div class="body">
+
                         @if(count($feedbacks) > 0)
                             <ul class="row list-unstyled c_review">
+
                                 @foreach($feedbacks as $feedback)
                                     <li class="col-12">
                                         <div class="avatar">
                                             <a href="javascript:void(0);">
                                                 <img class="rounded"
                                                      src="{{asset('assets/images/user-placeholder.png')}}"
-                                                     alt="user" width="60"></a>
+                                                     alt="user" height="auto" width="60"></a>
                                         </div>
                                         <div class="comment-action">
-                                            <h6 class="c_name">{{$feedback->buyer->name}}</h6>
-                                            <p class="c_msg m-b-0">{{\Illuminate\Support\Str::limit($feedback->body,70)}} </p>
-                                            <div class="badge badge-info">{{\Illuminate\Support\Str::limit($feedback->product->title,15)}}</div>
-                                            <span class="m-l-10" style="position:absolute ;top:39px">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="p-2">
+                                                    <h6 class="c_name">{{$feedback->buyer->name}}</h6>
+                                                </div>
+                                                <div class="p-2">
+                                                    <span class="m-l-10" >
                                             @if($feedback->score == 'green')
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star col-amber"></i></a>
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star col-amber"></i></a>
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star col-amber"></i></a>
-                                                @elseif($feedback->score == 'warning')
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star col-amber"></i></a>
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star col-amber"></i></a>
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star-outline text-muted"></i></a>
-                                                @else
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star col-amber"></i></a>
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star-outline text-muted"></i></a>
-                                                    <a href="javascript:void(0);"><i
-                                                                class="zmdi zmdi-star-outline text-muted"></i></a>
-                                                @endif
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star col-amber"></i></a>
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star col-amber"></i></a>
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star col-amber"></i></a>
+                                                        @elseif($feedback->score == 'warning')
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star col-amber"></i></a>
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star col-amber"></i></a>
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star-outline text-muted"></i></a>
+                                                        @else
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star col-amber"></i></a>
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star-outline text-muted"></i></a>
+                                                            <a href="javascript:void(0);"><i
+                                                                        class="zmdi zmdi-star-outline text-muted"></i></a>
+                                                        @endif
                                         </span>
-                                            <small class="comment-date float-sm-right pt-1">{{$feedback->created_at}}</small>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="p-2">
+                                                    <p class=" m-b-0">{{$feedback->body}} </p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="p-2">
+                                                    <div class="badge badge-info">{{\Illuminate\Support\Str::limit($feedback->product->title,30)}}</div>
+                                                </div>
+                                                <div class="p-2">
+                                                    <small class="comment-date float-sm-right pt-1">{{$feedback->created_at}}</small>
+                                                </div>
+                                            </div>
                                         </div>
                                     </li>
                                 @endforeach
@@ -92,25 +112,17 @@
                             <hr>
                         @endif
                         <div class="user">
-                            <div class="d-flex">
-                                <h2 class="font-18 flex-grow-1 mb-0">{{$seller->name}}
 
-                                </h2>
-                                <div class=" badge  badge-{{$sellerColor}}  ">{{$sellerIsVerified}}</div>
-                            </div>
-                            <hr>
-                            <span class="text-info">{{$seller->mobile}}</span>
-                            <br>
                             <span class="text-info"><strong>مجموع بازخورد
-                                    ها:</strong> ' {{$seller->feedbacks->count()}}</span>
-                            <ul class="list-unstyled mt-3 d-flex">
-                                <li class="mr-3 p-2 mp-res badge badge-success"> عالی: {{$good}} :)</li>
-                                <li class="mr-3 p-2 mp-res badge badge-info">معمولی: {{$normal}}</li>
-                                <li class="mr-3 p-2 mp-res badge badge-danger"> ضعیف :{{$bad}}</li>
+                                    ها:</strong> {{$seller->feedbacks->count()}}</span>
+                            <ul class="list-unstyled mt-3  d-flex justify-content-around">
+                                <li class=" p-2 mp-res badge badge-success"> عالی: {{$good}} :)</li>
+                                <li class=" p-2 mp-res badge badge-info">معمولی: {{$normal}}</li>
+                                <li class=" p-2 mp-res badge badge-danger"> ضعیف :{{$bad}}</li>
                             </ul>
 
 
-                            <div class="progress m-b-5">
+                            <div class="progress">
                                 <div class="progress-bar progress-bar-success" style="width: {{$p_good}}%">
                                     <span class="sr-only">{{$p_good}}٪ کامل (موفقیت)</span>
                                 </div>
@@ -132,7 +144,7 @@
         <div class="row clearfix">
             @foreach($products as $product)
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                    <div class="card" >
+                    <div class="card">
                         <div class="body product_item">
                             <span class="label onsale">فروشی!</span>
                             <img src="{{$product->image}}" alt="{{$seller->title}}" class="img-fluid cp_img"/>
@@ -154,7 +166,7 @@
                                    href="{{route('product',$product->id)}}">{{\Illuminate\Support\Str::limit($product->title,80)}}</a>
 
                                 <ul class="product_price list-unstyled justify-content-center">
-                                    <li class="new_price">{{number_format($product->price)}} هزار تومان</li>
+                                    <li class="new_price">{{ $product->price != 0 ? number_format($product->price)." هزار تومان" : 'بدون قیمت'}} </li>
                                 </ul>
                             </div>
                             <div class="action text-center">
@@ -183,18 +195,18 @@
     </div>
 @endsection
 @section('scripts')
-<script>
-    $(document).ready(function () {
+    <script>
+        $(document).ready(function () {
 
 
-        if (RegExp('multipage', 'gi').test(window.location.search)) {
-            introJs().setOption('doneLabel', 'Next page').start().oncomplete(function () {
+            if (RegExp('multipage', 'gi').test(window.location.search)) {
+                introJs().setOption('doneLabel', 'Next page').start().oncomplete(function () {
                     window.location.href = '{{ url("seller/products/?multipage=true") }}';
-            });
-        }
+                });
+            }
 
-    });
-</script>
+        });
+    </script>
 @endsection
 @section('styles')
     <style>

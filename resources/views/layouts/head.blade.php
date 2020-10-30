@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js " lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#5851db">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>::دستیار فروش شرخر :: خانه</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+    <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/plugins/charts-c3/plugin.css')}}"/>
+    <link rel="icon" href="{{asset('assets/images/fav.png')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/morrisjs/morris.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/plugins/intro.js-master/introjs.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/plugins/intro.js-master/introjs-rtl.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/mine.css')}}">
+@yield('styles')
+
+<!-- Custom Css -->
+
+</head>

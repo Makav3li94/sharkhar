@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Seller;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\Seller;
 use App\Models\Transaction;
 use Carbon\Carbon;
@@ -100,10 +101,10 @@ class AdminSellerController extends Controller {
 		} );
 
 		if ( $validator->fails() ) {
-			return redirect()->back()->withErrors($validator)->withInput();
+			return redirect()->back()->withErrors( $validator )->withInput();
 		}
 		$request->sheba   = Str::upper( $request->sheba );
-		 $default_shipping = (int) filter_var( $request->default_shipping, FILTER_SANITIZE_NUMBER_INT );
+		$default_shipping = (int) filter_var( $request->default_shipping, FILTER_SANITIZE_NUMBER_INT );
 		$free_shipping    = (int) filter_var( $request->free_shipping, FILTER_SANITIZE_NUMBER_INT );
 		$seller->update( [
 			'sheba'            => $request->sheba,
@@ -114,7 +115,7 @@ class AdminSellerController extends Controller {
 			'free_shipping'    => $free_shipping,
 			'telephone'        => $request->telephone,
 			'default_shipping' => $default_shipping,
-			'bank_status' => $request->payment_method ?? 0,
+			'bank_status'      => $request->payment_method ?? 0,
 		] );
 
 		return redirect()->back()->with( 'success', 'تغییرات با موفقیت اعمال شد . ' );
@@ -140,5 +141,60 @@ class AdminSellerController extends Controller {
 		}
 
 		return false;
+	}
+
+
+	public function search( Request $request ) {
+		if ( $request->ajax() ) {
+			$val      = $request->input( 'val' );
+			$products = Product::where( [
+				[ 'seller_id', auth()->guard( 'web' )->user()->id ],
+				[ 'status', '1' ],
+				[ 'body', 'like', "%$val%" ]
+			] )->take( 5 )->get();
+
+
+			if ( count( $products ) == 0 ) {
+				return response()->json( [
+					'records' => 'none'
+				] );
+			} else {
+				$productsList = [];
+				$html         = ' <div class="card>"> <div class="body"><table class="table">';
+				$price        = '';
+
+
+				foreach ( $products as $key => $product ) {
+					if ( $product->price != 0 ) {
+						$price = number_format( $product->price ) . " هزارتومان" ?? '';
+					} else {
+						$price = '<input class="form-control total price_input" onkeyup="optinalPriceFunc('.$product->id.')" name="optional_price" id="' . $product->id . '-optional_price" type="text">';
+					}
+					$html .= '<tr>';
+					$html .= '<td> <img src="' . $product->image_thumb . '" width="35" alt="Product img"> </td>
+                              <td>' . Str::limit( $product->title, 30 ) . '</td>
+                              <td>' . $price . '</td>
+							  <td>
+                                <button type="button" class="btn btn-sm btn-info clipboard-btn" data-clipboard-text="' . route( 'product', $product->id ) . '">
+                                    <i class="zmdi zmdi-copy"></i>
+                                </button>
+                                ||
+                                <a class="btn btn-sm btn-success"
+                                   id="' . $product->id . '-whatsup-link"
+                                   href="whatsapp://send?text=' . route( 'product', $product->id ) . '"
+                                   data-action="share/whatsapp/share">
+                                    <i class="zmdi zmdi-whatsapp"></i>
+                                </a>
+                              </td>';
+					$html .= '</tr>';
+
+				}
+				$html .= '</table></div></div>';
+
+				return response()->json( [
+					'records' => $html
+				] );
+			}
+		}
 	}
 }
