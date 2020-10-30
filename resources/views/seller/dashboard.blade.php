@@ -68,9 +68,9 @@
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card widget_2 big_icon domains">
                     <div class="body">
-                        <h6>بازخورد ها</h6>
+                        <h6>بازخورد های روز</h6>
                         <h2>
-                            <small class="info"> 10</small>
+                            <small class="info"> {{$totalFeedbacks}}</small>
                         </h2>
                         <small>مجموع بازخورد ثبت شده</small>
                         <div class="progress">

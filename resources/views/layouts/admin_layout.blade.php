@@ -37,8 +37,8 @@
 
     @if(!isset($hide))
         <div class="container">
-            <div class=" mb-3">
-                <div class="d-flex  justify-content-between">
+            <div class="row mb-3">
+                <div class="col-md-4 col-sm-12 mb-2">
 
                     <div class="p-2 ml-5"
                          @if(request()->is('seller/dashboard'))
@@ -50,63 +50,63 @@
                         <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
                                     class="zmdi zmdi-sort-amount-desc"></i></button>
                     </div>
+                </div>
 
-                    <div class="p-2 flex-grow-1">
-                        @if(auth()->guard('web')->check())
-                            <form id="app-search">
-                                <div class="input-group masked-input position-relative">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="zmdi zmdi-search"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="نام محصول ...">
-                                    <span class="input-group-text float-left " style="cursor: pointer"
-                                          onclick="$('#app-search input').val(''); $('#app-search .list-group').html('');">
+                <div class="col-md-8 col-sm-12">
+                    @if(auth()->guard('web')->check())
+                        <form id="app-search">
+                            <div class="input-group masked-input position-relative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="zmdi zmdi-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="نام محصول ...">
+                                <span class="input-group-text float-left " style="cursor: pointer"
+                                      onclick="$('#app-search input').val(''); $('#app-search .list-group').html('');">
                                         <i class="zmdi zmdi-close-circle"></i>
                                     </span>
-                                </div>
-                                <div class="list-group"></div>
-                            </form>
-                        @endif
-                    </div>
+                            </div>
+                            <div class="list-group"></div>
+                        </form>
+                    @endif
                 </div>
             </div>
-            <div class="bread-crumb d-flex justify-content-between">
-                <div class="p-2">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="
+        <div class="bread-crumb d-flex justify-content-between">
+            <div class="p-2">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="
                        @if(auth()->guard('web')->check())
-                            {{route('seller.dashboard')}}
-                            @elseif(auth()->guard('buyer')->check())
-                            {{route('buyer.dashboard')}}
-                            @else
-                            @endif">
-                                <i class="zmdi zmdi-home"></i> شرخر</a>
-                        </li>
-                        @if(isset($b_level1))
-
-                            <li class="breadcrumb-item">
-                                <a href="{{url()->previous()}}">{{$b_level1}}</a>
-                            </li>
-
-                            <li class="breadcrumb-item active">{{$b_level2}}</li>
+                        {{route('seller.dashboard')}}
+                        @elseif(auth()->guard('buyer')->check())
+                        {{route('buyer.dashboard')}}
                         @else
-                            <li class="breadcrumb-item active">{{$b_level2}}</li>
-                        @endif
+                        @endif">
+                            <i class="zmdi zmdi-home"></i> شرخر</a>
+                    </li>
+                    @if(isset($b_level1))
+
+                        <li class="breadcrumb-item">
+                            <a href="{{url()->previous()}}">{{$b_level1}}</a>
+                        </li>
+
+                        <li class="breadcrumb-item active">{{$b_level2}}</li>
+                    @else
+                        <li class="breadcrumb-item active">{{$b_level2}}</li>
+                    @endif
 
 
-                    </ul>
-                </div>
-
-                @if(isset($back))
-                    <div class="p-2 ">
-                        <a class="btn btn-info  " href="{{url()->previous()}}">
-                            بازگشت
-                            <i class="zmdi zmdi-arrow-right"></i>
-                        </a>
-                    </div>
-                @endif
+                </ul>
             </div>
+
+            @if(isset($back))
+                <div class="p-2 ">
+                    <a class="btn btn-info  " href="{{url()->previous()}}">
+                        بازگشت
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </a>
+                </div>
+            @endif
+        </div>
         </div>
     @endif
 

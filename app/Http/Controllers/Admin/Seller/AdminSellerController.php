@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Seller;
 
 use App\Http\Controllers\Controller;
+use App\Models\Feedback;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Seller;
@@ -24,10 +25,11 @@ class AdminSellerController extends Controller {
 
 		$totalSale         = Transaction::where( 'seller_id', auth()->user()->id )->sum( 'price' );
 		$totalOrders       = Order::where( 'seller_id', auth()->user()->id )->count();
-		$totalTransactions = Transaction::where( 'seller_id', auth()->user()->id )->count();;
-		$totalViews = 1;
+		$totalTransactions = Transaction::where( 'seller_id', auth()->user()->id )->count();
+		$totalFeedbacks    = Feedback::where( 'seller_id', auth()->user()->id )->whereDate( "created_at", '=', $now )->count();
+		$totalViews        = 1;
 
-		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalOrders', 'totalTransactions', 'totalViews' ) );
+		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalFeedbacks','totalOrders', 'totalTransactions', 'totalViews' ) );
 	}
 
 	public function verify( Request $request, Seller $seller ) {
@@ -168,7 +170,7 @@ class AdminSellerController extends Controller {
 					if ( $product->price != 0 ) {
 						$price = number_format( $product->price ) . " هزارتومان" ?? '';
 					} else {
-						$price = '<input class="form-control total price_input" onkeyup="optinalPriceFunc('.$product->id.')" name="optional_price" id="' . $product->id . '-optional_price" type="text">';
+						$price = '<input class="form-control total price_input" onkeyup="optinalPriceFunc(' . $product->id . ')" name="optional_price" id="' . $product->id . '-optional_price" type="text">';
 					}
 					$html .= '<tr>';
 					$html .= '<td> <img src="' . $product->image_thumb . '" width="35" alt="Product img"> </td>
