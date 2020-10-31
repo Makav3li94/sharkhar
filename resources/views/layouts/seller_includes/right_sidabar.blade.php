@@ -177,10 +177,16 @@
                     <a href="{{route('admin.contacts.index')}}">
                         <i class="zmdi zmdi-ticket-star"></i><span>تیکت ها</span></a>
                 </li>
-                <li class="{{ request()->is('buyer/orders') ? 'active' : '' }} ">
-                    <a href="{{route('buyer.orders.index')}}">
+                <li class="{{ request()->is('admin/orders') ? 'active' : '' }} ">
+                    <a href="{{route('admin.orders.index')}}">
                         <i class="zmdi zmdi-assignment"></i><span>سفارشات</span>
                     </a>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>بلاگ</span></a>
+                    <ul class="ml-menu">
+                        <li><a href="{{route('admin.blogs.index')}}">لیست بلاگ ها</a></li>
+                        <li><a href="{{route('admin.blogs.create')}}">بلاگ جدید</a></li>
+                    </ul>
                 </li>
             @endif
 

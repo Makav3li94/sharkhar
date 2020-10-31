@@ -33,7 +33,7 @@
 
 @include('layouts.front_header')
 
-@if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
+@if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check() && !auth()->guard('admin')->check())
     @php
         $bib = 'bib'
     @endphp

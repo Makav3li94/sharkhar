@@ -12,14 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('admin',function (){
-//	\App\Models\Admin::create([
-//		'name'=>'Makaveli',
-//		'email'=>'neogood@yahoo.com',
-//		'mobile'=>'09121989573',
-//		'password'=>\Illuminate\Support\Facades\Hash::make('Parham@19171363'),
-//	]);
-//});
+Route::get('admin',function (){
+	\App\Models\Admin::create([
+		'name'=>'Makaveli',
+		'email'=>'neogood@yahoo.com',
+		'mobile'=>'09121989573',
+		'password'=>\Illuminate\Support\Facades\Hash::make('Parham@19171363'),
+	]);
+});
 //Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
 Route::get( 'test', function () {
 //	\Spatie\Sitemap\SitemapGenerator::create('https://sharkhar.net/')->getSitemap()->writeToDisk('public', 'sitemap.xml');
@@ -136,9 +136,9 @@ Route::get( '/', function () {
 
 Route::post( 'message', function () {
 	request()->validate( [
-		'name' => 'required|string',
+		'name'  => 'required|string',
 		'email' => 'required|email',
-		'body' => 'required|string',
+		'body'  => 'required|string',
 	] );
 	\App\Models\Contact::create( request()->all() );
 
@@ -248,6 +248,7 @@ Route::name( 'admin.' )->prefix( 'admin' )->middleware( 'auth:admin' )->group( f
 		'show'
 	] );;
 
+	Route::resource( 'blogs', \App\Http\Controllers\BlogController::class );
 
 	Route::patch( 'sellers.update/{seller}', [
 		\App\Http\Controllers\SellersController::class,
@@ -257,6 +258,23 @@ Route::name( 'admin.' )->prefix( 'admin' )->middleware( 'auth:admin' )->group( f
 
 	Route::resource( 'contacts', \App\Http\Controllers\ContactsController::class );
 
+
+	Route::resource( 'orders', \App\Http\Controllers\OrdersController::class )->except( [
+		'create',
+		'show'
+	] );;
+	Route::resource( 'police', \App\Http\Controllers\PoliceController::class )->except( [
+		'create',
+		'show'
+	] );;
+	Route::resource( 'products', \App\Http\Controllers\ProductsController::class )->except( [
+		'create',
+		'show'
+	] );;
+	Route::resource( 'transactions', \App\Http\Controllers\TransactionsController::class )->only( [
+		'index',
+	] );;
+	Route::resource( 'feedbacks', \App\Http\Controllers\FeedbacksController::class );
 } );
 
 

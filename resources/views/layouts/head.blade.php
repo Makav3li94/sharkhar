@@ -25,7 +25,7 @@
     </title>
     <link rel="icon" href="{{asset('assets/images/fav.png')}}">
 
-    @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
+    @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check() && !auth()->guard('admin')->check())
 
 
 

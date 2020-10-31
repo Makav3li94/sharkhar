@@ -16,14 +16,23 @@ class BlogController extends Controller
      */
     public function index()
     {
-    	$blogCategories = BlogCategory::all();
-    	$blogs = Blog::paginate(4);
-    	$blogsLatest = Blog::orderBy('id','DESC')->get()->take(5);
-    	$tags = Tag::all()->take(5);
-    	return view('blog.index',compact('blogs','blogCategories','tags','blogsLatest'));
+		if (!auth()->guard('admin')->check()){
+			$blogCategories = BlogCategory::all();
+			$blogs = Blog::paginate(4);
+			$blogsLatest = Blog::orderBy('id','DESC')->get()->take(5);
+			$tags = Tag::all()->take(5);
+			return view('blog.index',compact('blogs','blogCategories','tags','blogsLatest'));
+		}else{
+			$blogs = Blog::all();
 
+			return view('admin.blog.index',compact('blogs'));
+		}
     }
-
+	public function create()
+	{
+		$blogCategories = BlogCategory::all();
+		return view('admin.blogs.create',compact('blogCategories'));
+	}
 
     /**
      * Store a newly created resource in storage.
@@ -33,7 +42,13 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+        	'title' => 'required|string',
+        	'slug' => 'required|string',
+        	'body' => 'required|string',
+        	'image' => 'required|image',
+        	'category_id' => 'required|numeric',
+        ]);
     }
 
     /**

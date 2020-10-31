@@ -91,7 +91,7 @@
                                         <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{route('shop')}}">فروشگاه
-                                                ها</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{route('blogs.index')}}">وبلاگ</a></li>
                                         <li class="nav-item "><a class="nav-link pl-0" href="{{route('rules')}}">قوانین و
                                                 مقررات</a></li>
                                     </ul>
