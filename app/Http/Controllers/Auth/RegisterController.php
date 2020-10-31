@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller {
 	/*
@@ -163,7 +164,7 @@ class RegisterController extends Controller {
 		$seller  = Seller::create( [
 			'name'        => $data['name'],
 			'mobile'      => $data['mobile'],
-			'insta_user'  => trim($data['insta_user']),
+			'insta_user'  => Str::lower(trim($data['insta_user'])),
 			'password'    => Hash::make( $data['password'] ),
 			'bank_status' => 1,
 		] );

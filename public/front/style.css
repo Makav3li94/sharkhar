@@ -241,7 +241,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #405de6;
+    color: #5851db;
     font-size: 30px;
     margin: 0;
 }
@@ -393,9 +393,9 @@ header {
     font-weight: 500;
     display: inline-block;
     border: 2px solid #a883e9;
-    height: 50px;
+    height: 35px;
     min-width: 110px;
-    line-height: 46px;
+    line-height: 30px;
     text-align: center;
     border-radius: 24px 24px 24px 24px;
     font-size: 0.8rem;
@@ -409,14 +409,23 @@ header {
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
 }
+.login-link:hover{
+    color:#e1306c!important;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
 
+.login-link:hover > a{
+    transform: rotate(20deg);
+}
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #833ab4;
+    background-color: #405de6;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding-top: 15px;
+    /*padding-top: 15px;*/
     position: fixed;
     top: 0;
     z-index: 99;
@@ -430,10 +439,6 @@ header {
     /*padding: 23px 15px;*/
 }
 
-.header_area.sticky .navbar {
-    padding: 0;
-}
-
 
 /* --------------------------
 :: 3.0 Wellcome Area CSS
@@ -441,7 +446,7 @@ header {
 
 .wellcome_area {
     background-image: url(img/bg-img/welcome-bg.png);
-    height: 900px;
+    height: 800px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
@@ -470,10 +475,10 @@ header {
 .welcome-thumb img {
     height: auto;
     width: 100%;
+    /*transform: rotate(-6deg);*/
 }
 
 .wellcome-heading > h1 {
-    font-size: 50px;
     color: #ffffff;
     font-weight: 700;
     position: relative;
@@ -579,7 +584,7 @@ header {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #405de6;
+    color: #5851db;
 }
 
 .single-icon {
@@ -588,7 +593,7 @@ header {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #405de6;
+    color: #5851db;
     margin-bottom: 15px;
 }
 
@@ -603,7 +608,7 @@ header {
 }
 
 .special_description_content > h2 {
-    color: #405de6;
+    color: #5851db;
     font-size: 26px;
     margin-bottom: 30px;
 }
@@ -707,7 +712,7 @@ header {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #405de6;
+    color: #5851db;
     text-align: right;
 }
 
@@ -765,7 +770,7 @@ header {
 }
 
 .video-area .video-play-btn a:hover {
-    background-color: #a865e1;
+    background-color: #5851db;
     color: #fff;
 }
 
@@ -776,12 +781,12 @@ header {
 .cool_facts_area {
     position: relative;
     z-index: auto;
-    background: #a865e1;
-    background: -webkit-linear-gradient(to left, #7873ed, #a865e1);
-    background: -webkit-linear-gradient(right, #7873ed, #a865e1);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#a865e1));
-    background: -o-linear-gradient(right, #7873ed, #a865e1);
-    background: linear-gradient(to left, #7873ed, #a865e1);
+    background: #5851db;
+    background: -webkit-linear-gradient(to left, #405de6, #5851db);
+    background: -webkit-linear-gradient(right, #405de6, #5851db);
+    background: -webkit-gradient(linear, right top, left top, from(#405de6), to(#5851db));
+    background: -o-linear-gradient(right, #405de6, #5851db);
+    background: linear-gradient(to left, #405de6, #5851db);
     padding: 80px 0 80px 0;
     /*top: -100px;*/
 }
@@ -888,7 +893,7 @@ header {
 }
 
 .single-price-plan .package-plan > h5 {
-    color: #405de6;
+    color: #5851db;
     font-size: 18px;
 }
 
@@ -934,7 +939,7 @@ header {
 .single-price-plan.active .package-plan,
 .single-price-plan.active .plan-button > a,
 .single-price-plan:hover .plan-button > a {
-    background-color: #a865e1;
+    background-color: #5851db;
 }
 
 .single-price-plan.active .package-plan .ca-price > h4,
@@ -949,7 +954,7 @@ header {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #405de6;
+    color: #5851db;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -1062,12 +1067,12 @@ header {
 -------------------------- */
 
 .our-monthly-membership {
-    background: #a865e1;
-    background: -webkit-linear-gradient(to left, #7873ed, #a865e1);
-    background: -webkit-linear-gradient(right, #7873ed, #a865e1);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#a865e1));
-    background: -o-linear-gradient(right, #7873ed, #a865e1);
-    background: linear-gradient(to left, #7873ed, #a865e1);
+    background: #405de6;
+    background: -webkit-linear-gradient(to left, #405de6, #5851db);
+    background: -webkit-linear-gradient(right, #405de6, #5851db);
+    background: -webkit-gradient(linear, right top, left top, from(#405de6), to(#5851db));
+    background: -o-linear-gradient(right, #405de6, #5851db);
+    background: linear-gradient(to left, #405de6, #5851db);
 }
 
 .membership-description > h2 {
@@ -1093,7 +1098,7 @@ header {
 }
 
 .get-started-button > a:hover {
-    background: #405de6;
+    background: #5851db;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1121,7 +1126,7 @@ header {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #405de6;
+    color: #5851db;
 }
 
 .member-text > p {
@@ -1201,7 +1206,7 @@ header {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #405de6;
+    color: #5851db;
 }
 
 .footer-contact-area {
@@ -1256,7 +1261,7 @@ header {
 }
 
 .btn.submit-btn:hover {
-    background: #405de6;
+    background: #5851db;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1276,7 +1281,7 @@ header {
 -------------------------- */
 
 .footer-text > h2 {
-    color: #405de6;
+    color: #5851db;
     font-size: 45px;
     font-weight: 700;
 }
@@ -1410,7 +1415,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .new-button {
-    background-color: #405de6;
+    background-color: #5851db;
     color: #fff !important;
     font-weight: 200;
     display: inline-block;
@@ -1480,7 +1485,7 @@ small {
     text-align: center;
     z-index: 95;
     font-size: 22px;
-    color: #405de6;
+    color: #5851db;
     padding: 60px;
     background-color: #fff;
 
@@ -1495,4 +1500,35 @@ small {
     border: 1px solid #222222;
     padding: 10px;
     margin-left: 10px;
+}
+.logo-link:hover {
+    transform: rotate(-20deg);
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+.phone-link{
+    display: inline-block;
+}
+.phone-link{
+    cursor: default;
+}
+
+.phone-link:hover > a{
+    transform: rotate(-20deg);
+        -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+.phone-link  a:hover {
+    transform: rotate(20deg);
+        -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+.main-header .navbar-nav li:hover{
+    border-bottom:  1px solid #e1306c;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
 }

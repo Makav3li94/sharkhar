@@ -52,8 +52,13 @@
                             @endif
                     >
                         <h1 class="mb-0">{{ ucfirst($title ?? '') }}</h1>
-                        <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
-                                    class="zmdi zmdi-sort-amount-desc"></i></button>
+                        @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
+
+                            @else
+                            <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
+                                        class="zmdi zmdi-sort-amount-desc"></i></button>
+                            @endif
+
                     </div>
                 </div>
 

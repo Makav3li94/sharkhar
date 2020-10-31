@@ -22,8 +22,9 @@ use Illuminate\Support\Facades\Route;
 //});
 //Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
 Route::get( 'test', function () {
-	$path = '/public/';
-	\Spatie\Sitemap\SitemapGenerator::create('https://sharkhar.net')->writeToFile($path);
+//	\Spatie\Sitemap\SitemapGenerator::create('https://sharkhar.net/')->getSitemap()->writeToDisk('public', 'sitemap.xml');
+//	$path = '/public/';
+//	\Spatie\Sitemap\SitemapGenerator::create('https://sharkhar.net')->writeToFile($path);
 //	$sellers = \App\Models\Seller::doesntHave( 'products' )->get();
 //	foreach ( $sellers as $seller ) {
 //		\App\Jobs\ScrapInsta::dispatch( $seller );

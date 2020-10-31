@@ -14221,9 +14221,7 @@ section.bib {
     margin-top: 10px;
     overflow: hidden;
 }
-.shop-box img{
-    height: 200px;
-}
+
 .m-r-10,
 .right-sidebar .right_chat .media .media-object,
 .chat-widget ul,
@@ -18173,6 +18171,10 @@ section.bib {
     .wizard_validation .wizard .steps > ul > li {
         width: 100% !important
     }
+    .nono {
+        display: none !important;
+    }
+
 }
 
 .waves-effect.waves-red .waves-ripple {
@@ -22437,9 +22439,6 @@ section.bib {
 
 
 @media screen and (max-width: 600px) {
-    .nono {
-        display: none !important;
-    }
 
     .soso {
         display: block !important;

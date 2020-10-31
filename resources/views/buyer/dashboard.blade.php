@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <div class="container">
+    <div class="container pr-0 pl-0">
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card widget_2 big_icon traffic">
