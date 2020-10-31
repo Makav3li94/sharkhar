@@ -179,7 +179,7 @@ class TransactionsController extends Controller {
 					'product_id'       => $product->id,
 					'order_id'         => $order->id,
 					'price'            => $cost,
-					'transaction_type' => 1,
+					'transaction_type' => 0,
 				] );
 
 				return $payment->pay()->render();

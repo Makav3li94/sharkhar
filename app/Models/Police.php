@@ -27,7 +27,15 @@ class Police extends Model {
 	public function transaction() {
 		return $this->belongsTo( Transaction::class );
 	}
-
+	public function getAdminVoteAttribute( $value ) {
+		if ($value  == 1 ) {
+			return $value = 'seller';
+		} elseif($value == 2) {
+			return $value = 'buyer';
+		}else{
+			return $value = null;
+		}
+	}
 	public function getIsVerifiedAttribute( $value ) {
 		if ($value  == 1 ) {
 			return $value = 'blue';

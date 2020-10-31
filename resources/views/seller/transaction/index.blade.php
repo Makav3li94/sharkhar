@@ -159,7 +159,7 @@
                                                     واسط |
                                                     @if($transaction->police->is_verified == 'green')
                                                         <span class="col-{{$transaction->police->is_verified}}">  تایید شده</span>
-                                                    @elseif($transaction->police->is_verified == 'warning')
+                                                    @elseif($transaction->police->is_verified == 'blue')
                                                         <span class="col-{{$transaction->police->is_verified}}">  در حال بررسی</span>
                                                     @else
                                                         <span class="col-{{$transaction->police->is_verified}}">گزارش مشکل</span>

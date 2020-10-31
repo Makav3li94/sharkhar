@@ -166,8 +166,7 @@
     }
 
     .welcome-thumb img {
-        padding-right: 30px;
-        transform: rotate(15deg);
+
     }
 
     .header_area .menu_area #nav .nav-link,
@@ -312,9 +311,10 @@
     }
 
     .wellcome-heading > h3 {
-        font-size: 252px;
-        top: -105px;
+        font-size: 155px;
+        top: -10px;
         left: -1px;
+        right: 0;
     }
 
     .wellcome-heading,

@@ -10,16 +10,40 @@
             </a>
         </div>
     @else
-        <div class="container">
-            <a href="{{route('seller.products.index')}}">
-                <div class="alert alert-info">مشتری دارید؟ کافیه از طریق بخش محصولات کپی لینک خرید رو برای مشتری بفرستید
-                    و بقیش با ما !
+        @if(auth()->user()->id_card == null)
+            <div class="container">
+                <a href="{{route('seller.profile',auth()->user()->id)}}">
+                    <div class="alert alert-danger">لطفا تصویر کارت ملی خود را جهت تایید تطبیق با شماره شِبا وارد نمایید.
+                    </div>
+                </a>
+            </div>
+
+        @else
+            @if(auth()->user()->is_verified == 'green' )
+                <div class="container">
+                    <a href="{{route('seller.products.index')}}">
+                        <div class="alert alert-info">
+                            تبریک، شما تایید شدید ! حالا کافیه از طریق بخش محصولات کپی لینک خرید رو برای مشتری
+                            بفرستید
+                            و بقیش با ما !
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
+            @else
+                <div class="container">
+                    <a href="{{route('seller.contacts.create')}}">
+                        <div class="alert alert-danger">
+متاسفانه شما تایید هویت نشدید.
+                        </div>
+                    </a>
+                </div>
+            @endif
+        @endif
+
     @endif
     <div class="container pr-0 pl-0">
-        <div class="row clearfix" data-step="2" data-intro="آمار روزانه فروش، تراکنش و سفارش" data-position="bottom-middle-aligned">
+        <div class="row clearfix" data-step="2" data-intro="آمار روزانه فروش، تراکنش و سفارش"
+             data-position="bottom-middle-aligned">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card widget_2 big_icon traffic">
                     <div class="body">
@@ -81,7 +105,8 @@
                 </div>
             </div>
         </div>
-        <div class="row clearfix" data-step="3" data-intro="آمار کلی فروش، تراکنش و سفارش" data-position="bottom-middle-aligned">
+        <div class="row clearfix" data-step="3" data-intro="آمار کلی فروش، تراکنش و سفارش"
+             data-position="bottom-middle-aligned">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">

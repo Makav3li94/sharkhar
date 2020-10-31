@@ -15,7 +15,7 @@
                     <div class="body">
                         @if($police->admin_vote != null)
                             <div class="alert alert-success">
-                                پلتفرم شرخر، حق را به     <div class="col-red inlineblock">{{$police->admin_vote == 1 ? 'فروشنده' : 'خریدار'}}</div> می دهد و اقدامات مالی لازم را انجام خواهد داد.
+                                پلتفرم شرخر، حق را به                   <div class="col-red inlineblock">{{$police->admin_vote == 'seller' ? 'فروشنده' : 'خریدار'}}</div> می دهد و اقدامات مالی لازم را انجام خواهد داد.
                                 در صورت نارضایتی به رای، لطفا شماره سفارش و دلیل اعتراض را از طریق پشتیبانی پیگیری کنید.
                             </div>
                         @else
@@ -134,7 +134,7 @@
                                                     عالی ! تایید میشه
                                                 </option>
                                                 @if($police->is_verified != 'red')
-                                                <option value="1" {{$police->is_verified == 'blue' ? 'selected' :  ''}}>درس
+                                                <option value="1" {{$police->is_verified == 'blue' ? 'selected' :  ''}}>در
                                                     حال بررسی
                                                 </option>
                                                 @endif
@@ -149,11 +149,13 @@
                                             @endif
                                         </div>
                                     </div>
+
+                                    @if($police->buyer_body == null)
                                     <div class="row clearfix mb-3 show-it" {{$police->is_verified == 'red' ? '' :  'hidden'}} >
                                         <div class="col-lg-12">
                                             <label for="">دلیل نارضایتی را شرح دهید.</label>
                                             <textarea name="buyer_body" class="form-control w-100" id="" cols="30" rows="3"
-                                                      placeholder="دلیل عدم رضایت از کالا" {{$police->is_verified == 'red' ? 'disabled' :  'hidden'}} >{{$police->is_verified == 'red' ? $police->buyer_body :  ''}}</textarea>
+                                                      placeholder="دلیل عدم رضایت از کالا"  >{{$police->is_verified == 'red' ? $police->buyer_body :  ''}}</textarea>
                                             @if($errors->has('buyer_body'))
                                                 <small class="text-danger d-inline-block w-100  mt-2">
                                                     {{$errors->first('buyer_body')}}
@@ -175,12 +177,13 @@
                                             @endif
                                         </div>
                                     </div>
-
+                                    @endif
                                         <div class="row">
                                             <div class="col-lg-12 d-flex justify-content-center">
                                                 <button type="submit" class="btn btn-success">ثبت</button>
                                             </div>
                                         </div>
+
                                 </form>
 
                             @endif
@@ -309,7 +312,9 @@
     <script src="{{asset('assets/plugins/summernote/dist/summernote.js')}}"></script>
     <script>
         $(document).ready(function () {
-
+            if ($('#is_verified').val() == 0){
+                    $('.show-it').prop("hidden", false);
+            }
             if ($('#deliver_status').val()) {
                 if ($('#is_verified').val() != 2) {
                     $('#is_verified').prop("disabled", false);

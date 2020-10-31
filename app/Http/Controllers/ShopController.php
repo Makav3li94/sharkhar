@@ -41,7 +41,6 @@ class ShopController extends Controller {
 	}
 
 	public function single( Product $product ,$optional_price = null) {
-
 		$seller = $product->seller;
 		$good   = Feedback::where( [ [ 'product_id', $product->id ], [ 'score', 2 ] ] )->count();
 		$normal = Feedback::where( [ [ 'product_id', $product->id ], [ 'score', 1 ] ] )->count();

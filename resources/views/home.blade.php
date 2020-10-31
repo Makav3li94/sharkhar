@@ -12,7 +12,7 @@
                 <div class="col-12 col-md">
                     <div class="wellcome-heading text-right" style="direction: rtl">
                         <h1>دستیار فروش شرخر: خرید امن، فروش آسان  </h1>
-                                            <h3>شرخر</h3>
+                                            <h3 class="nono">شرخر</h3>
 {{--                        <p>مراقب پولتون هستیم.</p>--}}
                         <p>کی از فروش  بیشتر رو پیچ فروشگاهی اینستاگرامش بدش میاد !</p>
 {{--                        <p>دیگه نگران نباشید  پیج جنسو میفرسته، درست میفرسته، چی می فرسته :)</p>--}}
@@ -130,6 +130,19 @@
         </div>
     </section>
     <!-- ***** Awesome Features Start ***** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section class="pricing-plane-area section_padding_100_70 clearfix position-relative" id="pricing" >
         <h5 class="fornow" >

@@ -166,7 +166,7 @@ class RegisterController extends Controller {
 			'mobile'      => $data['mobile'],
 			'insta_user'  => Str::lower(trim($data['insta_user'])),
 			'password'    => Hash::make( $data['password'] ),
-			'bank_status' => 1,
+			'bank_status' => 0,
 		] );
 		$scraper = new ScraperController();
 		$scraper->scrapInstagram( $seller );

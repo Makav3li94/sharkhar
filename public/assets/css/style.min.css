@@ -182,13 +182,13 @@ fieldset[disabled] .navbar .navbar-nav > a.btn.active {
 .btn.btn-icon,
 .navbar .navbar-nav > a.btn.btn-icon {
     height: 2.375rem;
-    min-width: 2.375rem;
+    min-width: 3.375rem;
     width: 2.375rem;
     padding: 0;
     font-size: .9375rem;
     overflow: hidden;
     position: relative;
-    line-height: 2.375rem
+    line-height: 2.375rem;
 }
 
 .btn.btn-icon.btn-simple,

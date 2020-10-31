@@ -42,7 +42,6 @@
 <!-- ***** Header Area End ***** -->
 @yield('content')
 
-
 @include('login-modal')
 
 @include('footer')

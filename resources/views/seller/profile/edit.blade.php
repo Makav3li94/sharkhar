@@ -9,7 +9,9 @@
         <div class="row clearfix">
             <div class="card">
                 <div class="header">
-                    <h2><strong>تنظیمات</strong> حساب</h2>
+                    <h2><strong>تنظیمات </strong>حساب - (<span
+                                class="col-{{$seller->is_verified}}">{{$seller->is_verified == 'green' ? 'تایید هویت شده' : 'تایید نشده'}}</span>)
+                    </h2>
                 </div>
                 <div class="body" data-intro="تکمیل اطلاعات از اینجا">
                     <form action="{{route('seller.update',$seller->id)}}" method="post">
@@ -67,6 +69,45 @@
                                                    type="text">
                                         </div>
                                     </div>
+
+                                    <div class="col-lg-6 col-md-6 mb-4"
+                                         data-intro="کد ملی  مطابق با شماره شبا ، جهت واریز پول.">
+                                        <label>کد ملی <span class="text-danger mr-1">*</span></label>
+                                        <div class="input-group masked-input">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                            class="zmdi zmdi-account-add"></i></span>
+                                            </div>
+                                            <input class="form-control" name="m_code"
+                                                   placeholder="لطفا کد ملی معتبر وارد کنید."
+                                                   value="{{$seller->m_code ?? old('m_code')}}"
+                                                   {{$seller->m_code ? 'readonly' : ''}}
+                                                   type="text">
+                                            @if($errors->has('m_code'))
+                                                <small class="text-danger d-inline-block w-100  mt-2">
+                                                    {{$errors->first('m_code')}}
+                                                </small>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 mb-4" data-intro="شماره شِبا جهت تصفیه">
+                                        <label>شماره شبا <span class="text-danger mr-1">*</span></label>
+                                        <div class="input-group masked-input">
+                                            <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i
+                                                                class="zmdi zmdi-money"></i></span>
+                                            </div>
+                                            <input class="form-control" name="sheba"
+                                                   value="{{$seller->sheba ?? old('sheba')}}"
+                                                   placeholder="مثال : IR123456789987654321123456 "
+                                                   type="text">
+                                            @if($errors->has('sheba'))
+                                                <small class="text-danger d-inline-block w-100  mt-2">
+                                                    {{$errors->first('sheba')}}
+                                                </small>
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="col-lg-6 col-md-6 mb-4">
                                         <label>پست الکترونیک</label>
                                         <div class="input-group masked-input">
@@ -85,23 +126,23 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 mb-4">
-                                        <label>لینک پیج ایسنتاگرام</label>
-                                        <div class="input-group masked-input">
-                                            <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                                class="zmdi zmdi-calendar"></i></span>
-                                            </div>
-                                            <input class="form-control"
-                                                   value="{{$seller->insta_link ?? ''}}" disabled type="text"
-                                                   placeholder="https://www.instagram.com/parnasite">
-                                            @if($errors->has('insta_link'))
-                                                <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('insta_link')}}
-                                                </small>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    {{--                                    <div class="col-lg-6 col-md-6 mb-4">--}}
+                                    {{--                                        <label>لینک پیج ایسنتاگرام</label>--}}
+                                    {{--                                        <div class="input-group masked-input">--}}
+                                    {{--                                            <div class="input-group-prepend">--}}
+                                    {{--                                                    <span class="input-group-text"><i--}}
+                                    {{--                                                                class="zmdi zmdi-calendar"></i></span>--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                            <input class="form-control"--}}
+                                    {{--                                                   value="{{$seller->insta_link ?? ''}}" disabled type="text"--}}
+                                    {{--                                                   placeholder='https://www.instagram.com/{{$seller->insta_link}}'>--}}
+                                    {{--                                            @if($errors->has('insta_link'))--}}
+                                    {{--                                                <small class="text-danger d-inline-block w-100  mt-2">--}}
+                                    {{--                                                    {{$errors->first('insta_link')}}--}}
+                                    {{--                                                </small>--}}
+                                    {{--                                            @endif--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
 
                                     <div class="col-lg-6 col-md-6 mb-4">
                                         <label>تلفن ثابت</label>
@@ -112,7 +153,7 @@
                                             </div>
                                             <input class="form-control"
                                                    value="{{$seller->telephone ?? old('telephone')}}"
-                                                   name="telephone" placeholder="02185749652" type="text">
+                                                   name="telephone" placeholder="مثال : ۰۲۱۲۲۲۲۲۲۲۲۲" type="text">
                                             @if($errors->has('telephone'))
                                                 <small class="text-danger d-inline-block w-100  mt-2">
                                                     {{$errors->first('telephone')}}
@@ -121,7 +162,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 mb-4 ">
+                                    <div class="col-lg-12 col-md-12 mb-4 ">
                                         <label>عنوان فروشگاه</label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
@@ -138,46 +179,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 mb-4"
-                                         data-intro="کد ملی  مطابق با شماره شبا ، جهت واریز پول.">
-                                        <label>کد ملی</label>
-                                        <div class="input-group masked-input">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                            class="zmdi zmdi-account-add"></i></span>
-                                            </div>
-                                            <input class="form-control" name="m_code"
-                                                   value="{{$seller->m_code ?? old('m_code')}}"
-                                                   {{$seller->m_code ? 'readonly' : ''}}
-                                                   type="text">
-                                            @if($errors->has('m_code'))
-                                                <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('m_code')}}
-                                                </small>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 mb-4" data-intro="شماره شِبا جهت تصفیه">
-                                        <label>شماره شبا</label>
-                                        <div class="input-group masked-input">
-                                            <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                                class="zmdi zmdi-money"></i></span>
-                                            </div>
-                                            <input class="form-control" name="sheba"
-                                                   value="{{$seller->sheba ?? old('sheba')}}"
-                                                   placeholder="مثال : IR123456789987654321123456 همراه با IR"
-                                                   type="text">
-                                            @if($errors->has('sheba'))
-                                                <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('sheba')}}
-                                                </small>
-                                            @endif
-                                        </div>
-                                    </div>
+
                                     <div class="col-lg-6 col-md-6 mb-4"
                                          data-intro="هزینه پستی ارسال، مثلا 15 هزار تومان">
-                                        <label>هزینه ارسال ثابت</label>
+                                        <label>هزینه ارسال ثابت به تومان</label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
@@ -196,7 +201,7 @@
 
                                     <div class="col-lg-6 col-md-6 mb-4"
                                          data-intro="اگر فرضا خرید بالای 200 هزار تومان شامل ارسال رایگان میشود، عدد 200،000 را وارد کنید.">
-                                        <label>حداقل خرید و ارسال رایگان</label>
+                                        <label>حداقل خرید و ارسال رایگان به تومان</label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
@@ -278,9 +283,22 @@
             <div class="card">
                 <div class="header">
 
-                    <h2>اطلاعات مورد نیاز جهت <strong class="text-danger">تایید شما</strong></h2>
+                    <h2>
+                        اطلاعات مورد نیاز جهت <strong>تایید شما
+                            @if($seller->id_card != null)
+                                @if($seller->is_verified == 'green')
+                                    <span class="col-orange"> - تایید شده</span>
+                                @else
+                            <span class="col-green"> - در حال بررسی ...</span>
+                                @endif
+                            @else
+
+                            @endif
+                        </strong>
+                    </h2>
                 </div>
-                <div class="body" data-intro="تکمیل اطلاعات برای گرفتن تاییدیه فروش شرخر،(این قسمت اختیاری است.)">
+                <div class="body"
+                     data-intro="تکمیل اطلاعات برای گرفتن تاییدیه فروش شرخر،(تصویر کارت ملی جهت تطبیق با شماره شبا الزامی است.)">
                     <div class="col-md-12">
                         <form action="{{route('seller.verify',$seller->id)}}" method="post"
                               enctype="multipart/form-data">
@@ -289,7 +307,7 @@
                             <div class="col-lg-12 col-md-12 mb-12">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 mb-4">
-                                        <label>عکس یا اسکن کارت ملی</label>
+                                        <label>عکس یا اسکن جلو کارت ملی <span class="text-danger mr-1">*</span></label>
                                         <input type="file" name="id_card" class="dropify"
                                                data-default-file=" {{$seller->id_card != null ? asset($seller->id_card) : ''}}"
                                                {{$seller->id_card != null ? 'disabled="disabled"' : ''}}

@@ -29,7 +29,7 @@
                             <div class="col-md-6 col-sm-6 p-0  text-right">
                                 <p class="mb-0"><strong>وضعیت سفارش: </strong>
                                     <span class="badge badge-{{$order->deliver_status == 'green' ? 'success' : 'warning'}}">@if($order->deliver_status == 'green')
-                                            موفق @else ناموفق @endif
+                                            موفق @else در حال انجام @endif
                                     </span>
                                 </p>
                             </div>

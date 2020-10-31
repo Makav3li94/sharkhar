@@ -29,24 +29,34 @@ class AdminSellerController extends Controller {
 		$totalFeedbacks    = Feedback::where( 'seller_id', auth()->user()->id )->whereDate( "created_at", '=', $now )->count();
 		$totalViews        = 1;
 
-		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalFeedbacks','totalOrders', 'totalTransactions', 'totalViews' ) );
+		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalFeedbacks', 'totalOrders', 'totalTransactions', 'totalViews' ) );
 	}
 
 	public function verify( Request $request, Seller $seller ) {
 
 		$request->validate( [
 			'id_card' => 'required|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
-			'id_book' => 'required|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
-			'id_bill' => 'required|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
+			'id_book' => 'nullable|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
+			'id_bill' => 'nullable|file|mimes:zip,rar,pdf,jpg,jpeg,png,doc,docs|max:2000',
 		] );
 		$path    = '/uploads/files/' . $seller->insta_user . "/";
-		$id_card = $request->file( 'id_card' );
-		$id_book = $request->file( 'id_book' );
-		$id_bill = $request->file( 'id_bill' );
+		$id_card = null;
+		$id_book = null;
+		$id_bill = null;
+		if ( $request->hasFile( 'id_card' ) ) {
+			$id_card = $request->file( 'id_card' );
+			$id_card = $this->FileUploader( $id_card, $path, $seller );
+		}
+		if ( $request->hasFile( 'id_book' ) ) {
+			$id_book = $request->file( 'id_book' );
+			$id_book = $this->FileUploader( $id_book, $path, $seller );
+		}
+		if ( $request->hasFile( 'id_bill' ) ) {
+			$id_bill = $request->file( 'id_bill' );
+			$id_bill = $this->FileUploader( $id_bill, $path, $seller );
+		}
 
-		$id_card = $this->FileUploader( $id_card, $path, $seller );
-		$id_book = $this->FileUploader( $id_book, $path, $seller );
-		$id_bill = $this->FileUploader( $id_bill, $path, $seller );
+
 		$seller->update( [
 			'id_card' => $id_card,
 			'id_book' => $id_book,
@@ -162,7 +172,7 @@ class AdminSellerController extends Controller {
 				] );
 			} else {
 				$productsList = [];
-				$html         = ' <div class="card>"> <div class="body"><table class="table">';
+				$html         = ' <div class="card>"> <div class="body p-0"><table class="table">';
 				$price        = '';
 
 
@@ -170,18 +180,18 @@ class AdminSellerController extends Controller {
 					if ( $product->price != 0 ) {
 						$price = number_format( $product->price ) . " هزارتومان" ?? '';
 					} else {
-						$price = '<input class="form-control total price_input" onkeyup="optinalPriceFunc(' . $product->id . ')" name="optional_price" id="' . $product->id . '-optional_price" type="text">';
+						$price = '<input class="form-control total" style="width: 80%" onkeyup="optinalPriceFunc(' . $product->id . ')" name="optional_price" id="' . $product->id . '-optional_price" type="text">';
 					}
 					$html .= '<tr>';
-					$html .= '<td> <img src="' . $product->image_thumb . '" width="35" alt="Product img"> </td>
-                              <td>' . Str::limit( $product->title, 30 ) . '</td>
-                              <td>' . $price . '</td>
-							  <td>
-                                <button type="button" class="btn btn-sm btn-info clipboard-btn" data-clipboard-text="' . route( 'product', $product->id ) . '">
+					$html .= '<td class="w-auto" style="padding: 10px 3px;"> <img src="' . $product->image_thumb . '" width="50" alt="Product img"> </td>
+                              <td class="w-auto" style="padding: 10px 3px;">' . Str::limit( $product->title, 10 ) . '</td>
+                              <td class="w-auto" style="padding: 10px 3px;">' . $price . '</td>
+							  <td  style="padding: 3px;width: 70px">
+                                <button type="button" class="btn btn-sm btn-info clipboard-btn p-2" data-clipboard-text="' . route( 'product', $product->id ) . '">
                                     <i class="zmdi zmdi-copy"></i>
                                 </button>
-                                ||
-                                <a class="btn btn-sm btn-success"
+                                <span class="nono">||</span>
+                                <a class="btn btn-sm btn-success p-2"
                                    id="' . $product->id . '-whatsup-link"
                                    href="whatsapp://send?text=' . route( 'product', $product->id ) . '"
                                    data-action="share/whatsapp/share">
