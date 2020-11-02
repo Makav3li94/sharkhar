@@ -5,24 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <meta name="description" content="                     دیگه نگران مشتری هایی که نمی تونن به فروشگاه های انلاین اعتماد کنن نباشید ! چون دستیار فروش شرخر کار اعتماد سازیتون رو انجام میده
-                                 و باعث افزایش فروشتون تا 70 درصد میشه. بیا تو :)">
-    <meta name="keywords"
-          content="شرخر, دستیار فروش شرخر, دستیار فروش آنلاین,دستیار فروش ,اینستا گرام, پیج فروشگاهی, فروشگاه انلاین, دستیار فروش اینستاگرام">
+
+<!-- MINIFIED -->
+    {!! \Artesaos\SEOTools\Facades\SEOTools::generate(true) !!}
+
+
     <meta name="theme-color" content="#5851db">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>
-        @if(isset($b_level2))
-            {{'دستیار فروش شرخر :: '.$b_level2 }}
-        @elseif(isset($title))
-            {{'دستیار فروش شرخر :: '.$title  }}
-        @else
-            ::دستیار فروش شرخر :: خانه
-        @endif
-    </title>
+
     <link rel="icon" href="{{asset('assets/images/fav.png')}}">
 
     @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check() && !auth()->guard('admin')->check())

@@ -6,6 +6,11 @@
                    href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img
                             referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt=""
                             style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
+
+
+{{--                <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=185088&amp;Code=swGIr379CMXL5IJdyLDB" alt="" style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>--}}
+
+
             </li>
 
             <li class="mb-2">

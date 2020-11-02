@@ -24,10 +24,14 @@
             $("#largeModal").modal('show');
 
         }, 3000);
-                @endif
 
+
+    });
+    @endif
+    $(document).ready(function () {
         var allowDismiss = true;
         @if(session()->has('success'))
+
         $.notify({
                 message: "{{ session('success') }}"
             },
@@ -51,35 +55,36 @@
                     '<a href="{3}" target="{4}" data-notify="url"></a>' +
                     '</div>'
             });
-    });
 
-    @endif
+        @endif
 
-    @if(session()->has('error'))
-    $.notify({
-            message: "{{ session('error') }}"
-        },
-        {
-            type: 'alert-danger',
-            allow_dismiss: allowDismiss,
-            newest_on_top: true,
-            timer: 3000,
-            placement: {
-                from: 'bottom',
-                align: 'left'
+        @if(session()->has('error'))
+        $.notify({
+                message: "{{ session('error') }}"
             },
-            template: '<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} ' + (allowDismiss ? "" : "") + '" role="alert">' +
-                '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-                '<span data-notify="icon"></span> ' +
-                '<span data-notify="title">{1}</span> ' +
-                '<span data-notify="message">{2}</span>' +
-                '<div class="progress" data-notify="progressbar">' +
-                '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
-                '</div>' +
-                '<a href="{3}" target="{4}" data-notify="url"></a>' +
-                '</div>'
-        });
-    @endif
+            {
+                type: 'alert-danger',
+                allow_dismiss: allowDismiss,
+                newest_on_top: true,
+                timer: 3000,
+                placement: {
+                    from: 'bottom',
+                    align: 'left'
+                },
+                template: '<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} ' + (allowDismiss ? "" : "") + '" role="alert">' +
+                    '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+                    '<span data-notify="icon"></span> ' +
+                    '<span data-notify="title">{1}</span> ' +
+                    '<span data-notify="message">{2}</span>' +
+                    '<div class="progress" data-notify="progressbar">' +
+                    '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+                    '</div>' +
+                    '<a href="{3}" target="{4}" data-notify="url"></a>' +
+                    '</div>'
+            });
+        @endif
+
+    });
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

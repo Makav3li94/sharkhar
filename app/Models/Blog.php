@@ -11,6 +11,8 @@ class Blog extends Model
 {
     use HasFactory,\Spatie\Tags\HasTags,Number;
 
+    protected $guarded = [];
+
     public function category(){
     	return $this->belongsTo(BlogCategory::class);
     }

@@ -19,6 +19,8 @@ class CreateBlogsTable extends Migration
 	        $table->string('slug')->unique();
 	        $table->string('title');
 	        $table->string('image');
+	        $table->string('meat');
+	        $table->string('keywords');
             $table->text('body');
 	        $table->foreign('category_id')->references('id')->on('blog_categories')->cascadeOnDelete();
             $table->timestamps();
