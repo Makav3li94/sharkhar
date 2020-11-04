@@ -34,7 +34,7 @@ class ShopController extends Controller {
 
 	public function vendor( $name ) {
 		$seller           = Seller::where( 'insta_user', $name )->first();
-		$products         = $seller->products()->latest()->paginate( 12 );
+		$products         = $seller->products()->paginate( 12 );
 		$good             = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 2 ] ] )->count();
 		$normal           = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 1 ] ] )->count();
 		$bad              = Feedback::where( [ [ 'seller_id', $seller->id ], [ 'score', 0 ] ] )->count();

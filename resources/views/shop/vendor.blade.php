@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'فروشگاه','b_level2'=>$seller->insta_user,'back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'فروشگاه '.$seller->insta_user,'b_level2'=>$seller->insta_user,'back'=>'true'])
 @section('content')
     <div class="container">
         <div class="row clearfix">

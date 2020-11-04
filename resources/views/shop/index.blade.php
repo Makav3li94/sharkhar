@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'فروشگاه','b_level2'=>'فروشگاه ها'])
+@extends('layouts.admin_layout',['title' => 'فروشگاه ها شرخر  | پرداخت امن، فروش آسان','b_level2'=>'فروشگاه ها شرخر  | پرداخت امن، فروش آسان'])
 @section('content')
     <div class="container">
 
@@ -10,7 +10,7 @@
                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                        <div class="card">
                            <div class="header">
-                               <h2><strong>فروشگاه </strong> برتر</h2>
+                               <h3><strong>فروشگاه </strong> برتر</h3>
                            </div>
                            <div class="body product_item shop-box">
 

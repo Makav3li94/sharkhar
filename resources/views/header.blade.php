@@ -32,7 +32,7 @@
                                                href="{{route('register')}}"
                                                data-toggle="modal" data-target="#colorModal">ورود /
                                                 ثبت نام
-                                                <a class="text-decoration-none text-white d-inline-block" onclick="$(this).css({'transform' : 'rotate('+ 360 +'deg)'})" href="javascript:void(0)">  <i class=" ti-user  "></i></a>
+                                                <span class="text-decoration-none text-white d-inline-block" onclick="$(this).css({'transform' : 'rotate('+ 360 +'deg)'})" href="javascript:void(0)">  <i class=" ti-user  "></i></span>
                                             </a>
                                         @endif
 
@@ -90,7 +90,7 @@
                                         <li class="nav-item"><a class="nav-link" href="#pricing">تعرفه</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="{{route('shop')}}">فروشگاه
+                                        <li class="nav-item"><a class="nav-link" href="{{route('shop')}}">فروشگاه</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{route('blogs.index')}}">وبلاگ</a></li>
                                         <li class="nav-item "><a class="nav-link pl-0" href="{{route('rules')}}">قوانین و
                                                 مقررات</a></li>

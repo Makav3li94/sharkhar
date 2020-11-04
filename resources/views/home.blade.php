@@ -11,11 +11,11 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading text-right" style="direction: rtl">
-                        <h1>دستیار فروش شرخر: خرید امن، فروش آسان  </h1>
-                                            <h3 class="nono">شرخر</h3>
-{{--                        <p>مراقب پولتون هستیم.</p>--}}
-                        <p>کی از فروش  بیشتر رو پیچ فروشگاهی اینستاگرامش بدش میاد !</p>
-{{--                        <p>دیگه نگران نباشید  پیج جنسو میفرسته، درست میفرسته، چی می فرسته :)</p>--}}
+                        <h1>دستیار فروش شرخر: خرید امن، فروش آسان </h1>
+                        <h3 class="nono">شرخر</h3>
+                        {{--                        <p>مراقب پولتون هستیم.</p>--}}
+                        <p>کی از فروش بیشتر رو پیچ فروشگاهی اینستاگرامش بدش میاد !</p>
+                        {{--                        <p>دیگه نگران نباشید  پیج جنسو میفرسته، درست میفرسته، چی می فرسته :)</p>--}}
                     </div>
                     <div class="get-start-area">
                         <!-- Form Start -->
@@ -27,7 +27,7 @@
         </div>
         <!-- Welcome thumb -->
         <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
-            <img src="{{asset('front/img/bg-img/welcome-img.png')}}" alt="">
+            <img src="{{asset('front/img/bg-img/welcome-img.png')}}" alt="Wellcome To Sharkhar">
         </div>
     </section>
     <!-- ***** Wellcome Area End ***** -->
@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="special_description_img">
-                            <img src="{{asset('front/img/bg-img/special.png')}}" alt="">
+                            <img src="{{asset('front/img/bg-img/special.png')}}" alt="Sharkhar Specials">
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-5 ml-xl-auto">
@@ -47,13 +47,16 @@
                             <h2>شرخر؛ افزایش فروش شما</h2>
                             <p>
                                 شرخر چیه ؟
-                                دیگه نگران مشتری هایی که نمی تونن به فروشگاه های انلاین اعتماد کنن نباشید ! چون شرخر کار اعتماد سازیتون رو انجام میده
+                                دیگه نگران مشتری هایی که نمی تونن به فروشگاه های انلاین اعتماد کنن نباشید ! چون شرخر کار
+                                اعتماد سازیتون رو انجام میده
                                 و باعث افزایش فروشتون تا 70 درصد میشه.
                                 چطوری ؟
-                                شرخر با مجوهایی رسمی ای که گرفته میتونه به شما که کسب و کار آنلاین دارید، گواهینامه ضمانت پرداخت بده ، و به مشتریهاتون بسترِ اطمینان پرداخت تا با خیال راحت ازتون خرید کنن.
+                                شرخر با مجوهایی رسمی ای که گرفته میتونه به شما که کسب و کار آنلاین دارید، گواهینامه
+                                ضمانت پرداخت بده ، و به مشتریهاتون بسترِ اطمینان پرداخت تا با خیال راحت ازتون خرید کنن.
                                 کار باهاش چطوریه ؟
                                 خیلی ساده ! حتی نیاز نیست محصولاتتون رو وارد کنید ! ما همه کارو می کنیم.
-                                شرخر یه الگوریتم داره که با استفاده از محصولات پیج فروشگاهی ایسنتاگرام شما، یک وب سایت فروشگاهی خیلی زیبا با امکانات کامل با نماد الکترونیک و درگاه بانکی  براتون می سازه.
+                                شرخر یه الگوریتم داره که با استفاده از محصولات پیج فروشگاهی ایسنتاگرام شما، یک وب سایت
+                                فروشگاهی خیلی زیبا با امکانات کامل با نماد الکترونیک و درگاه بانکی براتون می سازه.
                                 چی به ما می رسه ؟
                                 فقط یک درصد از تراکنش های موفق شما، 100 تومن میشه 1 تومن.
                             </p>
@@ -83,7 +86,8 @@
                             <i class="ti-ruler-pencil" aria-hidden="true"></i>
                         </div>
                         <h4>بهتری رابط کاربری</h4>
-                        <p>ما هرچی در توان داشتیمو گذاشتیم تا بهترین تجربه و سریع ترین فروش رو براتون به ارمغان بیاریم.</p>
+                        <p>ما هرچی در توان داشتیمو گذاشتیم تا بهترین تجربه و سریع ترین فروش رو براتون به ارمغان
+                            بیاریم.</p>
                     </div>
                 </div>
                 <!-- Single Special Area -->
@@ -111,6 +115,23 @@
 
         </div>
     </section>
+
+{{--    <div class="video-section">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12">--}}
+{{--                    <!-- Video Area Start -->--}}
+{{--                    <div class="video-area">--}}
+{{--                        <video width="100%" height="100%" controls>--}}
+{{--                            <source src="{{asset('front/img/sign-up.mp4')}}" type="video/mp4">--}}
+{{--                            Your browser does not support the video tag.--}}
+{{--                        </video>--}}
+{{--                    </div>--}}
+
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- ***** Special Area End ***** -->
     <section class="our-monthly-membership section_padding_70 clearfix">
         <div class="container">
@@ -133,20 +154,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <section class="pricing-plane-area section_padding_100_70 clearfix position-relative" id="pricing" >
-        <h5 class="fornow" >
-          به ازای هر تراکنش تنها 1%
+    <section class="pricing-plane-area section_padding_100_70 clearfix position-relative" id="pricing">
+        <h5 class="fornow">
+            به ازای هر تراکنش تنها 1%
         </h5>
         <div class="container" style="filter: blur(8px);">
             <div class="row">
@@ -275,7 +285,7 @@
                         <p>
                             یک فروشگاه رایگان کنار بقیه کسایی که ثبت نام کردن، زود تر فقط تا دیر نشده.
                             و کلی ورودی به صفحتون به صورت رایگان
-                            </p>
+                        </p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
@@ -316,7 +326,8 @@
                     <div class="single-feature">
                         <i class="ti-bar-chart" aria-hidden="true"></i>
                         <h5>آنالیز مالی</h5>
-                        <p>با ابزار گزارش گیری ما، تراکنش ها ، سود ها و ... می تونید پرفروشترین محصولات و ... کلی چیزای دیگه که برای کارتون مفیده.</p>
+                        <p>با ابزار گزارش گیری ما، تراکنش ها ، سود ها و ... می تونید پرفروشترین محصولات و ... کلی چیزای
+                            دیگه که برای کارتون مفیده.</p>
                     </div>
                 </div>
             </div>
@@ -326,20 +337,7 @@
     <!-- ***** Awesome Features End ***** -->
 
     <!-- ***** Video Area Start ***** -->
-    <div class="video-section">
-        {{--    <div class="container">--}}
-        {{--        <div class="row">--}}
-        {{--            <div class="col-12">--}}
-        {{--                <!-- Video Area Start -->--}}
-        {{--                <div class="video-area" style="background-image: url({{asset('img/bg-img/video.jpg')}});">--}}
-        {{--                    <div class="video-play-btn">--}}
-        {{--                        <a href="https://www.youtube.com/watch?v=f5BBJ4ySgpo" class="video_btn"><i class="fa fa-play" aria-hidden="true"></i></a>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--        </div>--}}
-        {{--    </div>--}}
-    </div>
+
     <!-- ***** Video Area End ***** -->
 
     <!-- ***** Cool Facts Area Start ***** -->
@@ -348,7 +346,8 @@
 
 
     <!-- ***** Contact Us Area Start ***** -->
-    <section class="footer-contact-area  clearfix" id="contact">
+{{--    <section class="footer-contact-area section_padding_100 clearfix" id="contact" style="box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 30px -20px; margin-bottom: 620px;">--}}
+    <section class="footer-contact-area section_padding_100 clearfix" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -363,7 +362,8 @@
                 <div class="col-md-6">
 
                     <div class="footer-text">
-                        <iframe id="my-deferred-iframe" src="about:blank" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe id="my-deferred-iframe" src="about:blank" width="100%" height="250" frameborder="0"
+                                style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                     {{--                <div class="address-text">--}}
                     {{--                    <p><span>Address:</span> 40 Baria Sreet 133/2 NewYork City, US</p>--}}

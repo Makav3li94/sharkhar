@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -95,9 +94,7 @@
 </script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqExwgWihRNtMSI8lIi3WnCmh4hQ8IJEA&callback=initMap&libraries=&v=weekly"
-        defer
-></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqExwgWihRNtMSI8lIi3WnCmh4hQ8IJEA&callback=initMap&libraries=&v=weekly" defer></script>
 
 </body>
 

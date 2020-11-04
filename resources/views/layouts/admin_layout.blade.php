@@ -2,34 +2,7 @@
 
 <body class="theme-blush">
 
-<!-- Page Loader -->
-<div class="page-loader-wrapper">
-    <div class="loader">
-        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{asset('assets/images/logo-p.png')}}" width="48" height="48"
-                                 alt="Sharkhar"></div>
-        <p>لطفا صبر کنید...</p>
-    </div>
-</div>
 
-
-<div class="modal fade" id="largeModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="title" id="largeModalLabel">درحال بارگذاری فروشگاه شما</h4>
-            </div>
-            <div class="modal-body">
-                الگوریتم شرخر در حال جمع آوری اطلاعات و بارگذاری فروشگاه شما می باشد. <br>
-                این پروسه 60 ثانیه طول خواهد کشید. <br>
-                شرخر در حال حاضر روی <strong class="text-danger">پیج پابلیک</strong> کار میکنه :| <br>
-                اگر پیجتون پرایویته خودتون باید محصولات رو وارد کنید.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">بستن</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 @include('layouts.front_header')
 
@@ -51,7 +24,7 @@
                          data-intro="در شرخر، شما برای فروش نیاز به ثبت شماره شِبا و ارسال لینک خرید برای مشتری دارید، همین. لطفا تا انتهای آموزش با من باشید."
                             @endif
                     >
-                        <h1 class="mb-0">{{ ucfirst($title ?? '') }}</h1>
+                        <h1 class="mb-0 font-16">{{ ucfirst($title ?? '') }}</h1>
                         @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
 
                             @else
@@ -141,7 +114,34 @@
     </div>
 </section>
 
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{asset('assets/images/logo-p.png')}}" width="48" height="48"
+                                 alt="Sharkhar"></div>
+        <p>لطفا صبر کنید...</p>
+    </div>
+</div>
 
+
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="title" id="largeModalLabel">درحال بارگذاری فروشگاه شما</h4>
+            </div>
+            <div class="modal-body">
+                الگوریتم شرخر در حال جمع آوری اطلاعات و بارگذاری فروشگاه شما می باشد. <br>
+                این پروسه 60 ثانیه طول خواهد کشید. <br>
+                شرخر در حال حاضر روی <strong class="text-danger">پیج پابلیک</strong> کار میکنه :| <br>
+                اگر پیجتون پرایویته خودتون باید محصولات رو وارد کنید.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
 @include('layouts.footer')
 
 

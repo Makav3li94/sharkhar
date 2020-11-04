@@ -1,10 +1,11 @@
-<footer class="text-center pt-lg-5 pb-5 clearfix" id="contact">
+{{--<footer class="footer-social-icon text-center section_padding_70 clearfix" style="z-index: -101; position: fixed; bottom: 0px; width: 1903px;">--}}
+<footer class="footer-social-icon text-center section_padding_70 clearfix" style="direction: rtl">
     <div class="mb-4 mt-2 p-3 ">
         <ul class="list-unstyled safety">
             <li class="mb-2">
                 <a referrerpolicy="origin" target="_blank"
                    href="https://trustseal.enamad.ir/?id=185088&amp;Code=swGIr379CMXL5IJdyLDB"><img
-                            referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt=""
+                            referrerpolicy="origin" src="{{asset('assets/images/e-namad.png')}}" alt="enamad"
                             style="cursor:pointer" id="swGIr379CMXL5IJdyLDB"></a>
 
 
@@ -14,9 +15,10 @@
             </li>
 
             <li class="mb-2">
-                <img id='nbqeesgtjzpewlaonbqewlao' style='cursor:pointer'
-                     onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=207424&p=uiwkobpdjyoeaodsuiwkaods", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")'
-                     alt='logo-samandehi' src='{{asset('assets/images/samandehi.png')}}'/>
+                <img id = 'nbqeesgtjzpewlaonbqewlao' width="135" style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=207424&p=uiwkobpdjyoeaodsuiwkaods", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=600, height=400, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=207424&p=odrflymayndtshwlodrfshwl' />
+{{--                <img id='nbqeesgtjzpewlaonbqewlao' style='cursor:pointer'--}}
+{{--                     onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=207424&p=uiwkobpdjyoeaodsuiwkaods", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")'--}}
+{{--                     alt='logo-samandehi' src='{{asset('assets/images/samandehi.png')}}'/>--}}
             </li>
 
             <li class="mb-2">
