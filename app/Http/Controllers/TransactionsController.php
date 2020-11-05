@@ -79,7 +79,7 @@ class TransactionsController extends Controller {
 			$buyer = auth()->guard( 'buyer' )->user();
 		}
 
-		if ( $product->price != $request->default_cost ) {
+		if ( $product->optional_price != $request->default_cost ) {
 			return redirect()->back()->withError( 'bitarbiat' );
 		}
 		$seller = $product->seller;

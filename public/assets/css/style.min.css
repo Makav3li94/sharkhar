@@ -18490,6 +18490,18 @@ section.bib {
 .dd-handle.dd3-handle:hover {
     background: #fff
 }
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #cacaca;
+    opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #cacaca;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: #cacaca;
+}
 
 .dd-empty,
 .dd-placeholder {

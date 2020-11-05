@@ -97,7 +97,7 @@ class AdminSellerController extends Controller {
 //		$request->sheba = preg_replace('/\s+/', '', $request->sheba);
 //		$request->sheba = Str::upper($request->sheba);
 		$validator = Validator::make( $data, [
-			'sheba'         => 'required|regex:/^(?i:IR)(?=.{24}$)[0-9]*$/',
+			'sheba'         => "required|unique:sellers,sheba,{$seller->id}|regex:/^(?i:IR)(?=.{24}$)[0-9]*$/",
 			'email'         => "nullable|unique:sellers,email,{$seller->id}",
 			'm_code'        => "required|numeric|unique:sellers,m_code,{$seller->id}",
 			'telephone'     => "nullable|unique:sellers,telephone,{$seller->id}",

@@ -72,7 +72,7 @@
 
                                     <div class="col-lg-6 col-md-6 mb-4"
                                          data-intro="کد ملی  مطابق با شماره شبا ، جهت واریز پول.">
-                                        <label>کد ملی <span class="text-danger mr-1">*</span></label>
+                                        <label>کد ملی صاحب حساب<span class="text-danger mr-1">*</span></label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i

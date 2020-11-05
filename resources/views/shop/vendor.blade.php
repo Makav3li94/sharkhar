@@ -172,7 +172,7 @@
                             <div class="action text-center">
                                 <a href="{{route('product',$product->id)}}"
                                    class="btn btn-raised btn-primary btn-round waves-effect">
-                                    می خوامش !
+                                   {{auth()->guard('web')->check() ? 'جزئیات' : ' می خوامش !'}}
                                 </a>
                             </div>
                         </div>

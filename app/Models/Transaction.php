@@ -33,7 +33,7 @@ class Transaction extends Model
 
 	public function getStatusAttribute( $value ) {
 
-		if ( $value == 1 ) {
+		if ( $value == 2 ) {
 			return $value = 'green';
 		} elseif($value == 0) {
 			return $value = 'red';

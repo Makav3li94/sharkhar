@@ -70,7 +70,7 @@ return array(
         "array"   => ":attribute باسد شامل :size آیتم باشد.",
     ),
     "timezone"         => "The :attribute must be a valid zone.",
-    "unique"           => ":attribute قبلا انتخاب شده است.",
+    "unique"           => "قبلا انتخاب شده است.",
     "url"              => "فرمت آدرس :attribute اشتباه است.",
 
     /*

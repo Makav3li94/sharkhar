@@ -3,7 +3,6 @@
 <body class="theme-blush">
 
 
-
 @include('layouts.front_header')
 
 @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check() && !auth()->guard('admin')->check())
@@ -27,35 +26,35 @@
                         <h1 class="mb-0 font-16">{{ ucfirst($title ?? '') }}</h1>
                         @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
 
-                            @else
+                        @else
                             <button class="btn btn-primary btn-icon mobile_menu" type="button">
                                 منو
                                 <i class="zmdi zmdi-sort-amount-desc"></i></button>
-                            @endif
+                        @endif
 
                     </div>
                 </div>
 
                 <div class="col-md-8 col-sm-12 pr-0 pl-0 ">
-                        <div class="card">
-                            <div class="body p-0">
-                                @if(auth()->guard('web')->check())
-                                    <form id="app-search">
-                                        <div class="input-group masked-input position-relative">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="zmdi zmdi-search"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="نام محصول ...">
-                                            <span class="input-group-text float-left " style="cursor: pointer"
-                                                  onclick="$('#app-search input').val(''); $('#app-search .list-group').html('');">
+                    <div class="card">
+                        <div class="body p-0">
+                            @if(auth()->guard('web')->check())
+                                <form id="app-search">
+                                    <div class="input-group masked-input position-relative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="zmdi zmdi-search"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="نام محصول ...">
+                                        <span class="input-group-text float-left " style="cursor: pointer"
+                                              onclick="$('#app-search input').val(''); $('#app-search .list-group').html('');">
                                         <i class="zmdi zmdi-close-circle"></i>
                                     </span>
-                                        </div>
-                                        <div class="list-group"></div>
-                                    </form>
-                                @endif
-                            </div>
+                                    </div>
+                                    <div class="list-group"></div>
+                                </form>
+                            @endif
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="bread-crumb d-flex justify-content-between">

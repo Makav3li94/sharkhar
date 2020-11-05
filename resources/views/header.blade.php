@@ -86,6 +86,8 @@
                                     <ul class="navbar-nav ml-auto" id="nav">
                                         <li class="nav-item "><a href="{{route('home')}}" class="nav-link">خانه</a>
                                         </li>
+                                        <li class="nav-item "><a href="{{route('buyer_login')}}" class="nav-link">پیگیری سفارش</a>
+                                        </li>
                                         <li class="nav-item"><a class="nav-link" href="#about">درباره</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#pricing">تعرفه</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
