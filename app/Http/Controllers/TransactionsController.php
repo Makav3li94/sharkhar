@@ -9,7 +9,12 @@ use App\Models\Police;
 use App\Models\Product;
 use App\Models\Seller;
 use App\Models\Transaction;
+use App\Models\Wallet;
+use App\Models\WalletCheckout;
 use App\Traits\Sms;
+use CoreProc\WalletPlus\Contracts\WalletTransaction;
+use CoreProc\WalletPlus\Models\WalletLedger;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -40,7 +45,6 @@ class TransactionsController extends Controller {
 
 		}
 	}
-
 
 
 	public function payment( Request $request, Product $product ) {
@@ -117,18 +121,19 @@ class TransactionsController extends Controller {
 		$buyer   = $order->buyer;
 		$product = $order->product;
 		$cost    = (int) $order->price;
+
 		$invoice = new Invoice;
 		$invoice->detail( 'mobile', $buyer->mobile );
 		$invoice->detail( 'email', 'test@gmail.com' );
-
+		$realCost = (int) ( $cost + round( $cost * ( 1 / 100 ) ) );
 //		if ( $seller->bank_status == 1 && $request->payment_method == 1 ) {
-		if ( $seller->bank_status == 'green'  ) {
+		if ( $seller->bank_status == 'green' ) {
 
 
 			if ( $cost != 0 ) {
-				 $payment = Payment::callbackUrl( route( 'check_payment', $order->id ) )->purchaseDirect(
-					( new Invoice )->amount( $cost )->partner( $seller->sheba )->sellerShare( $cost ),
-					function ( $driver, $transactionId) {
+				$payment     = Payment::callbackUrl( route( 'check_payment', $order->id ) )->purchaseDirect(
+					( new Invoice )->amount( $realCost )->partner( $seller->sheba )->sellerShare( $cost ),
+					function ( $driver, $transactionId ) {
 						Transaction::create( [
 							'transaction_id'   => $transactionId,
 							'buyer_id'         => 1,
@@ -141,7 +146,7 @@ class TransactionsController extends Controller {
 						] );
 					}
 				);
-				$transaction = DB::table( 'transactions' )->latest()->limit(1);
+				$transaction = DB::table( 'transactions' )->latest()->limit( 1 );
 				$transaction->update( [
 					'buyer_id'         => $buyer->id,
 					'seller_id'        => $product->seller_id,
@@ -157,7 +162,7 @@ class TransactionsController extends Controller {
 		} else {
 			if ( $cost != 0 ) {
 				$payment = Payment::callbackUrl( route( 'check_payment', $order->id ) )->purchase(
-					( new Invoice )->amount( $cost ),
+					( new Invoice )->amount( $realCost ),
 					function ( $driver, $transactionId ) {
 						Transaction::create( [
 							'transaction_id'   => $transactionId,
@@ -172,7 +177,7 @@ class TransactionsController extends Controller {
 					}
 				);
 
-				$transaction = DB::table( 'transactions' )->latest()->limit(1);
+				$transaction = DB::table( 'transactions' )->latest()->limit( 1 );
 				$transaction->update( [
 					'buyer_id'         => $buyer->id,
 					'seller_id'        => $product->seller_id,
@@ -190,11 +195,11 @@ class TransactionsController extends Controller {
 	}
 
 
-
 	public function checkPayment( Request $request ) {
 		$transaction = Transaction::where( 'transaction_id', $request->Authority )->first();
 		$order       = $transaction->order;
 		$cost        = (int) $order->price;
+		$realCost    = (int) ( $cost + round( $cost * ( 1 / 100 ) ) );
 		try {
 			$buyer                   = Buyer::findOrFail( $order->buyer_id );
 			$seller                  = Seller::findOrFail( $order->seller_id );
@@ -202,26 +207,26 @@ class TransactionsController extends Controller {
 			$product->optional_price = 0;
 			$product->save();
 
-			$receipt = Payment::amount( $cost * 10 )->transactionId( $request->Authority )->verify();
+			$receipt = Payment::amount( $realCost * 10 )->transactionId( $request->Authority )->verify();
 
 			// You can show payment referenceId to the user.
 			$verifyCode = $receipt->getReferenceId();
 
 			$order->update( [ 'payment_status' => 1 ] );
 			$transaction = Transaction::where( [ 'order_id' => $order->id ] )->first();
-			if ($order->payment_method == 0){
+			if ( $order->payment_method == 0 ) {
 				$transaction->update( [ 'verify_code' => $verifyCode ] );
 
-				Police::create([
-					'seller_id'=> $transaction->seller_id,
-					'buyer_id'=> $transaction->buyer_id,
-					'product_id'=> $transaction->product_id,
-					'order_id'=>$transaction->order_id ,
-					'transaction_id'=>$transaction->id ,
-					'transaction_type'=>0 ,
-				]);
+				Police::create( [
+					'seller_id'        => $transaction->seller_id,
+					'buyer_id'         => $transaction->buyer_id,
+					'product_id'       => $transaction->product_id,
+					'order_id'         => $transaction->order_id,
+					'transaction_id'   => $transaction->id,
+					'transaction_type' => 0,
+				] );
 
-			}else{
+			} else {
 				$transaction->update( [ 'status' => 1, 'verify_code' => $verifyCode ] );
 
 			}
@@ -257,10 +262,28 @@ class TransactionsController extends Controller {
 			$this->sentWithPattern( [ $buyer->mobile ], 'iubx9a17gk', [
 				'name'    => $buyer->name,
 				'product' => $product->id,
-				'cost'    => $cost,
+				'cost'    => $realCost,
 				'seller'  => $seller->name,
 				'link'    => $url
 			] );
+
+
+			//Wallet Actions
+
+			$wallet              = $seller->wallet;
+			$raw_balance         = ( (int) ( $wallet->raw_balance ) + ( $cost - round( $cost * ( 1 / 100 ) ) ) );
+			$wallet->raw_balance = $raw_balance;
+			$wallet->save();
+
+			WalletCheckout::create( [
+				'wallet_id'           => $seller->wallet->id,
+				'transaction_id'      => $transaction->id,
+				'transaction_type'    => 1,
+				'amount'              => (int) ( $cost - round( $cost * ( 1 / 100 ) ) ),
+				'running_raw_balance' => $raw_balance,
+			] );
+
+			//End Wallet
 
 			return view( 'shop.done_payment', compact( 'order', 'verifyCode' ) );
 
@@ -278,6 +301,7 @@ class TransactionsController extends Controller {
 
 
 	}
+
 	/**
 	 * Display the specified resource.
 	 *
@@ -322,4 +346,6 @@ class TransactionsController extends Controller {
 	public function destroy( Transaction $transaction ) {
 		//
 	}
+
+
 }

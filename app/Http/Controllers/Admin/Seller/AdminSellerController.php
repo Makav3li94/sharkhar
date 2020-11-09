@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\Seller;
 use App\Models\Transaction;
+use App\Models\WalletCheckout;
 use Carbon\Carbon;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
@@ -19,17 +20,19 @@ use Symfony\Component\Console\Input\Input;
 class AdminSellerController extends Controller {
 	public function dashboard() {
 		$now               = Carbon::now()->toDateString();
-		$todayOrders       = Order::where( 'seller_id', auth()->user()->id )->whereDate( "created_at", '=', $now )->count();
-		$todayTransactions = Transaction::where( 'seller_id', auth()->user()->id )->whereDate( "created_at", '=', $now )->count();
-		$todaySold         = Transaction::where( 'seller_id', auth()->user()->id )->whereDate( "created_at", '=', $now )->sum( 'price' );
+		 $seller = auth()->user();
+		$todayOrders       = Order::where( 'seller_id', $seller->id )->whereDate( "created_at", '=', $now )->count();
+		$todayTransactions = Transaction::where( 'seller_id', $seller->id )->whereDate( "created_at", '=', $now )->count();
+		$todaySold         = Transaction::where( 'seller_id', $seller->id )->whereDate( "created_at", '=', $now )->sum( 'price' );
 
-		$totalSale         = Transaction::where( 'seller_id', auth()->user()->id )->sum( 'price' );
-		$totalOrders       = Order::where( 'seller_id', auth()->user()->id )->count();
-		$totalTransactions = Transaction::where( 'seller_id', auth()->user()->id )->count();
-		$totalFeedbacks    = Feedback::where( 'seller_id', auth()->user()->id )->whereDate( "created_at", '=', $now )->count();
+		$totalSale         = Transaction::where( 'seller_id', $seller->id )->sum( 'price' );
+		$totalOrders       = Order::where( 'seller_id', $seller->id )->count();
+		$totalTransactions = Transaction::where( 'seller_id', $seller->id )->count();
+		$totalFeedbacks    = Feedback::where( 'seller_id',$seller->id )->whereDate( "created_at", '=', $now )->count();
 		$totalViews        = 1;
 
-		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalFeedbacks', 'totalOrders', 'totalTransactions', 'totalViews' ) );
+		$walletCheckouts =  WalletCheckout::where([['wallet_id',$seller->wallet->id],['transaction_type', 0]])->sum('amount');
+		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalFeedbacks', 'totalOrders', 'totalTransactions', 'totalViews' ,'walletCheckouts') );
 	}
 
 	public function verify( Request $request, Seller $seller ) {

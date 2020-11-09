@@ -24,7 +24,7 @@ class CreateBlogsTable extends Migration
             $table->text('body');
 	        $table->foreign('category_id')->references('id')->on('blog_categories')->cascadeOnDelete();
             $table->timestamps();
-            $table->date('published_at')->nullable();
+	        $table->dateTime('published_at')->nullable();
         });
     }
 

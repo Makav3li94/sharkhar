@@ -169,6 +169,26 @@ Route::get('admin',function (){
 });
 //Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
 Route::get( 'test', function () {
+
+//	$sellers = \App\Models\Seller::all();
+//	$buyers = \App\Models\Buyer::all();
+//		foreach ($sellers as $seller){
+//			\App\Models\Wallet::create([
+//				'seller_id'=>$seller->id,
+//				'buyer_id' => 0,
+//				'wallet_type_id'=>1,
+//				'raw_balance'=>0,
+//			]);
+//		}
+//
+//	foreach ($buyers as $buyer){
+//		\App\Models\Wallet::create([
+//			'seller_id'=>0,
+//			'buyer_id' => $buyer->id,
+//			'wallet_type_id'=>1,
+//			'raw_balance'=>0,
+//		]);
+//	}
 //	\Spatie\Sitemap\SitemapGenerator::create('https://sharkhar.net/')->getSitemap()->writeToDisk('public', 'sitemap.xml');
 //	$path = '/public/';
 //	\Spatie\Sitemap\SitemapGenerator::create('https://sharkhar.net')->writeToFile($path);

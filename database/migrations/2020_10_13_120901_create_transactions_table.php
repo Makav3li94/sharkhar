@@ -24,6 +24,7 @@ class CreateTransactionsTable extends Migration
             $table->tinyInteger('status')->default(0)->comment('is paid or not');
             $table->string('verify_code')->nullable();
             $table->tinyInteger('transaction_type')->comment('0 for police & 1 for direct');
+            $table->tinyInteger('transaction_status')->nullable()->default(0)->comment('0 for not payed to seller & 1 for in proccess & 2 for payed to Seller');
             $table->timestamps();
         });
     }

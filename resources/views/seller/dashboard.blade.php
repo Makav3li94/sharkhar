@@ -13,7 +13,8 @@
         @if(auth()->user()->id_card == null)
             <div class="container">
                 <a href="{{route('seller.profile',auth()->user()->id)}}">
-                    <div class="alert alert-danger">لطفا تصویر کارت ملی خود را جهت تایید تطبیق با شماره شِبا وارد نمایید.
+                    <div class="alert alert-danger">لطفا تصویر کارت ملی خود را جهت تایید تطبیق با شماره شِبا وارد
+                        نمایید.
                     </div>
                 </a>
             </div>
@@ -33,7 +34,7 @@
                 <div class="container">
                     <a href="{{route('seller.contacts.create')}}">
                         <div class="alert alert-danger">
-متاسفانه شما تایید هویت نشدید.
+                            متاسفانه شما تایید هویت نشدید.
                         </div>
                     </a>
                 </div>
@@ -42,8 +43,35 @@
 
     @endif
     <div class="container pr-0 pl-0">
+
         <div class="row clearfix" data-step="2" data-intro="آمار روزانه فروش، تراکنش و سفارش"
              data-position="bottom-middle-aligned">
+            <div class="col-md-12 col-lg-6">
+                <div class="card widget_2 big_icon wallet">
+                    <div class="body">
+                        <h3 class="mt-0 mb-0">{{number_format(auth()->user()->wallet->raw_balance)}} هزار تومان</h3>
+                        <p class="text-muted">موجودی کیف شما</p>
+                        <div class="progress">
+                            <div class="progress-bar l-amber" role="progressbar" aria-valuenow="45"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
+                        </div>
+                        <small>21% بالاتر از ماه گذشته</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="card widget_2 big_icon money">
+                    <div class="body">
+                        <h3 class="mt-0 mb-0">{{number_format($walletCheckouts)}} هزار تومان</h3>
+                        <p class="text-muted">مجموع برداشتی</p>
+                        <div class="progress">
+                            <div class="progress-bar l-pink" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 45%;"></div>
+                        </div>
+                        <small>43% بالاتر از ماه گذشته</small>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card widget_2 big_icon traffic">
                     <div class="body">
@@ -77,7 +105,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card widget_2 big_icon email">
                     <div class="body">
-                        <h6>تراکنش هایا امروز</h6>
+                        <h6>تراکنش های امروز</h6>
                         <h2>
                             <small class="info">{{$todayTransactions}}</small>
                         </h2>

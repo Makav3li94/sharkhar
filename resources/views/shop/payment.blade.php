@@ -109,7 +109,14 @@
                                             <span>{{$order->shipping_cost ?? 0}}</span>
                                         </div>
                                     </li>
-
+                                    <li class="d-flex justify-content-between">
+                                        <div class="">
+                                            <strong>سهم شرخر: </strong>
+                                        </div>
+                                        <div>
+                                            <span>{{(int) ( round( $order->price * ( 1 / 100 ) ) ) ?? 0}}</span>
+                                        </div>
+                                    </li>
                                     <li class="d-flex justify-content-between text-danger">
                                         <div>
                                             <strong>تخفیف: </strong>
@@ -121,7 +128,7 @@
                                 </ul>
                                 <hr>
                                 <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
-                                    : {{number_format($order->price) }} هزار
+                                    : {{number_format((int)($order->price + round( $order->price * (1/100))) * 10) }} هزار
                                     تومان</h5>
                             </div>
                             <div class="col-lg-3 nono">

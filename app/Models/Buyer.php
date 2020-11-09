@@ -16,7 +16,9 @@ class Buyer extends Authenticatable
     public function orders(){
     	return $this->hasMany(Order::class);
     }
-
+	public function wallet(){
+		return $this->hasMany(Wallet::class);
+	}
 	public function transactions(){
 		return $this->hasMany(Transaction::class);
 	}

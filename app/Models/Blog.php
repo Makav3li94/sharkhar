@@ -12,7 +12,7 @@ use Spatie\Feed\FeedItem;
 class Blog extends Model implements Feedable
 {
     use HasFactory,\Spatie\Tags\HasTags,Number;
-
+	protected $dateFormat = 'Y-m-d H:i';
     protected $guarded = [];
 
     public function category(){

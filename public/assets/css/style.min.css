@@ -19084,7 +19084,12 @@ section.bib {
     left: 40px;
     line-height: normal
 }
-
+.big_icon.wallet::before {
+    content: "\f198"
+}
+.big_icon.money::before {
+    content: "\f199"
+}
 .big_icon.storage::before {
     content: "\f297"
 }
@@ -19112,6 +19117,7 @@ section.bib {
 .big_icon.email::before {
     content: "\f15a"
 }
+
 
 .big_icon.domains::before {
     content: "\f173"

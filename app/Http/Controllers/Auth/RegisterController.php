@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\ScraperController;
 use App\Models\Buyer;
 use App\Models\PreRegister;
+use App\Models\Wallet;
 use App\Providers\RouteServiceProvider;
 use App\Models\Seller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -170,7 +171,11 @@ class RegisterController extends Controller {
 		] );
 		$scraper = new ScraperController();
 		$scraper->scrapInstagram( $seller );
-
+		Wallet::create([
+			'seller_id'=>$seller->id,
+			'wallet_type_id'=>1,
+			'raw_balance'=>0
+		]);
 		return $seller;
 	}
 
@@ -183,6 +188,12 @@ class RegisterController extends Controller {
 			'password' => Hash::make( $request['password'] ),
 		] );
 		Auth::guard( 'buyer' )->loginUsingId( $buyer->id );
+
+		Wallet::create([
+			'buyer_id'=>$buyer->id,
+			'wallet_type_id'=>1,
+			'raw_balance'=>0
+		]);
 
 		return redirect()->intended( 'buyer/dashboard' );
 	}

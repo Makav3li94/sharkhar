@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use Carbon\Carbon;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -33,13 +34,13 @@ class BlogController extends Controller {
 
 
 			$blogCategories = BlogCategory::all();
-			$blogs          = Blog::paginate( 4 );
+			$blogs = Blog::whereDate('published_at','<',Carbon::now()->toDateTimeString())->orderBy('id', 'desc')->paginate(4);
 			$blogsLatest    = Blog::orderBy( 'id', 'DESC' )->get()->take( 5 );
 			$tags           = Tag::all()->take( 5 );
 
 			return view( 'blog.index', compact( 'blogs', 'blogCategories', 'tags', 'blogsLatest' ) );
 		} else {
-			$blogs = Blog::paginate( 10 );
+			$blogs = Blog::latest()->paginate( 10 );
 
 			return view( 'admin.blogs.index', compact( 'blogs' ) );
 		}
@@ -68,7 +69,25 @@ class BlogController extends Controller {
 			'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 			'category_id' => 'required|numeric',
 		] );
+		if (isset($request->published_at)) {
 
+			$published_at = $this->convertNumbers($request->published_at);
+			$published_at = explode('/', $published_at);
+			$published_at = Verta::getGregorian($published_at[0], $published_at[1], $published_at[2]);
+			$published_at = $published_at[0] . "-" . $published_at[1] . "-" . $published_at[2];
+			if (isset($request->publish_time)) {
+				if (strlen($request->publish_time) == 5) {
+					$published_at .= " " . $request->publish_time . ":00";
+				} else {
+					$published_at .= " " . $request->publish_time;
+				}
+
+			}
+			$published_at = Carbon::createFromFormat('Y-m-d H:i:s', $published_at)->toDateTimeString();
+		} else {
+
+			$published_at = Carbon::now()->toDateTimeString();
+		}
 		$path  = '/uploads/files/blogs/';
 		$image = null;
 		if ( $request->hasFile( 'image' ) ) {
@@ -85,6 +104,7 @@ class BlogController extends Controller {
 			'keywords'    => $request->keywords,
 			'image'       => $image,
 			'category_id' => $request->category_id,
+			'published_at' => $published_at,
 		] );
 
 		$blog->attachTags( explode( ',', $request->tags ) );
@@ -154,7 +174,16 @@ class BlogController extends Controller {
 		foreach ( $tags as $tag ) {
 			$blogTags .= $tag['name'].", ";
 		 }
-		return view( 'admin.blogs.edit', compact( 'blog', 'blogCategories', 'blogTags' ) );
+
+		if(!empty($blog->published_at)){
+			$time = explode(' ', $blog->published_at);
+			$time = $time[1];
+			$date = $this->convertToJalali($blog->published_at);
+		}else{
+			$time = '';
+			$date = '';
+		}
+		return view( 'admin.blogs.edit', compact( 'blog', 'blogCategories', 'blogTags','time','date' ) );
 	}
 
 	/**
@@ -175,6 +204,23 @@ class BlogController extends Controller {
 			'category_id' => 'required|numeric',
 		] );
 
+		if (isset($request->published_at)) {
+
+			$published_at = $this->convertNumbers($request->published_at);
+			$published_at = explode('/', $published_at);
+			$published_at = Verta::getGregorian($published_at[0], $published_at[1], $published_at[2]);
+			$published_at = $published_at[0] . "-" . $published_at[1] . "-" . $published_at[2];
+			if (isset($request->publish_time)) {
+				if (strlen($request->publish_time) == 5) {
+					$published_at .= " " . $request->publish_time . ":00";
+				} else {
+					$published_at .= " " . $request->publish_time;
+				}
+			}
+			$published_at = Carbon::createFromFormat('Y-m-d H:i:s', $published_at)->toDateTimeString();
+
+		}
+
 		$path = '/uploads/files/blogs/';
 		if ( $request->hasFile( 'image' ) ) {
 			$image = $request->file( 'image' );
@@ -188,6 +234,7 @@ class BlogController extends Controller {
 				'keywords'    => $request->keywords,
 				'image'       => $image,
 				'category_id' => $request->category_id,
+				'published_at' => $published_at,
 			] );
 		} else {
 			$blog->update( [
@@ -196,9 +243,12 @@ class BlogController extends Controller {
 				'meta'        => $request->meta,
 				'keywords'    => $request->keywords,
 				'category_id' => $request->category_id,
+				'published_at' => $published_at,
 			] );
 		}
 		$blog->syncTags( explode( ',', $request->tags ) );
+
+
 
 		return redirect()->back()->with( 'success', 'با موفقیت بروزرسانی شد.' );
 	}
@@ -213,4 +263,32 @@ class BlogController extends Controller {
 	public function destroy( Blog $blog ) {
 		//
 	}
+	function convertNumbers($srting, $toPersian = false)
+	{
+		$en_num = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+		$fa_num = array('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹');
+		if ($toPersian) return str_replace($en_num, $fa_num, $srting);
+		else return str_replace($fa_num, $en_num, $srting);
+	}
+
+	public function convertToGoregian($start_date)
+	{
+		$start_day = explode(' ', $start_date);
+		$start_day = $start_day[0];
+		$start_day = explode('-', $start_day);
+		$start_day = Verta::getJalali($start_day[0], $start_day[1], $start_day[2]);
+		$start_day = $this->convertNumbers($start_day, true);
+		return $start_day = $start_day[0] . '/' . $start_day[1] . '/' . $start_day[2];
+	}
+
+	public function convertToJalali($start_date)
+	{
+		$start_day = explode(' ', $start_date);
+		$start_day = $start_day[0];
+		$start_day = explode('-', $start_day);
+		$start_day = Verta::getJalali($start_day[0], $start_day[1], $start_day[2]);
+		$start_day = $this->convertNumbers($start_day, true);
+		return $start_day = $start_day[0] . '/' . $start_day[1] . '/' . $start_day[2];
+	}
+
 }
