@@ -1,5 +1,5 @@
 {{--<footer class="footer-social-icon text-center section_padding_70 clearfix" style="z-index: -101; position: fixed; bottom: 0px; width: 1903px;">--}}
-<footer class="footer-social-icon text-center section_padding_70 clearfix" style="direction: rtl">
+<footer class="footer-social-icon text-center section_padding_50 clearfix mb-0" style="direction: rtl">
     <div class="mb-4 mt-2 p-3 ">
         <ul class="list-unstyled safety">
             <li class="mb-2">
@@ -90,15 +90,19 @@
                     <i class=" ti-headphone-alt  p-2"></i>
                     تلفن: ۶۷ ۷۳ ۲۸۴۳-۰۲۱ - : ۶۲ ۸۸ ۵۶۰۷-۰۲۱
                 </li>
-                <br>
-                <li>
-                    sharkhar@info.net
-                    <i class=" ti-email  p-2"></i>
+{{--                <br>--}}
+{{--                <li>--}}
+{{--                    sharkhar@info.net--}}
+{{--                    <i class=" ti-email  p-2"></i>--}}
 
-                </li>
+{{--                </li>--}}
 
             </ul>
         </nav>
+    </div>
+    <div class="footer-social-icon">
+        <a href="https://www.instagram.com/_sharkhar_/" target="_blank" title="اینستاگرام شرخر"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="mailto:info@sharkhar.net" title="ایمیل شرخر"><i class="fa fa-envelope" aria-hidden="true"></i></a>
     </div>
     <!-- Foooter Text-->
     <div class="copyright-text ">

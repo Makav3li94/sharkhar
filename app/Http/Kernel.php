@@ -32,6 +32,7 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+	        \Illuminatech\UrlTrailingSlash\Middleware\RedirectTrailingSlash::class, // enable automatic redirection on incorrect URL trailing slashes
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,

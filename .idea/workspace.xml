@@ -6,17 +6,540 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="664cae3b-4d8c-4eea-89b2-740d57374004" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sharkhar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sharkhar.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Seller/AdminSellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Seller/AdminSellerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_13_121011_create_police_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_13_121011_create_police_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/fa/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fa/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/profile/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/vendor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/vendor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Seller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_25_203917_create_blogs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_25_203917_create_blogs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/img/bg-img/welcome-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/img/bg-img/welcome-bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/blog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/asm89/stack-cors/.github/workflows/run-tests.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/asm89/stack-cors/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/asm89/stack-cors/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/asm89/stack-cors/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/asm89/stack-cors/src/CorsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/asm89/stack-cors/src/CorsService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/asm89/stack-cors/tests/CorsTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/asm89/stack-cors/tests/MockApp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/commonmark" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/commonmark" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/var-dump-server" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/var-dump-server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/src/EmailLexer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/src/EmailLexer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/src/Parser/DomainPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/src/Parser/DomainPart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/UndefinedVariableSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/UndefinedVariableSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Run.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Run.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hekmatinasser/verta/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hekmatinasser/verta/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hekmatinasser/verta/src/Traits/Creator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hekmatinasser/verta/src/Traits/Creator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hekmatinasser/verta/src/Traits/Formatting.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hekmatinasser/verta/src/Traits/Formatting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Bus/BusServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Bus/BusServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Bus/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Bus/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Config/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Config/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cookie/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cookie/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/DumpCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/DumpCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Factories/FactoryMakeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Factories/FactoryMakeCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Factories/stubs/factory.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Factories/stubs/factory.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/ResetCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/ResetCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/InteractsWithPivotTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/InteractsWithPivotTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphTo.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphTo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/PostgresSchemaState.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/PostgresSchemaState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/SchemaState.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/SchemaState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/SqliteSchemaState.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/SqliteSchemaState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Encryption/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Encryption/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Events/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Events/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Filesystem/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Filesystem/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Bus/PendingChain.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Bus/PendingChain.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/cast.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/cast.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/observer.plain.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/observer.plain.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/observer.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/observer.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Hashing/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Hashing/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Log/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Log/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Macroable/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Macroable/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/Messages/MailMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/Messages/MailMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pipeline/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pipeline/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Middleware/RateLimited.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Middleware/RateLimited.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Middleware/RateLimitedWithRedis.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Middleware/RateLimitedWithRedis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Redis/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Redis/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/PendingResourceRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/PendingResourceRegistration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteSignatureParameters.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteSignatureParameters.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Broadcast.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Broadcast.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Cache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Storage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Storage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Reflector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Reflector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Stringable.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Stringable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/PendingCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/PendingCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Testing/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesComponents.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesComponents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/tinker/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/tinker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/tinker/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/tinker/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/tinker/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RedirectsUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RedirectsUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/ResetsPasswords.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/ResetsPasswords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/SendsPasswordResetEmails.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/SendsPasswordResetEmails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/layouts/app.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/layouts/app.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/bootstrap-stubs/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/bootstrap-stubs/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/CommonMarkConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/CommonMarkConverter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/MentionParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/MentionParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Input/MarkdownInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Input/MarkdownInput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nunomaduro/collision/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nunomaduro/collision/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nunomaduro/collision/src/Adapters/Phpunit/Printer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nunomaduro/collision/src/Adapters/Phpunit/Printer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nunomaduro/collision/src/Adapters/Phpunit/Style.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nunomaduro/collision/src/Adapters/Phpunit/Style.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/.github/workflows/tests.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/ReflectionClosure.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/ReflectionClosure.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/SerializableClosure.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/SerializableClosure.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Exception/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Exception/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Clover.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Clover.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Cobertura.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Cobertura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Crap4j.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Crap4j.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Html/Facade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Html/Facade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/PHP.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/PHP.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Text.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Xml/Facade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Xml/Facade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Version.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Version.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-text-template/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-text-template/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-text-template/src/exceptions/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-text-template/src/exceptions/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-timer/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/src/exceptions/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-timer/src/exceptions/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/AUTHORS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/Autoloader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/HighlightResult.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/Highlighter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/JsonRef.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/Language.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/Mode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/ModeDeprecations.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/RegEx.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/RegExMatch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/RegExUtils.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/Terminators.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/1c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/abnf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/accesslog.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/actionscript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ada.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/angelscript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/apache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/applescript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/arcade.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/arduino.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/armasm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/asciidoc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/aspectj.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/autohotkey.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/autoit.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/avrasm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/awk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/axapta.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/bash.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/basic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/bnf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/brainfuck.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/cal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/capnproto.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ceylon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/clean.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/clojure-repl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/clojure.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/cmake.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/coffeescript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/coq.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/cos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/cpp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/crmsh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/crystal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/cs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/csp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/css.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/dart.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/delphi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/diff.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/django.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/dns.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/dockerfile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/dos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/dsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/dts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/dust.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ebnf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/elixir.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/elm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/erb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/erlang-repl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/erlang.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/excel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/fix.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/flix.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/fortran.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/fsharp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/gams.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/gauss.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/gcode.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/gherkin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/glsl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/gml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/go.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/golo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/gradle.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/groovy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/haml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/handlebars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/haskell.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/haxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/hsp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/htmlbars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/http.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/hy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/inform7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ini.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/irpf90.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/isbl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/java.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/javascript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/jboss-cli.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/json.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/julia-repl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/julia.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/kotlin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/lasso.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ldif.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/leaf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/less.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/lisp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/livecodeserver.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/livescript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/llvm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/lsl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/lua.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/makefile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/markdown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/mathematica.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/matlab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/maxima.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/mel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/mercury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/mipsasm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/mizar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/mojolicious.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/monkey.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/moonscript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/n1ql.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/nginx.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/nimrod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/nix.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/nsis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/objectivec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ocaml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/openscad.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/oxygene.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/parser3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/perl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/pf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/pgsql.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/php.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/plaintext.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/pony.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/powershell.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/processing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/profile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/prolog.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/properties.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/protobuf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/puppet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/purebasic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/python.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/q.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/qml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/r.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/reasonml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/rib.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/roboconf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/routeros.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/rsl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ruby.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/ruleslanguage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/rust.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/sas.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/scala.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/scheme.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/scilab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/scss.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/shell.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/smali.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/smalltalk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/sml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/sqf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/sql.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/stan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/stata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/step21.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/stylus.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/subunit.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/swift.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/taggerscript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/tap.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/tcl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/tex.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/thrift.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/tp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/twig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/typescript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/vala.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/vbnet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/vbscript-html.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/vbscript.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/verilog.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/vhdl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/vim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/x86asm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/xl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/xml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/xquery.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/yaml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/Highlight/languages/zephir.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/HighlightUtilities/_internals.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/HighlightUtilities/_themeColors.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/HighlightUtilities/functions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/a11y-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/a11y-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/agate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/an-old-hope.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/androidstudio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/arduino-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/arta.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/ascetic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-cave-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-cave-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-dune-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-dune-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-estuary-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-estuary-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-forest-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-forest-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-heath-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-heath-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-lakeside-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-lakeside-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-plateau-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-plateau-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-savanna-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-savanna-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-seaside-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-seaside-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-sulphurpool-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atelier-sulphurpool-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atom-one-dark-reasonable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atom-one-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/atom-one-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/brown-paper.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/brown-papersq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/codepen-embed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/color-brewer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/darcula.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/darkula.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/docco.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/dracula.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/far.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/foundation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/github-gist.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/github.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/gml.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/googlecode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/gradient-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/grayscale.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/gruvbox-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/gruvbox-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/hopscotch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/hybrid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/idea.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/ir-black.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/isbl-editor-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/isbl-editor-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/kimbie.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/kimbie.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/lightfair.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/magula.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/mono-blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/monokai-sublime.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/monokai.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/night-owl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/nord.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/obsidian.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/ocean.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/paraiso-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/paraiso-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/pojoaque.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/pojoaque.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/purebasic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/qtcreator_dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/qtcreator_light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/railscasts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/rainbow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/routeros.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/school-book.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/school-book.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/shades-of-purple.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/solarized-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/solarized-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/sunburst.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/tomorrow-night-blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/tomorrow-night-bright.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/tomorrow-night-eighties.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/tomorrow-night.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/tomorrow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/vs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/vs2015.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/xcode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/xt256.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/styles/zenburn.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit/.psalm/baseline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/code-unit/.psalm/baseline.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit/.psalm/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/code-unit/.psalm/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/code-unit/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit/src/exceptions/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/code-unit/src/exceptions/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/comparator/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/src/exceptions/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/comparator/src/exceptions/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/complexity/.psalm/baseline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/complexity/.psalm/baseline.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/complexity/.psalm/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/complexity/.psalm/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/complexity/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/complexity/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/complexity/src/Exception/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/complexity/src/Exception/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/diff/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/src/Exception/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/diff/src/Exception/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/src/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/diff/src/Parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/global-state/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/src/exceptions/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/global-state/src/exceptions/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/lines-of-code/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/lines-of-code/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/lines-of-code/src/Exception/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/lines-of-code/src/Exception/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/src/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/src/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/object-reflector/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/src/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/object-reflector/src/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/recursion-context/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/src/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/recursion-context/src/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/type/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/type/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sebastian/type/src/exception/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sebastian/type/src/exception/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/spatie/laravel-tags/.github/workflows/run-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/spatie/laravel-tags/.github/workflows/run-tests.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/spatie/laravel-tags/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/spatie/laravel-tags/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/spatie/laravel-tags/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/spatie/laravel-tags/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/spatie/laravel-tags/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/spatie/laravel-tags/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/spatie/laravel-tags/src/HasSlug.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/spatie/laravel-tags/src/HasSlug.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/spatie/laravel-tags/src/TagsServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/spatie/laravel-tags/src/TagsServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/error-handler/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/finder/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/finder/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/BinaryFileResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/BinaryFileResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/RawMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/RawMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/process/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/process/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/routing/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/routing/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/string/AbstractString.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/string/AbstractString.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/string/UnicodeString.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/string/UnicodeString.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/string/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/string/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/translation/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/translation/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/VarCloner.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/VarCloner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/build/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/build/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/build/docs/base.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/build/docs/base.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/src/voku/helper/ASCII.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/src/voku/helper/ASCII.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/src/voku/helper/data/ascii_by_languages.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/src/voku/helper/data/ascii_by_languages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/voku/portable-ascii/src/voku/helper/data/x02e.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/voku/portable-ascii/src/voku/helper/data/x02e.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,47 +570,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/head.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-56">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="88" column="91" selection-start-line="88" selection-start-column="91" selection-end-line="88" selection-end-column="91" />
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
+        <entry file="file://$PROJECT_DIR$/config/feed.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
+            <state relative-caret-position="592">
+              <caret line="75" column="55" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/style.min.css">
+        <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203850">
-              <caret line="11325" column="5" selection-start-line="11325" selection-start-column="5" selection-end-line="11325" selection-end-column="5" />
+            <state relative-caret-position="556">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="34" column="149" selection-start-line="34" selection-start-column="149" selection-end-line="34" selection-end-column="149" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/shop/vendor.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="669">
+              <caret line="178" column="26" selection-start-line="178" selection-start-column="26" selection-end-line="178" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/blog/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Blog.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="38" selection-start-line="38" selection-end-line="41" selection-end-column="5" />
+              <folding>
+                <element signature="e#30#52#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+              <folding>
+                <element signature="e#30#84#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Seller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
+              <folding>
+                <element signature="e#30#84#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,9 +674,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>3c6d71</find>
-      <find>#833ab4;</find>
-      <find>&lt;hr</find>
       <find>mobile</find>
       <find>navbar-bra</find>
       <find>@media screen and (max-width:</find>
@@ -125,7 +690,6 @@
       <find>texta</find>
       <find>bootstrap-tagsinput</find>
       <find>It's Over 9000</find>
-      <find>blogs</find>
       <find>video</find>
       <find>vide</find>
       <find>vid</find>
@@ -136,6 +700,10 @@
       <find>قبلا</find>
       <find>placeh</find>
       <find>transaction_type</find>
+      <find>sitemap</find>
+      <find>feeds</find>
+      <find>name</find>
+      <find>blogs</find>
     </findStrings>
     <replaceStrings>
       <replace>e1306c</replace>
@@ -161,47 +729,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/buyer/feedbacks/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/shop/payment.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/shop/done_payment.blade.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/Models/Feedback.php" />
-        <option value="$PROJECT_DIR$/public/front/style.css" />
-        <option value="$PROJECT_DIR$/resources/views/login-modal.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/front_footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/front_header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/buyer/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/public/front/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/public/front/indor-style.css" />
-        <option value="$PROJECT_DIR$/public/front/css/responsive.css" />
-        <option value="$PROJECT_DIR$/resources/views/seller/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/shop/single.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/seller/order/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/seller/transaction/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/seller/police/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/buyer/police/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Police.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seller_includes/right_sidabar.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Blog.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/blogs/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_10_25_203917_create_blogs_table.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/blogs/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/head.blade.php" />
         <option value="$PROJECT_DIR$/config/seotools.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/blogs/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/blog/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
         <option value="$PROJECT_DIR$/resources/views/shop/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/public/js/front.js" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/fa/validation.php" />
         <option value="$PROJECT_DIR$/resources/views/shop/vendor.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/seller/profile/edit.blade.php" />
@@ -212,6 +758,28 @@
         <option value="$PROJECT_DIR$/app/Models/Transaction.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/footer.blade.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_10_25_203917_create_blogs_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/sitemap/tags.blade.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa12936.20301/article.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sitemap/blogs.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sitemap/blog_categories.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sitemap/products.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sitemap/main.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SitemapController.php" />
+        <option value="$PROJECT_DIR$/resources/views/sitemap/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sitemap/vendors.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/blog/index.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Models/Blog.php" />
+        <option value="$PROJECT_DIR$/app/Models/Seller.php" />
+        <option value="$PROJECT_DIR$/app/Models/Product.php" />
+        <option value="$PROJECT_DIR$/config/feed.php" />
+        <option value="$PROJECT_DIR$/bootstrap/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
       </list>
     </option>
   </component>
@@ -318,7 +886,6 @@
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
-      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
@@ -327,29 +894,19 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-tags" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-translatable" />
       <path value="$PROJECT_DIR$/vendor/spatie/eloquent-sortable" />
-      <path value="$PROJECT_DIR$/vendor/league/glide" />
-      <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
-      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
-      <path value="$PROJECT_DIR$/vendor/spatie/image" />
-      <path value="$PROJECT_DIR$/vendor/spatie/browsershot" />
-      <path value="$PROJECT_DIR$/vendor/spatie/robots-txt" />
-      <path value="$PROJECT_DIR$/vendor/spatie/crawler" />
-      <path value="$PROJECT_DIR$/vendor/spatie/laravel-sitemap" />
-      <path value="$PROJECT_DIR$/vendor/intervention/image" />
-      <path value="$PROJECT_DIR$/vendor/tightenco/collect" />
-      <path value="$PROJECT_DIR$/vendor/nicmart/tree" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/shetabit/payment" />
       <path value="$PROJECT_DIR$/vendor/shetabit/multipay" />
       <path value="$PROJECT_DIR$/vendor/artesaos/seotools" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-feed" />
+      <path value="$PROJECT_DIR$/vendor/illuminatech/url-trailing-slash" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="14" />
-    <option name="y" value="61" />
-    <option name="width" value="1167" />
-    <option name="height" value="823" />
+    <option name="x" value="973" />
+    <option name="y" value="51" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -368,27 +925,18 @@
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="buyer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -399,7 +947,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../www/indeed_crm" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -408,11 +956,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\sharkhar\resources\views\sitemap" />
       <recent name="C:\wamp64\www\sharkhar\public\js" />
       <recent name="C:\wamp64\www\sharkhar\resources\views\admin\blogs" />
       <recent name="C:\wamp64\www\sharkhar\public\front\css" />
       <recent name="C:\wamp64\www\sharkhar\public\front" />
-      <recent name="C:\wamp64\www\sharkhar\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -492,18 +1040,20 @@
       <workItem from="1604514741358" duration="3068000" />
       <workItem from="1604517845422" duration="250000" />
       <workItem from="1604582145979" duration="2202000" />
-      <workItem from="1604584788923" duration="62000" />
+      <workItem from="1604584788923" duration="709000" />
+      <workItem from="1604853456912" duration="590000" />
+      <workItem from="1604916951404" duration="8340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248796000" />
+    <option name="totallyTimeSpent" value="258373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8974359" visible="true" weight="0.17963752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8974359" visible="true" weight="0.18283582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.102564104" side_tool="true" weight="0.19509594" />
@@ -525,7 +1075,7 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8974359" visible="true" weight="0.20575693" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8974359" visible="true" weight="0.18283582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.102564104" side_tool="true" weight="0.19509594" />
@@ -540,7 +1090,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004517" side_tool="true" weight="0.32932165" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" visible="true" weight="0.1971831" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" visible="true" weight="0.20910075" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -551,167 +1101,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/contact/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="89" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/buyer/order/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="155" selection-start-line="155" selection-end-line="161" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/buyer/order/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/seller/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="366" selection-start-line="366" selection-end-line="366" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/files/blogs/1604321884-1399-08-12-Untitled-2.png" />
-    <entry file="file://$PROJECT_DIR$/public/uploads/files/blogs/1604321915-1399-08-12-Untitled-2.png" />
-    <entry file="file://$PROJECT_DIR$/public/uploads/files/blogs/1604325771-1399-08-12-Untitled-23.png" />
-    <entry file="file://$PROJECT_DIR$/public/uploads/files/blogs/1604325905-1399-08-12-Untitled-23.png" />
-    <entry file="file://$PROJECT_DIR$/public/uploads/files/blogs/1604325947-1399-08-12-Untitled-23.png" />
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/artesaos/seotools/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="208">
-            <caret line="723" lean-forward="true" selection-start-line="723" selection-end-line="723" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/artesaos/seotools/src/SEOTools/Facades/SEOTools.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_25_203917_create_blogs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Compressed/33721_aero/aero/html/advanced-form-elements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="1110" column="42" selection-start-line="1110" selection-start-column="42" selection-end-line="1110" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/blogs/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/blogs/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="49" column="92" selection-start-line="49" selection-start-column="92" selection-end-line="49" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/blogs/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="106" column="61" selection-start-line="106" selection-start-column="61" selection-end-line="106" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_25_204123_create_blog_categories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blog/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blog/single.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blog/side-bar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="176" column="21" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="21" />
-          <folding>
-            <element signature="e#756#5493#1#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/artesaos/seotools/src/SEOTools/Facades/SEOMeta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="126" column="40" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="40" />
-          <folding>
-            <element signature="e#40#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/shop/single.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/front_header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -780,20 +1169,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/front.js" />
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/front/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -805,13 +1180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/shop/vendor.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3204">
-          <caret line="178" column="26" lean-forward="true" selection-start-line="178" selection-start-column="26" selection-end-line="178" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -856,6 +1224,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3510">
+          <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203850">
@@ -863,31 +1238,233 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/head.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
+        <state relative-caret-position="18">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/head.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="200">
+          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+          <folding>
+            <marker date="1604853853473" expanded="true" signature="4158:4343" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="52" />
+          <folding>
+            <element signature="e#40#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_25_203917_create_blogs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sitemap/tags.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa12936.11560/article.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa12936.20301/article.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa12936.24388/SiteMapController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sitemap/blog_categories.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sitemap/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="88" column="91" selection-start-line="88" selection-start-column="91" selection-end-line="88" selection-end-column="91" />
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sitemap/blogs.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/feed/feed.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/feed/atom.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/feed/rss.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sitemap/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SitemapController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sitemap/vendors.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sitemap/products.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/shop/vendor.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="178" column="26" selection-start-line="178" selection-start-column="26" selection-end-line="178" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blog/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="38" selection-start-line="38" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="e#30#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Seller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
+          <folding>
+            <element signature="e#30#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+          <folding>
+            <element signature="e#30#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="75" column="55" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="34" column="149" selection-start-line="34" selection-start-column="149" selection-end-line="34" selection-end-column="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
         </state>
       </provider>
     </entry>

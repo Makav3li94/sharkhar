@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Seller extends Authenticatable
+class Seller extends Authenticatable implements Feedable
 {
     use HasFactory;
 	protected $guarded = [];
@@ -90,5 +92,21 @@ class Seller extends Authenticatable
 		} else {
 			$this->attributes['telephone'] = $value;
 		}
+	}
+
+	public function toFeedItem(): FeedItem
+	{
+		return FeedItem::create([
+			'id' => $this->id,
+			'title' => $this->insta_user,
+			'summary' => $this->title,
+			'updated' => $this->updated_at,
+			'link' => route('vendor',$this->insta_user),
+			'author' => $this->name,
+		]);
+	}
+	public static function getFeedItems()
+	{
+		return Seller::all();
 	}
 }
