@@ -64,6 +64,7 @@ return array(
     'App\\Models\\Transaction' => $baseDir . '/app/Models/Transaction.php',
     'App\\Models\\Wallet' => $baseDir . '/app/Models/Wallet.php',
     'App\\Models\\WalletCheckout' => $baseDir . '/app/Models/WalletCheckout.php',
+    'App\\Models\\WalletPay' => $baseDir . '/app/Models/WalletPay.php',
     'App\\Models\\WalletType' => $baseDir . '/app/Models/WalletType.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

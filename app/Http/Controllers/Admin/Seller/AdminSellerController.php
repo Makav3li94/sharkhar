@@ -181,7 +181,7 @@ class AdminSellerController extends Controller {
 
 				foreach ( $products as $key => $product ) {
 					if ( $product->price != 0 ) {
-						$price = number_format( $product->price ) . " هزارتومان" ?? '';
+						$price = number_format( $product->price ) . " تومان" ?? '';
 					} else {
 						$price = '<input class="form-control total" style="width: 80%" onkeyup="optinalPriceFunc(' . $product->id . ')" name="optional_price" id="' . $product->id . '-optional_price" type="text">';
 					}

@@ -128,7 +128,7 @@
                                 </ul>
                                 <hr>
                                 <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
-                                    : {{number_format((int)($order->price + round( $order->price * (1/100))) * 10) }} هزار
+                                    : {{number_format((int)($order->price + round( $order->price * (1/100))) * 10) }}
                                     تومان</h5>
                             </div>
                             <div class="col-lg-3 nono">

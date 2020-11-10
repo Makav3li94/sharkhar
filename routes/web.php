@@ -103,21 +103,15 @@ Route::view( '/home', 'home' )->middleware( 'auth' );
 //******* ADMIN ********
 Route::name( 'admin.' )->prefix( 'admin' )->middleware( 'auth:admin' )->group( function () {
 	Route::get( 'dashboard', [ \App\Http\Controllers\Admin\Admin\AdminController::class, 'dashboard' ] )->name( 'dashboard' );
-
 	Route::resource( 'sellers', \App\Http\Controllers\SellersController::class )->except( [ 'create', 'show' ] );;
-
 	Route::resource( 'blogs', \App\Http\Controllers\BlogController::class );
-
 	Route::patch( 'sellers.update/{seller}', [ \App\Http\Controllers\SellersController::class, 'changePassword' ] )->name( 'sellers.change_password' );
-
-
 	Route::resource( 'contacts', \App\Http\Controllers\ContactsController::class );
-
-
 	Route::resource( 'orders', \App\Http\Controllers\OrdersController::class )->except( [ 'create', 'show' ] );;
 	Route::resource( 'police', \App\Http\Controllers\PoliceController::class )->except( [ 'create', 'show' ] );;
 	Route::resource( 'products', \App\Http\Controllers\ProductsController::class )->except( [ 'create', 'show' ] );;
 	Route::resource( 'transactions', \App\Http\Controllers\TransactionsController::class )->only( [ 'index', ] );;
+	Route::get( 'wallet-pay', [\App\Http\Controllers\WalletPayController::class,'index'] )->name('wallet_pay');
 	Route::resource( 'feedbacks', \App\Http\Controllers\FeedbacksController::class );
 } );
 
@@ -125,9 +119,7 @@ Route::name( 'admin.' )->prefix( 'admin' )->middleware( 'auth:admin' )->group( f
 //******* SElLER *******
 Route::name( 'seller.' )->prefix( 'seller' )->middleware( 'auth' )->group( function () {
 	Route::get( 'dashboard', [ \App\Http\Controllers\Admin\Seller\AdminSellerController::class, 'dashboard' ] )->name( 'dashboard' );
-
 	Route::post( 'verify/{seller}', [ \App\Http\Controllers\Admin\Seller\AdminSellerController::class, 'verify' ] )->name( 'verify' );
-
 	Route::get( 'profile/{seller}', [ \App\Http\Controllers\Admin\Seller\AdminSellerController::class, 'profile' ] )->name( 'profile' );
 	Route::patch( 'profile/{seller}', [ \App\Http\Controllers\Admin\Seller\AdminSellerController::class, 'changePassword' ] )->name( 'change_password' );
 	Route::patch( 'profile/update/{seller}', [ \App\Http\Controllers\Admin\Seller\AdminSellerController::class, 'update' ] )->name( 'update' );
@@ -135,7 +127,9 @@ Route::name( 'seller.' )->prefix( 'seller' )->middleware( 'auth' )->group( funct
 	Route::resource( 'police', \App\Http\Controllers\PoliceController::class )->except( [ 'create', 'show' ] );;
 	Route::resource( 'products', \App\Http\Controllers\ProductsController::class )->except( [ 'create', 'show' ] );;
 	Route::get( 'products_optional_price', [ \App\Http\Controllers\ProductsController::class, 'updateOptionalPrice' ] )->name( 'optional_price' );
-	Route::resource( 'transactions', \App\Http\Controllers\TransactionsController::class )->only( [ 'index', ] );;
+	Route::resource( 'transactions', \App\Http\Controllers\TransactionsController::class )->only( [ 'index' ] );;
+	Route::resource( 'wallet', \App\Http\Controllers\WalletController::class )->only( [ 'index','store' ] );;
+	Route::get( 'wallet-pay', [\App\Http\Controllers\WalletPayController::class,'request'] )->name('wallet_pay');
 	Route::resource( 'feedbacks', \App\Http\Controllers\FeedbacksController::class );
 
 	Route::resource( 'contacts', \App\Http\Controllers\ContactsController::class );

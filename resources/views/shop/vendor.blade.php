@@ -166,7 +166,7 @@
                                    href="{{route('product',$product->id)}}">{{\Illuminate\Support\Str::limit($product->title,80)}}</a>
 
                                 <ul class="product_price list-unstyled justify-content-center">
-                                    <li class="new_price">{{ $product->price != 0 ? number_format($product->price)." هزار تومان" : 'بدون قیمت'}} </li>
+                                    <li class="new_price">{{ $product->price != 0 ? number_format($product->price)." تومان" : 'بدون قیمت'}} </li>
                                 </ul>
                             </div>
                             <div class="action text-center">

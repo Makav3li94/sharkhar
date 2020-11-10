@@ -137,7 +137,7 @@
                                             </td>
                                             <td>
                                                 @if($product->price !=0)
-                                                    {{number_format($product->price)." هزارتومان" ?? ''}}
+                                                    {{number_format($product->price)." تومان" ?? ''}}
                                                 @else
                                                     <input class="form-control total price_input" onkeyup="optinalPriceFunc('{{$product->id}}')" name="optional_price" id="{{$product->id}}-optional_price" type="text">
                                                 @endif

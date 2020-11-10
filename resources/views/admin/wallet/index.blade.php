@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'امور مالی','b_level2'=>'لیست تراکنش های مالی','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'امور مالی','b_level2'=>'عملیات کیف پول','back'=>'true'])
 @section('styles')
     <link rel="stylesheet" href="{{asset('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
     <style>
@@ -103,73 +103,52 @@
     </style>
 @endsection
 @section('content')
-    @if(count($transactions) == 1)
-        <div class="container">
-            <div class="alert alert-danger"> {{auth()->user()->name}} ،ممنون بابت استفاده! تراکنش شما شِبا شده و مطابق
-                سیکل پرداخت شاپرک تصفیه خواهد شد.
-            </div>
-        </div>
-    @endif
+
     <div class="container">
         <div class="row clearfix">
-            @if(count($transactions) > 0)
+
+             @if(count($walletPays) > 0)
                 <div class="card">
                     <div class="body">
                         <div class="col-lg-12">
 
                             <div>
-                                {{--                            <table class="table">--}}
+
                                 <table class="table js-basic-example dataTable">
                                     <thead>
                                     <tr>
                                         <th>ردیف</th>
-                                        <th>خریدار</th>
-                                        <th>تلفن</th>
-                                        <th>شماره سفارش</th>
-                                        <th>قیمت</th>
+                                        <th>نوع</th>
+                                        <th>مقدار</th>
                                         <th>وضعیت</th>
-                                        <th>کد پیگیری</th>
-                                        <th>نوع تراکتش</th>
+                                        <th>تاریخ</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($transactions as $key=>$transaction)
+                                    @foreach($walletPays as $key=>$checkouts)
                                         <tr>
                                             <td>{{$key + 1}}</td>
-                                            <td>{{$transaction->buyer->name}}</td>
-                                            <td>{{$transaction->buyer->mobile}}</td>
-                                            <td>{{$transaction->order->id}}</td>
-                                            <td>{{number_format($transaction->price)}}</td>
                                             <td>
-                                            <span class="col-{{$transaction->status}}">
-                                                @if($transaction->status == 'green')
-                                                    پرداخت شده
-                                                @elseif($transaction->status == 'info')
-                                                    سیستم واسطه
-                                                @else
-                                                    پرداخت نشده
-                                                @endif
-                                            </span>
+                                                <div class="label label-{{$checkouts->transaction_type == 1 ? 'success' : 'danger' }}">
+                                                    {{$checkouts->transaction_type == 1 ? 'ورودی' : 'برداشت' }}
+                                                </div>
                                             </td>
-                                            <td>{{$transaction->verify_code ?? ''}}</td>
+                                            <td>{{number_format($checkouts->amount)}} تومان</td>
                                             <td>
-                                                @if($transaction->transaction_type == 1)
-                                                    مستقیم
-                                                @else
-                                                    واسط |
-                                                    @if($transaction->police->is_verified == 'green')
-                                                        <span class="col-{{$transaction->police->is_verified}}">  تایید شده</span>
-                                                    @elseif($transaction->police->is_verified == 'blue')
-                                                        <span class="col-{{$transaction->police->is_verified}}">  در حال بررسی</span>
+                                                <span class="col-green">
+                                                @if($checkouts->transaction_type == 1)
+                                                        انجام شده
                                                     @else
-                                                        <span class="col-{{$transaction->police->is_verified}}">گزارش مشکل</span>
+                                                        @if($checkouts->status == 1)
+                                                            انجام شده
+                                                        @else
+                                                            در حال واریز
+                                                        @endif
                                                     @endif
-                                                @endif
-                                                @if($transaction->transaction_type == 0)|
-                                                <a href="{{route('seller.police.edit',$transaction->police->id)}}"
-                                                   class="btn btn-sm btn-info">پیگیری</a>
-                                                @endif
+                                                </span>
                                             </td>
+
+                                            <td>{{$checkouts->created_at ?? ''}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -182,7 +161,7 @@
                 <div class="card">
                     <div class="body">
                         <p class="text-primary text-center m-0">
-                            فعلا تراکنشی ندارید :(
+                            فعلا عملیاتی ندارید :(
                         </p>
                     </div>
                 </div>
@@ -196,22 +175,5 @@
 @section('scripts')
     <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
-    <script>
-        $(document).ready(function () {
-            $('.js-basic-example').dataTable({
-                "bSort": false
-            });
-        });
-        $(document).ready(function () {
 
-
-            if (RegExp('multipage', 'gi').test(window.location.search)) {
-                introJs().setOption('doneLabel', 'صفحه بعد').start().oncomplete(function () {
-                    window.location.href = '{{ url("seller/feedbacks/?multipage=true") }}';
-                });
-            }
-
-        });
-
-    </script>
 @endsection

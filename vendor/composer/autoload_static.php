@@ -620,6 +620,7 @@ class ComposerStaticInite0bf74129289838c5b9041710f6b0ff8
         'App\\Models\\Transaction' => __DIR__ . '/../..' . '/app/Models/Transaction.php',
         'App\\Models\\Wallet' => __DIR__ . '/../..' . '/app/Models/Wallet.php',
         'App\\Models\\WalletCheckout' => __DIR__ . '/../..' . '/app/Models/WalletCheckout.php',
+        'App\\Models\\WalletPay' => __DIR__ . '/../..' . '/app/Models/WalletPay.php',
         'App\\Models\\WalletType' => __DIR__ . '/../..' . '/app/Models/WalletType.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

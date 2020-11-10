@@ -19,7 +19,7 @@
                                     </h5>
                                 @else
                                     <h5 class="price mt-0">قیمت فعلی: <span
-                                                class="col-amber">{{number_format($product->optional_price) ." هزار تومان" }} </span>
+                                                class="col-amber">{{number_format($product->optional_price) ." تومان" }} </span>
                                         @endif
                                     </h5>
                                     <div class="rating">
@@ -297,9 +297,9 @@
             getCurrency(value);
 
             valueRef.value = value.toLocaleString();
-            $('#price_invoice').html(value.toLocaleString() + ' هزار تومان');
+            $('#price_invoice').html(value.toLocaleString() + ' تومان');
             var total_val = value + {{$seller->default_shipping}};
-            $('#total_invoice').html(total_val.toLocaleString() + ' هزار تومان');
+            $('#total_invoice').html(total_val.toLocaleString() + '  تومان');
         }
 
         valueRef.addEventListener("change", getChange);

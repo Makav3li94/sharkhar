@@ -89,14 +89,16 @@
                 </li>
 
 
-
-                <li class="{{ request()->is('seller/transactions/*') ? 'active' : '' }} remove-help"
-                    @if(request()->is('seller/transactions'))
-                    data-step="1" data-intro="مدیریت تراکنش ها از اینجا"
-                        @endif>
-                    <a href="{{route('seller.transactions.index')}}">
-                        <i class="zmdi zmdi-money"></i><span>امورمالی</span>
-                    </a>
+                <li><a href="javascript:void(0);"
+                       class="menu-toggle {{ request()->is('seller/contacts/*') ? 'active' : '' }} remove-help"
+                       @if(request()->is('seller/transactions/*'))
+                       data-step="1" data-intro="ارسال تیکت به پشتیبانی شرخر از اینجا"
+                            @endif>
+                        <i class="zmdi zmdi-money-box"></i><span>امورمالی</span></a>
+                    <ul class="ml-menu">
+                        <li><a href="{{route('seller.wallet.index')}}">مدیریت کیف پول</a></li>
+                        <li><a href="{{route('seller.transactions.index')}}">تراکنش ها</a></li>
+                    </ul>
                 </li>
 
                 <li class="{{ request()->is('seller/feedbacks/*') ? 'active' : '' }} remove-help"
@@ -180,6 +182,11 @@
                 <li class="{{ request()->is('admin/orders') ? 'active' : '' }} ">
                     <a href="{{route('admin.orders.index')}}">
                         <i class="zmdi zmdi-assignment"></i><span>سفارشات</span>
+                    </a>
+                </li>
+                <li class="{{ request()->is('admin/wallet-pay') ? 'active' : '' }} ">
+                    <a href="{{route('admin.wallet_pay')}}">
+                        <i class="zmdi zmdi-assignment"></i><span>درخواست پرداخت</span>
                     </a>
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>بلاگ</span></a>

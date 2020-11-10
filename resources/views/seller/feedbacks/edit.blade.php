@@ -20,7 +20,7 @@
                         </div>
                         <hr>
                         <small class="text-muted">مبلغ پرداختی خریدار:</small>
-                        <p>{{number_format($order->price)}} هزار تومان</p>
+                        <p>{{number_format($order->price)}} تومان</p>
                         <hr>
                         <small class="text-muted">تاریخ خرید:</small>
                         <p>{{$order->created_at}}</p>

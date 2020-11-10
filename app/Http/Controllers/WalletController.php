@@ -3,83 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\Wallet;
+use App\Models\WalletCheckout;
 use Illuminate\Http\Request;
 
 class WalletController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+	public function index() {
+		if ( auth()->guard( 'web' )->check() ) {
+			$seller = auth()->user();
+			$wallet = Wallet::where('seller_id',$seller->id)->first();
+			$walletCheckouts =  WalletCheckout::where([['wallet_id',$seller->wallet->id],['transaction_type', 0]])->sum('amount');
+			return view('seller.wallet.index',compact('wallet','walletCheckouts'));
+		} elseif ( auth()->guard( 'buyer' )->check() ) {
+			$buyer = auth()->guard('buyer')->user();
+			$wallet = Wallet::where('buyer_id',$buyer->id);
+			$walletCheckouts =  WalletCheckout::where([['wallet_id',$buyer->wallet->id],['transaction_type', 0]])->sum('amount');
+		} else {
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+		}
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Wallet  $wallet
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Wallet $wallet)
-    {
-        //
-    }
+	public function store( Request $request ) {
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Wallet  $wallet
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Wallet $wallet)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Wallet  $wallet
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Wallet $wallet)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Wallet  $wallet
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Wallet $wallet)
-    {
-        //
-    }
+	}
 }

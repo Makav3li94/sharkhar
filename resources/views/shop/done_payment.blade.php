@@ -99,7 +99,7 @@
                                     </ul>
                                     <hr>
                                     <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
-                                        : {{number_format($order->price) }} هزار
+                                        : {{number_format($order->price) }}
                                         تومان</h5>
                                 </div>
                                 <div class="col-lg-3 nono">
@@ -216,7 +216,7 @@
                                     </ul>
                                     <hr>
                                     <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
-                                        : {{number_format($order->price) }} هزار
+                                        : {{number_format($order->price) }}
                                         تومان</h5>
                                 </div>
                                 <div class="col-lg-3 nono">

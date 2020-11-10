@@ -46,10 +46,10 @@
 
         <div class="row clearfix" data-step="2" data-intro="آمار روزانه فروش، تراکنش و سفارش"
              data-position="bottom-middle-aligned">
-            <div class="col-md-12 col-lg-6">
+            <div class="col-md-6 col-lg-6 col-sm-12">
                 <div class="card widget_2 big_icon wallet">
                     <div class="body">
-                        <h3 class="mt-0 mb-0">{{number_format(auth()->user()->wallet->raw_balance)}} هزار تومان</h3>
+                        <h3 class="mt-0 mb-0">{{number_format(auth()->user()->wallet->raw_balance)}} تومان</h3>
                         <p class="text-muted">موجودی کیف شما</p>
                         <div class="progress">
                             <div class="progress-bar l-amber" role="progressbar" aria-valuenow="45"
@@ -59,10 +59,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-6">
+            <div class="col-md-6 col-lg-6 col-sm-12">
                 <div class="card widget_2 big_icon money">
                     <div class="body">
-                        <h3 class="mt-0 mb-0">{{number_format($walletCheckouts)}} هزار تومان</h3>
+                        <h3 class="mt-0 mb-0">{{number_format($walletCheckouts)}} تومان</h3>
                         <p class="text-muted">مجموع برداشتی</p>
                         <div class="progress">
                             <div class="progress-bar l-pink" role="progressbar" aria-valuenow="45" aria-valuemin="0"

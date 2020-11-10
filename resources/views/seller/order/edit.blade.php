@@ -95,7 +95,7 @@
                                 </li>
                             </ul>
                             <hr>
-                            <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت : {{number_format($order->price) }} هزار
+                            <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت : {{number_format($order->price) }}
                                 تومان</h5>
                             {{--                                    <a href="javascript:void(0);" class="btn btn-info"><i--}}
                             {{--                                                class="zmdi zmdi-print"></i></a>--}}

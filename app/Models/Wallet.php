@@ -25,4 +25,8 @@ class Wallet extends Model
 	public function checkouts(){
     	return $this->hasMany(WalletCheckout::class);
 	}
+
+	public function pays() {
+		return $this->hasMany( WalletPay::class );
+	}
 }
