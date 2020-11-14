@@ -47,9 +47,11 @@ class Seller extends Authenticatable implements Feedable
 	}
 
 	public function getIsVerifiedAttribute( $value ) {
-		if ($value  == 1 ) {
+		if ($value  == 2 ) {
 			return $value = 'green';
-		} else {
+		} elseif ($value == 1){
+			return $value = 'info';
+		}else {
 			return $value = 'red';
 		}
 	}

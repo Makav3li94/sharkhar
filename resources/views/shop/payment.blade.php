@@ -10,33 +10,41 @@
                 <div class="body">
                     <div class="d-flex justify-content-between">
                         <div class="p-2 ">
-                            <h5><strong>شماره سفارش: </strong> #{{$order->id}}</h5>
+                            <p class="mb-0"><strong>سفارش: </strong>#{{$order->id}}</p>
                         </div>
 
                         <div class="p-2">
-                            <p class="mb-0"><strong>تاریخ سفارش: </strong>{{$order->created_at}}</p>
+                            <p class="mb-0"><strong> </strong>{{$order->created_at}}</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 p-0">
-                                <address>
-                                    <strong class=" pb-2">نام فروشنده: </strong>{{$order->seller->name}}<br>
-                                    {{$buyer->address ?? ''}}<br>
-                                    <abbr title="Phone">ت:</abbr> {{$order->seller->mobile}}<br>
-                                    <abbr title="Phone">ت-ث:</abbr> {{$order->seller->telephone ?? ''}}
-                                </address>
-                            </div>
-                            <div class="col-md-6 col-sm-6 p-0  text-right">
-                                <p class="mb-0"><strong>وضعیت سفارش: </strong>
-                                    <span class="badge badge-success"> در حال انجام
+                    <div class="d-flex justify-content-between">
+                        <div class="p-2 ">
+                            <p class="mb-0"><strong>فروشنده:</strong>{{$order->seller->name}}</p>
+                        </div>
+
+                        <div class="p-2">
+                            <p class="mb-0"><strong>ت:</strong>{{$order->seller->mobile}}</p>
+                            @if($order->seller->telephone !== null)
+                                <p class="mb-0"><strong>ت-ثابت:</strong>{{$order->seller->telephone ?? ''}}</p>
+                            @endif
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+
+
+                        <div class="p-2 ">
+                            <p class="mb-0"><strong>وضعیت سفارش: </strong>
+
+                            </p>
+                        </div>
+                        <div class="p-2">
+                               <span class="badge badge-success"> در حال انجام
                                     </span>
-                                </p>
-                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -47,6 +55,14 @@
         <div class="row clearfix">
             <div class="card">
                 <div class="body">
+                    <div class="col-md-12">
+                        <div class="p-2 ">
+                            محصول:
+                            <p class="mb-0">
+                                {{\Illuminate\Support\Str::limit($order->product->title,80) ??''}}
+                            </p>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div>
                             <table class="table">
@@ -72,6 +88,7 @@
                             </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -128,7 +145,7 @@
                                 </ul>
                                 <hr>
                                 <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
-                                    : {{number_format((int)($order->price + round( $order->price * (1/100))) * 10) }}
+                                    : {{number_format((int)($order->price + round( $order->price * (1/100))) ) }}
                                     تومان</h5>
                             </div>
                             <div class="col-lg-3 nono">
@@ -141,22 +158,22 @@
 
 
                         </div>
-{{--                        <div class="row mt-2">--}}
-{{--                            <div class="col-lg-12">--}}
-{{--                                <div class="form-group text-center">--}}
-{{--                                    <div class="radio inlineblock m-r-20">--}}
-{{--                                        <input type="radio" name="payment_method" id="direct" class="with-gap" value="0"--}}
-{{--                                               checked="">--}}
-{{--                                        <label for="direct">واریز مستقیم به فروشنده</label>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="radio inlineblock">--}}
-{{--                                        <input type="radio" name="payment_method" id="police" class="with-gap" value="1"--}}
-{{--                                        >--}}
-{{--                                        <label for="police">استفاده از سیستم واسطه شرخر</label>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="row mt-2">--}}
+                        {{--                            <div class="col-lg-12">--}}
+                        {{--                                <div class="form-group text-center">--}}
+                        {{--                                    <div class="radio inlineblock m-r-20">--}}
+                        {{--                                        <input type="radio" name="payment_method" id="direct" class="with-gap" value="0"--}}
+                        {{--                                               checked="">--}}
+                        {{--                                        <label for="direct">واریز مستقیم به فروشنده</label>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="radio inlineblock">--}}
+                        {{--                                        <input type="radio" name="payment_method" id="police" class="with-gap" value="1"--}}
+                        {{--                                        >--}}
+                        {{--                                        <label for="police">استفاده از سیستم واسطه شرخر</label>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                         <div class="row mt-1">
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">

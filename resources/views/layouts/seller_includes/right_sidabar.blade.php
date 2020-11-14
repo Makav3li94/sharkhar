@@ -17,8 +17,9 @@
             </a>
         @endif
 
-        <a class="logout-link" href="#" title="خروج از شرخر"
+        <a class="logout-link text-danger" href="#" title="خروج از شرخر"
            onclick="event.preventDefault();document.getElementById('logout').submit()">
+            <span class="text-danger"  style="font-size: 8px;position: absolute;left: 22px;top: 15px;">خروج</span>
             <i class="zmdi zmdi-power"></i>
         </a>
         <form id="logout" method="POST" action="{{ route('logout') }}">@csrf</form>
@@ -138,7 +139,7 @@
 
                 <li class="">
                     <a href="{{route('buyer.police.index')}}">
-                        <i class="zmdi zmdi-check"></i><span>سیستم واسطه</span></a>
+                        <i class="zmdi zmdi-check"></i><span>پیگیری سفارش</span></a>
                 </li>
 
                 <li class=" ">

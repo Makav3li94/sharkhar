@@ -20,6 +20,9 @@
         .header_area  .navbar-brand{
             border-bottom: none;
         }
+        .navbar .navbar-nav .nav-item .nav-link:not(.btn):hover, .navbar .navbar-nav .nav-item .nav-link:not(.btn):active {
+            background-color: transparent !important;
+        }
     </style>
     @include('login-modal')
 

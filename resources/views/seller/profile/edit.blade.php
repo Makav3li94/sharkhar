@@ -3,9 +3,6 @@
 @section('content')
 
     <div class="container">
-        @if($seller->sheba == null)
-            <div class="alert alert-danger">لطفا شماره شبا خود را جهت تصفیه وارد نمایید.</div>
-        @endif
         <div class="row clearfix">
             <div class="card">
                 <div class="header">
@@ -44,7 +41,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-md-12">
+                            <div class="col-lg-8 col-md-12 " id="sheba-box">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 mb-4">
                                         <label>نام کاربری اینستاگرام</label>
@@ -90,7 +87,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 mb-4" data-intro="شماره شِبا جهت تصفیه">
+                                    <div class="col-lg-6 col-md-6 mb-4"  data-intro="شماره شِبا جهت تصفیه">
                                         <label>شماره شبا <span class="text-danger mr-1">*</span></label>
                                         <div class="input-group masked-input">
                                             <div class="input-group-prepend">
@@ -217,24 +214,24 @@
                                             @endif
                                         </div>
                                     </div>
-                                    @if($seller->is_verified == 1)
-                                        <div class="col-lg-12">
-                                            <label>انتخاب روش پیش فرض پرداخت</label>
-                                            <div class="input-group ">
-                                                <div class="radio inlineblock m-r-20">
-                                                    <input type="radio" name="payment_method" id="direct"
-                                                           class="with-gap"
-                                                           value="1" {{$seller->bank_status == 1 ? 'checked=""': ''}}>
-                                                    <label for="direct">واریز مستقیم به حساب شما</label>
-                                                </div>
-                                                <div class="radio inlineblock">
-                                                    <input type="radio" name="payment_method" id="police"
-                                                           class="with-gap"
-                                                           value="0" {{$seller->bank_status == 0 ? 'checked=""': ''}}>
-                                                    <label for="police">استفاده از سیستم واسطه شرخر</label>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                    @if($seller->is_verified == 1)--}}
+{{--                                        <div class="col-lg-12">--}}
+{{--                                            <label>انتخاب روش پیش فرض پرداخت</label>--}}
+{{--                                            <div class="input-group ">--}}
+{{--                                                <div class="radio inlineblock m-r-20">--}}
+{{--                                                    <input type="radio" name="payment_method" id="direct"--}}
+{{--                                                           class="with-gap"--}}
+{{--                                                           value="1" {{$seller->bank_status == 1 ? 'checked=""': ''}}>--}}
+{{--                                                    <label for="direct">واریز مستقیم به حساب شما</label>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="radio inlineblock">--}}
+{{--                                                    <input type="radio" name="payment_method" id="police"--}}
+{{--                                                           class="with-gap"--}}
+{{--                                                           value="0" {{$seller->bank_status == 0 ? 'checked=""': ''}}>--}}
+{{--                                                    <label for="police">استفاده از سیستم واسطه شرخر</label>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         {{--                                    <div class="col-lg-12" hidden>--}}
                                         {{--                                        <label>محدود کردن متد پرداخت</label>--}}
                                         {{--                                        <div class="input-group ">--}}
@@ -245,7 +242,7 @@
                                         {{--                                            </div>--}}
                                         {{--                                        </div>--}}
                                         {{--                                    </div>--}}
-                                    @endif
+{{--                                    @endif--}}
                                     <div class="col-md-12 mb-3">
                                         <small class="text-info">در صورتی که فروشگاه فیزیکی دارید، آدرس آنرا وارد
                                             نمایید.
@@ -281,7 +278,7 @@
 
 
             <div class="card">
-                <div class="header">
+                <div class="header" id="ids-box">
 
                     <h2>
                         اطلاعات مورد نیاز جهت <strong>تایید شما
@@ -296,19 +293,20 @@
                             @endif
                         </strong>
                     </h2>
+
                 </div>
                 <div class="body"
                      data-intro="تکمیل اطلاعات برای گرفتن تاییدیه فروش شرخر،(تصویر کارت ملی جهت تطبیق با شماره شبا الزامی است.)">
-                    <div class="col-md-12">
+                    <div class="col-md-12" >
                         <form action="{{route('seller.verify',$seller->id)}}" method="post"
                               enctype="multipart/form-data">
                             @csrf
 
                             <div class="col-lg-12 col-md-12 mb-12">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="col-lg-4 col-md-6 mb-4 " >
                                         <label>عکس یا اسکن جلو کارت ملی <span class="text-danger mr-1">*</span></label>
-                                        <input type="file" name="id_card" class="dropify"
+                                        <input type="file" name="id_card" class="dropify" accept="image/png,image/jpeg"
                                                data-default-file=" {{$seller->id_card != null ? asset($seller->id_card) : ''}}"
                                                {{$seller->id_card != null ? 'disabled="disabled"' : ''}}
                                                data-allowed-file-extensions="pdf png jpeg jpg rar zip"
@@ -322,7 +320,7 @@
 
                                     <div class="col-lg-4 col-md-6 mb-4">
                                         <label>عکس یا اسکن شناسنامه</label>
-                                        <input type="file" name="id_book" class="dropify"
+                                        <input type="file" name="id_book" class="dropify" accept="image/png,image/jpeg"
                                                data-default-file=" {{$seller->id_book != null ? asset($seller->id_book) : ''}}"
                                                {{$seller->id_book != null ? 'disabled="disabled"' : ''}}
                                                data-allowed-file-extensions="pdf png jpeg jpg rar zip"
@@ -336,7 +334,7 @@
 
                                     <div class="col-lg-4 col-md-6 mb-4">
                                         <label>قبض به نام حداکثر 30 ماه</label>
-                                        <input type="file" name="id_bill" class="dropify"
+                                        <input type="file" name="id_bill" class="dropify" accept="image/png,image/jpeg"
                                                data-default-file=" {{$seller->id_bill != null ? asset($seller->id_bill) : ''}}"
                                                {{$seller->id_bill != null ? 'disabled="disabled"' : ''}}
                                                data-allowed-file-extensions="pdf png jpeg jpg rar zip"
@@ -429,6 +427,18 @@
     <script src="{{asset('assets/plugins/dropify/js/dropify.min.js')}}"></script>
     <script>
         $(document).ready(function () {
+
+            $("#move-to-sheba").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#sheba-box").offset().top
+                }, 2000);
+            });
+
+            $("#move-to-ids").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#ids-box").offset().top
+                }, 2000);
+            });
 
             getChange();
             getChange2();

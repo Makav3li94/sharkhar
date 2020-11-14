@@ -50,6 +50,6 @@ class Order extends Model {
 
 	public function getCreatedAtAttribute($val)
 	{
-		return $this->convertNumbers(Verta::instance($val)->format('y/n/j - H:i:s'));
+		return $this->convertNumbers(Verta::instance($val)->format('%d %B ، %Y - H:i:s'));
 	}
 }

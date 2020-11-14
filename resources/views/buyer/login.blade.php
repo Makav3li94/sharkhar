@@ -26,7 +26,7 @@
                                     </small>
                                 @endif
                             </div>
-                            <button type="button" id="sendpass" onclick="sendPass()"
+                            <button type="button" id="sendpass"
                                     class="btn btn-primary btn-block waves-effect waves-light">ارسال رمز عبور
                             </button>
                             <div class="input-group mb-3" id="passbox" hidden="">
@@ -83,7 +83,7 @@
     <script src="{{asset('assets/plugins/countdown/jquery.countdown.min.js')}}"></script>
     <script src="{{asset('assets/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script> <!-- Bootstrap Notify Plugin Js -->
     <script>
-        function sendPass() {
+        $("#sendpass").one("click", function() {
             var mobile = $('#mobile').val();
 
             $.ajaxSetup({
@@ -98,6 +98,7 @@
                 data: {mobile: mobile},
 
                 success: function (response) {
+                    console.log(response);
                     if (response.password_sent == 'success') {
                         var allowDismiss = true;
                         $.notify({
@@ -163,6 +164,6 @@
                     }
                 }
             });
-        }
+        });
     </script>
 @endsection

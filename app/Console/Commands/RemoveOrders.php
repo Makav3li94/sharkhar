@@ -35,10 +35,14 @@ class RemoveOrders extends Command {
 	 * @return int
 	 */
 	public function handle() {
-		$orders = Order::where( 'payment_status', 0 )->get();
+		$orders = Order::where( 'payment_status', 0 );
 		foreach ( $orders as $order ) {
-			$order->transaction()->delete();
-			$order->police()->delete();
+			if ($order->has('transaction')) {
+				$order->transaction()->delete();
+			}
+			if ($order->has('police')) {
+				$order->police()->delete();
+			}
 		}
 		$orders->delete();
 	}

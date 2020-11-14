@@ -5,9 +5,12 @@
             <div class="card">
                 <div class="body">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-12">
-                            <div class="blogitem-image">
-                                <img src="{{$product->image}}" alt="blog image">
+                        <div class="col-xl-4 col-lg-4 col-md-12 ">
+                            <div class="blogitem-image ">
+
+                                <img src="{{$product->image}}" alt="blog image" id="zoom_10"
+                                     data-zoom-image="{{$product->image}}">
+
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-12">
@@ -308,5 +311,27 @@
 
     </script>
 
+    <script src="{{asset('front/js/jquery.elevateZoom-3.0.8.min.js')}}"></script>
+    <script>
 
+        if ($(window).width() <= 600) {
+            $("#zoom_10").elevateZoom(
+                {
+                    zoomType				: "lens",
+                    lensShape : "round",
+                    lensSize    : 200
+                }
+            );
+        } else {
+            $("#zoom_10").elevateZoom(
+                {
+                    easing: true,
+                    zoomWindowPosition: 10
+                }
+            );
+
+        }
+
+
+    </script>
 @endsection

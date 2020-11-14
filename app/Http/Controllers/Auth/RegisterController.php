@@ -70,7 +70,7 @@ class RegisterController extends Controller {
 //				'm_code'       => [ 'required', 'numeric', 'unique:sellers' ],
 				'mobile'       => [ 'required', 'regex:/(09)[0-9]{9}/', 'unique:sellers' ],
 				'rules'        => [ 'required' ],
-				'insta_user'   => [ 'required', 'string' ],
+				'insta_user'   => [ 'required', 'string' , 'unique:sellers'],
 				'password'     => [ 'required', 'string', 'min:8' ],
 			] );
 

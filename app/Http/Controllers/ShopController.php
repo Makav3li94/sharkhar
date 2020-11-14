@@ -23,7 +23,7 @@ class ShopController extends Controller {
 		SEOTools::twitter()->setSite( '@sharkhar' );
 		SEOTools::jsonLd()->addImage( 'https://sharkhar.net/front/img/logo-p.png' );
 		$best    = Seller::WhereHas( 'products' )->where( [
-			[ 'is_verified', 1 ],
+			[ 'is_verified', 2 ],
 			[ 'status', 1 ]
 		] )->orderBy( 'id', 'DESC' )->take( 8 )->get();
 		$bestIds = $best->pluck( 'id' );
@@ -41,8 +41,17 @@ class ShopController extends Controller {
 		$p_good           = 0;
 		$p_norm           = 0;
 		$p_bad            = 0;
-		$sellerIsVerified = $seller->is_verified == 'green' ? ' تایید هویت شده توسط شرخر' : 'تایید نشده';
-		$sellerColor      = $seller->is_verified == "red" ? "danger" : "success";
+		if ($seller->is_verified == 'green'){
+			$sellerIsVerified = ' تایید هویت شده توسط شرخر';
+			$sellerColor      = "success";
+		}elseif($seller->is_verified == 'info'){
+			$sellerIsVerified =  'در حال بررسی توسط شرخر';
+			$sellerColor      =  "info";
+		}else{
+			$sellerIsVerified =  ' تایید هویت شده توسط شرخر';
+			$sellerColor      =  "danger";
+		}
+
 		$feedbacks        = Feedback::where( 'seller_id', $seller->id )->get()->take( 3 );
 		$all              = $good + $normal + $bad;
 		if ( $all != 0 ) {

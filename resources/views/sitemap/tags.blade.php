@@ -3,7 +3,7 @@
     @foreach ($tags as $tag)
         <url>
             <loc>https://sharkhar.net/articles/{{ $tag->title }}</loc>
-            <lastmod>{{ $article->created_at->tz('UTC')->toAtomString() }}</lastmod>
+            <lastmod>{{ $tag->created_at->tz('UTC')->toAtomString() }}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.7</priority>
         </url>

@@ -8,7 +8,9 @@
                         <ul class="navbar-nav  text-white">
 
                             <li class="p-2 phone-link">
-                                <a class="text-decoration-none text-white d-inline-block" onclick="$(this).css({'transform' : 'rotate('+ 360 +'deg)'})" href="javascript:void(0)">  <i class=" ti-headphone-alt  "></i></a>
+                                <a class="text-decoration-none text-white d-inline-block"
+                                   onclick="$(this).css({'transform' : 'rotate('+ 360 +'deg)'})"
+                                   href="javascript:void(0)"> <i class=" ti-headphone-alt  "></i></a>
                                 پشتیبانی : ۶۷ ۷۳ ۲۸۴۳-۰۲۱
                             </li>
                         </ul>
@@ -32,7 +34,9 @@
                                                href="{{route('register')}}"
                                                data-toggle="modal" data-target="#colorModal">ورود /
                                                 ثبت نام
-                                                <span class="text-decoration-none text-white d-inline-block" onclick="$(this).css({'transform' : 'rotate('+ 360 +'deg)'})" href="javascript:void(0)">  <i class=" ti-user  "></i></span>
+                                                <span class="text-decoration-none text-white d-inline-block"
+                                                      onclick="$(this).css({'transform' : 'rotate('+ 360 +'deg)'})"
+                                                      href="javascript:void(0)">  <i class=" ti-user  "></i></span>
                                             </a>
                                         @endif
 
@@ -86,15 +90,28 @@
                                     <ul class="navbar-nav ml-auto" id="nav">
                                         <li class="nav-item "><a href="{{route('home')}}" class="nav-link">خانه</a>
                                         </li>
-                                        <li class="nav-item "><a href="{{route('buyer_login')}}" class="nav-link">پیگیری سفارش</a>
+                                        <li class="nav-item "><a href="{{route('buyer_login')}}" class="nav-link">پیگیری
+                                                سفارش</a>
                                         </li>
-                                        <li class="nav-item"><a class="nav-link" href="#about">درباره</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#pricing">تعرفه</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="{{route('shop')}}">فروشگاه</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="{{route('blogs.index')}}">وبلاگ</a></li>
-                                        <li class="nav-item "><a class="nav-link pl-0" href="{{route('rules')}}">قوانین و
+                                        @if(request()->is('/'))
+                                            <li class="nav-item"><a class="nav-link" href="#about">درباره</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#pricing">تعرفه</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#features">امکانات</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
+                                        @else
+                                            <li class="nav-item"><a class="nav-link" href="{{route('home')}}/#about">درباره</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{{route('home')}}/#pricing">تعرفه</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{{route('home')}}/#features">امکانات</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{{route('home')}}/#contact">تماس با ما</a></li>
+                                        @endif
+
+
+                                        <li class="nav-item"><a class="nav-link" href="{{route('shop')}}">فروشگاه</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                                href="{{route('blogs.index')}}">وبلاگ</a></li>
+                                        <li class="nav-item "><a class="nav-link pl-0" href="{{route('rules')}}">قوانین
+                                                و
                                                 مقررات</a></li>
                                     </ul>
 

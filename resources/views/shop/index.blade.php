@@ -14,7 +14,7 @@
                            </div>
                            <div class="body product_item shop-box">
 
-                               <span class="badge badge-{{$besty->is_verified == 1 ? 'succcess' : 'danger'}}">{{$besty->is_verified == 1 ? 'تایید هویت شده' : ''}}</span>
+                               <span class="badge badge-{{$besty->is_verified == 2 ? 'succcess' : 'danger'}}">{{$besty->is_verified == 1 ? 'تایید هویت شده' : ''}}</span>
                                <a href="{{route('vendor',$besty->insta_user)}}">
                                    <span class="label" style="background-color: #3c763d;top: 100px!important;">تایید هویت شده</span>
                                    <img src="{{$besty->logo}}" alt="Product" class="cp_img"/>
@@ -54,7 +54,7 @@
                     <div class="card">
                         <div class="body product_item">
 
-                            <span class="badge badge-{{$seller->is_verified == 1 ? 'succcess' : 'danger'}}">{{$seller->is_verified == 1 ? 'تایید هویت شده' : ''}}</span>
+                            <span class="badge badge-{{$seller->is_verified == 2 ? 'succcess' : 'danger'}}">{{$seller->is_verified == 1 ? 'تایید هویت شده' : ''}}</span>
                             <a href="{{route('vendor',$seller->insta_user)}}">
                                 <span class="label onsale">تایید نشده</span>
                             <img src="{{$seller->logo}}" alt="Product" class="cp_img"/>

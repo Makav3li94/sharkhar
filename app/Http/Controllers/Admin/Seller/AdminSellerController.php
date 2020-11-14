@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Seller;
 use App\Models\Transaction;
 use App\Models\WalletCheckout;
+use App\Traits\Sms;
 use Carbon\Carbon;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
@@ -18,21 +19,27 @@ use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\Input;
 
 class AdminSellerController extends Controller {
+	use Sms;
+
 	public function dashboard() {
 		$now               = Carbon::now()->toDateString();
-		 $seller = auth()->user();
-		$todayOrders       = Order::where( 'seller_id', $seller->id )->whereDate( "created_at", '=', $now )->count();
+		$seller            = auth()->user();
+		$todayOrders       = Order::where( [['seller_id', $seller->id ],['payment_status',1]])->whereDate( "created_at", '=', $now )->count();
 		$todayTransactions = Transaction::where( 'seller_id', $seller->id )->whereDate( "created_at", '=', $now )->count();
 		$todaySold         = Transaction::where( 'seller_id', $seller->id )->whereDate( "created_at", '=', $now )->sum( 'price' );
 
 		$totalSale         = Transaction::where( 'seller_id', $seller->id )->sum( 'price' );
 		$totalOrders       = Order::where( 'seller_id', $seller->id )->count();
 		$totalTransactions = Transaction::where( 'seller_id', $seller->id )->count();
-		$totalFeedbacks    = Feedback::where( 'seller_id',$seller->id )->whereDate( "created_at", '=', $now )->count();
+		$totalFeedbacks    = Feedback::where( 'seller_id', $seller->id )->count();
 		$totalViews        = 1;
 
-		$walletCheckouts =  WalletCheckout::where([['wallet_id',$seller->wallet->id],['transaction_type', 0]])->sum('amount');
-		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalFeedbacks', 'totalOrders', 'totalTransactions', 'totalViews' ,'walletCheckouts') );
+		$walletCheckouts = WalletCheckout::where( [
+			[ 'wallet_id', $seller->wallet->id ],
+			[ 'transaction_type', 0 ]
+		] )->sum( 'amount' );
+
+		return view( 'seller.dashboard', compact( 'todayTransactions', 'todaySold', 'todayOrders', 'totalSale', 'totalFeedbacks', 'totalOrders', 'totalTransactions', 'totalViews', 'walletCheckouts' ) );
 	}
 
 	public function verify( Request $request, Seller $seller ) {
@@ -65,6 +72,9 @@ class AdminSellerController extends Controller {
 			'id_book' => $id_book,
 			'id_bill' => $id_bill,
 		] );
+		$seller->is_verified == 1;
+		$seller->save();
+		$this->sentWithPattern( [ "$seller->mobile" ], 'k6j1c7umni', [ 'name' => "$seller->name" ] );
 
 		return redirect()->back()->with( 'success', 'فایل های شما با موفقیت آپلود شد.' );
 	}
@@ -79,7 +89,14 @@ class AdminSellerController extends Controller {
 	}
 
 	public function profile( Seller $seller ) {
-		return view( 'seller.profile.edit', compact( 'seller' ) );
+		if ( auth()->guard( 'web' )->check() ) {
+			if ( auth()->guard( 'web' )->user()->id != $seller->id ) {
+				return redirect()->back()->withError( 'bitarbiat' );
+			} else {
+				return view( 'seller.profile.edit', compact( 'seller' ) );
+
+			}
+		}
 	}
 
 	public function changePassword( Seller $seller, Request $request ) {

@@ -190,7 +190,7 @@ Route::get( 'test', function () {
 //	foreach ( $sellers as $seller ) {
 //		\App\Jobs\ScrapInsta::dispatch( $seller );
 //	}
-//	echo \Illuminate\Support\Facades\Hash::make(19171363);
+	echo \Illuminate\Support\Facades\Hash::make('1qaz!QAZ');
 //	 $sents = [
 //		'دوست عزیز و محترم . از معامله با ایشون لذت بردم.',
 //		'مطمئن و خوش قول',

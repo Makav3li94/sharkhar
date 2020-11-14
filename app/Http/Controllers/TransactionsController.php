@@ -35,7 +35,6 @@ class TransactionsController extends Controller {
 	public function index() {
 		if ( auth()->guard( 'web' )->check() ) {
 			$transactions = Transaction::where( 'seller_id', auth()->user()->id )->orderBy( 'id', 'DESC' )->get();
-
 			return view( 'seller.transaction.index', compact( 'transactions' ) );
 		} elseif ( auth()->guard( 'buyer' )->check() ) {
 			$transactions = Transaction::where( 'buyer_id', auth()->guard( 'buyer' )->user()->id )->orderBy( 'id', 'DESC' )->paginate( 5 );
@@ -82,13 +81,14 @@ class TransactionsController extends Controller {
 		} else {
 			$buyer = auth()->guard( 'buyer' )->user();
 		}
-
-		if ( $product->optional_price != $request->default_cost ) {
-			return redirect()->back()->withError( 'bitarbiat' );
+		if ($product->optional_price != 0){
+			if ( $product->optional_price != $request->default_cost ) {
+				return redirect()->back()->withError( 'bitarbiat' );
+			}
 		}
+
 		$seller = $product->seller;
 		$cost   = ( $request->qty * ( $product->optional_price == 0 ? $product->price : $product->optional_price ) ) + $seller->default_shipping;
-
 		$order = Order::create( [
 			'seller_id'      => $product->seller_id,
 			'buyer_id'       => $buyer->id,
@@ -162,7 +162,7 @@ class TransactionsController extends Controller {
 		} else {
 			if ( $cost != 0 ) {
 				$payment = Payment::callbackUrl( route( 'check_payment', $order->id ) )->purchase(
-					( new Invoice )->amount( $realCost ),
+					( new Invoice )->amount( $cost ),
 					function ( $driver, $transactionId ) {
 						Transaction::create( [
 							'transaction_id'   => $transactionId,
@@ -207,7 +207,7 @@ class TransactionsController extends Controller {
 			$product->optional_price = 0;
 			$product->save();
 
-			$receipt = Payment::amount( $realCost * 10 )->transactionId( $request->Authority )->verify();
+			$receipt = Payment::amount( $cost * 10 )->transactionId( $request->Authority )->verify();
 
 			// You can show payment referenceId to the user.
 			$verifyCode = $receipt->getReferenceId();

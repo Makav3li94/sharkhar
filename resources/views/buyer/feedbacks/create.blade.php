@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'بازخورد جدید','b_level2'=>'بازخورد جدید','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'ثبت امتیاز فروشنده','b_level2'=>'ثبت امتیاز فروشنده','back'=>'true'])
 
 @section('content')
 
@@ -7,19 +7,16 @@
 
             <div class="card">
                 <div class="body">
-                    <div class="row">
+                    <div class="row clearfix">
                         <div class="col-lg-2"></div>
                         <div class="col-lg-8 col-md-12">
-                            <div class="form-group">
-                                <label>انتخاب سفارش</label>
-                                <select class="form-control  ms select2" id="order" name="order"
-                                        onchange="getSeller()" data-placeholder="انتخاب سفارش">
-                                    <option></option>
-                                    @foreach($orders as $order)
-                                        <option value="{{$order->id}}" {{old('order') == $order->id ? 'selected="selected"' : '' }}>{{$order->seller->insta_user.' ||  '.\Illuminate\Support\Str::limit($order->product->title,40)}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                            <select class="form-control show-tick ms select2" id="order" name="order"
+                                    onchange="getSeller()" data-placeholder="انتخاب سفارش">
+                                <option></option>
+                                @foreach($orders as $order)
+                                    <option value="{{$order->id}}" {{old('order') == $order->id ? 'selected="selected"' : '' }}>{{$order->seller->insta_user.' ||  '.\Illuminate\Support\Str::limit($order->product->title,40)}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>

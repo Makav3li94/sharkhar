@@ -27,9 +27,12 @@
                         @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
 
                         @else
-                            <button class="btn btn-primary btn-icon mobile_menu" type="button">
+                            <button class="btn btn-primary btn-icon mobile_menu" type="button" onclick="menuOpened()">
+                                <i class="zmdi zmdi-menu"></i>
                                 منو
-                                <i class="zmdi zmdi-sort-amount-desc"></i></button>
+                                <i id="menu-close-button" class="zmdi zmdi-close-circle-o text-danger font-15" style="display:none;top: 2px;position: relative;"></i>
+                            </button>
+
                         @endif
 
                     </div>
@@ -57,8 +60,8 @@
                     </div>
                 </div>
             </div>
-            <div class="bread-crumb d-flex justify-content-between">
-                <div class="p-2">
+            <div class="bread-crumb row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="
@@ -86,7 +89,7 @@
                 </div>
 
                 @if(isset($back))
-                    <div class="p-2 ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 ">
                         <a class="btn btn-info  " href="{{url()->previous()}}">
                             بازگشت
                             <i class="zmdi zmdi-arrow-right"></i>
@@ -107,6 +110,8 @@
             </div>
         </div>
     @endif
+
+    @include('layouts.seller_includes.alerts')
     @yield('content')
     <div class="toTop">
         <a href="#"><i class="zmdi zmdi-long-arrow-up"></i></a>
@@ -131,7 +136,7 @@
             </div>
             <div class="modal-body">
                 الگوریتم شرخر در حال جمع آوری اطلاعات و بارگذاری فروشگاه شما می باشد. <br>
-                این پروسه 60 ثانیه طول خواهد کشید. <br>
+                این پروسه نهایتا تا 60 دقیقه طول خواهد کشید. <br>
                 شرخر در حال حاضر روی <strong class="text-danger">پیج پابلیک</strong> کار میکنه :| <br>
                 اگر پیجتون پرایویته خودتون باید محصولات رو وارد کنید.
             </div>

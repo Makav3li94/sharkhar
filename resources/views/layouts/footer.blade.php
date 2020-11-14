@@ -17,7 +17,26 @@
 
 <script src="{{asset('assets/js/pages/index.js')}}"></script>
 <script>
+
+
+    function menuOpened() {
+        $('#menu-close-button').toggle();
+        if ($(window).width() <= 600) {
+            if ($('#menu-close-button:visible').length > 0) {
+                history.pushState(null, null, window.top.location.pathname + window.top.location.search);
+                window.addEventListener('popstate', (e) => {
+                    e.preventDefault();
+                    history.pushState(null, null, window.top.location.pathname + window.top.location.search);
+                });
+            }else{
+
+            }
+        }
+
+    }
+
     @if(session('modal'))
+
     $(document).ready(function () {
 
         setTimeout(function () {
@@ -27,13 +46,14 @@
 
 
     });
+
     @endif
     function optinalPriceFunc(val) {
 
         if (this.timer) {
             window.clearTimeout(this.timer);
         }
-        this.timer = window.setTimeout(function() {
+        this.timer = window.setTimeout(function () {
 
             $.ajaxSetup({
                 headers: {
@@ -41,16 +61,16 @@
                 }
             });
             var product_id = val;
-            var price = $('#'+ val + '-optional_price').val();
+            var price = $('#' + val + '-optional_price').val();
             $.ajax({
                 'url': "{{route('seller.optional_price')}}",
                 'type': 'get',
                 'contentType': "application/json",
-                data: {product_id: product_id,optional_price:price},
+                data: {product_id: product_id, optional_price: price},
 
                 success: function (response) {
 
-                    if (response.price_error == 'true'){
+                    if (response.price_error == 'true') {
                         var allowDismiss = true;
                         $.notify({
                                 message: "لطفا قیمت را درست وارد کنید."
@@ -79,8 +99,8 @@
 
                     if (response.optional_price == 'success') {
 
-                        $('#'+ val + '-copy-link').attr("data-clipboard-text", "{{url('/product/')}}"+'/'+val+'/'+price).change();
-                        $('#'+ val + '-whatsup-link').attr("href", 'whatsapp://send?text='+"{{url('/product/')}}"+'/'+val+'/'+price).change();
+                        $('#' + val + '-copy-link').attr("data-clipboard-text", "{{url('/product/')}}" + '/' + val + '/' + price).change();
+                        $('#' + val + '-whatsup-link').attr("href", 'whatsapp://send?text=' + "{{url('/product/')}}" + '/' + val + '/' + price).change();
                         var allowDismiss = true;
                         $.notify({
                                 message: "قیمت موقت اعمال شد."
@@ -113,6 +133,7 @@
 
 
     }
+
     $(document).ready(function () {
         var allowDismiss = true;
         @if(session()->has('success'))

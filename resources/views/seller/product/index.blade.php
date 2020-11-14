@@ -74,6 +74,10 @@
             .table td, .table th {
                 text-align: left;
             }
+
+            td .tr{
+                text-align: right;
+            }
         }
 
         @media screen and ( max-width: 520px ) {
@@ -132,10 +136,10 @@
                                                     <img src="{{$product->image_thumb}}" width="35" alt="Product img">
                                                 </a>
                                             </td>
-                                            <td>
-                                                {{\Illuminate\Support\Str::limit($product->title,30)}}
+                                            <td class="tr">
+                                                {{\Illuminate\Support\Str::limit($product->title,80)}}
                                             </td>
-                                            <td>
+                                            <td >
                                                 @if($product->price !=0)
                                                     {{number_format($product->price)." تومان" ?? ''}}
                                                 @else
@@ -160,6 +164,7 @@
                                                 <a href="{{route('seller.products.edit',$product->id)}}"
                                                    class="btn btn-default waves-effect waves-float btn-sm waves-green"><i
                                                             class="zmdi zmdi-edit"></i></a>
+                                                ||
                                                 <button id="" data-type="confirm" data-id="{{$product->id}}"
                                                         class="delete_product btn btn-danger waves-effect waves-float btn-sm waves-red">
                                                     <i

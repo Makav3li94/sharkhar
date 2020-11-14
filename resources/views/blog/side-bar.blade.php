@@ -16,7 +16,8 @@
         <div class="body">
             <ul class="list-unstyled mb-0 widget-categories">
                 @foreach($blogCategories as $blogCategory)
-                    <li><a href="{{'blog',$blogCategory->slug}}">گزارش کسب و کار</a></li>
+{{--                    <li><a href="{{'blog',$blogCategory->slug}}">{{$blogCategory->title}}</a></li>--}}
+                    <li><a href="javascript:void(0)">{{$blogCategory->title}}</a></li>
                 @endforeach
             </ul>
         </div>

@@ -4,27 +4,30 @@
 
 
     <div class="container">
-        <div class="row clearfix">
-            <div class="col-lg-12 pr-0 pl-0 mr-0">
+        @if($police->admin_vote != null)
+            <div class="row clearfix">
+                <div class="col-lg-12 pr-0 pl-0 mr-0">
+                    <div class="card mcard_4">
+                        <div class="header">
+                            <h2><strong>رای شرخر</strong> به این اختلاف</h2>
+                        </div>
+                        <div class="body">
+                            @if($police->admin_vote != null)
+                                <div class="alert alert-success">
+                                    پلتفرم شرخر، حق را به
+                                    <div class="col-red inlineblock">{{$police->admin_vote == 'seller' ? 'فروشنده' : 'خریدار'}}</div>
+                                    می دهد و اقدامات مالی لازم را انجام خواهد داد.
+                                    در صورت نارضایتی به رای، لطفا شماره سفارش و دلیل اعتراض را از طریق پشتیبانی پیگیری
+                                    کنید.
+                                </div>
+                            @else
 
-            <div class="card mcard_4">
-
-                    <div class="header">
-                        <h2><strong>رای شرخر</strong> به این اختلاف</h2>
-                    </div>
-                    <div class="body">
-                        @if($police->admin_vote != null)
-                            <div class="alert alert-success">
-                                پلتفرم شرخر، حق را به                   <div class="col-red inlineblock">{{$police->admin_vote == 'seller' ? 'فروشنده' : 'خریدار'}}</div> می دهد و اقدامات مالی لازم را انجام خواهد داد.
-                                در صورت نارضایتی به رای، لطفا شماره سفارش و دلیل اعتراض را از طریق پشتیبانی پیگیری کنید.
-                            </div>
-                        @else
-
-                        @endif
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12 pr-0 mr-0">
                 <div class="card mcard_4">
@@ -33,12 +36,12 @@
                         <h2><strong>اطلاعات</strong> سفارش</h2>
                     </div>
                     <div class="body">
-                        <div class="img">
-                            <img src="{{$order->product->image}}" class="rounded-circle" alt="profile-image">
+                        <div class="img mt-0">
+                            <img src="{{$order->product->image}}" class="img-fluid mt-0 w-100 h-auto" alt="profile-image">
                         </div>
                         <div class="user">
                             <h1 class="mt-3 mb-1">{{$order->seller->insta_user}}</h1>
-                            <h2 class="mt-3 mb-1">{{$order->seller->name}}</h2>
+                            <h2 class="mt-3 mb-1 font-13">{{$order->seller->name}}</h2>
                             <small class="text-info">{{$order->seller->mobile}}</small>
                         </div>
                         {{--                            <ul class="list-unstyled social-links">--}}
@@ -109,12 +112,12 @@
                                     @method('patch')
 
                                     <div class="row clearfix mb-3">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 mb-3">
                                             <label for="">وضعیت تحویل</label>
                                             <select class="form-control show-tick" id="deliver_status"
                                                     name="deliver_status" {{$police->order->deliver_status == 'green' ? 'disabled' :  ''}}>
                                                 <option value="0" {{$police->order->deliver_status == 'red' ? 'selected' :  ''}}>
-                                                    به دستم نرسیده
+                                                    تحویل نگرفتم
                                                 </option>
                                                 <option value="1" {{$police->order->deliver_status == 'green' ? 'selected' :  ''}}>
                                                     تحویل گرفتم
@@ -126,7 +129,7 @@
                                                 </small>
                                             @endif
                                         </div>
-                                        <div class="col-sm-6 ">
+                                        <div class="col-sm-6 mb-3">
                                             <label for="">رضایت از سفارش</label>
                                             <select class="form-control show-tick" id="is_verified" name="is_verified"
                                                     disabled>

@@ -2,46 +2,7 @@
 
 @section('content' )
 
-    @if(auth()->user()->sheba == null)
-        <div class="container">
-            <a href="{{route('seller.profile',auth()->user()->id)}}">
-                <div class="alert alert-danger">لطفا از طریق اطلاعات فروشگاه، شماره شبا خود را جهت تصفیه وارد نمایید.
-                </div>
-            </a>
-        </div>
-    @else
-        @if(auth()->user()->id_card == null)
-            <div class="container">
-                <a href="{{route('seller.profile',auth()->user()->id)}}">
-                    <div class="alert alert-danger">لطفا تصویر کارت ملی خود را جهت تایید تطبیق با شماره شِبا وارد
-                        نمایید.
-                    </div>
-                </a>
-            </div>
 
-        @else
-            @if(auth()->user()->is_verified == 'green' )
-                <div class="container">
-                    <a href="{{route('seller.products.index')}}">
-                        <div class="alert alert-info">
-                            تبریک، شما تایید شدید ! حالا کافیه از طریق بخش محصولات کپی لینک خرید رو برای مشتری
-                            بفرستید
-                            و بقیش با ما !
-                        </div>
-                    </a>
-                </div>
-            @else
-                <div class="container">
-                    <a href="{{route('seller.contacts.create')}}">
-                        <div class="alert alert-danger">
-                            متاسفانه شما تایید هویت نشدید.
-                        </div>
-                    </a>
-                </div>
-            @endif
-        @endif
-
-    @endif
     <div class="container pr-0 pl-0">
 
         <div class="row clearfix" data-step="2" data-intro="آمار روزانه فروش، تراکنش و سفارش"

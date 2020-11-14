@@ -38,7 +38,7 @@ class ScrapInsta extends Command
      */
     public function handle()
     {
-        $sellers = Seller::doesntHave('products')->where('status',1)->get();
+        $sellers = Seller::where(['status',1],['is_verified',2])->get();
         foreach ($sellers as $seller){
 	        \App\Jobs\ScrapInsta::dispatch( $seller );
         }

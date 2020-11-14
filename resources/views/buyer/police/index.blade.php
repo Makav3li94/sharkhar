@@ -61,15 +61,17 @@
             }
 
             td:nth-of-type(6):before {
-                content: "تحویل";
-            }
-
-            td:nth-of-type(7):before {
                 content: "پرداخت";
             }
-
+            td:nth-of-type(7):before {
+                content: "تحویل";
+            }
             td:nth-of-type(8):before {
-                content: "عملیات";
+                content: "تایید کالا";
+            }
+
+            td:nth-of-type(9):before {
+                content: "ادامه";
             }
 
             .table td, .table th {
@@ -112,9 +114,10 @@
                                         <th>قیمت</th>
                                         <th>فروشنده</th>
                                         <th class="nono"> شماره تلفن فروشنده</th>
+                                        <th>پرداخت</th>
                                         <th>نحویل</th>
-                                        <th>تایید جنس</th>
-                                        <th>عملیات</th>
+                                        <th>تایید کالا</th>
+                                        <th>تغییر وضعیت سفارش</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -126,6 +129,12 @@
                                             <td>{{$order->product->price}}</td>
                                             <td>{{$order->seller->name}}</td>
                                             <td class="nono">{{$order->seller->mobile}}</td>
+                                            <td>
+                                                <span class="col-{{$order->payment_status}}">
+                                                    @if($order->payment_status == 'green')
+                                                        پرداخت شده @else عدم پرداخت @endif
+                                                </span>
+                                            </td>
                                             <td>
                                                 <span class="col-{{$order->deliver_status}}">
                                                     @if($order->deliver_status == 'green')

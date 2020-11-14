@@ -110,17 +110,26 @@ class SellersController extends Controller {
 		}
 
 		if ( isset( $request->is_verified ) ) {
-			$is_verified = 1;
+			$seller->mobile;
+			$is_verified = 2;
+			if ( $seller->is_verified != 'green' ) {
+				$this->sentWithPattern( [ $seller->mobile ], 'oyvdyql7w0',
+					[
+						'name' => $seller->name,
+						'link' => 'https://sharkhar.net/login'
+					]
+				);
+			}
 		}
 		if ( isset( $request->bank_status ) ) {
-		return	$bank_status = 1;
+			return $bank_status = 1;
 		}
 
 		$request->sheba   = Str::upper( $request->sheba );
 		$default_shipping = (int) filter_var( $request->default_shipping, FILTER_SANITIZE_NUMBER_INT );
 		$free_shipping    = (int) filter_var( $request->free_shipping, FILTER_SANITIZE_NUMBER_INT );
 		$seller->update( [
-			'sheba'           => $request->sheba,
+			'sheba'            => $request->sheba,
 			'mobile'           => $request->mobile,
 			'insta_user'       => $request->insta_user,
 			'status'           => $status,
@@ -149,6 +158,7 @@ class SellersController extends Controller {
 	public function destroy( Seller $seller ) {
 		//
 	}
+
 	public function resendCode( Request $request ) {
 
 		$preRegister  = PreRegister::where( 'mobile', $request->mobile )->first();

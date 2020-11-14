@@ -94,11 +94,14 @@ class LoginController extends Controller {
 
 	public function linkLoginBuyer( $token ) {
 		$linkLogin = LinkLogin::validFromToken( $token );
-		$buyer = Buyer::where('mobile',$linkLogin->mobile)->first();
+		if ($linkLogin){
+			$buyer = Buyer::where('mobile',$linkLogin->mobile)->first();
 
-		Auth::guard('buyer')->loginUsingId($buyer->id);
-		$linkLogin->delete();
-		return redirect()->route('buyer.orders.index');
+			Auth::guard('buyer')->loginUsingId($buyer->id);
+			$linkLogin->delete();
+			return redirect()->route('buyer.orders.index');
+		}
+		return redirect()->route('buyer_login');
 	}
 
 	public function sendPass(Request $request){
@@ -107,10 +110,14 @@ class LoginController extends Controller {
 		$buyer = Buyer::where('mobile',$mobile)->first();
 		if (!$buyer){
 			return response()->json( [ 'error' => 'mobileNoteFound' ] );
+		}else{
+			$this->sentWithPattern([$mobile], 'allg7waqdb', ['name'=>$buyer->name,'pass'=>$pass]);
+			$password = Hash::make($pass);
+			$buyer->password = $password;
+			$buyer->save();
+			return response()->json( [ 'password_sent' => 'success' ] );
 		}
-		$this->sentWithPattern([$mobile], 'allg7waqdb', ['name'=>$buyer->name,'pass'=>$pass]);
-		$buyer->update(['password'=>Hash::make($pass)]);
-		return response()->json( [ 'password_sent' => 'success' ] );
+
 	}
 
 
