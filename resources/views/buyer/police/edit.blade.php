@@ -29,8 +29,8 @@
             </div>
         @endif
         <div class="row clearfix">
-            <div class="col-lg-4 col-md-12 pr-0 mr-0">
-                <div class="card mcard_4">
+            <div class="col-lg-4 col-md-12 pr-0 mr-0 p-res-0">
+                <div class="card">
 
                     <div class="header">
                         <h2><strong>اطلاعات</strong> سفارش</h2>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-12 pl-0 ml-0">
+            <div class="col-lg-8 col-md-12 pl-0 ml-0 p-res-0">
                 <div class="card ">
                     <div class="header">
                         <h2><strong>تغییر</strong> وضعیت سفارش</h2>

@@ -10,8 +10,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-2"></div>
                         <div class="col-lg-8 col-md-12">
-                            <select class="form-control show-tick ms select2" id="order" name="order"
-                                    onchange="getSeller()" data-placeholder="انتخاب سفارش">
+                            <select class="form-control show-tick ms select2" id="order" onchange="getSeller()" data-placeholder="انتخاب سفارش">
                                 <option></option>
                                 @foreach($orders as $order)
                                     <option value="{{$order->id}}" {{old('order') == $order->id ? 'selected="selected"' : '' }}>{{$order->seller->insta_user.' ||  '.\Illuminate\Support\Str::limit($order->product->title,40)}}</option>

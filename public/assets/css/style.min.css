@@ -2702,6 +2702,12 @@ img {
         margin-left: 0;
         margin-right: 0
     }
+    .p-res-0 {
+        padding: 0;
+    }
+    .badge {
+        font-size: 11px!important;
+    }
 }
 
 @media only screen and (max-width: 580px) {
