@@ -31,7 +31,9 @@ class Order extends Model {
 	public function police() {
 		return $this->hasOne( Police::class );
 	}
-
+	public function feedback() {
+		return $this->hasOne( Feedback::class );
+	}
 	public function getDeliverStatusAttribute( $value ) {
 		if ($value  == 1 ) {
 			return $value = 'green';
