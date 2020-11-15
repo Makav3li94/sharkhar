@@ -24,9 +24,10 @@
     <!-- Favicon-->
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
+    @yield('styles')
     <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    @yield('styles')
+
 </head>
 
 <body class="theme-blush">

@@ -59,7 +59,9 @@
             td:nth-of-type(4):before {
                 content: "فروشنده";
             }
-
+            td:nth-of-type(5):before {
+                content: "رهگیری";
+            }
             td:nth-of-type(6):before {
                 content: "پرداخت";
             }
@@ -113,11 +115,11 @@
                                         <th>تصویر</th>
                                         <th>قیمت</th>
                                         <th>فروشنده</th>
-                                        <th class="nono"> شماره تلفن فروشنده</th>
+                                        <th> کد رهگیری پستی</th>
                                         <th>پرداخت</th>
                                         <th>نحویل</th>
                                         <th>تایید کالا</th>
-                                        <th>تغییر وضعیت سفارش</th>
+                                        <th>ادامه</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -126,9 +128,9 @@
                                             <td class="nono">{{$key + 1}}</td>
                                             <td><img src="{{asset($order->product->image_thumb)}}" width="48"
                                                      alt="Product img"></td>
-                                            <td>{{$order->product->price}}</td>
+                                            <td>{{$order->price}}</td>
                                             <td>{{$order->seller->name}}</td>
-                                            <td class="nono">{{$order->seller->mobile}}</td>
+                                            <td>{{$order->tracking_code ?? 'ثبت نشده'}}</td>
                                             <td>
                                                 <span class="col-{{$order->payment_status}}">
                                                     @if($order->payment_status == 'green')

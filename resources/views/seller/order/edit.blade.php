@@ -2,9 +2,54 @@
 
 @section('content')
 
+
+
     <div class="container">
         <div class="row clearfix">
+            <div class="card">
 
+                <div class="header">
+                    <h2><strong>کدرهگیری </strong> پست</h2>
+                </div>
+                <div class="body">
+                    <form action="{{route('seller.orders.update',$order->id)}}" method="post" class="form-horizontal">
+                        @csrf
+                        @method('patch')
+
+                        <div class="row clearfix">
+                            <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+                                <div class="form-group">
+                                    <input type="text" name="tracking_code" id="tracking_code" class="form-control"
+                                           value="{{$order->tracking_code!=null ? $order->tracking_code : ''}}"
+                                           {{$order->tracking_code!=null ? 'disabled' : ''}} placeholder=" مثلا: 104919919900021620000114">
+                                </div>
+                                @if($errors->has('tracking_code'))
+                                    <small class="text-danger">{{$errors->first('tracking_code')}}</small>
+                                @endif
+                            </div>
+                            @if($order->tracking_code == null)
+                                <div class="col-lg-8 col-md-8 col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-raised btn-info btn-round waves-effect">
+                                            ثبت
+                                        </button>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="col-lg-8 col-md-65 col-sm-4">
+                                    <div class="d-flex bd-highlight text-center mb-3">
+                                        <div class="bg-green flex-fill bd-highlight">
+                                            <p class="pb-0 font-13 pt-2">
+                                                در صورت تحویل مرسوله، اگر کالا تا 48 ساعت توسط خریدار تایید نشد، پول به حساب شما واریز می شود.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="card">
                 <div class="body">
                     <div class="d-flex ">
@@ -95,7 +140,8 @@
                                 </li>
                             </ul>
                             <hr>
-                            <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت : {{number_format($order->price) }}
+                            <h5 class="mb-0 text-success text-center"> مبلغ قابل پرداخت
+                                : {{number_format($order->price) }}
                                 تومان</h5>
                             {{--                                    <a href="javascript:void(0);" class="btn btn-info"><i--}}
                             {{--                                                class="zmdi zmdi-print"></i></a>--}}

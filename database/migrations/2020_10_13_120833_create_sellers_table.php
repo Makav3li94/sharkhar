@@ -15,6 +15,7 @@ class CreateSellersTable extends Migration
     {
         Schema::create('sellers', function (Blueprint $table) {
 	        $table->id();
+	        $table->unsignedBigInteger('shop_category_id')->default(0)->index();
 	        $table->string('name');
 	        $table->string('email')->nullable()->unique();
 			$table->string('mobile')->unique();

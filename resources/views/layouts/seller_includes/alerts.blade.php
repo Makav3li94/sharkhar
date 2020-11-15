@@ -34,13 +34,13 @@
 
                     @else
                         @if(auth()->guard('web')->user()->is_verified == 'green' )
-                            <a href="{{route('seller.products.index')}}">
-                                <div class="alert alert-info">
-                                    تبریک، شما تایید شدید ! حالا کافیه از طریق بخش محصولات کپی لینک خرید رو برای مشتری
-                                    بفرستید
-                                    و بقیش با ما !
-                                </div>
-                            </a>
+{{--                            <a href="{{route('seller.products.index')}}">--}}
+{{--                                <div class="alert alert-info">--}}
+{{--                                    تبریک، شما تایید شدید ! حالا کافیه از طریق بخش محصولات کپی لینک خرید رو برای مشتری--}}
+{{--                                    بفرستید--}}
+{{--                                    و بقیش با ما !--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
                         @elseif(auth()->guard('web')->user()->is_verified == 'info' )
                             <a href="{{route('seller.products.index')}}">
                                 <div class="alert alert-secondary">

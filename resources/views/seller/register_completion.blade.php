@@ -56,19 +56,19 @@
                                     </small>
                                 @endif
                             </div>
-{{--                            <div class="input-group mb-3">--}}
-{{--                                <input type="text" name="m_code" class="form-control " placeholder="کد ملی"--}}
-{{--                                       value="{{ old('m_code') }}" oninput="setCustomValidity('')"--}}
-{{--                                       oninvalid="this.setCustomValidity('لطفا کد ملی را وارد کنید')" required>--}}
-{{--                                <div class="input-group-append">--}}
-{{--                                    <span class="input-group-text"><i class="zmdi zmdi-account-add"></i></span>--}}
-{{--                                </div>--}}
-{{--                                @if($errors->has('m_code'))--}}
-{{--                                    <small class="text-danger d-inline-block w-100  mt-2">--}}
-{{--                                        {{$errors->first('m_code')}}--}}
-{{--                                    </small>--}}
-{{--                                @endif--}}
-{{--                            </div>--}}
+                            {{--                            <div class="input-group mb-3">--}}
+                            {{--                                <input type="text" name="m_code" class="form-control " placeholder="کد ملی"--}}
+                            {{--                                       value="{{ old('m_code') }}" oninput="setCustomValidity('')"--}}
+                            {{--                                       oninvalid="this.setCustomValidity('لطفا کد ملی را وارد کنید')" required>--}}
+                            {{--                                <div class="input-group-append">--}}
+                            {{--                                    <span class="input-group-text"><i class="zmdi zmdi-account-add"></i></span>--}}
+                            {{--                                </div>--}}
+                            {{--                                @if($errors->has('m_code'))--}}
+                            {{--                                    <small class="text-danger d-inline-block w-100  mt-2">--}}
+                            {{--                                        {{$errors->first('m_code')}}--}}
+                            {{--                                    </small>--}}
+                            {{--                                @endif--}}
+                            {{--                            </div>--}}
 
                             <div class="input-group mb-3">
                                 <input type="text" name="mobile" class="form-control" placeholder="شماره موبایل"
@@ -122,11 +122,24 @@
                             <div class="input-group mb-3 ">
                                 <img class="d-block h-25 mx-auto" src="{{asset('assets/images/user_ex.jpg')}}" alt="">
                             </div>
-
+                            <div class="input-group mb-3">
+                                <select class="form-control show-tick ms select2" id="shop_category" name="shop_category" data-placeholder="دسته بندی فروشگاه">
+                                    <option></option>
+                                    @foreach($shopCategorise as $shopCategory)
+                                        <option value="{{$shopCategory->id}}" {{old('order') == $shopCategory->id ? 'selected="selected"' : '' }}>{{$shopCategory->title}}</option>
+                                    @endforeach
+                                </select>
+                                @if($errors->has('shop_category'))
+                                    <small class="text-danger d-inline-block w-100  mt-2">
+                                        {{$errors->first('shop_category')}}
+                                    </small>
+                                @endif
+                            </div>
 
                             <div class="checkbox">
                                 <input id="remember_me" name="rules" type="checkbox" checked>
-                                <label for="remember_me">من با قوانین و مقررات موافقم. <a href="{{route('rules')}}" target="_blank">شرایط
+                                <label for="remember_me">من با قوانین و مقررات موافقم. <a href="{{route('rules')}}"
+                                                                                          target="_blank">شرایط
                                         استفاده</a></label>
                                 @if($errors->has('rules'))
                                     <small class="text-danger d-inline-block w-100  mt-2">
@@ -160,6 +173,7 @@
     </div>
 @endsection
 @section('styles')
+    <link rel="stylesheet" href="{{asset('assets/plugins/select2/select2.css')}}"/>
     <style>
         small {
             text-align: right !important;
@@ -246,5 +260,11 @@
                 }
             });
         }
+    </script>
+    <script src="{{asset('assets/plugins/select2/select2.min.js')}}"></script> <!-- Select2 Js -->
+    <script>
+        $(function () {
+            $('.select2').select2();
+        });
     </script>
 @endsection

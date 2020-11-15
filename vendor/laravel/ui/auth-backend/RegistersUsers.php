@@ -3,6 +3,7 @@
 namespace Illuminate\Foundation\Auth;
 
 use App\Models\PreRegister;
+use App\Models\ShopCategory;
 use App\Traits\Randomable;
 use App\Traits\Sms;
 use Illuminate\Auth\Events\Registered;
@@ -55,7 +56,9 @@ trait RegistersUsers {
 			$mobile = $request->mobile;
 			$confirm_code = 'on';
 
-			return view( 'seller.register_completion ', compact( 'confirm_code','mobile' ) );
+			$shopCategorise = ShopCategory::all();
+
+			return view( 'seller.register_completion ', compact( 'confirm_code','mobile','shopCategorise' ) );
 		}
 
 

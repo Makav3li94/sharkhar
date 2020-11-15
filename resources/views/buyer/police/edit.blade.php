@@ -37,7 +37,8 @@
                     </div>
                     <div class="body">
                         <div class="img mt-0">
-                            <img src="{{$order->product->image}}" class="img-fluid mt-0 w-100 h-auto" alt="profile-image">
+                            <img src="{{$order->product->image}}" class="img-fluid mt-0 w-100 h-auto"
+                                 alt="profile-image">
                         </div>
                         <div class="user">
                             <h1 class="mt-3 mb-1">{{$order->seller->insta_user}}</h1>
@@ -95,6 +96,59 @@
                 </div>
             </div>
             <div class="col-lg-8 col-md-12 pl-0 ml-0 p-res-0">
+
+
+                {{--                <div class="card">--}}
+                {{--                    وضعیت محصول از طریق api  پست--}}
+                {{--                </div>--}}
+
+                @if($order->tracking_code != null)
+
+                    <div class="card">
+
+                        <div class="header">
+                            <h2><strong>کد رهگیری </strong> پست</h2>
+                        </div>
+                        <div class="body">
+                                <div class="row clearfix">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+                                        <div class="form-group">
+                                            <input type="text" name="tracking_code" id="tracking_code"
+                                                   class="form-control"
+                                                   value="{{$order->tracking_code!=null ? $order->tracking_code : ''}}"
+                                                   {{$order->tracking_code!=null ? 'disabled' : ''}} placeholder=" مثلا: 104919919900021620000114">
+                                        </div>
+                                        @if($errors->has('tracking_code'))
+                                            <small class="text-danger">{{$errors->first('tracking_code')}}</small>
+                                        @endif
+                                    </div>
+                                    @if($order->tracking_code == null)
+                                        <div class="col-lg-8 col-md-8 col-sm-12">
+                                            <div class="form-group">
+                                                <button type="submit"
+                                                        class="btn btn-raised btn-info btn-round waves-effect">
+                                                    ثبت
+                                                </button>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div class="col-lg-8 col-md-65 col-sm-4">
+                                            <div class="d-flex bd-highlight text-center mb-3">
+                                                <div class="bg-green flex-fill bd-highlight">
+                                                    <p class="pb-0 font-13 pt-2">
+                                                        در صورت عدم تایید کالا تا 48 ساعت،
+                                                        پول به حساب فروشنده واریز می شود.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            @endif
+                                        </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                @endif
                 <div class="card ">
                     <div class="header">
                         <h2><strong>تغییر</strong> وضعیت سفارش</h2>
@@ -105,7 +159,7 @@
                         <div class="body">
                             @if($police->is_verified == 'green')
                                 <div class="alert alert-success">شما این خرید را تایید کرده اید</div>
-                                @else
+                            @else
                                 <form action="{{route('buyer.police.update',$police->id)}}" method="post"
                                       enctype="multipart/form-data">
                                     @csrf
@@ -137,11 +191,13 @@
                                                     عالی ! تایید میشه
                                                 </option>
                                                 @if($police->is_verified != 'red')
-                                                <option value="1" {{$police->is_verified == 'blue' ? 'selected' :  ''}}>در
-                                                    حال بررسی
-                                                </option>
+                                                    <option value="1" {{$police->is_verified == 'blue' ? 'selected' :  ''}}>
+                                                        در
+                                                        حال بررسی
+                                                    </option>
                                                 @endif
-                                                <option value="0" {{$police->is_verified == 'red' ? 'selected' :  ''}}>مشکل
+                                                <option value="0" {{$police->is_verified == 'red' ? 'selected' :  ''}}>
+                                                    مشکل
                                                     داره :(
                                                 </option>
                                             </select>
@@ -154,38 +210,40 @@
                                     </div>
 
                                     @if($police->buyer_body == null)
-                                    <div class="row clearfix mb-3 show-it" {{$police->is_verified == 'red' ? '' :  'hidden'}} >
-                                        <div class="col-lg-12">
-                                            <label for="">دلیل نارضایتی را شرح دهید.</label>
-                                            <textarea name="buyer_body" class="form-control w-100" id="" cols="30" rows="3"
-                                                      placeholder="دلیل عدم رضایت از کالا"  >{{$police->is_verified == 'red' ? $police->buyer_body :  ''}}</textarea>
-                                            @if($errors->has('buyer_body'))
-                                                <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('buyer_body')}}
-                                                </small>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="row clearfix mb-3 show-it" {{$police->is_verified == 'red' ? '' :  'hidden'}} >
-                                        <div class="col-lg-12 ">
-                                            <label>ارسال فایل جهت بررسی</label>
-                                            <input type="file" name="buyer_file" class="dropify " data-height="200" {{$police->is_verified == 'red' ? 'disabled' :  ''}}
-                                                   data-default-file=" {{$police->buyer_file != null ? asset($police->buyer_file) : ''}}"
-                                                   data-allowed-file-extensions="pdf png jpeg jpg rar zip"
-                                                   data-max-file-size="2M">
-                                            @if($errors->has('id_card'))
-                                                <small class="text-danger d-inline-block w-100  mt-2">
-                                                    {{$errors->first('id_card')}}
-                                                </small>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    @endif
-                                        <div class="row">
-                                            <div class="col-lg-12 d-flex justify-content-center">
-                                                <button type="submit" class="btn btn-success">ثبت</button>
+                                        <div class="row clearfix mb-3 show-it" {{$police->is_verified == 'red' ? '' :  'hidden'}} >
+                                            <div class="col-lg-12">
+                                                <label for="">دلیل نارضایتی را شرح دهید.</label>
+                                                <textarea name="buyer_body" class="form-control w-100" id="" cols="30"
+                                                          rows="3"
+                                                          placeholder="دلیل عدم رضایت از کالا">{{$police->is_verified == 'red' ? $police->buyer_body :  ''}}</textarea>
+                                                @if($errors->has('buyer_body'))
+                                                    <small class="text-danger d-inline-block w-100  mt-2">
+                                                        {{$errors->first('buyer_body')}}
+                                                    </small>
+                                                @endif
                                             </div>
                                         </div>
+                                        <div class="row clearfix mb-3 show-it" {{$police->is_verified == 'red' ? '' :  'hidden'}} >
+                                            <div class="col-lg-12 ">
+                                                <label>ارسال فایل جهت بررسی</label>
+                                                <input type="file" name="buyer_file" class="dropify " data-height="200"
+                                                       {{$police->is_verified == 'red' ? 'disabled' :  ''}}
+                                                       data-default-file=" {{$police->buyer_file != null ? asset($police->buyer_file) : ''}}"
+                                                       data-allowed-file-extensions="pdf png jpeg jpg rar zip"
+                                                       data-max-file-size="2M">
+                                                @if($errors->has('id_card'))
+                                                    <small class="text-danger d-inline-block w-100  mt-2">
+                                                        {{$errors->first('id_card')}}
+                                                    </small>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <div class="row">
+                                        <div class="col-lg-12 d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-success">ثبت</button>
+                                        </div>
+                                    </div>
 
                                 </form>
 
@@ -315,8 +373,8 @@
     <script src="{{asset('assets/plugins/summernote/dist/summernote.js')}}"></script>
     <script>
         $(document).ready(function () {
-            if ($('#is_verified').val() == 0){
-                    $('.show-it').prop("hidden", false);
+            if ($('#is_verified').val() == 0) {
+                $('.show-it').prop("hidden", false);
             }
             if ($('#deliver_status').val()) {
                 if ($('#is_verified').val() != 2) {

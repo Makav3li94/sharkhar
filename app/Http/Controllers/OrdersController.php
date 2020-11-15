@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -67,7 +68,18 @@ class OrdersController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        if (isset($request->tracking_code)){
+        	$request->validate([
+        		'tracking_code'=>'required|string|regex:/\b\d{24}\b/'
+	        ]);
+	        $tracking_code_created_at = Carbon::now()->toDateTimeString();
+        	$order->update([
+        		'tracking_code' => $request->tracking_code,
+        		'tracking_code_created_at' =>$tracking_code_created_at
+	        ]);
+        	return redirect()->back()->with('success','با موفقیت ثبت شد.');
+        }
+	    return redirect()->back()->with('error','چیزی برای ویرایش وجود ندارد.');
     }
 
     /**

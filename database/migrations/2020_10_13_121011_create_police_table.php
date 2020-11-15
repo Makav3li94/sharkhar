@@ -21,6 +21,7 @@ class CreatePoliceTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('transaction_id');
             $table->unsignedBigInteger('transaction_type');
+
             $table->tinyInteger('is_verified')->default(1)->comment('1 for natural 2 for verifie and 0 for fuck up shit ');
             $table->text('buyer_body')->nullable();
             $table->string('buyer_file')->nullable();

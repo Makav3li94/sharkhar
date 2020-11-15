@@ -65,13 +65,13 @@ class RegisterController extends Controller {
 		if ( $type == null ) {
 
 			$validator = Validator::make( $data, [
-				'confirm_code' => [ 'required', 'numeric' ],
-				'name'         => [ 'required', 'string', 'max:255' ],
-//				'm_code'       => [ 'required', 'numeric', 'unique:sellers' ],
-				'mobile'       => [ 'required', 'regex:/(09)[0-9]{9}/', 'unique:sellers' ],
-				'rules'        => [ 'required' ],
-				'insta_user'   => [ 'required', 'string' , 'unique:sellers'],
-				'password'     => [ 'required', 'string', 'min:8' ],
+				'confirm_code'  => [ 'required', 'numeric' ],
+				'name'          => [ 'required', 'string', 'max:255' ],
+				'shop_category' => [ 'required', 'numeric' ],
+				'mobile'        => [ 'required', 'regex:/(09)[0-9]{9}/', 'unique:sellers' ],
+				'rules'         => [ 'required' ],
+				'insta_user'    => [ 'required', 'string', 'unique:sellers' ],
+				'password'      => [ 'required', 'string', 'min:8' ],
 			] );
 
 			$validator->after( function ( $validator ) use ( $data ) {
@@ -163,19 +163,21 @@ class RegisterController extends Controller {
 	 */
 	protected function create( array $data ) {
 		$seller  = Seller::create( [
-			'name'        => $data['name'],
-			'mobile'      => $data['mobile'],
-			'insta_user'  => Str::lower(trim($data['insta_user'])),
-			'password'    => Hash::make( $data['password'] ),
-			'bank_status' => 0,
+			'shop_category_id' => $data['shop_category'],
+			'name'          => $data['name'],
+			'mobile'        => $data['mobile'],
+			'insta_user'    => Str::lower( trim( $data['insta_user'] ) ),
+			'password'      => Hash::make( $data['password'] ),
+			'bank_status'   => 0,
 		] );
 		$scraper = new ScraperController();
 		$scraper->scrapInstagram( $seller );
-		Wallet::create([
-			'seller_id'=>$seller->id,
-			'wallet_type_id'=>1,
-			'raw_balance'=>0
-		]);
+		Wallet::create( [
+			'seller_id'      => $seller->id,
+			'wallet_type_id' => 1,
+			'raw_balance'    => 0
+		] );
+
 		return $seller;
 	}
 
@@ -189,11 +191,11 @@ class RegisterController extends Controller {
 		] );
 		Auth::guard( 'buyer' )->loginUsingId( $buyer->id );
 
-		Wallet::create([
-			'buyer_id'=>$buyer->id,
-			'wallet_type_id'=>1,
-			'raw_balance'=>0
-		]);
+		Wallet::create( [
+			'buyer_id'       => $buyer->id,
+			'wallet_type_id' => 1,
+			'raw_balance'    => 0
+		] );
 
 		return redirect()->intended( 'buyer/dashboard' );
 	}
