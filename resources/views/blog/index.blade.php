@@ -9,7 +9,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     @foreach($blogs as $blog)
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="card">
                                 <div class="blogitem mb-5 p-5">
                                     <div class="blogitem-image">
@@ -47,8 +47,10 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <h5><a href="{{route('blogs.show',$blog->slug)}}">{{$blog->title}}</a></h5>
-
+                                        <h2><a href="{{route('blogs.show',$blog->slug)}}">{{$blog->title}}</a></h2>
+                                        <p>
+                                            {!! $blog->meta !!}
+                                        </p>
                                         <a href="{{route('blogs.show',$blog->slug)}}" class="btn btn-info">ادامه
                                             مطلب</a>
                                     </div>

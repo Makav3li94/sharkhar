@@ -81,7 +81,7 @@
 
                             <div class="ml-auto p-2">
                                 <a class="navbar-brand logo-link" href="{{route('home')}}">
-                                    <img src="{{asset('front/img/logo-w.png')}}" width="50" alt="شرخر">
+                                    <img src="{{asset('assets/images/logo-p.png')}}" width="80" alt="شرخر">
                                 </a>
                             </div>
 

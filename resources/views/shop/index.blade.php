@@ -7,7 +7,7 @@
 
                @foreach($best as $besty)
 
-                   <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                   <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                        <div class="card">
                            <div class="header">
                                <h3><strong>فروشگاه </strong> برتر</h3>
@@ -50,7 +50,7 @@
 
             @foreach($sellers as $seller)
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                     <div class="card">
                         <div class="body product_item">
 

@@ -5,7 +5,7 @@
             <loc>https://sharkhar.net/product/{{ $product->id }}</loc>
             <lastmod>{{ $product->created_at->tz('UTC')->toAtomString() }}</lastmod>
             <changefreq>weekly</changefreq>
-            <priority>0.9</priority>
+            <priority>0.8</priority>
         </url>
     @endforeach
 </urlset>

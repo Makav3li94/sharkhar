@@ -39,8 +39,8 @@
                                     </ul>
                                 </div>
                             </div>
-                            <h5>{{$blog->title}}</h5>
-                                {!! $blog->body !!}
+                            <h1>{{$blog->title}}</h1>
+                            {!! $blog->body !!}
 
                         </div>
                     </div>
@@ -50,4 +50,34 @@
             @include('blog.side-bar')
         </div>
     </div>
+@endsection
+
+@section('styles')
+    <style>
+        .blogitem-content p {
+            line-height: 2.5em!important;
+            font-size: 14px!important;
+            text-align: justify!important;
+            font-weight: normal!important;
+            color: #4c5053!important;
+        }
+        .blogitem-content h1,h2,h3,h4,h5,h6{
+            line-height: 2.5em!important;
+            font-weight: normal!important;
+            color: #4c5053!important;
+        }
+        .blogitem-content h1{
+            font-size: 18pt!important;
+            text-align: center;
+        }
+        .blogitem-content h2{
+            font-size: 16pt!important;
+        }
+        .blogitem-content h3{
+            font-size: 16pt!important;
+        }
+        .blogitem-content h4,h5,h6{
+            font-size: 14pt!important;
+        }
+    </style>
 @endsection
