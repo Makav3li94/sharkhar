@@ -20,7 +20,9 @@
 {{--                     onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=207424&p=uiwkobpdjyoeaodsuiwkaods", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")'--}}
 {{--                     alt='logo-samandehi' src='{{asset('assets/images/samandehi.png')}}'/>--}}
             </li>
-
+            <li class="mb-2">
+                <img src="{{asset('assets/images/ea.png')}}" alt="درگاه بانک پاسارگاد">
+            </li>
             <li class="mb-2">
                 <img src="{{asset('assets/images/passargad.png')}}" alt="درگاه بانک پاسارگاد">
             </li>
