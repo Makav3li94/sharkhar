@@ -117,6 +117,12 @@
       <path value="$PROJECT_DIR$/vendor/artesaos/seotools" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-feed" />
       <path value="$PROJECT_DIR$/vendor/illuminatech/url-trailing-slash" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/phpfastcache/phpfastcache" />
+      <path value="$PROJECT_DIR$/vendor/restyler/instagram-php-scraper" />
+      <path value="$PROJECT_DIR$/vendor/mashape/unirest-php" />
+      <path value="$PROJECT_DIR$/vendor/ippanel/php-rest-sdk" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

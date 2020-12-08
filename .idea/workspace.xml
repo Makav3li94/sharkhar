@@ -6,8 +6,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="664cae3b-4d8c-4eea-89b2-740d57374004" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sharkhar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sharkhar.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/traits/Scraper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/traits/Scraper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/traits/Sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/traits/Sms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_13_120636_create_buyers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_13_120636_create_buyers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/.php_cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/UPGRADING.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/UPGRADING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/ClientInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/ClientInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/SeekException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/MessageFormatter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/MessageFormatter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Middleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Pool.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Pool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RequestOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RequestOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/TransferStats.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/TransferStats.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/UriTemplate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Utils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions_include.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions_include.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,19 +95,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/blog/single.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/traits/Scraper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+            <state relative-caret-position="-864">
+              <caret line="99" column="42" selection-start-line="99" selection-start-column="42" selection-end-line="99" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/FixInputs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="56" selection-start-line="56" selection-end-line="75" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/traits/Sms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1222">
+              <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+              <folding>
+                <element signature="e#31#52#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_13_120636_create_buyers_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/SmsInbox.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://E:/download/service/service/ippanel/inboxList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" selection-start-line="4" selection-end-line="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/footer.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/RemoveSms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+            <state relative-caret-position="520">
+              <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+              <folding>
+                <element signature="e#40#64#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,24 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mobile_menu</find>
-      <find>sidebiar</find>
-      <find>sider</find>
-      <find>oncl</find>
-      <find>منو</find>
-      <find>side</find>
-      <find>zmdi-close-circle-o</find>
-      <find>j</find>
-      <find>Verta</find>
-      <find>$realCost</find>
-      <find>sele</find>
-      <find>send_pass</find>
-      <find>response</find>
-      <find>response()-&gt;json</find>
-      <find>sendPass</find>
-      <find>انتخاب2</find>
-      <find>پایه</find>
-      <find>show-tick</find>
       <find>@media</find>
       <find>padding: 0</find>
       <find>get.seller.ajax</find>
@@ -100,6 +189,24 @@
       <find>blogitem-content</find>
       <find>0.8</find>
       <find>site</find>
+      <find>Phpfastcache</find>
+      <find>Client</find>
+      <find>inst</find>
+      <find>setRapidApiKey</find>
+      <find>prox</find>
+      <find>setContent</find>
+      <find>cli</find>
+      <find>getMediaCount</find>
+      <find>getUsername</find>
+      <find>getBiography</find>
+      <find>getFullName</find>
+      <find>$cache</find>
+      <find>$result</find>
+      <find>Scraper</find>
+      <find>$this-&gt;RapidApi</find>
+      <find>set_time_l</find>
+      <find>Buyer::cr</find>
+      <find>Buyer::create</find>
     </findStrings>
     <replaceStrings>
       <replace>e1306c</replace>
@@ -111,6 +218,8 @@
       <replace>3c6d71</replace>
       <replace>5851db</replace>
       <replace>0.7</replace>
+      <replace>$post</replace>
+      <replace>$RapidApi</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\sharkhar\public\assets\plugins\intro.js-master</dir>
@@ -118,6 +227,7 @@
       <dir>C:\wamp64\www\sharkhar\public\front</dir>
       <dir>C:\wamp64\www\sharkhar\</dir>
       <dir>C:\wamp64\www\sharkhar\app</dir>
+      <dir>C:\wamp64\www\sharkhar\vendor\restyler</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -126,17 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/seller/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/seller/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/seller/profile/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Seller.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/ScrapInsta.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SellersController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/front_header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/shop/single.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/RemoveOrders.php" />
         <option value="$PROJECT_DIR$/resources/views/shop/payment.blade.php" />
@@ -147,7 +246,6 @@
         <option value="$PROJECT_DIR$/resources/views/buyer/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin_layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" />
-        <option value="$PROJECT_DIR$/app/traits/Sms.php" />
         <option value="$PROJECT_DIR$/resources/views/buyer/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/head.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/buyer/feedbacks/create.blade.php" />
@@ -177,6 +275,18 @@
         <option value="$PROJECT_DIR$/resources/views/sitemap/main.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blog/single.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/footer.blade.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/traits/OldScraper.php" />
+        <option value="$PROJECT_DIR$/vendor/restyler/instagram-php-scraper/src/InstagramScraper/Model/Account.php" />
+        <option value="$PROJECT_DIR$/app/traits/Scraper.php" />
+        <option value="$PROJECT_DIR$/app/Models/SmsInbox.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_12_08_135606_create_sms_inboxes_table.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/GetInbox.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_10_13_120636_create_buyers_table.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/traits/Sms.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/SendLink.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/RemoveSms.php" />
       </list>
     </option>
   </component>
@@ -297,11 +407,17 @@
       <path value="$PROJECT_DIR$/vendor/artesaos/seotools" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-feed" />
       <path value="$PROJECT_DIR$/vendor/illuminatech/url-trailing-slash" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/phpfastcache/phpfastcache" />
+      <path value="$PROJECT_DIR$/vendor/restyler/instagram-php-scraper" />
+      <path value="$PROJECT_DIR$/vendor/mashape/unirest-php" />
+      <path value="$PROJECT_DIR$/vendor/ippanel/php-rest-sdk" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="261" />
-    <option name="y" value="69" />
+    <option name="x" value="973" />
+    <option name="y" value="51" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -321,25 +437,20 @@
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
               <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sharkhar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sharkhar" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+              <item name="Commands" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -351,7 +462,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shoppable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bank" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -360,11 +471,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\sharkhar\app\traits" />
       <recent name="C:\wamp64\www\sharkhar\resources\views\layouts\seller_includes" />
       <recent name="C:\wamp64\www\sharkhar\resources\views\sitemap" />
       <recent name="C:\wamp64\www\sharkhar\public\js" />
       <recent name="C:\wamp64\www\sharkhar\resources\views\admin\blogs" />
-      <recent name="C:\wamp64\www\sharkhar\public\front\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -465,16 +576,25 @@
       <workItem from="1606311163164" duration="422000" />
       <workItem from="1606313009607" duration="611000" />
       <workItem from="1606660048939" duration="94000" />
+      <workItem from="1606811751326" duration="635000" />
+      <workItem from="1606899515561" duration="1208000" />
+      <workItem from="1607364279537" duration="12376000" />
+      <workItem from="1607383365040" duration="49000" />
+      <workItem from="1607384746916" duration="41000" />
+      <workItem from="1607431816099" duration="3518000" />
+      <workItem from="1607451838750" duration="813000" />
+      <workItem from="1607453165400" duration="3531000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="339383000" />
+    <option name="totallyTimeSpent" value="361554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8974359" visible="true" weight="0.2238806" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8974359" visible="true" weight="0.24413647" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.102564104" side_tool="true" weight="0.19509594" />
@@ -489,7 +609,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004517" side_tool="true" weight="0.32932165" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" visible="true" weight="0.20910075" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49954832" visible="true" weight="0.20910075" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -522,202 +642,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_13_120833_create_sellers_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/buyer/feedbacks/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SellersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_13_121011_create_police_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/seller/register_completion.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="133" column="71" selection-start-line="133" selection-start-column="71" selection-end-line="133" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_11_15_145454_create_shop_categories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/seller/police/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1242">
-          <caret line="6" selection-start-line="6" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/seller_includes/alerts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Seller/AdminSellerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-          <folding>
-            <element signature="e#53#89#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="88" column="8" lean-forward="true" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/seller/wallet/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="156" selection-start-line="156" selection-end-line="163" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrdersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="81" column="76" selection-start-line="81" selection-start-column="76" selection-end-line="81" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/seller/order/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/RemoveOrders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Feedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_13_120917_create_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/shop/single.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5778">
-          <caret line="321" column="37" selection-start-line="321" selection-start-column="37" selection-end-line="321" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/shop/vendor.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/traits/Sms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/front/indor-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/style.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="22336" selection-start-line="22336" selection-end-line="22336" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScraperController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="241" column="61" selection-start-line="241" selection-start-column="61" selection-end-line="241" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/shop/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -861,24 +785,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/vendor/raiym/instagram-php-scraper/src/InstagramScraper/Instagram.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="67" column="85" selection-start-line="67" selection-start-column="85" selection-end-line="67" selection-end-column="85" />
+        <state relative-caret-position="345">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/blog/single.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
+        <state relative-caret-position="646">
           <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/footer.blade.php">
+    <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+        <state relative-caret-position="435">
+          <caret line="150" column="73" selection-start-line="150" selection-start-column="73" selection-end-line="150" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/restyler/instagram-php-scraper/src/InstagramScraper/Endpoints.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.example">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/restyler/instagram-php-scraper/src/InstagramScraper/Traits/InitializerTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/restyler/instagram-php-scraper/src/InstagramScraper/Model/AbstractModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/restyler/instagram-php-scraper/src/InstagramScraper/Model/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/restyler/instagram-php-scraper/src/InstagramScraper/Exception/InstagramAuthException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/restyler/instagram-php-scraper/src/InstagramScraper/Instagram.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Jobs/ScrapInsta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <element signature="e#28#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/traits/OldScraper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="40" selection-start-line="40" selection-end-line="40" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/download/php-wsdl/php-wsdl/sendSms.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_135606_create_sms_inboxes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/download/php-wsdl/php-wsdl/inboxList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="247" column="11" selection-start-line="247" selection-start-column="11" selection-end-line="247" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/seller/product/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="156" column="80" lean-forward="true" selection-start-line="156" selection-start-column="80" selection-end-line="156" selection-end-column="109" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_13_120636_create_buyers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/SmsInbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/traits/Sms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1222">
+          <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+          <folding>
+            <element signature="e#31#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/traits/Scraper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864">
+          <caret line="99" column="42" selection-start-line="99" selection-start-column="42" selection-end-line="99" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/FixInputs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="56" selection-start-line="56" selection-end-line="75" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/GetInbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="41" column="19" selection-start-line="40" selection-start-column="5" selection-end-line="41" selection-end-column="20" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendLink.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding>
+            <element signature="e#40#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/download/service/service/ippanel/inboxList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/RemoveSms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+          <folding>
+            <element signature="e#40#64#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

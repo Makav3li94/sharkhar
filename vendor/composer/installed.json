@@ -1033,39 +1033,45 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.5",
-            "version_normalized": "6.5.5.0",
+            "version": "7.2.0",
+            "version_normalized": "7.2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "9d4290de1cfd701f38099ef7e183b64b4b7b0c5e"
+                "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
-                "reference": "9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0aa74dfb41ae110835923ef10a9d803a22d50e79",
+                "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.6.1",
-                "php": ">=5.5",
-                "symfony/polyfill-intl-idn": "^1.17.0"
+                "guzzlehttp/promises": "^1.4",
+                "guzzlehttp/psr7": "^1.7",
+                "php": "^7.2.5 || ^8.0",
+                "psr/http-client": "^1.0"
+            },
+            "provide": {
+                "psr/http-client-implementation": "1.0"
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "php-http/client-integration-tests": "^3.0",
+                "phpunit/phpunit": "^8.5.5 || ^9.3.5",
                 "psr/log": "^1.1"
             },
             "suggest": {
+                "ext-curl": "Required for CURL handler support",
+                "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
-            "time": "2020-06-16T21:01:06+00:00",
+            "time": "2020-10-10T11:47:56+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.5-dev"
+                    "dev-master": "7.1-dev"
                 }
             },
             "installation-source": "dist",
@@ -1086,6 +1092,11 @@
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://sagikazarmark.hu"
                 }
             ],
             "description": "Guzzle is a PHP HTTP client library",
@@ -1096,8 +1107,32 @@
                 "framework",
                 "http",
                 "http client",
+                "psr-18",
+                "psr-7",
                 "rest",
                 "web service"
+            ],
+            "support": {
+                "issues": "https://github.com/guzzle/guzzle/issues",
+                "source": "https://github.com/guzzle/guzzle/tree/7.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/alexeyshockov",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/gmponos",
+                    "type": "github"
+                }
             ],
             "install-path": "../guzzlehttp/guzzle"
         },
@@ -1469,6 +1504,54 @@
                 }
             ],
             "install-path": "../illuminatech/url-trailing-slash"
+        },
+        {
+            "name": "ippanel/php-rest-sdk",
+            "version": "v1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ippanel/php-rest-sdk.git",
+                "reference": "ef0375c46502ebdcf5cf2aec955492d0b7f384f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ippanel/php-rest-sdk/zipball/ef0375c46502ebdcf5cf2aec955492d0b7f384f9",
+                "reference": "ef0375c46502ebdcf5cf2aec955492d0b7f384f9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5"
+            },
+            "time": "2020-02-18T14:41:21+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "IPPanel\\": "src/IPPanel/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "ippanel",
+                    "email": "dev@ippanel.com"
+                }
+            ],
+            "description": "IPPanel REST API client",
+            "homepage": "https://github.com/ippanel/php-rest-sdk",
+            "support": {
+                "issues": "https://github.com/ippanel/php-rest-sdk/issues",
+                "source": "https://github.com/ippanel/php-rest-sdk/tree/v1.0.1"
+            },
+            "install-path": "../ippanel/php-rest-sdk"
         },
         {
             "name": "laravel/framework",
@@ -2007,6 +2090,60 @@
             ],
             "description": "Mime-type detection for Flysystem",
             "install-path": "../league/mime-type-detection"
+        },
+        {
+            "name": "mashape/unirest-php",
+            "version": "v3.0.4",
+            "version_normalized": "3.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mashape/unirest-php.git",
+                "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+                "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "0.1.*",
+                "phpunit/phpunit": "~4.4"
+            },
+            "suggest": {
+                "ext-json": "Allows using JSON Bodies for sending and parsing requests"
+            },
+            "time": "2016-08-11T17:49:21+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Unirest\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Unirest PHP",
+            "homepage": "https://github.com/Mashape/unirest-php",
+            "keywords": [
+                "client",
+                "curl",
+                "http",
+                "https",
+                "rest"
+            ],
+            "support": {
+                "email": "opensource@mashape.com",
+                "issues": "https://github.com/Mashape/unirest-php/issues",
+                "source": "https://github.com/Mashape/unirest-php/tree/master"
+            },
+            "install-path": "../mashape/unirest-php"
         },
         {
             "name": "mockery/mockery",
@@ -2775,6 +2912,126 @@
             "install-path": "../phpdocumentor/type-resolver"
         },
         {
+            "name": "phpfastcache/phpfastcache",
+            "version": "8.0.3",
+            "version_normalized": "8.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPSocialNetwork/phpfastcache.git",
+                "reference": "e1b7cb89a438d1d962d0529ff74c4932159a216f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPSocialNetwork/phpfastcache/zipball/e1b7cb89a438d1d962d0529ff74c4932159a216f",
+                "reference": "e1b7cb89a438d1d962d0529ff74c4932159a216f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.3",
+                "psr/cache": "~1.0.0",
+                "psr/simple-cache": "~1.0.0"
+            },
+            "conflict": {
+                "basho/riak": "*",
+                "doctrine/couchdb": "*"
+            },
+            "require-dev": {
+                "league/climate": "^3.5"
+            },
+            "suggest": {
+                "ext-apc": "*",
+                "ext-couchbase": "*",
+                "ext-intl": "*",
+                "ext-leveldb": "*",
+                "ext-memcache": "*",
+                "ext-memcached": "*",
+                "ext-redis": "*",
+                "ext-sqlite": "*",
+                "ext-wincache": "*",
+                "ext-xcache": "*",
+                "mongodb/mongodb": "^1.1",
+                "phpfastcache/couchdb": "~1.0.0",
+                "phpfastcache/phpssdb": "~1.0.0",
+                "phpfastcache/riak-client": "~1.4.4",
+                "predis/predis": "~1.1.0"
+            },
+            "time": "2020-11-24T11:29:49+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Phpfastcache\\": "lib/Phpfastcache/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Georges.L",
+                    "email": "contact@geolim4.com",
+                    "homepage": "https://github.com/Geolim4",
+                    "role": "Actual Project Manager/Developer"
+                },
+                {
+                    "name": "Khoa Bui",
+                    "email": "khoaofgod@gmail.com",
+                    "homepage": "https://www.phpfastcache.com",
+                    "role": "Former Project Developer/Original Creator"
+                }
+            ],
+            "description": "PHP Abstract Cache Class - Reduce your database call using cache system. PhpFastCache handles a lot of drivers such as Apc(u), Cassandra, CouchBase, Couchdb, Mongodb, Files, (P)redis, Leveldb, Memcache(d), Ssdb, Sqlite, Wincache, Xcache, Zend Data Cache.",
+            "homepage": "https://www.phpfastcache.com",
+            "keywords": [
+                "LevelDb",
+                "abstract",
+                "apc",
+                "apcu",
+                "cache",
+                "cache class",
+                "caching",
+                "cassandra",
+                "cookie",
+                "couchbase",
+                "couchdb",
+                "files cache",
+                "memcache",
+                "memcached",
+                "mongodb",
+                "mysql cache",
+                "pdo cache",
+                "php cache",
+                "predis",
+                "redis",
+                "ssdb",
+                "wincache",
+                "xcache",
+                "zend",
+                "zend data cache",
+                "zend disk cache",
+                "zend memory cache",
+                "zend server"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPSocialNetwork/phpfastcache/issues",
+                "source": "https://github.com/PHPSocialNetwork/phpfastcache/tree/8.0.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/geolim4",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/geolim4",
+                    "type": "patreon"
+                }
+            ],
+            "install-path": "../phpfastcache/phpfastcache"
+        },
+        {
             "name": "phpoption/phpoption",
             "version": "1.7.5",
             "version_normalized": "1.7.5.0",
@@ -3304,6 +3561,58 @@
             "install-path": "../phpunit/phpunit"
         },
         {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2016-08-06T20:24:11+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
+            "install-path": "../psr/cache"
+        },
+        {
             "name": "psr/container",
             "version": "1.0.0",
             "version_normalized": "1.0.0.0",
@@ -3403,6 +3712,61 @@
                 "psr-14"
             ],
             "install-path": "../psr/event-dispatcher"
+        },
+        {
+            "name": "psr/http-client",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-client.git",
+                "reference": "2dfb5f6c5eff0e91e20e913f8c5452ed95b86621"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-client/zipball/2dfb5f6c5eff0e91e20e913f8c5452ed95b86621",
+                "reference": "2dfb5f6c5eff0e91e20e913f8c5452ed95b86621",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0",
+                "psr/http-message": "^1.0"
+            },
+            "time": "2020-06-29T06:28:15+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP clients",
+            "homepage": "https://github.com/php-fig/http-client",
+            "keywords": [
+                "http",
+                "http-client",
+                "psr",
+                "psr-18"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-client/tree/master"
+            },
+            "install-path": "../psr/http-client"
         },
         {
             "name": "psr/http-message",
@@ -3825,6 +4189,60 @@
                 "uuid"
             ],
             "install-path": "../ramsey/uuid"
+        },
+        {
+            "name": "restyler/instagram-php-scraper",
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/restyler/instagram-php-scraper.git",
+                "reference": "860cab595891e34a8f5971c97b1ed6c96bf5be2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/restyler/instagram-php-scraper/zipball/860cab595891e34a8f5971c97b1ed6c96bf5be2a",
+                "reference": "860cab595891e34a8f5971c97b1ed6c96bf5be2a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "mashape/unirest-php": "3.0.*",
+                "php": ">=5.4.0",
+                "psr/simple-cache": "~1.0"
+            },
+            "require-dev": {
+                "phpfastcache/phpfastcache": "^7.1",
+                "phpunit/phpunit": "5.5.*"
+            },
+            "time": "2020-10-08T13:29:07+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "InstagramScraper\\": "src/InstagramScraper/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "restyler"
+                }
+            ],
+            "description": "Profixied Instagram PHP Scraper. Get account information, photos and videos without any authorization, via smart proxy balancer.",
+            "homepage": "https://github.com/restyler/instagram-php-scraper/tree/proxified",
+            "keywords": [
+                "instagram",
+                "scraper"
+            ],
+            "support": {
+                "source": "https://github.com/restyler/instagram-php-scraper/tree/v1.0.2"
+            },
+            "install-path": "../restyler/instagram-php-scraper"
         },
         {
             "name": "sebastian/cli-parser",
