@@ -57,7 +57,7 @@
                 content: "تصویر";
             }
             td:nth-of-type(3):before {
-                content: "";
+                content: "کد محصول";
             }
             td:nth-of-type(4):before {
                 content: "قیمت";
@@ -119,7 +119,7 @@
                                     <tr>
                                         <th>ردیف</th>
                                         <th>تصویر</th>
-                                        <th>نام</th>
+                                        <th>کد</th>
                                         <th data-intro="اگر علاقه ای به ثبت قیمت ندارید، قبل از کپی لینک قیمت روز را در این قسمت وارد کنید.">قیمت</th>
                                         <th data-intro="برای مشتری پیج ایسنتاگرام یا کسب و کارتون، این لینک را از طریق دکمه کپی ارسال کنید،همین ! بقیش با ما.">کپی لینک خرید</th>
                                         <th data-intro="ویراش، حذف و تغییر قیمت محصول ...">عملیات</th>
@@ -137,7 +137,8 @@
                                                 </a>
                                             </td>
                                             <td class="tr">
-                                                {{\Illuminate\Support\Str::limit($product->title,80)}}
+{{--                                                {{\Illuminate\Support\Str::limit($product->title,80)}}--}}
+                                                {{$product->sku}}
                                             </td>
                                             <td >
                                                 @if($product->price !=0)

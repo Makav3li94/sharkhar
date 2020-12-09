@@ -242,10 +242,24 @@ Route::get( 'admin', function () {
 	] );
 } );
 //Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
-Route::get( 'test', function () {
-	$str_to_replace = "0";
+ function fa_to_en($text)
+{
+	$fa_num = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹', '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+	$en_num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-	return $output_str = $str_to_replace.substr('+98935676654', 3);
+	return str_replace($fa_num, $en_num, $text);
+}
+
+Route::get( 'test', function () {
+	$readyForLinks = App\Models\SmsInbox::where( 'status', 0 )->get();
+	foreach ( $readyForLinks as $readyForLink ) {
+		return	$body = fa_to_en( $readyForLink->body );
+		if ( $product = Product::where( 'sku', $body ) ) {
+			$this->sentWithPattern( [ $readyForLink->sender ], 'b89970nfk8', [ 'link' => route( 'product', $product->id ) ] );
+			$readyForLink->status = 1;
+			$readyForLink->save();
+		}
+	}
 
 // Request without proxy
 //	$PROXY_HOST = "frvpn.tiks.top"; // Proxy server address

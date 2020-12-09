@@ -42,7 +42,7 @@ class SendLink extends Command {
 		foreach ( $readyForLinks as $readyForLink ) {
 			$body = $this->fa_to_en( $readyForLink->body );
 			if ( $product = Product::where( 'sku', $body ) ) {
-				$this->sentWithPattern( [ $readyForLink->sender ], 'b89970nfk8', [ 'link' => route( 'product', $product->id ) ] );
+				$this->sentWithPattern( [ $readyForLink->sender ], 'nif553w6hh', ['name' => 'خریدار گرامی', 'link' => route( 'product', $product->id ) ] );
 				$readyForLink->status = 1;
 				$readyForLink->save();
 			}
