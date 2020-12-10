@@ -41,8 +41,8 @@ class SendLink extends Command {
 		$readyForLinks = SmsInbox::where( 'status', 0 )->get();
 		foreach ( $readyForLinks as $readyForLink ) {
 			$body = $this->fa_to_en( $readyForLink->body );
-			if ( $product = Product::where( 'sku', $body ) ) {
-				$this->sentWithPattern( [ $readyForLink->sender ], 'nif553w6hh', ['name' => 'خریدار گرامی', 'link' => route( 'product', $product->id ) ] );
+			if ( $product = Product::where( 'sku', $body )->first() ) {
+				$this->sentWithPattern( [ $readyForLink->sender ], '8ik0xpkklm', ['name' => 'خریدار گرامی، ','product' => route( 'product', $product->id ) ] );
 				$readyForLink->status = 1;
 				$readyForLink->save();
 			}

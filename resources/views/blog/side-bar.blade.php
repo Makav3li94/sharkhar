@@ -30,11 +30,11 @@
             <ul class="list-unstyled mb-0 widget-recentpost">
                 @foreach($blogsLatest as $blog)
                     <li>
-                        <a href="{{route('blogs.show',$blog->slug)}}">
+                        <a href="{{route('news.show',$blog->slug)}}">
                             <img src="{{asset($blog->image)}}" alt="blog thumbnail">
                         </a>
                         <div class="recentpost-content">
-                            <a href="{{route('blogs.show',$blog->slug)}}">{{$blog->title}}</a>
+                            <a href="{{route('news.show',$blog->slug)}}">{{$blog->title}}</a>
                             <span>{{$blog->created_at}}</span>
                         </div>
                     </li>

@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Product;
 use App\Models\Seller;
+use App\Models\ShopCategory;
 use Illuminate\Http\Request;
 use Spatie\Tags\Tag;
 
@@ -32,10 +33,18 @@ class SitemapController extends Controller {
 		] )->header( 'Content-Type', 'text/xml' );
 	}
 
-	public function blogCategories() {
-		$blogCategories = BlogCategory::latest()->get();
+//	public function blogCategories() {
+//		$blogCategories = ShopCategory::where('parent_id',0)->get();
+//
+//		return response()->view( 'sitemap.blog_categories', [
+//			'categories' => $blogCategories,
+//		] )->header( 'Content-Type', 'text/xml' );
+//	}
 
-		return response()->view( 'sitemap.blog_categories', [
+	public function shopCategories() {
+		$blogCategories = ShopCategory::where('parent_id',0)->get();
+
+		return response()->view( 'sitemap.shop_categories', [
 			'categories' => $blogCategories,
 		] )->header( 'Content-Type', 'text/xml' );
 	}

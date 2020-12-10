@@ -109,7 +109,7 @@
                                         <li class="nav-item"><a class="nav-link" href="{{route('shop')}}">فروشگاه</a>
                                         </li>
                                         <li class="nav-item"><a class="nav-link"
-                                                                href="{{route('blogs.index')}}">وبلاگ</a></li>
+                                                                href="{{route('news.index')}}">اخبار</a></li>
                                         <li class="nav-item "><a class="nav-link pl-0" href="{{route('rules')}}">قوانین
                                                 و
                                                 مقررات</a></li>

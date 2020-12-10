@@ -68,7 +68,7 @@ Route::post( '/register/buyer', [ \App\Http\Controllers\Auth\RegisterController:
 //Shop Pages
 
 Route::get( '/shops', [ \App\Http\Controllers\ShopController::class, 'shop' ] )->name( 'shop' );
-Route::resource( '/blogs', \App\Http\Controllers\BlogController::class )->except( [ 'create' ] );
+Route::resource( '/news', \App\Http\Controllers\BlogController::class )->except( [ 'create' ] );
 Route::get( '/blogs/{slug}', [ \App\Http\Controllers\BlogController::class, 'show' ] )->name( 'blog' );
 Route::get( '/blog/{category_slug}', [ \App\Http\Controllers\BlogController::class, 'category' ] );
 Route::get( '/vendors/{name}', [ \App\Http\Controllers\ShopController::class, 'vendor' ] )->name( 'vendor' );
@@ -109,17 +109,18 @@ Route::get( '/rules', [ \App\Http\Controllers\PagesController::class, 'rules' ] 
 Route::get( '/sitemap.xml', [ \App\Http\Controllers\SitemapController::class, 'index' ] );
 Route::get( '/sitemap/main.xml', [ \App\Http\Controllers\SitemapController::class, 'main' ] );
 Route::get( '/sitemap/articles.xml', [ \App\Http\Controllers\SitemapController::class, 'blogs' ] );
-Route::get( '/sitemap/categories.xml', [ \App\Http\Controllers\SitemapController::class, 'blogCategories' ] );
-Route::get( '/sitemap/vendors.xml', [ \App\Http\Controllers\SitemapController::class, 'vendors' ] );
-Route::get( '/sitemap/tags.xml', [ \App\Http\Controllers\SitemapController::class, 'tags' ] );
-Route::get( '/sitemap/products-part-1.xml', [ \App\Http\Controllers\SitemapController::class, 'products1' ] );
-Route::get( '/sitemap/products-part-2.xml', [ \App\Http\Controllers\SitemapController::class, 'products2' ] );
-Route::get( '/sitemap/products-part-3.xml', [ \App\Http\Controllers\SitemapController::class, 'products3' ] );
-Route::get( '/sitemap/products-part-4.xml', [ \App\Http\Controllers\SitemapController::class, 'products4' ] );
-Route::get( '/sitemap/products-part-5.xml', [ \App\Http\Controllers\SitemapController::class, 'products5' ] );
-Route::get( '/sitemap/products-part-6.xml', [ \App\Http\Controllers\SitemapController::class, 'products6' ] );
-Route::get( '/sitemap/products-part-7.xml', [ \App\Http\Controllers\SitemapController::class, 'products7' ] );
-Route::get( '/sitemap/products-part-8.xml', [ \App\Http\Controllers\SitemapController::class, 'products8' ] );
+Route::get( '/sitemap/categories.xml', [ \App\Http\Controllers\SitemapController::class, 'shopCategories' ] );
+//Route::get( '/sitemap/categories.xml', [ \App\Http\Controllers\SitemapController::class, 'blogCategories' ] );
+//Route::get( '/sitemap/vendors.xml', [ \App\Http\Controllers\SitemapController::class, 'vendors' ] );
+//Route::get( '/sitemap/tags.xml', [ \App\Http\Controllers\SitemapController::class, 'tags' ] );
+//Route::get( '/sitemap/products-part-1.xml', [ \App\Http\Controllers\SitemapController::class, 'products1' ] );
+//Route::get( '/sitemap/products-part-2.xml', [ \App\Http\Controllers\SitemapController::class, 'products2' ] );
+//Route::get( '/sitemap/products-part-3.xml', [ \App\Http\Controllers\SitemapController::class, 'products3' ] );
+//Route::get( '/sitemap/products-part-4.xml', [ \App\Http\Controllers\SitemapController::class, 'products4' ] );
+//Route::get( '/sitemap/products-part-5.xml', [ \App\Http\Controllers\SitemapController::class, 'products5' ] );
+//Route::get( '/sitemap/products-part-6.xml', [ \App\Http\Controllers\SitemapController::class, 'products6' ] );
+//Route::get( '/sitemap/products-part-7.xml', [ \App\Http\Controllers\SitemapController::class, 'products7' ] );
+//Route::get( '/sitemap/products-part-8.xml', [ \App\Http\Controllers\SitemapController::class, 'products8' ] );
 //Route::get('/sitemap.xml/products-part-9', [ \App\Http\Controllers\SitemapController::class, 'products9' ]);
 //Route::get('/sitemap.xml/products-part-10', [ \App\Http\Controllers\SitemapController::class, 'products10' ]);
 
@@ -242,24 +243,9 @@ Route::get( 'admin', function () {
 	] );
 } );
 //Route::get('test', [ \App\Http\Controllers\ScraperController::class, 'scrap' ]);
- function fa_to_en($text)
-{
-	$fa_num = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹', '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-	$en_num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-	return str_replace($fa_num, $en_num, $text);
-}
 
 Route::get( 'test', function () {
-	$readyForLinks = App\Models\SmsInbox::where( 'status', 0 )->get();
-	foreach ( $readyForLinks as $readyForLink ) {
-		return	$body = fa_to_en( $readyForLink->body );
-		if ( $product = Product::where( 'sku', $body ) ) {
-			$this->sentWithPattern( [ $readyForLink->sender ], 'b89970nfk8', [ 'link' => route( 'product', $product->id ) ] );
-			$readyForLink->status = 1;
-			$readyForLink->save();
-		}
-	}
+
 
 // Request without proxy
 //	$PROXY_HOST = "frvpn.tiks.top"; // Proxy server address

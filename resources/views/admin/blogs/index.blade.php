@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout',['title' => 'لیست بلاگ ها','b_level2'=>'لیست بلاگ ها','back'=>'true'])
+@extends('layouts.admin_layout',['title' => 'اخبار','b_level2'=>'اخبار','back'=>'true'])
 @section('styles')
 
 @endsection

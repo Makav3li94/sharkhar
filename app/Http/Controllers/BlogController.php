@@ -144,7 +144,7 @@ class BlogController extends Controller {
 
 		OpenGraph::setDescription( $blog->meta );
 		OpenGraph::setTitle( $blog->title );
-		OpenGraph::setUrl( route( 'blogs.show', $blog->slug ) );
+		OpenGraph::setUrl( route( 'news.show', $blog->slug ) );
 		OpenGraph::addProperty( 'type', 'article' );
 		OpenGraph::addProperty( 'locale:alternate', [ 'pt-pt', 'fa-ir' ] );
 

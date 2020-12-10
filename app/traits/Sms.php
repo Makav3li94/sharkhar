@@ -48,6 +48,23 @@ trait Sms {
 		}
 	}
 
+	public function sentWithPatternFaraz( $number, $pattern_code, $input_data ) {
+		ini_set( "soap.wsdl_cache_enabled", "0" );
+		try {
+			$wsdl_url = "http://ippanel.com/class/sms/wsdlservice/server.php?wsdl";
+			$client   = new SoapClient( $wsdl_url );
+			$user     = "09356766574";
+			$pass     = "0016864069";
+			$fromNum  = "3000505";
+			$toNum    = $number;
+
+			$result = $client->sendPatternSms( $fromNum, $toNum, $user, $pass, $pattern_code, $input_data );
+//			 echo $result;
+		} catch ( SoapFault $ex ) {
+//			 echo $ex->faultstring;
+		}
+	}
+
 	public function getSms() {
 		$apiKey = "sigmoI-jPjKojyzrgSORV4OQ6E-6KhFDKyOGThdpSOg=";
 		$client = new \IPPanel\Client( $apiKey );
