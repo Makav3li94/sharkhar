@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-12">
                             <div class="product details">
-                                <h3 class="product-title mb-2 mt-2">{{\Illuminate\Support\Str::limit($product->title,25)}}</h3>
+                                <h1 class="product-title font-17 mb-2 mt-2">{{\Illuminate\Support\Str::limit($product->title,25)}}</h3>
                                 @if($product->optional_price == 0)
                                     <h5 class="price mt-0">قیمت: <span
                                                 class="col-amber">{{$product->price != 0 ? number_format($product->price) ." هزار تومان" : 'وارد نشده.'}} </span>

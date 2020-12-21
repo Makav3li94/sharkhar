@@ -1,6 +1,7 @@
 @extends('layouts.admin_layout',['title' => 'فروشگاه '.$seller->insta_user,'b_level2'=>$seller->insta_user,'back'=>'true'])
 @section('content')
     <div class="container">
+        <hr>
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12">
                 <div class="card mcard_1">
@@ -147,8 +148,10 @@
                     <div class="card">
                         <div class="body product_item">
                             <span class="label onsale">فروشی!</span>
+                                  <a href="{{route('product',$product->id)}}"
+                                   class="">
                             <img src="{{$product->image}}" alt="{{$seller->title}}" class="img-fluid cp_img"/>
-
+                                </a>
                             <div class="d-flex mt-3">
                                 <div class="pr-2 ml-auto">
                                     <i class="zmdi zmdi-thumb-up col-blue"></i>

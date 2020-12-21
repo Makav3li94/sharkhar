@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700");
+
 
 @font-face {
     font-family: "IRANSansDN";
@@ -11028,7 +11028,7 @@ body {
     -o-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    font-family: 'IRANSansDN', "Comfortaa", sans-serif;
+    font-family: 'IRANSansDN', sans-serif;
     background-color: #fff;
     font-weight: 400;
     font-size: 15px;
@@ -12801,7 +12801,7 @@ section.bib {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     border-radius: 0;
-    font-family: 'IRANSansDN', "Comfortaa", sans-serif;
+    font-family: 'IRANSansDN', sans-serif;
     border: none;
     position: fixed;
     top: 0;
@@ -13030,7 +13030,7 @@ section.bib {
     -o-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    font-family: 'IRANSansDN', "Comfortaa", sans-serif;
+    font-family: 'IRANSansDN', sans-serif;
     width: 250px;
     height: calc(100vh - 0px);
     position: fixed;
@@ -20377,7 +20377,11 @@ section.bib {
     font-weight: 700;
     margin: 0
 }
-
+.product_item a{
+    display:inline-block;
+    width:100%;
+    text-align:center;
+}
 .c_review {
     margin-bottom: 0
 }

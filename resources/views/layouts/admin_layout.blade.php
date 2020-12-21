@@ -14,6 +14,7 @@
 
     @if(!isset($hide))
         <div class="container">
+                  @if(auth()->guard('web')->check() || auth()->guard('buyer')->check() || auth()->guard('admin')->check())
             <div class="row mb-3">
                 <div class="col-md-4 col-sm-12 mb-2">
 
@@ -23,7 +24,7 @@
                          data-intro="در شرخر، شما برای فروش نیاز به ثبت شماره شِبا و ارسال لینک خرید برای مشتری دارید، همین. لطفا تا انتهای آموزش با من باشید."
                             @endif
                     >
-                        <h1 class="mb-0 font-16">{{ ucfirst($title ?? '') }}</h1>
+                     
                         @if(!auth()->guard('web')->check() && !auth()->guard('buyer')->check())
 
                         @else
@@ -37,11 +38,11 @@
 
                     </div>
                 </div>
-
+       
                 <div class="col-md-8 col-sm-12 pr-0 pl-0 ">
                     <div class="card">
                         <div class="body p-0">
-                            @if(auth()->guard('web')->check())
+               
                                 <form id="app-search">
                                     <div class="input-group masked-input position-relative">
                                         <div class="input-group-prepend">
@@ -55,14 +56,22 @@
                                     </div>
                                     <div class="list-group"></div>
                                 </form>
-                            @endif
+                       
                         </div>
                     </div>
                 </div>
+                    
             </div>
+             @endif
             <div class="bread-crumb row">
+                  @if(isset($back))
                 <div class="col-lg-8 col-md-8 col-sm-12">
-                    <ul class="breadcrumb">
+                    
+                    @else
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                    @endif
+                    
+                    <ul class="breadcrumb mb-0">
                         <li class="breadcrumb-item">
                             <a href="
                        @if(auth()->guard('web')->check())
@@ -112,6 +121,11 @@
     @endif
 
     @include('layouts.seller_includes.alerts')
+                   
+                         @if(!request()->is('product/*'))
+
+       <h1 class=" font-16 text-center">{{ ucfirst($title ?? '') }}</h1>
+       @endif
     @yield('content')
     <div class="toTop">
         <a href="#"><i class="zmdi zmdi-long-arrow-up"></i></a>

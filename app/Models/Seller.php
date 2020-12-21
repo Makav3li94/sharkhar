@@ -37,6 +37,9 @@ class Seller extends Authenticatable implements Feedable
 		return $this->hasMany(Police::class);
 	}
 
+    public function shopCategory(){
+        return $this->hasOne(ShopCategory::class,'id','shop_category_id');
+    }
 
 	public function setEmailAttribute($value) {
 		if ( empty($value) ) { // will check for empty string

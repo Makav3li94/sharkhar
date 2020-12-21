@@ -422,7 +422,7 @@ header {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #405de6;
+    background-color: #964e96;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     /*padding-top: 15px;*/
@@ -446,7 +446,7 @@ header {
 
 .wellcome_area {
     background-image: url(img/bg-img/welcome-bg.png);
-    height: 800px;
+    height: 600px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
@@ -782,11 +782,11 @@ header {
     position: relative;
     z-index: auto;
     background: #5851db;
-    background: -webkit-linear-gradient(to left, #405de6, #5851db);
-    background: -webkit-linear-gradient(right, #405de6, #5851db);
-    background: -webkit-gradient(linear, right top, left top, from(#405de6), to(#5851db));
-    background: -o-linear-gradient(right, #405de6, #5851db);
-    background: linear-gradient(to left, #405de6, #5851db);
+    background: -webkit-linear-gradient(to left, #964e96, #5851db);
+    background: -webkit-linear-gradient(right, #964e96, #5851db);
+    background: -webkit-gradient(linear, right top, left top, from(#964e96), to(#5851db));
+    background: -o-linear-gradient(right, #964e96, #5851db);
+    background: linear-gradient(to left, #964e96, #5851db);
     padding: 80px 0 80px 0;
     /*top: -100px;*/
 }
@@ -1067,12 +1067,12 @@ header {
 -------------------------- */
 
 .our-monthly-membership {
-    background: #405de6;
-    background: -webkit-linear-gradient(to left, #405de6, #5851db);
-    background: -webkit-linear-gradient(right, #405de6, #5851db);
-    background: -webkit-gradient(linear, right top, left top, from(#405de6), to(#5851db));
-    background: -o-linear-gradient(right, #405de6, #5851db);
-    background: linear-gradient(to left, #405de6, #5851db);
+    background: #964e96;
+    background: -webkit-linear-gradient(to left, #964e96, #5851db);
+    background: -webkit-linear-gradient(right, #964e96, #5851db);
+    background: -webkit-gradient(linear, right top, left top, from(#964e96), to(#5851db));
+    background: -o-linear-gradient(right, #964e96, #5851db);
+    background: linear-gradient(to left, #964e96, #5851db);
 }
 
 .membership-description > h2 {
@@ -1094,7 +1094,7 @@ header {
     line-height: 45px;
     color: #e1306c;
     font-weight: 500;
-    border-radius: 23px 23px 23px 0;
+    border-radius: 23px 23px 23px 23px;
 }
 
 .get-started-button > a:hover {
@@ -1400,7 +1400,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .login-button {
-    background-color: #e1306c;
+    background-color: #3086e1;
     color: #fff;
     font-weight: 200;
     display: inline-block;
@@ -1415,7 +1415,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .new-button {
-    background-color: #5851db;
+    background-color: #e1306c;
     color: #fff !important;
     font-weight: 200;
     display: inline-block;

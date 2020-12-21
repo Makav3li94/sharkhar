@@ -1,7 +1,7 @@
 <div class="modal fade" id="colorModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content" style="direction: rtl">
-            <div class="modal-header text-center" style="background-color: #e1306c;">
+            <div class="modal-header text-center" style="background-color: #3086e1;">
                 <h4 class="title  text-white " id="defaultModalLabel">ورود یا ثبت نام</h4>
                 <button type="button" class="btn  btn-sm btn-round text-white" data-dismiss="modal"><i
                             class="ti-close"></i></button>

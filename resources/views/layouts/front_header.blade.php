@@ -3,7 +3,7 @@
     @include('header')
     <style>
         header {
-            background-color: #405de6;
+            background-color: #964e96;;
         }
 
         .header_area .top-header .navbar {

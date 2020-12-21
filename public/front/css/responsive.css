@@ -1,3 +1,12 @@
+@media (min-width: 1400px) and (max-width: 2000px) {
+
+    
+    .wellcome_area {
+    height: 800px;
+
+    }
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .menu_area .navbar-brand {
         font-size: 42px;
@@ -27,6 +36,11 @@
 
     .header_area.sticky .menu_area #nav .nav-link {
         padding: 23px 7.5px;
+    }
+    
+    .wellcome_area {
+    height: 600px;
+
     }
 }
 
